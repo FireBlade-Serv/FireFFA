@@ -19,7 +19,7 @@ public class Events implements Listener {
 		
 		Tp.tpSpawn(p);
 		
-		GlowstoneTitle gt = new GlowstoneTitle(p, "§6Bienvenue sur le FFA !", p.getName(), 20, 50, 20);
+		GlowstoneTitle gt = new GlowstoneTitle(p, "§6Bienvenue sur le FFA !", "§l"+p.getName(), 20, 50, 20);
 		gt.send();
 	}
 	

@@ -8,7 +8,7 @@ public class Tp {
 	public static void tpSpawn(Player p){
 		//tp Glowstoner 80 114 -47 90 180
 		
-		p.teleport(new Location(p.getWorld(), 80, 114, -47, 90, 180));
+		p.teleport(new Location(p.getWorld(), 80.5, 114, -47.5, -90, 0));
 	}
 
 }
