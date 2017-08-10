@@ -21,6 +21,8 @@ public class TestKit implements CommandExecutor {
 		if(p.isOp()) {
 			if (args[0].equalsIgnoreCase("Demolisseur")) {
 				Kits.kitDemolisseur(p);
+			} else if (args[0].equalsIgnoreCase("Fantome")) {
+				Kits.kitFantome(p);
 			}
 		}
 		return false;
