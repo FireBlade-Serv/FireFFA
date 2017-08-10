@@ -106,8 +106,8 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGen(Material.IRON_CHESTPLATE, ChatColor.BLUE+"Kit agile", 1));
 		p.getInventory().setLeggings(ItemGen(Material.IRON_LEGGINGS, ChatColor.BLUE+"Kit agile", 1));
 		p.getInventory().setBoots(ItemGen(Material.GOLD_BOOTS, ChatColor.BLUE+"Botte d'agilité", 1));
-		p.getInventory().setItem(1, ItemGen(Material.IRON_SWORD, ChatColor.BLUE+"Kit agile", 1));
-		p.getInventory().setItem(9, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(0, ItemGen(Material.IRON_SWORD, ChatColor.BLUE+"Kit agile", 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1, false, false));
 	}
 }
