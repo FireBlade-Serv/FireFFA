@@ -3,15 +3,25 @@ package eu.fireblade.fireffa.items;
 import java.util.ArrayList;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class Kits {
+	
+	public static ArrayList<String> LoreCreator(String a, String b){
+		ArrayList<String> lore = new ArrayList<String>();
+		lore.add(a);
+		lore.add(b);
+		
+		return lore;
+	}
 	
 	public static ItemStack ItemGen(Material m, String n, int nombre) {
 		ItemStack item = new ItemStack(m, nombre);
@@ -91,6 +101,15 @@ public class Kits {
 		return item;
 	}
 	
+	public static ItemStack ItemGenColorLeather(Material leatherPiece, String n, int nombre, int blue, int green, int red) {
+		ItemStack item = new ItemStack(leatherPiece);
+		  LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
+		  meta.setDisplayName(n);
+		  meta.setColor(Color.fromBGR(blue, green, red));
+		  item.setItemMeta(meta);
+		  return item;
+	}
+	
 	public static ItemStack Bouf(Material m, int nombre) {
 		ItemStack item = new ItemStack(m, nombre);
 		ItemMeta itemM = item.getItemMeta();
@@ -99,16 +118,17 @@ public class Kits {
 		return item;		
 	}
 	
-	public static void kitAgile(Player p) {
+	public static void kitDemolisseur(Player p) {
 		p.getInventory().clear();
 		
-		p.getInventory().setHelmet(ItemGen(Material.IRON_HELMET, ChatColor.BLUE+"Kit agile", 1));
-		p.getInventory().setChestplate(ItemGen(Material.IRON_CHESTPLATE, ChatColor.BLUE+"Kit agile", 1));
-		p.getInventory().setLeggings(ItemGen(Material.IRON_LEGGINGS, ChatColor.BLUE+"Kit agile", 1));
-		p.getInventory().setBoots(ItemGen(Material.GOLD_BOOTS, ChatColor.BLUE+"Botte d'agilité", 1));
-		p.getInventory().setItem(0, ItemGen(Material.IRON_SWORD, ChatColor.BLUE+"Kit agile", 1));
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_RED+"Chapeau du démolisseur", 1, 59, 26, 26));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_RED+"Tunique du démolisseur", 1, 59, 26, 26));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_RED+"Pantalon du démolisseur", 1, 59, 26, 26));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_RED+"Bottes du démolisseur", 1, 59, 26, 26));
+		p.getInventory().setItem(0, ItemGen2(Material.IRON_AXE, Enchantment.DAMAGE_ALL, 5, Enchantment.KNOCKBACK, 2, ChatColor.DARK_RED+"Hache de guerre"
+				+ LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1)); 
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
-		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1, false, false));
+		p.getInventory().setItem(16, new ItemStack(Material.FIREBALL));
 	}
 }
 

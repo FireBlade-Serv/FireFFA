@@ -20,7 +20,7 @@ public class TestKit implements CommandExecutor {
 		
 		if(p.isOp()) {
 			if (args[0].equalsIgnoreCase("Agile")) {
-				Kits.kitAgile(p);
+				Kits.kitDemolisseur(p);
 			}
 		}
 		return false;
