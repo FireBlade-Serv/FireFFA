@@ -50,6 +50,7 @@ public class Kits {
 	}
 	
 	public static ItemStack ItemGen3(Material m, Enchantment ench, int level, Enchantment ench2, int level2, Enchantment ench3,
+
 		int level3, String n, String l1, String l2, String l3) {
 		ItemStack item = new ItemStack(m);
 		ItemMeta itemM = item.getItemMeta();
@@ -64,6 +65,14 @@ public class Kits {
 		return item;
 	}
 	
+	public static ItemStack Bouf(Material m) {
+		ItemStack item = new ItemStack(m);
+		ItemMeta itemM = item.getItemMeta();
+		itemM.setDisplayName(ChatColor.BLUE+"Nourriture");
+		item.setItemMeta(itemM);
+		return item;		
+	}
+	
 	public static void kitAgile(Player p) {
 		p.getInventory().setItem(1, ItemGen0(Material.IRON_HELMET, ChatColor.BLUE+"Kit agile", null, null, null));
 		p.getInventory().setItem(1, ItemGen0(Material.IRON_CHESTPLATE, ChatColor.BLUE+"Kit agile", null, null, null));
@@ -71,6 +80,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen0(Material.GOLD_BOOTS, ChatColor.BLUE+"Botte d'agilité", "", "", 
 				ChatColor.WHITE+"Une légende raconte que son détenteur cours plus vite que la lumiére."));
 		p.getInventory().setItem(1, ItemGen0(Material.IRON_SWORD, ChatColor.BLUE+"Kit agile", null, null, null));
+		p.getInventory().setItem(64, Bouf(Material.CARROT_ITEM));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1, false, false));
 	}
 }
