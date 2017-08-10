@@ -4,6 +4,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 
 import eu.fireblade.fireffa.util.Tp;
@@ -15,7 +16,7 @@ public class Events implements Listener {
 	public void onJoin(PlayerJoinEvent e){
 		final Player p = e.getPlayer();
 		
-		e.setJoinMessage("§e"+p.getName()+" à rejoint le FireFFA !");
+		e.setJoinMessage("§6[§eFireFFA§6] §e"+p.getName()+"§f à rejoint le FireFFA !");
 		
 		Tp.tpSpawn(p);
 		
@@ -26,6 +27,13 @@ public class Events implements Listener {
 	@EventHandler
 	public void onRain(WeatherChangeEvent e){
 		e.setCancelled(true);
+	}
+	
+	@EventHandler
+	public void onQuit(PlayerQuitEvent e){
+		final Player p = e.getPlayer();
+		
+		e.setQuitMessage("§6[§eFireFFA§6] §e"+p.getName()+"§f à quitté le FireFFA !");
 	}
 
 }
