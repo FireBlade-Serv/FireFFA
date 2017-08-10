@@ -11,9 +11,15 @@ public class TestKit implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		
+		if(!(sender instanceof Player)){
+			return false;
+		}
+		
 		Player p = (Player) sender;
-		if(sender.isOp()) {
-			if (args[1].equalsIgnoreCase("Agile")) {
+		
+		if(p.isOp()) {
+			if (args[0].equalsIgnoreCase("Agile")) {
 				Kits.kitAgile(p);
 			}
 		}
