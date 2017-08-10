@@ -110,6 +110,7 @@ public class Kits {
 		  LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
 		  meta.setDisplayName(n);
 		  meta.setColor(Color.fromBGR(blue, green, red));
+		  meta.spigot().setUnbreakable(true);
 		  item.setItemMeta(meta);
 		  return item;
 	}
