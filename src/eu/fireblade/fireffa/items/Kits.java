@@ -10,6 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class Kits {
 	
@@ -21,12 +23,16 @@ public class Kits {
 		return lore;
 	}
 	
-	public static ItemStack ItemGen(Material m, String n, int nombre) {
+	public static ItemStack ItemGen(Material m, String n, ArrayList<String> lore,  int nombre) {
 		ItemStack item = new ItemStack(m, nombre);
 		ItemMeta itemM = item.getItemMeta();
 		itemM.setDisplayName(n);
 		itemM.spigot().setUnbreakable(true);
 		item.setItemMeta(itemM);
+		
+		if(lore != null){
+			itemM.setLore(lore);
+		}
 		
 		return item;
 	}
@@ -117,7 +123,7 @@ public class Kits {
 	}
 	
 	public static void kitDemolisseur(Player p) {
-		p.getInventory().clear();
+		Clear(p);
 		
 		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_RED+"Chapeau du démolisseur", 1, 89, 39, 39));
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_RED+"Tunique du démolisseur", 1, 89, 39, 39));
@@ -128,5 +134,25 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.getInventory().setItem(1, new ItemStack(Material.FIREBALL, 16));
 	}
+	
+	public static void kitFantome(Player p) {
+		Clear(p);
+		
+		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, ChatColor.GRAY+"Épée du fantôme", new ArrayList<String>(), 1));
+		p.getInventory().setItem(1, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 5, ChatColor.GRAY+"Bâton du châtiment", new ArrayList<String>(), 1));
+		p.getInventory().setItem(2, ItemGen0(Material.BLAZE_ROD, ChatColor.GRAY+"Warp stick", 
+				LoreCreator(ChatColor.BLUE+"Clique droit -Téléporte", ChatColor.BLUE+"Utilisable toute les minutes"), 1));
+		p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 1));
+	}
+	
+	private static void Clear(Player p) {
+		p.getInventory().clear();
+		p.getInventory().setHelmet(null);
+		p.getInventory().setChestplate(null);
+		p.getInventory().setLeggings(null);
+		p.getInventory().setBoots(null);
+		p.getActivePotionEffects().clear();
+	}
 }
+
 
