@@ -19,7 +19,7 @@ public class TestKit implements CommandExecutor {
 		Player p = (Player) sender;
 		
 		if(p.isOp()) {
-			if (args[0].equalsIgnoreCase("Agile")) {
+			if (args[0].equalsIgnoreCase("Demolisseur")) {
 				Kits.kitDemolisseur(p);
 			}
 		}
