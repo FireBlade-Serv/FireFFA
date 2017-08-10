@@ -74,10 +74,10 @@ public class Kits {
 	}
 	
 	public static void kitAgile(Player p) {
-		p.getInventory().setItem(1, ItemGen0(Material.IRON_HELMET, ChatColor.BLUE+"Kit agile", null, null, null));
-		p.getInventory().setItem(1, ItemGen0(Material.IRON_CHESTPLATE, ChatColor.BLUE+"Kit agile", null, null, null));
-		p.getInventory().setItem(1, ItemGen0(Material.IRON_LEGGINGS, ChatColor.BLUE+"Kit agile", null, null, null));
-		p.getInventory().setItem(1, ItemGen0(Material.GOLD_BOOTS, ChatColor.BLUE+"Botte d'agilité", "", "", 
+		p.getInventory().setHelmet(ItemGen0(Material.IRON_HELMET, ChatColor.BLUE+"Kit agile", null, null, null));
+		p.getInventory().setChestplate(ItemGen0(Material.IRON_CHESTPLATE, ChatColor.BLUE+"Kit agile", null, null, null));
+		p.getInventory().setLeggings(ItemGen0(Material.IRON_LEGGINGS, ChatColor.BLUE+"Kit agile", null, null, null));
+		p.getInventory().setBoots(ItemGen0(Material.GOLD_BOOTS, ChatColor.BLUE+"Botte d'agilité", "", "", 
 				ChatColor.WHITE+"Une légende raconte que son détenteur cours plus vite que la lumiére."));
 		p.getInventory().setItem(1, ItemGen0(Material.IRON_SWORD, ChatColor.BLUE+"Kit agile", null, null, null));
 		p.getInventory().setItem(64, Bouf(Material.CARROT_ITEM));
