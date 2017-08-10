@@ -2,10 +2,14 @@ package eu.fireblade.fireffa.items;
 
 import java.util.Arrays;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class Kits {
 	
@@ -13,6 +17,7 @@ public class Kits {
 		ItemStack item = new ItemStack(m);
 		ItemMeta itemM = item.getItemMeta();
 		itemM.setDisplayName(n);
+		itemM.spigot().setUnbreakable(true);
 		itemM.setLore(Arrays.asList(l1, l2, l3));
 		item.setItemMeta(itemM);
 		
@@ -23,6 +28,7 @@ public class Kits {
 		ItemStack item = new ItemStack(m);
 		ItemMeta itemM = item.getItemMeta();
 		itemM.setDisplayName(n);
+		itemM.spigot().setUnbreakable(true);
 		itemM.setLore(Arrays.asList(l1, l2, l3));
 		itemM.addEnchant(ench, level, true);
 		item.setItemMeta(itemM);
@@ -34,6 +40,7 @@ public class Kits {
 		ItemStack item = new ItemStack(m);
 		ItemMeta itemM = item.getItemMeta();
 		itemM.setDisplayName(n);
+		itemM.spigot().setUnbreakable(true);
 		itemM.setLore(Arrays.asList(l1, l2, l3));
 		itemM.addEnchant(ench, level, true);
 		itemM.addEnchant(ench2, level2, true);
@@ -47,6 +54,7 @@ public class Kits {
 		ItemStack item = new ItemStack(m);
 		ItemMeta itemM = item.getItemMeta();
 		itemM.setDisplayName(n);
+		itemM.spigot().setUnbreakable(true);
 		itemM.setLore(Arrays.asList(l1, l2, l3));
 		itemM.addEnchant(ench, level, true);
 		itemM.addEnchant(ench2, level2, true);
@@ -55,5 +63,15 @@ public class Kits {
 		
 		return item;
 	}
-}
 	
+	public static void kitAgile(Player p) {
+		p.getInventory().setItem(1, ItemGen0(Material.IRON_HELMET, ChatColor.BLUE+"Kit agile", null, null, null));
+		p.getInventory().setItem(1, ItemGen0(Material.IRON_CHESTPLATE, ChatColor.BLUE+"Kit agile", null, null, null));
+		p.getInventory().setItem(1, ItemGen0(Material.IRON_LEGGINGS, ChatColor.BLUE+"Kit agile", null, null, null));
+		p.getInventory().setItem(1, ItemGen0(Material.GOLD_BOOTS, ChatColor.BLUE+"Botte d'agilité", "", "", 
+				ChatColor.WHITE+"Une légende raconte que son détenteur cours plus vite que la lumiére."));
+		p.getInventory().setItem(1, ItemGen0(Material.IRON_SWORD, ChatColor.BLUE+"Kit agile", null, null, null));
+		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1, false, false));
+	}
+}
+
