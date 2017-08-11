@@ -362,12 +362,13 @@ public class Kits {
 	public static void kitArcherelementaire (Player p) {
 		Clear(p);
 		
-		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
-		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
-		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
-		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
-		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 5, ChatColor.DARK_GREEN+"Arc des adieux", null, 1));
-		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_FIRE, 1, ChatColor.DARK_GREEN+"Arc de feu", null, 1));
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
+		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.RED+"OITC arrow", null, 32));
+		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 5, ChatColor.GREEN+"Arc des adieux", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_FIRE, 1, ChatColor.GREEN+"Arc de feu", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.BOW, ChatColor.DARK_GREEN+"Arc de glace", LoreCreator(ChatColor.BLUE+"Ses fléches ralentissent et aveugles", ChatColor.BLUE+"Pendant 2 secondes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));		
 	}
@@ -388,6 +389,19 @@ public class Kits {
 		p.getInventory().setItem(1, bonemeal);
 		p.getInventory().setItem(2, ItemGen(Material.STRING, ChatColor.YELLOW+"Ficelle de pelote laine", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));			
+	}
+	
+	public static void kitArchervagabon (Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_GREEN+"Chapeau de l'archer vagabon", 1, 63, 76, 38));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_GREEN+"Chapeau de l'archer vagabon", 1, 63, 76, 38));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_GREEN+"Chapeau de l'archer vagabon", 1, 63, 76, 38));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_GREEN+"Chapeau de l'archer vagabon", 1, 63, 76, 38));
+		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 10, ChatColor.DARK_GREEN+"Arc de la mort", null, 1));
+		p.getInventory().setItem(2, ItemGen(Material.BOW, ChatColor.DARK_GREEN+"Arc de l'archer vagabon", null, 1));
+		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.RED+"Fléche de l'archer vagabon", null, 32));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
 	private static void Clear(Player p) {
