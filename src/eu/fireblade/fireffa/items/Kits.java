@@ -363,9 +363,9 @@ public class Kits {
 		Clear(p);
 		
 		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
-		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
-		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
-		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.GREEN+"Chapeau de l'archer élémentaire", 1, 102, 127, 51));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.GREEN+"Tunique de l'archer élémentaire", 1, 102, 127, 51));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.GREEN+"Pantalon de l'archer élémentaire", 1, 102, 127, 51));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.GREEN+"Bottes de l'archer élémentaire", 1, 102, 127, 51));
 		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.RED+"OITC arrow", null, 32));
 		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 5, ChatColor.GREEN+"Arc des adieux", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_FIRE, 1, ChatColor.GREEN+"Arc de feu", null, 1));
@@ -377,9 +377,9 @@ public class Kits {
 		Clear(p);
 		
 		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.YELLOW+"Chapeau de l'ocelot", 1, 229, 229, 51));
-		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.YELLOW+"Chapeau de l'ocelot", 1, 229, 229, 51));
-		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.YELLOW+"Chapeau de l'ocelot", 1, 229, 229, 51));
-		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.YELLOW+"Chapeau de l'ocelot", 1, 229, 229, 51));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.YELLOW+"Tunique de l'ocelot", 1, 229, 229, 51));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.YELLOW+"Pantalon de l'ocelot", 1, 229, 229, 51));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.YELLOW+"Bottes de l'ocelot", 1, 229, 229, 51));
 		p.getInventory().setItem(0, ItemGen2(Material.LEATHER_BOOTS, Enchantment.DAMAGE_ALL, 3, Enchantment.KNOCKBACK, 6, ChatColor.YELLOW+"Coup de poisson", null, 1));
 		ItemStack bonemeal = new ItemStack(Material.INK_SACK, 1, (short)15);
 		ItemMeta bonemealM = bonemeal.getItemMeta();
@@ -395,16 +395,16 @@ public class Kits {
 		Clear(p);
 		
 		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_GREEN+"Chapeau de l'archer vagabon", 1, 63, 76, 38));
-		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_GREEN+"Chapeau de l'archer vagabon", 1, 63, 76, 38));
-		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_GREEN+"Chapeau de l'archer vagabon", 1, 63, 76, 38));
-		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_GREEN+"Chapeau de l'archer vagabon", 1, 63, 76, 38));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_GREEN+"Tunique de l'archer vagabon", 1, 63, 76, 38));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_GREEN+"Pantalon de l'archer vagabon", 1, 63, 76, 38));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_GREEN+"Bottes de l'archer vagabon", 1, 63, 76, 38));
 		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 10, ChatColor.DARK_GREEN+"Arc de la mort", null, 1));
 		p.getInventory().setItem(1, ItemGen(Material.BOW, ChatColor.DARK_GREEN+"Arc de l'archer vagabon", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.RED+"Fléche de l'archer vagabon", null, 32));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
-	public static void KitArcherelite (Player p) {
+	public static void kitArcherelite (Player p) {
 		Clear(p);
 		
 		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_GREEN+"Chapeau de l'archer d'élite", 1, 114, 113, 57));
@@ -413,28 +413,39 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
-	public static void KitAssassin (Player p) {
+	public static void kitAssassin (Player p) {
 		Clear(p);
 		
 		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.BLACK+"Chapeau de l'assassin", 1, 25, 25, 25));
-		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.BLACK+"Chapeau de l'assassin", 1, 25, 25, 25));
-		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.BLACK+"Chapeau de l'assassin", 1, 25, 25, 25));
-		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.BLACK+"Chapeau de l'assassin", 1, 25, 25, 25));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.BLACK+"Tunique de l'assassin", 1, 25, 25, 25));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.BLACK+"Pantalon de l'assassin", 1, 25, 25, 25));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.BLACK+"Bottes de l'assassin", 1, 25, 25, 25));
 		p.getInventory().setItem(0, ItemGen1(Material.WOOD_SWORD, Enchantment.KNOCKBACK, -10, ChatColor.BLACK+"Dague",null ,1));
 		p.getInventory().setItem(1, ItemGen1(Material.SHEARS, Enchantment.DAMAGE_ALL, 4, ChatColor.BLACK+"Couteau de l'égorgeur", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
-	public static void KitPanda (Player p) {
+	public static void kitPanda (Player p) {
 		Clear(p);
 		
 		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.WHITE+"Chapeau du panda", 1, 255, 255, 255));
-		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.WHITE+"Chapeau du panda", 1, 25, 25, 25));
-		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.WHITE+"Chapeau du panda", 1, 255, 255, 255));
-		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.WHITE+"Chapeau du panda", 1, 25, 25, 25));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.WHITE+"Tunique du panda", 1, 25, 25, 25));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.WHITE+"Pantalon du panda", 1, 255, 255, 255));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.WHITE+"Bottes du panda", 1, 25, 25, 25));
 		p.getInventory().setItem(0, ItemGen2(Material.SUGAR_CANE, Enchantment.DAMAGE_ALL, 3, Enchantment.KNOCKBACK, 1, ChatColor.WHITE+"Bamboo", null, 1));
 		p.getInventory().setItem(1, ItemGen(Material.CLAY, ChatColor.WHITE+"Charge au sol", LoreCreator(ChatColor.BLUE+"Clique droit - Petite explosion", ChatColor.BLUE+"30 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
+	public static void kitInformaticien (Player p) {
+		Clear(p);
+		
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.GRAY+"Tunique de l'informaticien", 1, 102, 153, 216));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.GRAY+"Pantalon de l'informaticien", 1, 25, 25, 25));
+		p.getInventory().setBoots(ItemGen(Material.LEATHER_BOOTS, ChatColor.GRAY+"Bottes de l'informaticien", null, 1));
+		p.getInventory().setItem(0, ItemGen2(Material.CAULDRON_ITEM, Enchantment.DAMAGE_ALL, 4, Enchantment.KNOCKBACK, 1, ChatColor.GRAY+"Tour de pc", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.WOOD_HOE, Enchantment.KNOCKBACK, 5, ChatColor.GRAY+"Tournevis", null, 1));
+		p.getInventory().setItem(2, ItemGen1(Material.POWERED_RAIL, Enchantment.FIRE_ASPECT, 2, ChatColor.GRAY+"Carte graphique (AMD)", null, 1));
 	}
 	
 	private static void Clear(Player p) {
