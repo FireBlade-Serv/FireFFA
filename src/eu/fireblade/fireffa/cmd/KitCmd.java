@@ -1,5 +1,6 @@
 package eu.fireblade.fireffa.cmd;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.bukkit.Bukkit;
@@ -104,17 +105,63 @@ public class KitCmd implements CommandExecutor {
 		inv.setItem(45, genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0));
 		inv.setItem(53, genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0));
 		
+		//vagabond
 		inv.setItem(0, genPerspective(Material.STAINED_GLASS, "§b§lKits Vagabond", (byte) 3));
+		inv.setItem(9, genPerspective(Material.STONE_SWORD, "§9Chevalier", (byte) 0,
+				Arrays.asList("§9+ Peut facilement combo")));
+		inv.setItem(18, genPerspective(Material.BLAZE_POWDER, "§9Magicien", (byte) 0,
+				Arrays.asList("§9+ A des potions")));
+		inv.setItem(27, genPerspective(Material.BOW, "§9Archer Vagabond", (byte) 0,
+				Arrays.asList("§9+ ", "§9- ")));
+		
+		//inquisiteur
 		inv.setItem(1, genPerspective(Material.STAINED_GLASS, "§e§lKits Inquisiteur", (byte) 4));
+		inv.setItem(10, genPerspective(Material.IRON_INGOT, "§9Mineur", (byte) 0,
+				Arrays.asList("§9+ Peut enflamer ses advairsaires")));
+		inv.setItem(19, genPerspective(Material.SUGAR_CANE, "§9Panda", (byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(28, genPerspective(Material.LEATHER_HELMET, "§9Ours", (byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		
+		//meurtrier
 		inv.setItem(2, genPerspective(Material.STAINED_GLASS, "§5§lKits Meurtrier", (byte) 2));
+		inv.setItem(11, genPerspectiveEnch(Material.GOLD_HELMET, "§9Tank", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
+				Arrays.asList("§9+ La meilleure armure","§9- Ne peut pas courir")));
+		inv.setItem(20, genPerspectiveEnch(Material.STICK, "§9Flic", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
+				Arrays.asList("§9+ A un pistolet")));
+		inv.setItem(29, genPerspective(Material.SHEARS, "§9Assassin", (byte) 0,
+				Arrays.asList("§9+ ", "§9- ")));
+		
+		//mercenaire
 		inv.setItem(3, genPerspective(Material.STAINED_GLASS, "§a§lKits Mercenaire", (byte) 5));
+		inv.setItem(12, genPerspective(Material.CARROT_ITEM, "§9Lapin", (byte) 0,
+				Arrays.asList("§9+ A JumpBoost VI")));
+		inv.setItem(21, genPerspectiveEnch(Material.RED_MUSHROOM, "§9Gameur", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(29, genPerspective(Material.CAKE, "§9Patissier", (byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		
+		//bourreau
 		inv.setItem(4, genPerspective(Material.STAINED_GLASS, "§9§lKits Bourreau", (byte) 11));
+		inv.setItem(13, genPerspectiveEnch(Material.INK_SACK, "§9Grampa", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
+				Arrays.asList("§9+ Peut faire un gros recul")));
+		inv.setItem(22, genPerspective(Material.STONE_AXE, "§9Boucher", (byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(30, genPerspectiveEnch(Material.LEASH, "§9Esclave", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		
+		//executeur
 		inv.setItem(5, genPerspective(Material.STAINED_GLASS, "§1§lKits Executeur", (byte) 13));
+		
+		
 		inv.setItem(6, genPerspective(Material.STAINED_GLASS, "§c§lKits Sanguinaire", (byte) 14));
 		inv.setItem(7, genPerspective(Material.STAINED_GLASS, "§6§lKits Massacreur", (byte) 1));
 		inv.setItem(8, genPerspective(Material.STAINED_GLASS, "§7§lKits Déchiqueteur", (byte) 8));
 		
+		//deathgod
 		inv.setItem(40, genPerspective(Material.STAINED_GLASS, "§0§lKits DeathGod", (byte) 15));
+		inv.setItem(49, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Démolisseur", 1, 89, 38, 38,
+				Arrays.asList("§9+ Peut lancer des fireball")));
 		
 		p.openInventory(inv);
 	}

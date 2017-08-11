@@ -50,7 +50,7 @@ public class OldKit implements CommandExecutor {
 		inv.setItem(11, genPerspectiveEnch(Material.GOLD_HELMET, "§9Tank", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
 				Arrays.asList("§9+ La meilleure armure","§9- Ne peut pas courir")));
 		inv.setItem(12, genPerspectiveEnch(Material.STICK, "§9Flic", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
-				Arrays.asList("§9+ A un pistolet")));	
+				Arrays.asList("§9+ A un pistolet")));
 		inv.setItem(13, genPerspective(Material.BLAZE_POWDER, "§9Magicien", (byte) 0,
 				Arrays.asList("§9+ A des potions")));
 		inv.setItem(14, genPerspective(Material.STONE_SWORD, "§9Chevalier", (byte) 0,
