@@ -2,6 +2,7 @@ package eu.fireblade.fireffa.cmd;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -109,7 +110,7 @@ public class Kit implements CommandExecutor {
 		return item;
 	}
 	
-	private static ItemStack genPerspectivePot(String name, PotionType pt, boolean setsplash, ArrayList<String> list){
+	private static ItemStack genPerspectivePot(String name, PotionType pt, boolean setsplash, List<String> list){
 		Potion p = new Potion(pt);
 		p.setSplash(setsplash);
 		
