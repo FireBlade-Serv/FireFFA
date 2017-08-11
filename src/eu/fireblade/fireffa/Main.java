@@ -11,6 +11,7 @@ public class Main extends JavaPlugin{
 	@Override
 	public void onEnable() {
 		getLogger().info("FireFFA ON");
+		getLogger().info("Plugin by Glowstoner & _goldocelot_ !");
 		
 		getServer().getPluginManager().registerEvents(new Events(), this);
 		
