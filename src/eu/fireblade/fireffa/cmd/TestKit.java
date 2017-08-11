@@ -29,6 +29,8 @@ public class TestKit implements CommandExecutor {
 				Kits.kitFlic(p);
 			} else if (args[0].equalsIgnoreCase("Magicien")) {
 				Kits.kitMagicien(p);
+			} else if (args[0].equalsIgnoreCase("Chevalier")) {
+				Kits.kitChevalier(p);
 			}
 		}
 		return false;

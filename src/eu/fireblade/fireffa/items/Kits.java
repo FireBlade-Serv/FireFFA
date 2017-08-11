@@ -193,6 +193,18 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
+	public static void kitChevalier (Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.GRAY+"Chapeau du chevalier", 1, 153, 153, 153));
+		p.getInventory().setChestplate(ItemGen(Material.CHAINMAIL_CHESTPLATE, ChatColor.GRAY+"Cotte de maille du chevalier", new ArrayList<String>(), 1));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.GRAY+"Pantalon du chevalier", 1, 153, 153, 153));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.GRAY+"Bottes du chevalier", 1, 153, 153, 153));
+		p.getInventory().setItem(0, ItemGen1(Material.STONE_SWORD, Enchantment.KNOCKBACK, 0-2, ChatColor.GRAY+"Épée du Chevalier", new ArrayList<String>(), 1));
+		p.getInventory().setItem(1, generatePotItem(PotionType.INSTANT_HEAL, 2, ChatColor.GRAY+"Potion curative du chevalier", false));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
 	private static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
