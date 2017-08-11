@@ -153,7 +153,9 @@ public class Kits {
 		p.getInventory().setChestplate(null);
 		p.getInventory().setLeggings(null);
 		p.getInventory().setBoots(null);
-		p.removePotionEffect((PotionEffectType) p.getActivePotionEffects());
+		for (PotionEffect effect : p.getActivePotionEffects()) {
+	        p.removePotionEffect(effect.getType());
+		}
 	}
 }
 
