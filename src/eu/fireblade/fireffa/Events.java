@@ -71,13 +71,14 @@ public class Events implements Listener {
 		final Player p = e.getPlayer();
 		final Action a = e.getAction();
 		if(a.equals(Action.RIGHT_CLICK_AIR) && e.getMaterial().equals(Material.IRON_AXE) && eu.fireblade.fireffa.Var.démolisseur.contains(p)){
-			if(p.getInventory().containsAtLeast(eu.fireblade.fireffa.items.Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1), 1))
-			p.launchProjectile(Fireball.class);
-			p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
-			p.getInventory().removeItem(eu.fireblade.fireffa.items.Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1));
-		} else {
+			if(p.getInventory().containsAtLeast(eu.fireblade.fireffa.items.Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1), 1)) {
+				p.launchProjectile(Fireball.class);
+				p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
+				p.getInventory().removeItem(eu.fireblade.fireffa.items.Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1));
+			} else {
 			p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
-			p.sendMessage(ChatColor.GOLD+"[FireFFA]"+ChatColor.RED+"Vous n'avez plus de boule de feu.");
+			p.sendMessage(ChatColor.GOLD+"[FireFFA] "+ChatColor.RED+"Vous n'avez plus de boule de feu.");
+			}
 		}
-	}
+	}		
 }
