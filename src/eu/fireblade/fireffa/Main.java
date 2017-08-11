@@ -3,6 +3,8 @@ package eu.fireblade.fireffa;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import eu.fireblade.fireffa.util.Tp;
+
 
 public class Main extends JavaPlugin{
 	
@@ -15,9 +17,9 @@ public class Main extends JavaPlugin{
 		
 		getServer().getPluginManager().registerEvents(new Events(), this);
 		
-		getCommand("kit").setExecutor(new eu.fireblade.fireffa.cmd.Kit());
+		getCommand("kit").setExecutor(new eu.fireblade.fireffa.cmd.KitCmd());
 		
-		eu.fireblade.fireffa.util.Tp.loadSpawnPoint();
+		Tp.loadSpawnPoint();
 	}
 	
 	@Override

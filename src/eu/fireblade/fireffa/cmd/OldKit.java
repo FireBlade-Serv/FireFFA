@@ -19,7 +19,7 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
 
-public class Kit implements CommandExecutor {
+public class OldKit implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -59,13 +59,9 @@ public class Kit implements CommandExecutor {
 				Arrays.asList("§9+ A JumpBoost 6")));
 		inv.setItem(16, genPerspectivePot("§9Russe", PotionType.STRENGTH, false,
 				Arrays.asList("§9+ A une potion de force")));
-		inv.setItem(15, genPerspective(Material.CARROT_ITEM, "§9Lapin", (byte) 0,
+		inv.setItem(17, genPerspective(Material.CARROT_ITEM, "§9Lapin", (byte) 0,
 				Arrays.asList("§9+ A JumpBoost 6")));
-		inv.setItem(16, genPerspectiveEnch(Material.INK_SACK, "§9Grampa", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
-				Arrays.asList("§9+ Peut faire un gros recul")));
-		inv.setItem(17, genPerspective(Material.IRON_INGOT, "§9Mineur", (byte) 0,
-				Arrays.asList("§9+ Peut enflamer ses advairsaires")));
-		
+
 		//fire
 		inv.setItem(18, genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4));
 		
@@ -76,13 +72,21 @@ public class Kit implements CommandExecutor {
 					Arrays.asList("§9+ Peu se propulser vers le ciel et ne prend pas de dégâts de chute")));
 			inv.setItem(21, genPerspective(Material.TNT, "§9Djiadiste", (byte) 0,
 					Arrays.asList("§9+ A un arc flame")));
+			inv.setItem(22, genPerspective(Material.IRON_INGOT, "§9Mineur", (byte) 0,
+					Arrays.asList("§9+ Peut enflamer ses advairsaires")));
+			inv.setItem(23, genPerspectiveEnch(Material.INK_SACK, "§9Grampa", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
+					Arrays.asList("§9+ Peut faire un gros recul")));
 			
 		}else{
-			inv.setItem(19, genPerspectiveEnch(Material.CACTUS, "§9Cactus",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
+			inv.setItem(19, genPerspectiveEnch(Material.BARRIER, "§9Cactus",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
 					Arrays.asList("§8Vous devez avoir le grade Fire !")));
 			inv.setItem(20, genPerspectiveEnch(Material.BARRIER, "§9Piaf", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
 					Arrays.asList("§8Vous devez avoir le grade Fire !")));
-			inv.setItem(21, genPerspective(Material.TNT, "§9Djiadiste", (byte) 0,
+			inv.setItem(21, genPerspective(Material.TNT, "§9Djihadiste", (byte) 0,
+					Arrays.asList("§8Vous devez avoir le grade Fire !")));
+			inv.setItem(22, genPerspective(Material.IRON_INGOT, "§9Mineur", (byte) 0,
+					Arrays.asList("§8Vous devez avoir le grade Fire !")));
+			inv.setItem(23, genPerspectiveEnch(Material.INK_SACK, "§9Grampa", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
 					Arrays.asList("§8Vous devez avoir le grade Fire !")));
 		}
 		
