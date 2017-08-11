@@ -142,7 +142,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen2(Material.IRON_AXE, Enchantment.DAMAGE_ALL, 2, Enchantment.KNOCKBACK, 2, ChatColor.DARK_RED+"Hache de guerre",
 				LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1)); 
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
-		p.getInventory().setItem(2, ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 16));
+		p.getInventory().setItem(1, ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 16));
 	}
 	
 	public static void kitFantome(Player p) {
@@ -223,9 +223,43 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGen2ColorLeather(Material.LEATHER_CHESTPLATE, Enchantment.THORNS, 4, ChatColor.GREEN+"Tunique du cactus", 1, 127, 204, 25));
 		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.THORNS, 4, ChatColor.GREEN+"Pantalon du cactus", 1, 127, 204, 25));
 		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.THORNS, 4, ChatColor.GREEN+"Bottes du cactus", 1, 127, 204, 25));
-		p.getInventory().setItem(1, ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 1, ChatColor.GREEN+"Épine", null,1));
+		p.getInventory().setItem(0, ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 1, ChatColor.GREEN+"Épine", null,1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2));
+	}
+	
+	public static void kitPiaf (Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.GRAY+"Chapeau du piaf", 1, 216, 127, 51));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.GRAY+"Tunique du piaf", 1, 127, 204, 25));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.GRAY+"Pantalon du piaf", 1, 153, 51, 51));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.GRAY+"Bottes du piaf", 1, 229, 51, 51));
+		p.getInventory().setItem(0, ItemGen1(Material.SUGAR, Enchantment.DAMAGE_ALL, 4, ChatColor.GRAY+"Fiente", null, 1));
+		p.getInventory().setItem(1, ItemGen(Material.FEATHER, ChatColor.GRAY+"Vol", 
+				LoreCreator(ChatColor.BLUE+"Clique droit - Propulse en hauteur", ChatColor.BLUE+"Utilisable 25 fois"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		
+	}
+
+	public static void kitVoleurdame (Player p) {
+		Clear(p);
+		
+		ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 1);
+		ItemMeta skullM = skull.getItemMeta();
+		skullM.setDisplayName(ChatColor.BLACK+"Crâne du mangeur d'âme");
+		skullM.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 2, true);
+		skull.setItemMeta(skullM);	
+		
+		p.getInventory().setHelmet(skull);
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.BLACK+"Tunique du mangeur d'âme", 1, 25, 25, 25));
+		p.getInventory().setLeggings(ItemGen(Material.CHAINMAIL_LEGGINGS, ChatColor.BLACK+"Jambiére de maile du mangeur d'âme", null, 1));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.BLACK+"Bottes du mangeur d'âme", 1, 25, 25, 25));
+		p.getInventory().setItem(0, ItemGen(Material.STONE_SWORD, ChatColor.BLACK+"Épée du mangeur d'âme", 
+				LoreCreator(ChatColor.BLUE+"Clique droit - Vole 1,5 coeurs", ChatColor.BLUE+"45 secondes de récupération"), 1));
+		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.BLACK+"Puit de sang", LoreCreator
+				(ChatColor.BLUE+"Clique droit - Utilise les âmes accumulées pour se régénerer", ChatColor.BLUE+"Consomme le puit de sang (Expérience)"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
 	private static void Clear(Player p) {
