@@ -3,6 +3,8 @@ package eu.fireblade.fireffa;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
@@ -34,6 +36,16 @@ public class Events implements Listener {
 		final Player p = e.getPlayer();
 		
 		e.setQuitMessage("§6[§eFireFFA§6] §e"+p.getName()+"§f à quitté le FireFFA !");
+	}
+	
+	@EventHandler
+	public void onDamage(EntityDamageByEntityEvent e){
+		
+	}
+	
+	@EventHandler
+	public void onClick(InventoryClickEvent e){
+		
 	}
 
 }
