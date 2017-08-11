@@ -56,7 +56,7 @@ public class Events implements Listener {
 		Player d = e.getEntity();
 		Player p = d.getKiller();
 		if (d.getType().equals(EntityType.PLAYER) && p.getType().equals(EntityType.PLAYER)) {
-			p.setHealth(p.getHealth()+2);
+			p.setHealth(p.getHealth()+4);
 			p.sendMessage(ChatColor.GOLD+"[FireFFA] "+ChatColor.RED+"La bravour dont vous avez fait preuve en tuant \""+ChatColor.WHITE+d.getName()+ChatColor.RED+"\" vous est récompensé, vous régénerez 2 coeurs.");
 		}
 	}
