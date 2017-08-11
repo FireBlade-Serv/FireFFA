@@ -5,3 +5,5 @@ version: Alpha v1.5.1
 commands:
  kit:
   description: Cette commande vous give un kit specifique !
+ tkit:
+  description: Cette commande vous give un kit specifique !
