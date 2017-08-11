@@ -10,8 +10,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.potion.PotionType;
 
 public class Kits {
 	
@@ -36,22 +38,7 @@ public class Kits {
 		
 		return item;
 	}
-	
-	public static ItemStack ItemGen0(Material m, String n, ArrayList<String> lore, int nombre) {
-		ItemStack item = new ItemStack(m, nombre);
-		ItemMeta itemM = item.getItemMeta();
-		itemM.setDisplayName(n);
-		itemM.spigot().setUnbreakable(true);
 		
-		if(lore != null){
-			itemM.setLore(lore);
-		}
-		
-		item.setItemMeta(itemM);
-		
-		return item;
-	}
-	
 	public static ItemStack ItemGen1(Material m, Enchantment ench, int level, String n, ArrayList<String> lore, int nombre) {
 		ItemStack item = new ItemStack(m, nombre);
 		ItemMeta itemM = item.getItemMeta();
@@ -123,6 +110,17 @@ public class Kits {
 		return item;		
 	}
 	
+	public static ItemStack generatePotItem(PotionType pt, int level, String name, boolean splash) {
+		Potion pot = new Potion(pt, level);
+		pot.setSplash(splash);
+		ItemStack potion = pot.toItemStack(1);
+		ItemMeta meta = potion.getItemMeta();
+		meta.setDisplayName(name);
+		potion.setItemMeta(meta);
+		
+		return potion;
+	}
+	
 	public static void kitDemolisseur(Player p) {
 		Clear(p);
 		
@@ -130,7 +128,7 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_RED+"Tunique du démolisseur", 1, 89, 38, 38));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_RED+"Pantalon du démolisseur", 1, 89, 38, 38));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_RED+"Bottes du démolisseur", 1, 89, 38, 38));
-		p.getInventory().setItem(0, ItemGen2(Material.IRON_AXE, Enchantment.DAMAGE_ALL, 5, Enchantment.KNOCKBACK, 2, ChatColor.DARK_RED+"Hache de guerre",
+		p.getInventory().setItem(0, ItemGen2(Material.IRON_AXE, Enchantment.DAMAGE_ALL, 2, Enchantment.KNOCKBACK, 2, ChatColor.DARK_RED+"Hache de guerre",
 				LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1)); 
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.getInventory().setItem(1, new ItemStack(Material.FIREBALL, 16));
@@ -141,10 +139,27 @@ public class Kits {
 		
 		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, ChatColor.GRAY+"Épée du fantôme", new ArrayList<String>(), 1));
 		p.getInventory().setItem(1, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 5, ChatColor.GRAY+"Bâton du châtiment", new ArrayList<String>(), 1));
-		p.getInventory().setItem(2, ItemGen0(Material.BLAZE_ROD, ChatColor.GRAY+"Warp stick", 
+		p.getInventory().setItem(2, ItemGen(Material.BLAZE_ROD, ChatColor.GRAY+"Warp stick", 
 				LoreCreator(ChatColor.BLUE+"Clique droit -Téléporte", ChatColor.BLUE+"Utilisable toute les minutes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.POTATO_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 1));
+	}
+	
+	public static void kitTank(Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGen1(Material.GOLD_HELMET, Enchantment.PROTECTION_ENVIRONMENTAL, 4, ChatColor.GOLD+"Casque du tank",
+				new ArrayList<String>(), 1));
+		p.getInventory().setChestplate(ItemGen1(Material.GOLD_CHESTPLATE, Enchantment.PROTECTION_FIRE, 4, ChatColor.GOLD+"Plastron du tank",
+				new ArrayList<String>(), 1));
+		p.getInventory().setLeggings(ItemGen1(Material.GOLD_LEGGINGS, Enchantment.PROTECTION_FIRE, 4, ChatColor.GOLD+"Jambiéres du tank",
+				new ArrayList<String>(), 1));
+		p.getInventory().setBoots(ItemGen1(Material.GOLD_BOOTS, Enchantment.PROTECTION_FIRE, 4, ChatColor.GOLD+"Bottes du tank",
+				new ArrayList<String>(), 1));
+		p.getInventory().setItem(0, ItemGen1(Material.WOOD_SWORD, Enchantment.KNOCKBACK, 4, ChatColor.GOLD+"Épée du tank",
+				new ArrayList<String>(), 1));
+		p.getInventory().setItem(1, generatePotItem(PotionType.INSTANT_HEAL, 2, ChatColor.GOLD+"Potion curative du tank", true));
+		p.getInventory().setItem(2, generatePotItem(PotionType.INSTANT_HEAL, 2, ChatColor.GOLD+"Potion curative du tank", true));
 	}
 	
 	private static void Clear(Player p) {
@@ -158,5 +173,3 @@ public class Kits {
 		}
 	}
 }
-
-

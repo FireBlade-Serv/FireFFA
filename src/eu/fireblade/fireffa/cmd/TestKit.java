@@ -23,6 +23,8 @@ public class TestKit implements CommandExecutor {
 				Kits.kitDemolisseur(p);
 			} else if (args[0].equalsIgnoreCase("Fantome")) {
 				Kits.kitFantome(p);
+			} else if (args[0].equalsIgnoreCase("Tank")) {
+				Kits.kitFantome(p);
 			}
 		}
 		return false;
