@@ -38,7 +38,9 @@ public class Var {
 	
 	public static ArrayList<Player> jihadist = new ArrayList<Player>();	
 	
-	public static ArrayList<Player> gamer = new ArrayList<Player>();	
+	public static ArrayList<Player> gamer = new ArrayList<Player>();
+	
+	public static ArrayList<Player> sauvage = new ArrayList<Player>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	public static HashMap<Player, Integer> killStreak = new HashMap<Player, Integer>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
