@@ -1,9 +1,11 @@
 package eu.fireblade.fireffa;
 
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -48,4 +50,12 @@ public class Events implements Listener {
 		
 	}
 
+	@EventHandler
+	public void onDeath(PlayerDeathEvent e) {
+		Player d = e.getEntity();
+		Player p = d.getKiller();
+		if (d.getType().equals(EntityType.PLAYER) && p.getType().equals(EntityType.PLAYER)) {
+			p.setHealth(p.getHealth()+2);
+		}
+	}
 }
