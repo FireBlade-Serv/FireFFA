@@ -1,6 +1,5 @@
 package eu.fireblade.fireffa.cmd;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -53,7 +52,7 @@ public class Kit implements CommandExecutor {
 		if(p.hasPermission("fireffa.fire") || p.isOp()){
 			inv.setItem(19, genPerspectivePot("§9Fantôme", PotionType.INVISIBILITY, false));
 		}else{
-			inv.setItem(19, genPerspectivePot("§cFantôme", PotionType.INVISIBILITY, false, (ArrayList<String>) Arrays.asList("§8Vous devez avoir le grade Fire !")));
+			inv.setItem(19, genPerspectivePot("§cFantôme", PotionType.INVISIBILITY, false, Arrays.asList("§8Vous devez avoir le grade Fire !")));
 		}
 		
 		//ultra
