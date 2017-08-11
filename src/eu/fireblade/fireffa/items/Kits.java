@@ -177,6 +177,22 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.FIREBALL, ChatColor.DARK_BLUE+"Munition", new ArrayList<String>(), 12));
 	}
 	
+	public static void kitMagicien (Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGen(Material.DIAMOND_HELMET, ChatColor.BLUE+"Casque du magicien", new ArrayList<String>(), 1));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.BLUE+"Tunique du magicien", 1, 51, 76, 178));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.BLUE+"Pantalon du magicien", 1, 51, 76, 178));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.BLUE+"Bottes du magicien", 1, 153, 51, 51));
+		p.getInventory().setItem(0, ItemGen2(Material.STICK, Enchantment.KNOCKBACK, 3, Enchantment.DAMAGE_ALL, 1, ChatColor.BLUE+"Baguette magique", 
+				LoreCreator(ChatColor.BLUE+"Clique droit - Ralentit et aveugle", ChatColor.BLUE+"Consomme une poudre magique"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(1, ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", new ArrayList<String>(), 3));
+		p.getInventory().setItem(2, generatePotItem(PotionType.REGEN, 2, ChatColor.BLUE+"Potion de régéneratrice du magicien", true));
+		p.getInventory().setItem(2, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLUE+"Potion déstructrice du magicien", true));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
 	private static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
