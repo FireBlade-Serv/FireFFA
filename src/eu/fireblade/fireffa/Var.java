@@ -49,6 +49,8 @@ public class Var {
 	public static ArrayList<Player> archerélite = new ArrayList<Player>();
 	
 	public static ArrayList<Player> assassin = new ArrayList<Player>();
+	
+	public static ArrayList<Player> panda = new ArrayList<Player>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	public static HashMap<Player, Integer> killStreak = new HashMap<Player, Integer>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
