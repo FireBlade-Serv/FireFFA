@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -130,6 +131,19 @@ public class Kits {
 		potion.setItemMeta(meta);
 		
 		return potion;
+	}
+	
+	public static ItemStack generateMutiplePot(PotionEffectType pt, int level, int time, PotionEffectType pt2, int level2, int time2, String name, ArrayList<String> lore, int nombre) {
+		ItemStack Potion = new ItemStack(Material.POTION, 1);
+		PotionMeta PotionMeta = (PotionMeta) Potion.getItemMeta();
+		PotionMeta.setDisplayName(name);
+		PotionMeta.setLore(lore);
+		PotionMeta.addCustomEffect(new PotionEffect(pt, level, time), true);
+		PotionMeta.addCustomEffect(new PotionEffect(pt2, level2, time2), true);
+		Potion.setItemMeta(PotionMeta);
+		Potion po = new Potion((byte) 8258);
+		po.apply(Potion);
+		return Potion;
 	}
 	
 	public static void kitDemolisseur(Player p) {
@@ -270,6 +284,18 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.CARROT_ITEM, Enchantment.KNOCKBACK, 4, ChatColor.WHITE+"Carotte du lapin", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.GOLDEN_CARROT, Enchantment.DAMAGE_ALL, 4, ChatColor.WHITE+"Carotte magique du lapin", null, 1));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 6));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
+	public static void kitRusse(Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_GREEN+"Chapeau du russe", 1, 102, 127, 51));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_GREEN+"Tunique du russe", 1, 63, 76, 38));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_GREEN+"Pantalon du russe", 1, 63, 76, 38));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_GREEN+"Bottes du russe", 1, 25, 25, 25));
+		p.getInventory().setItem(0, ItemGen1(Material.WOOD_SWORD, Enchantment.DAMAGE_ALL, 2, ChatColor.DARK_GREEN+"Épée de combat", null, 1));
+		p.getInventory().setItem(1, generateMutiplePot(PotionEffectType.INCREASE_DAMAGE, 2, 90, PotionEffectType.CONFUSION, 1, 90, ChatColor.DARK_GREEN+"Vodka", LoreCreator(ChatColor.BLUE+"Force II et nausé II", ChatColor.BLUE+"1 minute"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
