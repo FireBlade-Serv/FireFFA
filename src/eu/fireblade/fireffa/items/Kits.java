@@ -102,6 +102,17 @@ public class Kits {
 		  return item;
 	}
 	
+	public static ItemStack ItemGen2ColorLeather(Material leatherPiece, Enchantment ench, int level ,String n, int nombre, int red, int green, int blue) {
+		ItemStack item = new ItemStack(leatherPiece);
+		  LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
+		  meta.setDisplayName(n);
+		  meta.setColor(Color.fromBGR(blue, green, red));
+		  meta.addEnchant(ench, level, true);
+		  meta.spigot().setUnbreakable(true);
+		  item.setItemMeta(meta);
+		  return item;
+	}
+	
 	public static ItemStack Bouf(Material m, int nombre) {
 		ItemStack item = new ItemStack(m, nombre);
 		ItemMeta itemM = item.getItemMeta();
@@ -203,6 +214,18 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.STONE_SWORD, Enchantment.KNOCKBACK, 0-2, ChatColor.GRAY+"Épée du Chevalier", new ArrayList<String>(), 1));
 		p.getInventory().setItem(1, generatePotItem(PotionType.INSTANT_HEAL, 2, ChatColor.GRAY+"Potion curative du chevalier", false));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
+	public static void kitCactus (Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGen2ColorLeather(Material.LEATHER_HELMET, Enchantment.THORNS, 4, ChatColor.GREEN+"Chapeau du cactus", 1, 127, 204, 25));
+		p.getInventory().setChestplate(ItemGen2ColorLeather(Material.LEATHER_CHESTPLATE, Enchantment.THORNS, 4, ChatColor.GREEN+"Tunique du cactus", 1, 127, 204, 25));
+		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.THORNS, 4, ChatColor.GREEN+"Pantalon du cactus", 1, 127, 204, 25));
+		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.THORNS, 4, ChatColor.GREEN+"Bottes du cactus", 1, 127, 204, 25));
+		p.getInventory().setItem(1, ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 1, ChatColor.GREEN+"Épine", new ArrayList<String>(),1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2));
 	}
 	
 	private static void Clear(Player p) {
