@@ -3,6 +3,7 @@ package eu.fireblade.fireffa;
 
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
@@ -10,6 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -67,6 +69,13 @@ public class Events implements Listener {
 	}
 	
 	@EventHandler
+	public void onDamage(EntityDamageEvent e) {
+		Entity p = e.getEntity();
+		if (p.getType().equals(EntityType.PLAYER) && Var.piaf.contains(p)) {
+		}
+	}
+	
+	@EventHandler
 	public void onInteract (PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
 		final Action a = e.getAction();
@@ -82,3 +91,4 @@ public class Events implements Listener {
 		}
 	}		
 }
+
