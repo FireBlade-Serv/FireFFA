@@ -14,7 +14,7 @@ public class Main extends JavaPlugin{
 		
 		getServer().getPluginManager().registerEvents(new Events(), this);
 		
-		getCommand("kit").setExecutor(new eu.fireblade.fireffa.cmd.TestKit());
+		getCommand("kit").setExecutor(new eu.fireblade.fireffa.cmd.Kit());
 	}
 	
 	@Override
