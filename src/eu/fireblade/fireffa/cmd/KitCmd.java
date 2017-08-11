@@ -77,15 +77,49 @@ public class KitCmd implements CommandExecutor {
 		inv.setItem(52, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(53, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		
-		inv.setItem(31, genPerspective(Material.STAINED_GLASS, "§f§lKits Membre", (byte) 0));
+		inv.setItem(31, genPerspective(Material.STAINED_GLASS, "§f§lKits Membre/FFA", (byte) 0));
 		inv.setItem(13, genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4));
 		inv.setItem(14, genPerspectiveEnch(Material.STAINED_GLASS, "§c§lKits Ultimate",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 14));
 		inv.setItem(12, genPerspectiveEnch(Material.STAINED_GLASS, "§6§lKits Ultra",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 1));
 		
 		p.openInventory(inv);
 	}
+	
+	public static void ffaMenu(Player p){
+		Inventory inv = Bukkit.createInventory(null, 54, "§9Kits FireFFA");
+		
+		inv.setItem(36, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(37, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(38, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(39, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(44, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(43, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(42, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(41, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(52, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(51, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(46, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(47, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		
+		inv.setItem(45, genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0));
+		inv.setItem(53, genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0));
+		
+		inv.setItem(0, genPerspective(Material.STAINED_GLASS, "§b§lKits Vagabond", (byte) 3));
+		inv.setItem(1, genPerspective(Material.STAINED_GLASS, "§e§lKits Inquisiteur", (byte) 4));
+		inv.setItem(2, genPerspective(Material.STAINED_GLASS, "§5§lKits Meurtrier", (byte) 2));
+		inv.setItem(3, genPerspective(Material.STAINED_GLASS, "§a§lKits Mercenaire", (byte) 5));
+		inv.setItem(4, genPerspective(Material.STAINED_GLASS, "§9§lKits Bourreau", (byte) 11));
+		inv.setItem(5, genPerspective(Material.STAINED_GLASS, "§1§lKits Executeur", (byte) 13));
+		inv.setItem(6, genPerspective(Material.STAINED_GLASS, "§c§lKits Sanguinaire", (byte) 14));
+		inv.setItem(7, genPerspective(Material.STAINED_GLASS, "§6§lKits Massacreur", (byte) 1));
+		inv.setItem(8, genPerspective(Material.STAINED_GLASS, "§7§lKits Déchiqueteur", (byte) 8));
+		
+		inv.setItem(40, genPerspective(Material.STAINED_GLASS, "§0§lKits DeathGod", (byte) 15));
+		
+		p.openInventory(inv);
+	}
 
-	private static ItemStack genPerspective(Material m, String name, byte data){
+	public static ItemStack genPerspective(Material m, String name, byte data){
 		ItemStack item = new ItemStack(m, 1, data);
 		ItemMeta meta = item.getItemMeta();
 		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
@@ -94,7 +128,7 @@ public class KitCmd implements CommandExecutor {
 		return item;
 	}
 	
-	private static ItemStack genPerspective(Material m, String name, byte data, List<String> lore){
+	public static ItemStack genPerspective(Material m, String name, byte data, List<String> lore){
 		ItemStack item = new ItemStack(m, 1, data);
 		ItemMeta meta = item.getItemMeta();
 		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
@@ -104,7 +138,7 @@ public class KitCmd implements CommandExecutor {
 		return item;
 	}
 	
-	private static ItemStack genPerspectiveEnch(Material m, String name, Enchantment ench, int lvl, byte data){
+	public static ItemStack genPerspectiveEnch(Material m, String name, Enchantment ench, int lvl, byte data){
 		ItemStack item = new ItemStack(m, 1, data);
 		ItemMeta meta = item.getItemMeta();
 		meta.addEnchant(ench, lvl, true);
@@ -114,7 +148,7 @@ public class KitCmd implements CommandExecutor {
 		return item;
 	}
 	
-	private static ItemStack genPerspectiveEnch(Material m, String name, Enchantment ench, int lvl, byte data, List<String> lore){
+	public static ItemStack genPerspectiveEnch(Material m, String name, Enchantment ench, int lvl, byte data, List<String> lore){
 		ItemStack item = new ItemStack(m, 1, data);
 		ItemMeta meta = item.getItemMeta();
 		meta.addEnchant(ench, lvl, true);
@@ -125,7 +159,7 @@ public class KitCmd implements CommandExecutor {
 		return item;
 	}
 	
-	private static ItemStack genPerspectivePot(String name, PotionType pt, boolean setsplash, List<String> list){
+	public static ItemStack genPerspectivePot(String name, PotionType pt, boolean setsplash, List<String> list){
 		Potion p = new Potion(pt);
 		p.setSplash(setsplash);
 		
@@ -139,7 +173,7 @@ public class KitCmd implements CommandExecutor {
 		return item;
 	}
 	
-	private static ItemStack genPerspectiveLeatherColor(Material leatherPiece, String n, int nombre, int red, int green, int blue, List<String> list) {
+	public static ItemStack genPerspectiveLeatherColor(Material leatherPiece, String n, int nombre, int red, int green, int blue, List<String> list) {
 		ItemStack item = new ItemStack(leatherPiece);
 		  LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
 		  meta.setDisplayName(n);
