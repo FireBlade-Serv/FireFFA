@@ -105,7 +105,7 @@ public class Kits {
 		return item;
 	}
 	
-	public static ItemStack ItemGenColorLeather(Material leatherPiece, String n, int nombre, int blue, int green, int red) {
+	public static ItemStack ItemGenColorLeather(Material leatherPiece, String n, int nombre, int red, int green, int blue) {
 		ItemStack item = new ItemStack(leatherPiece);
 		  LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
 		  meta.setDisplayName(n);
