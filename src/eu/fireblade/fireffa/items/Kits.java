@@ -268,7 +268,7 @@ public class Kits {
 		
 		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_DAMAGE, 999, ChatColor.RED+"OITC bow", LoreCreator(ChatColor.BLUE+"Les fléches tuent à l'impacte", ChatColor.BLUE+"Consomme une fléche si la cible est ratée"), 1));
 		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.RED+"OITC arrow", null, 3));
-		p.getInventory().setItem(0, ItemGen(Material.STONE_SWORD, ChatColor.RED+"OITC sword", null, 1));
+		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 2, ChatColor.RED+"OITC sword", null, 1));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
