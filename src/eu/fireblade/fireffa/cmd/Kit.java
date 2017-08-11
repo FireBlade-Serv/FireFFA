@@ -45,15 +45,17 @@ public class Kit implements CommandExecutor {
 		
 		//membre
 		inv.setItem(9, genPerspective(Material.STAINED_GLASS, "§f§lKits Membre", (byte) 0));
-		inv.setItem(10, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Démolisseur", 1, 89, 38, 38, Arrays.asList("§9+Peut lancer des fireball", "§9-A une armure faible")));
-		inv.setItem(10, genPerspectiveEnch(Material.GOLD_HELMET, "§9Tank", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0, Arrays.asList("§9+La meilleure armure", "§9-Ne peut pas courir")));
+		inv.setItem(10, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Démolisseur", 1, 89, 38, 38,
+				Arrays.asList("§9+ Peut lancer des fireball", "§9- A une armure faible")));
+		inv.setItem(11, genPerspectiveEnch(Material.GOLD_HELMET, "§9Tank", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
+				Arrays.asList("§9+ La meilleure armure","§9- Ne peut pas courir")));
 		
 		//fire
 		inv.setItem(18, genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4));
 		
 		if(p.hasPermission("fireffa.fire") || p.isOp()){
-			inv.setItem(19, genPerspectivePot("§9Fantôme", PotionType.INVISIBILITY, false, Arrays.asList("§9+Est invisible", "§9-Ne possède pas d'armure")));
-			inv.setItem(20, genPerspectivePot("§9Cactus", PotionType.INVISIBILITY, false, Arrays.asList("§9+Est invisible", "§9-Ne possède pas d'armure")));
+			inv.setItem(19, genPerspectivePot("§9Fantôme", PotionType.INVISIBILITY, false, Arrays.asList("§9+ Est invisible", "§9- Ne possède pas d'armure")));
+			inv.setItem(20, genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4));
 		}else{
 			inv.setItem(19, genPerspectivePot("§cFantôme", PotionType.INVISIBILITY, false, Arrays.asList("§8Vous devez avoir le grade Fire !")));
 		}
