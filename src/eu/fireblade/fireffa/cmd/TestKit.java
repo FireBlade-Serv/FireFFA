@@ -23,7 +23,7 @@ public class TestKit implements CommandExecutor {
 				eu.fireblade.fireffa.items.Kits.kitArcherelite(p);
 			} else if(args[0].equalsIgnoreCase("Archervagabon")) {
 				eu.fireblade.fireffa.items.Kits.kitArchervagabon(p);
-			} else if(args[0].equalsIgnoreCase("Assasin")) {
+			} else if(args[0].equalsIgnoreCase("Assassin")) {
 				eu.fireblade.fireffa.items.Kits.kitAssassin(p);
 			} else if(args[0].equalsIgnoreCase("Cactus")) {
 				eu.fireblade.fireffa.items.Kits.kitCactus(p);
