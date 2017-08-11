@@ -143,6 +143,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 5, ChatColor.GRAY+"Bâton du châtiment", new ArrayList<String>(), 1));
 		p.getInventory().setItem(2, ItemGen0(Material.BLAZE_ROD, ChatColor.GRAY+"Warp stick", 
 				LoreCreator(ChatColor.BLUE+"Clique droit -Téléporte", ChatColor.BLUE+"Utilisable toute les minutes"), 1));
+		p.getInventory().setItem(8, Bouf(Material.POTATO_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 1));
 	}
 	
