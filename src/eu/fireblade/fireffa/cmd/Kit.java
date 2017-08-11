@@ -55,7 +55,7 @@ public class Kit implements CommandExecutor {
 		
 		if(p.hasPermission("fireffa.fire") || p.isOp()){
 			inv.setItem(19, genPerspectivePot("§9Fantôme", PotionType.INVISIBILITY, false, Arrays.asList("§9+ Est invisible", "§9- Ne possède pas d'armure")));
-			inv.setItem(20, genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4));
+			inv.setItem(20, genPerspectiveEnch(Material.CACTUS, "§9Cactus",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0, Arrays.asList("§9+ A Speed II et il renvoie une partie des dégats", "§9- A une faible armure et il fait peu de dégâts")));
 		}else{
 			inv.setItem(19, genPerspectivePot("§cFantôme", PotionType.INVISIBILITY, false, Arrays.asList("§8Vous devez avoir le grade Fire !")));
 		}
