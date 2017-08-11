@@ -299,6 +299,32 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
+	public static void kitGrampa(Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGen(Material.GOLD_HELMET, ChatColor.DARK_GRAY+"Casque du grampa", null, 1));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_GRAY+"Tunique du grampa", 1, 254, 254, 254));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_GRAY+"Pantalon du grampa", 1, 229, 229, 51));
+		p.getInventory().setBoots(ItemGen(Material.LEATHER_BOOTS, ChatColor.DARK_GRAY+"Bottes du grampa", null, 1));
+		p.getInventory().setItem(0, ItemGen1(Material.INK_SACK, Enchantment.DAMAGE_ALL, 4, ChatColor.DARK_GRAY+"Dentier", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 10, ChatColor.DARK_GRAY+"Canne", null, 1));
+		p.getInventory().setItem(2, ItemGen(Material.INK_SACK, ChatColor.DARK_GRAY+"Pruneau", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"Récupération 1 minute 30"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+
+	public static void kitMineur(Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.YELLOW+"Chapeau du mineur", 1, 229, 229, 51));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.YELLOW+"Tunique du mineur", 1, 76, 127, 153));
+		p.getInventory().setLeggings(ItemGen(Material.LEATHER_LEGGINGS, ChatColor.YELLOW+"Pantalon du mineur", null, 1));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.YELLOW+"Bottes du mineur", 1, 25, 25, 25));
+		p.getInventory().setItem(0, ItemGen2(Material.STONE_PICKAXE, Enchantment.DAMAGE_ALL, 2, Enchantment.KNOCKBACK, 1, ChatColor.YELLOW+"Pioche du mineur", null ,1));
+		p.getInventory().setItem(1, ItemGen1(Material.IRON_INGOT, Enchantment.DAMAGE_ALL, 3, ChatColor.YELLOW+"Lingot de la mort", null, 1));
+		p.getInventory().setItem(2, ItemGen2(Material.COAL, Enchantment.FIRE_ASPECT, 1, Enchantment.DAMAGE_ALL, 0-Integer.MAX_VALUE, ChatColor.YELLOW+"Charbon du mineur", null, 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
 	private static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
