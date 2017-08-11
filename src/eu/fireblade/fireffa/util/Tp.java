@@ -1,15 +1,22 @@
 package eu.fireblade.fireffa.util;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 public class Tp {
 	
 	public static void tpSpawn(Player p){
-		//tp Glowstoner 80 114 -47 90 180
-		//tp Glowstoner 80 114.5 -47.5 -90 0
-		
 		p.teleport(new Location(p.getWorld(), 80, 114.5, -47.5, -90, 0));
 	}
 
+	public static void loadSpawnPoint() {
+		eu.fireblade.fireffa.Var.spawn.add(new Location(Bukkit.getWorld("World"), 68.5, 71, 22.5, 127, 0));
+		eu.fireblade.fireffa.Var.spawn.add(new Location(Bukkit.getWorld("World"), 94.5, 93, -79.5, -1, 0));
+		eu.fireblade.fireffa.Var.spawn.add(new Location(Bukkit.getWorld("World"), 100, 75, 2, 140, 0));
+		eu.fireblade.fireffa.Var.spawn.add(new Location(Bukkit.getWorld("World"), 38.5, 65, -118.5, 13, 0));
+		eu.fireblade.fireffa.Var.spawn.add(new Location(Bukkit.getWorld("World"), 7.5, 66, 51.5, 98, -6));
+		eu.fireblade.fireffa.Var.spawn.add(new Location(Bukkit.getWorld("World"), -110, 66, 39.5, -90, -5));
+		eu.fireblade.fireffa.Var.spawn.add(new Location(Bukkit.getWorld("World"), -110, 66, 39.5, -90, -5));
+	}
 }
