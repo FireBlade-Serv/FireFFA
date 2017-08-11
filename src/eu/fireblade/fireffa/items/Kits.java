@@ -126,10 +126,10 @@ public class Kits {
 	public static void kitDemolisseur(Player p) {
 		Clear(p);
 		
-		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_RED+"Chapeau du démolisseur", 1, 89, 39, 39));
-		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_RED+"Tunique du démolisseur", 1, 89, 39, 39));
-		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_RED+"Pantalon du démolisseur", 1, 89, 39, 39));
-		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_RED+"Bottes du démolisseur", 1, 89, 39, 39));
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_RED+"Chapeau du démolisseur", 1, 89, 38, 38));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_RED+"Tunique du démolisseur", 1, 89, 38, 38));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_RED+"Pantalon du démolisseur", 1, 89, 38, 38));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_RED+"Bottes du démolisseur", 1, 89, 38, 38));
 		p.getInventory().setItem(0, ItemGen2(Material.IRON_AXE, Enchantment.DAMAGE_ALL, 5, Enchantment.KNOCKBACK, 2, ChatColor.DARK_RED+"Hache de guerre",
 				LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1)); 
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
@@ -152,7 +152,7 @@ public class Kits {
 		p.getInventory().setChestplate(null);
 		p.getInventory().setLeggings(null);
 		p.getInventory().setBoots(null);
-		p.getActivePotionEffects().clear();
+		p.removePotionEffect((PotionEffectType) p.getActivePotionEffects());
 	}
 }
 
