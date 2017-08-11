@@ -372,6 +372,24 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));		
 	}
 	
+	public static void kitOcelot (Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.YELLOW+"Chapeau de l'ocelot", 1, 229, 229, 51));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.YELLOW+"Chapeau de l'ocelot", 1, 229, 229, 51));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.YELLOW+"Chapeau de l'ocelot", 1, 229, 229, 51));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.YELLOW+"Chapeau de l'ocelot", 1, 229, 229, 51));
+		p.getInventory().setItem(0, ItemGen2(Material.LEATHER_BOOTS, Enchantment.DAMAGE_ALL, 3, Enchantment.KNOCKBACK, 6, ChatColor.YELLOW+"Coup de poisson", null, 1));
+		ItemStack bonemeal = new ItemStack(Material.INK_SACK, 1, (short)15);
+		ItemMeta bonemealM = bonemeal.getItemMeta();
+		bonemealM.setDisplayName(ChatColor.YELLOW+"Pelote de laine");
+		bonemealM.setLore(LoreCreator(ChatColor.BLUE+"Clique droit - Vitesse 2 pendant 5 secondes", ChatColor.BLUE+"Consomme 1 ficelle de pelote de laine, 10 secondes de récupération"));
+		bonemeal.setItemMeta(bonemealM);
+		p.getInventory().setItem(1, bonemeal);
+		p.getInventory().setItem(2, ItemGen(Material.STRING, ChatColor.YELLOW+"Ficelle de pelote laine", null, 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));			
+	}
+	
 	private static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
