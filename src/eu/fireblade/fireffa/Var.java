@@ -1,7 +1,9 @@
 package eu.fireblade.fireffa;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 public class Var {
@@ -35,5 +37,8 @@ public class Var {
 	public static ArrayList<Player> mineur = new ArrayList<Player>();
 	
 	public static ArrayList<Player> jihadist = new ArrayList<Player>();	
-
+//------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	public static HashMap<Player, Integer> killStreak = new HashMap<Player, Integer>();
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	public static ArrayList<Location> spawn = new ArrayList<Location>();
 }
