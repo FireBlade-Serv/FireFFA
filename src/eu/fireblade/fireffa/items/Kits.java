@@ -338,6 +338,28 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
+	public static void kitGamer (Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.GREEN+"Chapeau du gamer", 1, 127, 204, 25));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.GREEN+"Tunique du gamer", 1, 127, 204, 25));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.GREEN+"Pantalon du gamer", 1, 127, 204, 25 ));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.GREEN+"Bottes du gamer", 1, 127, 204, 25));
+		p.getInventory().setItem(0, ItemGen2(Material.WOOD_SWORD, Enchantment.DAMAGE_ALL, 2, Enchantment.KNOCKBACK, 8, ChatColor.GREEN+"Épée du hero", null, 1));
+		p.getInventory().setItem(1, ItemGen(Material.RED_MUSHROOM, ChatColor.GREEN+"Super champignon", LoreCreator(ChatColor.BLUE+"Clique droit - Force 2, 5 secondes", ChatColor.BLUE+"Récupération 30 secondes"), 1));
+		p.getInventory().setItem(2, ItemGen(Material.RABBIT_FOOT, ChatColor.DARK_GREEN+"Super jump", LoreCreator(ChatColor.BLUE+"Clique droit - Saute à une hauteur de 5 blocs", ChatColor.BLUE+"Récupération 15 secondes"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
+	public static void kitSauvage (Player p) {
+		Clear(p);
+		
+		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.PROTECTION_ENVIRONMENTAL, 5, ChatColor.DARK_PURPLE+"Pantalon du sauvage", 1, 102, 127, 51));
+		p.getInventory().setItem(0, ItemGen1(Material.FISHING_ROD, Enchantment.DAMAGE_ALL, 4, ChatColor.DARK_PURPLE+"Massue", null, 1));
+		p.getInventory().setItem(1, ItemGen(Material.GRILLED_PORK, ChatColor.DARK_PURPLE+"Nourriture charnue", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 3 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
 	private static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
