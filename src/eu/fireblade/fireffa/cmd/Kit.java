@@ -40,13 +40,25 @@ public class Kit implements CommandExecutor {
 		inv.setItem(10, genPerspectiveEnch(Material.GOLD_HELMET, "§9Tank", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
 		
 		//fire
-		inv.setItem(18, genPerspective(Material.STAINED_GLASS, "§e§lKits Fire", (byte) 4));
+		inv.setItem(18, genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4));
 		
 		//ultra
-		inv.setItem(27, genPerspective(Material.STAINED_GLASS, "§6§lKits Ultra", (byte) 1));
+		inv.setItem(27, genPerspectiveEnch(Material.STAINED_GLASS, "§6§lKits Ultra",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 1));
 		
 		//ultimate
-		inv.setItem(36, genPerspective(Material.STAINED_GLASS, "§c§lKits Ultimate", (byte) 14));
+		inv.setItem(36, genPerspectiveEnch(Material.STAINED_GLASS, "§c§lKits Ultimate",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 14));
+		
+		inv.setItem(45, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(46, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(47, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(48, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		
+		inv.setItem(49, genPerspectiveEnch(Material.EMERALD, "Plugin by Glowstoner & _goldocelot_",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+		
+		inv.setItem(50, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(51, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(52, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(53, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		
 		p.openInventory(inv);
 		
