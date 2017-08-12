@@ -71,6 +71,8 @@ public class Var {
 	public static ArrayList<Player> mathématicien = new ArrayList<Player>();
 	
 	public static ArrayList<Player> pyro = new ArrayList<Player>();
+	
+	public static ArrayList<Player> moutarde = new ArrayList<Player>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	public static HashMap<Player, Integer> killStreak = new HashMap<Player, Integer>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
