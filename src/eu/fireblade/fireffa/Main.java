@@ -17,7 +17,7 @@ public class Main extends JavaPlugin{
 		
 		getServer().getPluginManager().registerEvents(new Events(), this);
 		
-		getCommand("kit").setExecutor(new eu.fireblade.fireffa.cmd.KitCmd());
+		getCommand("kit").setExecutor(new eu.fireblade.fireffa.cmd.GUI());
 		getCommand("tkit").setExecutor(new eu.fireblade.fireffa.cmd.TestKit());
 		
 		Tp.loadSpawnPoint();
