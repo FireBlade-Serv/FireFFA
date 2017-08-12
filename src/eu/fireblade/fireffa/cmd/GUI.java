@@ -128,8 +128,7 @@ public class GUI implements CommandExecutor {
 		
 		//mercenaire
 		inv.setItem(3, genPerspective(Material.STAINED_GLASS, "§a§lKits Mercenaire", (byte) 5));
-		//inv.setItem(12, genPerspective(Material.CARROT_ITEM, "§9Lapin", (byte) 0,
-		//		Arrays.asList("§9+ A JumpBoost VI")));
+		
 		inv.setItem(12, genPerspective(Material.FERMENTED_SPIDER_EYE, "§9Kit Guerrier Galactique", (byte) 0));
 		inv.setItem(21, genPerspectiveEnch(Material.RED_MUSHROOM, "§9Kit Gameur", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
 		inv.setItem(30, genPerspective(Material.CAKE, "§9Kit Patissier", (byte) 0));
@@ -187,12 +186,20 @@ public class GUI implements CommandExecutor {
 			inv.setItem(22, genPerspective(Material.ARROW, "§9Kit Nuage", (byte) 0));
 			inv.setItem(23, genPerspective(Material.TNT, "§9Kit Djihadiste", (byte) 0));
 			inv.setItem(24, genPerspectiveEnch(Material.BOW, "§9Kit Archer élémentaire", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+			
+			inv.setItem(30, genPerspectiveSkullItem("§9Kit Ogre", "Shrek"));
+			inv.setItem(31, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Kit Bouftout", 1, 255, 255, 255));
+			inv.setItem(32, genPerspective(Material.CARROT_ITEM, "§9Kit Lapin", (byte) 0));
 		}else{
 			inv.setItem(20, genPerspectiveBlock("Kit Glowstone", GlobalRank.FIRE));
 			inv.setItem(21, genPerspectiveBlock("Kit Cactus", GlobalRank.FIRE));
 			inv.setItem(22, genPerspectiveBlock("Kit Nuage", GlobalRank.FIRE));
 			inv.setItem(23, genPerspectiveBlock("Kit Djihadiste", GlobalRank.FIRE));
 			inv.setItem(24, genPerspectiveBlock("Kit Archer élémentaire", GlobalRank.FIRE));
+			
+			inv.setItem(30, genPerspectiveBlock("Kit Ogre", GlobalRank.FIRE));
+			inv.setItem(31, genPerspectiveBlock("Kit Bouftout", GlobalRank.FIRE));
+			inv.setItem(32, genPerspectiveBlock("Kit Lapin", GlobalRank.FIRE));
 		}
 		
 		p.openInventory(inv);
