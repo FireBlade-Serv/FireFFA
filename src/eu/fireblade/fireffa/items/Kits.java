@@ -463,7 +463,7 @@ public class Kits {
 		p.getInventory().setItem(3, ItemGen1(Material.GOLD_INGOT, Enchantment.FIRE_ASPECT, 2, ChatColor.DARK_PURPLE+"Command prompt: FLAME", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK ?
+	// MANQUE ABILITÉ
 	private static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
