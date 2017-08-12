@@ -580,7 +580,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.POTION, ChatColor.YELLOW+"Gaz moutarde", LoreCreator(ChatColor.BLUE+"Clique droit - Donne poison 2 à la cible pendant 2 secondes", ChatColor.BLUE+"15 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	
+	// Manque abilité
 	public static void kitVampire(Player p) {
 		Clear(p);
 		
@@ -590,6 +590,22 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§5Bottes du vampire", 1, 57, 31, 31));
 		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§5Epée du vampire", LoreCreator("§9Clique droit - permet de ce tp dans le dos du joueur", "§920 secondes de récupération"), 1));
 		p.getInventory().setItem(1, ItemGen(Material.INK_SACK, "§5Transformation", LoreCreator("§9Clique droit - te transforme en chauve souris", "§940 secondes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
+	public static void kitNuage(Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGen2ColorLeather(Material.LEATHER_HELMET, Enchantment.ARROW_DAMAGE, 10, "§fChapeau Nuage", 1, 255, 255, 255));
+		p.getInventory().setChestplate(ItemGen2ColorLeather(Material.LEATHER_CHESTPLATE, Enchantment.ARROW_DAMAGE, 10, "§fPlastron Nuage", 1, 255, 255, 255));
+		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.ARROW_DAMAGE, 10, "§fPantalon Nuage", 1, 255, 255, 255));
+		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.ARROW_DAMAGE, 10, "§fBottes Nuage", 1, 255, 255, 255));
+		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§fépée Nuage", LoreCreator("Oh les beaux nuages", "tu peux planer"), 1));
+		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, "§fArc Nuage",  null, 1));
+		p.getInventory().setItem(1, ItemGen(Material.ARROW, "Flèche", null, 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		
+		
 	}
 	// MANQUE ABILITÉ
 	private static void Clear(Player p) {
