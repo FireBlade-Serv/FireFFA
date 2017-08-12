@@ -134,11 +134,13 @@ public class KitCmd implements CommandExecutor {
 		
 		//mercenaire
 		inv.setItem(3, genPerspective(Material.STAINED_GLASS, "§a§lKits Mercenaire", (byte) 5));
-		inv.setItem(12, genPerspective(Material.CARROT_ITEM, "§9Lapin", (byte) 0,
-				Arrays.asList("§9+ A JumpBoost VI")));
+		//inv.setItem(12, genPerspective(Material.CARROT_ITEM, "§9Lapin", (byte) 0,
+		//		Arrays.asList("§9+ A JumpBoost VI")));
+		inv.setItem(12, genPerspective(Material.FERMENTED_SPIDER_EYE, "§9Guerrier Galactique", (byte) 0,
+				Arrays.asList("§9+ ", "§9- ")));
 		inv.setItem(21, genPerspectiveEnch(Material.RED_MUSHROOM, "§9Gameur", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(29, genPerspective(Material.CAKE, "§9Patissier", (byte) 0, 
+		inv.setItem(30, genPerspective(Material.CAKE, "§9Patissier", (byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
 		
 		//bourreau
@@ -147,7 +149,7 @@ public class KitCmd implements CommandExecutor {
 				Arrays.asList("§9+ Peut faire un gros recul")));
 		inv.setItem(22, genPerspective(Material.STONE_AXE, "§9Boucher", (byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(30, genPerspectiveEnch(Material.LEASH, "§9Esclave", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
+		inv.setItem(31, genPerspectiveEnch(Material.LEASH, "§9Esclave", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
 		
 		//executeur
@@ -155,6 +157,8 @@ public class KitCmd implements CommandExecutor {
 		inv.setItem(14, genPerspective(Material.PORK, "§9Sauvage", (byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
 		inv.setItem(31, genPerspectiveEnch(Material.BOW, "§9Archer d'élite", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(32, genPerspectiveEnch(Material.BOW, "§9Archer d'élite", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
 		
 		//sanguinaire
