@@ -71,7 +71,7 @@ public class Events implements Listener {
 			}
 		}
 		
-		if(inv.getName().equals("§9Kit")){
+		if(inv.getName().equals("§9Kits")){
 			if(item.equals(KitCmd.genPerspective(Material.STAINED_GLASS, "§f§lKits Membre/FFA", (byte) 0))){
 				e.setCancelled(true);
 				
@@ -81,6 +81,12 @@ public class Events implements Listener {
 			}
 		}else if(inv.getName().equals("§9Kits FireFFA")){
 			e.setCancelled(true);
+			
+			if(item.equals(KitCmd.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
+				p.closeInventory();
+				
+				KitCmd.mainMenu(p);
+			}
 		}
 	}
 
@@ -88,8 +94,11 @@ public class Events implements Listener {
 	public void onDeath(PlayerDeathEvent e) {
 		Player d = e.getEntity();
 		Player p = d.getKiller();
+		
 		if (d.getType().equals(EntityType.PLAYER) && p.getType().equals(EntityType.PLAYER)) {
-			p.setHealth(p.getHealth()+4);
+			if(d != p){
+				p.setHealth(p.getMaxHealth());
+			}
 		}
 	}
 	
