@@ -57,6 +57,8 @@ public class Var {
 	public static ArrayList<Player> programmeur = new ArrayList<Player>();
 	
 	public static ArrayList<Player> patissier = new ArrayList<Player>();
+	
+	public static ArrayList<Player> ours = new ArrayList<Player>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	public static HashMap<Player, Integer> killStreak = new HashMap<Player, Integer>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
