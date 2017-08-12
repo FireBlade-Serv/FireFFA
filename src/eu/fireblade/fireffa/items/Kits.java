@@ -469,7 +469,7 @@ public class Kits {
 		p.getInventory().setItem(3, ItemGen1(Material.GOLD_INGOT, Enchantment.FIRE_ASPECT, 2, ChatColor.DARK_PURPLE+"Command prompt: FLAME", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ + ITEM BRICK 
+	// MANQUE ABILITÉ
 	public static void kitPatissier (Player p) {
 		Clear(p);
 		
@@ -525,14 +525,38 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.BLACK+"Tunique de domination", 1, 25, 25, 25));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.BLACK+"Pantalon de domination", 1, 25, 25, 25));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.BLACK+"Bottes de domination", 1, 25, 25, 25));
-		p.getInventory().setItem(0, ItemGen1(Material.NETHER_STAR, Enchantment.DAMAGE_ALL, 2,ChatColor.BLACK+"Éclaire de terreur", LoreCreator(ChatColor.BLUE+"Clique droit - Fait tomber la foudre", ChatColor.BLUE+"30 secondes de récupération"),1));
-		p.getInventory().setItem(1, generatePotItem(PotionType.INSTANT_DAMAGE, 1, "Potion de domination", true));
-		p.getInventory().setItem(2, generatePotItem(PotionType.INSTANT_DAMAGE, 1, "Potion de domination", true));
-		p.getInventory().setItem(3, generatePotItem(PotionType.INSTANT_DAMAGE, 1, "Potion de domination", true));
-		p.getInventory().setItem(4, generatePotItem(PotionType.SLOWNESS, 1, "Potion anti-rebellion", true));
+		p.getInventory().setItem(0, ItemGen1(Material.NETHER_STAR, Enchantment.DAMAGE_ALL, 3,ChatColor.BLACK+"Éclaire de terreur", LoreCreator(ChatColor.BLUE+"Clique droit - Fait tomber la foudre", ChatColor.BLUE+"30 secondes de récupération"),1));
+		p.getInventory().setItem(1, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLACK+"Potion de domination", true));
+		p.getInventory().setItem(2, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLACK+"Potion de domination", true));
+		p.getInventory().setItem(3, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLACK+"Potion de domination", true));
+		p.getInventory().setItem(4, generatePotItem(PotionType.SLOWNESS, 1, ChatColor.BLACK+"Potion anti-rebellion", true));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	// MANQUE ABILITÉ
+	public static void kitBoucher(Player p) {
+		Clear(p);
+		
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_RED+"Tunique de boucher", 1, 255, 255, 255));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_RED+"Pantalon de boucher", 1, 76, 127, 153));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_RED+"Bottes de boucher", 1, 25, 25, 25));
+		p.getInventory().setItem(0, ItemGen2(Material.STONE_AXE, Enchantment.DAMAGE_ALL, 2, Enchantment.KNOCKBACK, 2, ChatColor.DARK_RED+"Couteau à viande", null, 1));
+		p.getInventory().setItem(1, ItemGen(Material.RAW_BEEF, ChatColor.DARK_RED+"Viande saignante", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 1 coeur", ChatColor.BLUE+"1 utilisation"), 1));
+		p.getInventory().setItem(2, ItemGen(Material.MUTTON, ChatColor.DARK_RED+"Viande fraiche", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	// MANQUE ABILITÉ
+	public static void kitMathematicien(Player p) {
+		Clear(p);
+		
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.AQUA+"Tunique du mathématicien", 1, 153, 153, 153));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.AQUA+"Pantalon du mathématicien", 1, 25, 25, 25));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.AQUA+"Bottes du mathématicien", 1, 25, 25, 25));
+		p.getInventory().setItem(0, ItemGen1(Material.FISHING_ROD, Enchantment.DAMAGE_ALL, 2, ChatColor.AQUA+"Compa", null, 1));
+		p.getInventory().setItem(1, ItemGen2(Material.REDSTONE_COMPARATOR, Enchantment.DAMAGE_ALL, 3, Enchantment.FIRE_ASPECT, 1, ChatColor.AQUA+"Calculatrice", null, 1));
+		p.getInventory().setItem(2, ItemGen(Material.BEACON, ChatColor.AQUA+"Y=MX+P", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
 	private static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
