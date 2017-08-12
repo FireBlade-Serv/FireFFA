@@ -14,11 +14,16 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
+import eu.fireblade.fireffa.cmd.KitCmd;
 import eu.fireblade.fireffa.util.Tp;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.md_5.bungee.api.ChatColor;
@@ -56,7 +61,27 @@ public class Events implements Listener {
 	
 	@EventHandler
 	public void onClick(InventoryClickEvent e){
+		final Player p = (Player) e.getWhoClicked();
+		final Inventory inv = e.getClickedInventory();
+		final ItemStack item = e.getCurrentItem();
 		
+		if(inv.getType().equals(InventoryType.PLAYER)){
+			if(e.getSlotType().equals(SlotType.ARMOR)){
+				e.setCancelled(true);
+			}
+		}
+		
+		if(inv.getName().equals("§9Kit")){
+			if(item.equals(KitCmd.genPerspective(Material.STAINED_GLASS, "§f§lKits Membre/FFA", (byte) 0))){
+				e.setCancelled(true);
+				
+				p.closeInventory();
+				
+				KitCmd.ffaMenu(p);
+			}
+		}else if(inv.getName().equals("§9Kits FireFFA")){
+			e.setCancelled(true);
+		}
 	}
 
 	@EventHandler

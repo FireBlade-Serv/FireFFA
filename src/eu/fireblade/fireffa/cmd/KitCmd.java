@@ -152,11 +152,23 @@ public class KitCmd implements CommandExecutor {
 		
 		//executeur
 		inv.setItem(5, genPerspective(Material.STAINED_GLASS, "§1§lKits Executeur", (byte) 13));
+		inv.setItem(14, genPerspective(Material.PORK, "§9Sauvage", (byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(31, genPerspectiveEnch(Material.BOW, "§9Archer d'élite", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
 		
-		
+		//sanguinaire
 		inv.setItem(6, genPerspective(Material.STAINED_GLASS, "§c§lKits Sanguinaire", (byte) 14));
+		
+		//massacreur
 		inv.setItem(7, genPerspective(Material.STAINED_GLASS, "§6§lKits Massacreur", (byte) 1));
+		inv.setItem(16, genPerspective(Material.RAW_FISH, "§9Ocelot", (byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		
+		//déchiqueteur
 		inv.setItem(8, genPerspective(Material.STAINED_GLASS, "§7§lKits Déchiqueteur", (byte) 8));
+		inv.setItem(17, genPerspective(Material.DETECTOR_RAIL, "§9Informaticien", (byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
 		
 		//deathgod
 		inv.setItem(40, genPerspective(Material.STAINED_GLASS, "§0§lKits DeathGod", (byte) 15));
