@@ -292,7 +292,7 @@ public class Kits {
 		lore.add(ChatColor.BLUE+"Force I");
 		lore.add(ChatColor.BLUE+"1 minute");
 		PotionMeta.setLore(lore);
-		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 20*60, 0), true);
+		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.SPEED, 20*60, 0), true);
 		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20*60, 0), true);
 		Potion.setItemMeta(PotionMeta);
 
@@ -506,6 +506,18 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	// MANQUE ABILITÉ
+	public static void kitEsclave(Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.BLACK+"Chapeau de l'esclave", 1, 76, 76, 76));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.BLACK+"Tunique de l'esclave", 1, 76, 76, 76));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.BLACK+"Pantalon de l'esclave", 1, 76, 76, 76));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.BLACK+"Bottes de l'esclave", 1, 76, 76, 76));
+		p.getInventory().setItem(0, ItemGen1(Material.LEASH, Enchantment.DAMAGE_ALL, 4, ChatColor.BLACK+"Fouet volé", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.WOOD_HOE, Enchantment.KNOCKBACK, 2, ChatColor.BLACK+"Hoe de l'esclave", null, 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
 	private static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
