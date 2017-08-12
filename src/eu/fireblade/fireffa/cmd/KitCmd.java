@@ -156,9 +156,9 @@ public class KitCmd implements CommandExecutor {
 		inv.setItem(5, genPerspective(Material.STAINED_GLASS, "§1§lKits Executeur", (byte) 13));
 		inv.setItem(14, genPerspective(Material.PORK, "§9Sauvage", (byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(31, genPerspectiveEnch(Material.BOW, "§9Archer d'élite", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
+		inv.setItem(23, genPerspectiveEnch(Material.BOW, "§9Archer d'élite", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(32, genPerspectiveEnch(Material.BOW, "§9Archer d'élite", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
+		inv.setItem(32, genPerspectiveEnch(Material.SEEDS, "§9Moutarde", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
 		
 		//sanguinaire
