@@ -1,5 +1,6 @@
 package eu.fireblade.fireffa.cmd;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.bukkit.Bukkit;
@@ -18,6 +19,8 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
+
+import eu.fireblade.fireffa.util.GlobalRank;
 
 public class GUI implements CommandExecutor {
 
@@ -178,6 +181,20 @@ public class GUI implements CommandExecutor {
 		
 		inv.setItem(4, genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4));
 		
+		if((p.hasPermission("fireffa.fire") || p.hasPermission("fireffa.ultra") || p.hasPermission("fireffa.ultime")) ||p.isOp()){
+			inv.setItem(29, genPerspective(Material.GLOWSTONE_DUST, "§9Kit Glowstone", (byte) 0));
+			inv.setItem(30, genPerspectiveEnch(Material.BARRIER, "§9Kit Cactus", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+			inv.setItem(31, genPerspective(Material.ARROW, "§9Kit Nuage", (byte) 0));
+			inv.setItem(32, genPerspective(Material.TNT, "§9Kit Djihadiste", (byte) 0));
+			inv.setItem(33, genPerspectiveEnch(Material.BOW, "§9Kit Archer élémentaire", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+		}else{
+			inv.setItem(29, genPerspectiveBlock("Kit Glowstone", GlobalRank.FIRE));
+			inv.setItem(30, genPerspectiveBlock("Kit Cactus", GlobalRank.FIRE));
+			inv.setItem(31, genPerspectiveBlock("Kit Nuage", GlobalRank.FIRE));
+			inv.setItem(32, genPerspectiveBlock("Kit Djihadiste", GlobalRank.FIRE));
+			inv.setItem(33, genPerspectiveBlock("Kit Archer élémentaire", GlobalRank.FIRE));
+		}
+		
 		p.openInventory(inv);
 	}
 	
@@ -243,6 +260,27 @@ public class GUI implements CommandExecutor {
 		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 		meta.setDisplayName(name);
 		item.setItemMeta(meta);
+		return item;
+	}
+	
+	public static ItemStack genPerspectiveBlock(String name, GlobalRank minRank){
+		ItemStack item = new ItemStack(Material.BARRIER, 1);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName("§c"+name);
+		
+		meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
+		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+		
+		if(minRank.equals(GlobalRank.FIRE)){
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Fire !"));
+		}else if(minRank.equals(GlobalRank.ULTRA)){
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Ultra !"));
+		}else if(minRank.equals(GlobalRank.ULTIMATE)){
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Ultimate !"));
+		}
+		
+		item.setItemMeta(meta);
+		
 		return item;
 	}
 	
