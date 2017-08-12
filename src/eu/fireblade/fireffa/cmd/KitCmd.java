@@ -164,12 +164,20 @@ public class KitCmd implements CommandExecutor {
 		
 		//sanguinaire
 		inv.setItem(6, genPerspective(Material.STAINED_GLASS, "§c§lKits Sanguinaire", (byte) 14));
-		inv.setItem(32, genPerspectiveEnch(Material.WOOD_SWORD, "§9Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
+		inv.setItem(15, genPerspectiveEnch(Material.WOOD_SWORD, "§9Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(24, genPerspectiveSkullItem("§9Enderman", "MHF_Enderman", 
+				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(33, genPerspective(Material.SAPLING, "§9Robin des bois", (byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
 		
 		//massacreur
 		inv.setItem(7, genPerspective(Material.STAINED_GLASS, "§6§lKits Massacreur", (byte) 1));
 		inv.setItem(16, genPerspective(Material.RAW_FISH, "§9Ocelot", (byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(25, genPerspective(Material.CLAY_BRICK, "§9Rulio", (byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(34, genPerspectiveEnch(Material.REDSTONE_COMPARATOR, "§9Mathématicien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
 		
 		//déchiqueteur
