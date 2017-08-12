@@ -133,18 +133,6 @@ public class Kits {
 		return potion;
 	}
 	
-	public static ItemStack generateMutiplePot(PotionEffectType pt, int level, int time, PotionEffectType pt2, int level2, int time2, String name, ArrayList<String> lore, int nombre) {
-		ItemStack Potion = new ItemStack(Material.POTION, 1);
-		PotionMeta PotionMeta = (PotionMeta) Potion.getItemMeta();
-		PotionMeta.setDisplayName(name);
-		PotionMeta.setLore(lore);
-		PotionMeta.addCustomEffect(new PotionEffect(pt, level, time), true);
-		PotionMeta.addCustomEffect(new PotionEffect(pt2, level2, time2), true);
-		Potion.setItemMeta(PotionMeta);
-		Potion po = new Potion(1);
-		po.apply(Potion);
-		return Potion;
-	}
 	
 	public static void kitDemolisseur(Player p) {
 		Clear(p);
@@ -294,7 +282,20 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_GREEN+"Pantalon du russe", 1, 63, 76, 38));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_GREEN+"Bottes du russe", 1, 25, 25, 25));
 		p.getInventory().setItem(0, ItemGen1(Material.WOOD_SWORD, Enchantment.DAMAGE_ALL, 2, ChatColor.DARK_GREEN+"Épée de combat", null, 1));
-		p.getInventory().setItem(1, generateMutiplePot(PotionEffectType.INCREASE_DAMAGE, 2, 20*60, PotionEffectType.CONFUSION, 1, 20*60, ChatColor.DARK_GREEN+"Vodka", LoreCreator(ChatColor.BLUE+"Force II et nausé I", ChatColor.BLUE+"1 minute"), 1));
+		
+		ItemStack Potion = new ItemStack(Material.POTION, 1);
+		PotionMeta PotionMeta = (PotionMeta) Potion.getItemMeta();
+		PotionMeta.setDisplayName(ChatColor.BLUE+"Vodka");
+		ArrayList<String> lore = new ArrayList<String>();
+		lore.add(ChatColor.BLUE+"Nausée");
+		lore.add(ChatColor.BLUE+"Force");
+		lore.add(ChatColor.BLUE+"1 minute");
+		PotionMeta.setLore(lore);
+		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 20*60, 1), true);
+		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20*60, 0), true);
+		Potion.setItemMeta(PotionMeta);
+
+		p.getInventory().setItem(1, Potion);
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
