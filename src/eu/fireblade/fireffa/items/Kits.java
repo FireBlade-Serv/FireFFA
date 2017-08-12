@@ -577,8 +577,19 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.YELLOW+"Pantalon de la moutarde", 1, 229, 229, 51));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.YELLOW+"Bottes de la moutarde", 1, 229, 229, 51));
 		p.getInventory().setItem(0, ItemGen1(Material.SEEDS, Enchantment.DAMAGE_ALL, 3, ChatColor.YELLOW+"Graine de moutarde", null, 1));
-		p.getInventory().setItem(1, ItemGen(Material.POTION, ChatColor.YELLOW+"Gaz moutarde", LoreCreator(ChatColor.BLUE+"Clique droit - Donne poison 2 à la cible pendant 2 secondes", ChatColor.BLUE+"15 secondes de récupérations"), 1));
+		p.getInventory().setItem(1, ItemGen(Material.POTION, ChatColor.YELLOW+"Gaz moutarde", LoreCreator(ChatColor.BLUE+"Clique droit - Donne poison 2 à la cible pendant 2 secondes", ChatColor.BLUE+"15 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
+	public static void kitVampire(Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, "§5Chapeau du vampire", 1, 57, 31, 31));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§5Tunique du vampire", 1, 57, 31, 31));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§5Pantalon du vampire", 1, 57, 31, 31));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§5Bottes du vampire", 1, 57, 31, 31));
+		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§5Epée du vampire", LoreCreator("§9Clique droit - permet de ce tp dans le dos du joueur", "§920 secondes de récupération"), 1));
+		p.getInventory().setItem(1, ItemGen(Material.INK_SACK, "§5Transformation", LoreCreator("§9Clique droit - te transforme en chauve souris", "§940 secondes de récupération"), 1));
 	}
 	// MANQUE ABILITÉ
 	private static void Clear(Player p) {
