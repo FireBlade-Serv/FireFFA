@@ -175,7 +175,7 @@ public class KitCmd implements CommandExecutor {
 		inv.setItem(7, genPerspective(Material.STAINED_GLASS, "§6§lKits Massacreur", (byte) 1));
 		inv.setItem(16, genPerspective(Material.RAW_FISH, "§9Ocelot", (byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(25, genPerspective(Material.CLAY_BRICK, "§9Rulio", (byte) 0, 
+		inv.setItem(25, genPerspective(Material.BRICK, "§9Rulio", (byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
 		inv.setItem(34, genPerspectiveEnch(Material.REDSTONE_COMPARATOR, "§9Mathématicien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
@@ -259,11 +259,12 @@ public class KitCmd implements CommandExecutor {
 		  return item;
 	}
 	
-	public static ItemStack genPerspectiveSkullItem(String skull, String owner, List<String> list){
+	public static ItemStack genPerspectiveSkullItem(String name, String owner, List<String> list){
 		ItemStack item = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
 		SkullMeta skullMeta = (SkullMeta) item.getItemMeta();
 		skullMeta.setOwner(owner);
 		skullMeta.setLore(list);
+		skullMeta.setDisplayName(name);
 		item.setItemMeta(skullMeta);
 		
 		return item;
