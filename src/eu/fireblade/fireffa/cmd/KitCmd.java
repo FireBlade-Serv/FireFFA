@@ -16,6 +16,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
 
@@ -156,13 +157,15 @@ public class KitCmd implements CommandExecutor {
 		inv.setItem(5, genPerspective(Material.STAINED_GLASS, "§1§lKits Executeur", (byte) 13));
 		inv.setItem(14, genPerspective(Material.PORK, "§9Sauvage", (byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(23, genPerspectiveEnch(Material.BOW, "§9Archer d'élite", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
+		inv.setItem(23, genPerspectiveLeatherColor(Material.LEATHER_HELMET, "§9Archer d'élite", 1, 114, 113, 57,
 				Arrays.asList("§9+ ", "§9- ")));
 		inv.setItem(32, genPerspectiveEnch(Material.SEEDS, "§9Moutarde", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
 				Arrays.asList("§9+ ", "§9- ")));
 		
 		//sanguinaire
 		inv.setItem(6, genPerspective(Material.STAINED_GLASS, "§c§lKits Sanguinaire", (byte) 14));
+		inv.setItem(32, genPerspectiveEnch(Material.WOOD_SWORD, "§9Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
+				Arrays.asList("§9+ ", "§9- ")));
 		
 		//massacreur
 		inv.setItem(7, genPerspective(Material.STAINED_GLASS, "§6§lKits Massacreur", (byte) 1));
@@ -246,5 +249,15 @@ public class KitCmd implements CommandExecutor {
 		  meta.spigot().setUnbreakable(true);
 		  item.setItemMeta(meta);
 		  return item;
+	}
+	
+	public static ItemStack genPerspectiveSkullItem(String skull, String owner, List<String> list){
+		ItemStack item = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
+		SkullMeta skullMeta = (SkullMeta) item.getItemMeta();
+		skullMeta.setOwner(owner);
+		skullMeta.setLore(list);
+		item.setItemMeta(skullMeta);
+		
+		return item;
 	}
 }
