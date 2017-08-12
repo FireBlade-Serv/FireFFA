@@ -307,7 +307,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGen(Material.LEATHER_BOOTS, ChatColor.DARK_GRAY+"Bottes du grampa", null, 1));
 		p.getInventory().setItem(0, ItemGen1(Material.INK_SACK, Enchantment.DAMAGE_ALL, 4, ChatColor.DARK_GRAY+"Dentier", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 10, ChatColor.DARK_GRAY+"Canne", null, 1));
-		p.getInventory().setItem(2, ItemGen(Material.INK_SACK, ChatColor.DARK_GRAY+"Pruneau", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"Récupération 1 minute 30"), 1));
+		p.getInventory().setItem(2, ItemGen(Material.COAL, ChatColor.DARK_GRAY+"Pruneau", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"Récupération 1 minute 30"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 
@@ -333,7 +333,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_RED+"Bottes du jihadist", 1, 216, 127, 51));
 		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_FIRE, 1, ChatColor.DARK_RED+"Kalachnikov", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.DARK_RED+"Munitions", null, 32));
-		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.DARK_RED+"Allah akbar", LoreCreator(ChatColor.BLUE+"Clique droit - Se faire exploser", ChatColor.BLUE+"Vous tue instantanément"), 1));
+		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.DARK_RED+"Allah akbar",LoreCreator(ChatColor.BLUE+"Clique droit - Se faire exploser", ChatColor.BLUE+"Vous tue instantanément"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
@@ -366,7 +366,7 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.GREEN+"Tunique de l'archer élémentaire", 1, 102, 127, 51));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.GREEN+"Pantalon de l'archer élémentaire", 1, 102, 127, 51));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.GREEN+"Bottes de l'archer élémentaire", 1, 102, 127, 51));
-		p.getInventory().setItem(3, ItemGen(Material.ARROW, ChatColor.RED+"OITC arrow", null, 32));
+		p.getInventory().setItem(3, ItemGen(Material.ARROW, ChatColor.GREEN+"Fléche de l'arche élémentaire", null, 32));
 		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 5, ChatColor.GREEN+"Arc des adieux", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_FIRE, 1, ChatColor.GREEN+"Arc de feu", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.BOW, ChatColor.DARK_GREEN+"Arc de glace", LoreCreator(ChatColor.BLUE+"Ses fléches ralentissent et aveugles", ChatColor.BLUE+"Pendant 2 secondes"), 1));
@@ -409,7 +409,7 @@ public class Kits {
 		
 		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_GREEN+"Chapeau de l'archer d'élite", 1, 114, 113, 57));
 		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, ChatColor.DARK_GREEN+"Arc mitrailleur", LoreCreator(ChatColor.BLUE+"N'a pas besoin d'être chargé", ChatColor.BLUE+"Pas de limite d'utilisation"), 1));
-		p.getInventory().setItem(1, ItemGen(Material.ARROW, ChatColor.RED+"Fléche de l'archer vagabon", null, 1));
+		p.getInventory().setItem(1, ItemGen(Material.ARROW, ChatColor.RED+"Fléche de l'archer élite", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
