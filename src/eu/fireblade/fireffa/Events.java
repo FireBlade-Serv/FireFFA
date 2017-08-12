@@ -114,8 +114,9 @@ public class Events implements Listener {
 	public void onDamage(EntityDamageEvent e) {
 		Entity p = e.getEntity();
 		if (p.getType().equals(EntityType.PLAYER) && Var.piaf.contains(p)) {
-		}	if(e.getCause().equals(DamageCause.FALL)) {
+			if(e.getCause().equals(DamageCause.FALL)) {
 				e.setCancelled(true);
+		}
 	}
 }
 	
