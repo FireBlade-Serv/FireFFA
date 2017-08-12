@@ -309,10 +309,15 @@ public class Kits {
 		p.getInventory().setBoots(ItemGen(Material.LEATHER_BOOTS, ChatColor.DARK_GRAY+"Bottes du grampa", null, 1));
 		p.getInventory().setItem(0, ItemGen1(Material.INK_SACK, Enchantment.DAMAGE_ALL, 4, ChatColor.DARK_GRAY+"Dentier", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 10, ChatColor.DARK_GRAY+"Canne", null, 1));
-		p.getInventory().setItem(2, ItemGen(Material.COAL , ChatColor.DARK_GRAY+"Pruneau",LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"Récupération 1 minute 30"), 1));
+		ItemStack charcoal = new ItemStack(Material.COAL, 1, (byte) 1);
+		ItemMeta charcoalM = charcoal.getItemMeta();
+		charcoalM.setDisplayName(ChatColor.DARK_GRAY+"Pruneau");
+		charcoalM.setLore(LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"Récupération 1 minute 30"));
+		charcoal.setItemMeta(charcoalM);
+		p.getInventory().setItem(2, charcoal);
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// METTRE CHARCOAL A LA PLACE DE CHARBON
+	// OK
 	public static void kitMineur(Player p) {
 		Clear(p);
 		
@@ -472,6 +477,10 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.LIGHT_PURPLE+"Tunique du patissier", 1, 25, 25, 25));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.LIGHT_PURPLE+"Pantalon du patissier", 1, 25, 25, 25));
 		p.getInventory().setBoots(ItemGen(Material.LEATHER_BOOTS, ChatColor.LIGHT_PURPLE+"Bottes du patissier", null, 1));
+		p.getInventory().setItem(0, ItemGen1(Material.PUMPKIN_PIE, Enchantment.DAMAGE_ALL, 2, ChatColor.LIGHT_PURPLE+"Tarte aux épines", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.CAKE, Enchantment.KNOCKBACK, 4, ChatColor.LIGHT_PURPLE+"Gâteau dans ta face", null, 1));
+		p.getInventory().setItem(3, ItemGen(Material.COOKIE, ChatColor.LIGHT_PURPLE+"Cookie du patisser", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs + vitesse 2, 15 secondes", ChatColor.BLUE+"30 secondes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}	
 	private static void Clear(Player p) {
 		p.getInventory().clear();
