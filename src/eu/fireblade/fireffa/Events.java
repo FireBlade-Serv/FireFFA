@@ -13,10 +13,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -67,10 +66,8 @@ public class Events implements Listener {
 		final Inventory inv = e.getClickedInventory();
 		final ItemStack item = e.getCurrentItem();
 		
-		if(inv.getType().equals(InventoryType.PLAYER)){
-			if(e.getSlotType().equals(SlotType.ARMOR)){
-				e.setCancelled(true);
-			}
+		if(e.getSlotType().equals(SlotType.ARMOR)){
+			e.setCancelled(true);
 		}
 		
 		if(inv.getName().equals("§9§lKits")){
@@ -86,7 +83,7 @@ public class Events implements Listener {
 				p.closeInventory();
 				
 				GUI.fireMenu(p);
-			}else if(item.equals(GUI.genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Ultra",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 1))){
+			}else if(item.equals(GUI.genPerspectiveEnch(Material.STAINED_GLASS, "§6§lKits Ultra",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 1))){
 				e.setCancelled(true);
 				
 				p.closeInventory();

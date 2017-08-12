@@ -232,6 +232,8 @@ public class GUI implements CommandExecutor {
 			inv.setItem(31, genPerspectiveBlock("Kit Dieu", GlobalRank.ULTRA));
 			inv.setItem(32, genPerspectiveBlock("Kit Swap", GlobalRank.ULTRA));
 		}
+		
+		p.openInventory(inv);
 	}
 	
 	public static void genMenuRankModel(Inventory inv){
