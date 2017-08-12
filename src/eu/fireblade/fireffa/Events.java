@@ -3,6 +3,7 @@ package eu.fireblade.fireffa;
 
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Fireball;
@@ -79,8 +80,12 @@ public class Events implements Listener {
 				p.closeInventory();
 				
 				GUI.ffaMenu(p);
-			}else{
+			}else if(item.equals(GUI.genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4))){
 				e.setCancelled(true);
+				
+				p.closeInventory();
+				
+				GUI.fireMenu(p);
 			}
 		}else if(inv.getName().equals("§9Kits FireFFA")){
 			e.setCancelled(true);
