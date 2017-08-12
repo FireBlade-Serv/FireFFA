@@ -176,6 +176,8 @@ public class GUI implements CommandExecutor {
 		
 		genMenuRankModel(inv);
 		
+		inv.setItem(4, genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4));
+		
 		p.openInventory(inv);
 	}
 	
@@ -184,8 +186,6 @@ public class GUI implements CommandExecutor {
 		inv.setItem(1, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(2, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(3, genPerspective(Material.LEAVES, "§1", (byte) 0));
-		
-		inv.setItem(4, genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4));
 		
 		inv.setItem(5, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(6, genPerspective(Material.LEAVES, "§1", (byte) 0));
@@ -200,6 +200,41 @@ public class GUI implements CommandExecutor {
 		inv.setItem(14, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(15, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(16, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(17, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		
+		inv.setItem(18, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(19, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(25, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(26, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		
+		inv.setItem(27, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(28, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(29, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(33, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(34, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(35, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		
+		inv.setItem(36, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(37, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(38, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(39, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(40, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(41, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(42, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(43, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(44, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		
+		inv.setItem(45, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(46, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(47, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(48, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		
+		inv.setItem(49, genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0));
+		
+		inv.setItem(50, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(51, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(52, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(53, genPerspective(Material.LEAVES, "§1", (byte) 0));
 	}
 
 	public static ItemStack genPerspective(Material m, String name, byte data){
@@ -241,7 +276,6 @@ public class GUI implements CommandExecutor {
 		meta.setDisplayName(n);
 		meta.setColor(Color.fromBGR(blue, green, red));
 		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-		meta.spigot().setUnbreakable(true);
 		item.setItemMeta(meta);
 		
 		return item;
