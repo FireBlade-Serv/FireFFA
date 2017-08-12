@@ -141,7 +141,7 @@ public class Kits {
 		PotionMeta.addCustomEffect(new PotionEffect(pt, level, time), true);
 		PotionMeta.addCustomEffect(new PotionEffect(pt2, level2, time2), true);
 		Potion.setItemMeta(PotionMeta);
-		Potion po = new Potion((byte) 8258);
+		Potion po = new Potion(1);
 		po.apply(Potion);
 		return Potion;
 	}
