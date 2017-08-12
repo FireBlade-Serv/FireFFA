@@ -220,6 +220,7 @@ public class GUI implements CommandExecutor {
 		ItemStack item = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
 		SkullMeta skullMeta = (SkullMeta) item.getItemMeta();
 		skullMeta.setOwner(owner);
+		skullMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 		skullMeta.setDisplayName(name);
 		item.setItemMeta(skullMeta);
 		
