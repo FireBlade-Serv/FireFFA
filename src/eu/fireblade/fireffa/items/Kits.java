@@ -458,7 +458,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_PURPLE+"Pantalon du programmeur", 1, 25, 25, 25));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_PURPLE+"Bottes du programmeur", 1, 25, 25, 25));
 		p.getInventory().setItem(0, ItemGen1(Material.NETHER_BRICK_ITEM, Enchantment.DAMAGE_ALL, 4, ChatColor.DARK_PURPLE+"Command prompt: DAMAGE", null, 1));
-		p.getInventory().setItem(1, ItemGen1(Material.BRICK_STAIRS, Enchantment.KNOCKBACK, 10, ChatColor.DARK_PURPLE+"Command prompt: KICK", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.SMOOTH_BRICK, Enchantment.KNOCKBACK, 10, ChatColor.DARK_PURPLE+"Command prompt: KICK", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.IRON_INGOT, ChatColor.DARK_PURPLE+"Command prompt: BLIND", LoreCreator(ChatColor.BLUE+"Clique droit - Aveugle", ChatColor.BLUE+"5 secondes de récupération"), 1));
 		p.getInventory().setItem(3, ItemGen1(Material.GOLD_INGOT, Enchantment.FIRE_ASPECT, 2, ChatColor.DARK_PURPLE+"Command prompt: FLAME", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
