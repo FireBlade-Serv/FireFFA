@@ -294,7 +294,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_GREEN+"Pantalon du russe", 1, 63, 76, 38));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_GREEN+"Bottes du russe", 1, 25, 25, 25));
 		p.getInventory().setItem(0, ItemGen1(Material.WOOD_SWORD, Enchantment.DAMAGE_ALL, 2, ChatColor.DARK_GREEN+"Épée de combat", null, 1));
-		p.getInventory().setItem(1, generateMutiplePot(PotionEffectType.INCREASE_DAMAGE, 2, 90, PotionEffectType.CONFUSION, 1, 90, ChatColor.DARK_GREEN+"Vodka", LoreCreator(ChatColor.BLUE+"Force II et nausé II", ChatColor.BLUE+"1 minute"), 1));
+		p.getInventory().setItem(1, generateMutiplePot(PotionEffectType.INCREASE_DAMAGE, 2, 20*60, PotionEffectType.CONFUSION, 1, 20*60, ChatColor.DARK_GREEN+"Vodka", LoreCreator(ChatColor.BLUE+"Force II et nausé II", ChatColor.BLUE+"1 minute"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
