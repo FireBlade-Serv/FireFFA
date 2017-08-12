@@ -10,7 +10,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -173,9 +172,34 @@ public class GUI implements CommandExecutor {
 	}
 	
 	public static void fireMenu(Player p){
-		Inventory inv = Bukkit.createInventory(null, InventoryType.ENCHANTING, "test");
+		Inventory inv = Bukkit.createInventory(null, 54, "test");
+		
+		genMenuRankModel(inv);
 		
 		p.openInventory(inv);
+	}
+	
+	public static void genMenuRankModel(Inventory inv){
+		inv.setItem(0, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(1, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(2, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(3, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		
+		inv.setItem(4, genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4));
+		
+		inv.setItem(5, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(6, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(7, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(8, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		
+		inv.setItem(9, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(10, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(11, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(12, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(13, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(14, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(15, genPerspective(Material.LEAVES, "§1", (byte) 0));
+		inv.setItem(16, genPerspective(Material.LEAVES, "§1", (byte) 0));
 	}
 
 	public static ItemStack genPerspective(Material m, String name, byte data){

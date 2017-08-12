@@ -104,7 +104,7 @@ public class Events implements Listener {
 		
 		if (d.getType().equals(EntityType.PLAYER) && p.getType().equals(EntityType.PLAYER)) {
 			if(d != p){
-				p.setHealth(p.getHealth() + 4);
+				p.setHealth(p.getHealth() + 5);
 			}
 		}
 	}
