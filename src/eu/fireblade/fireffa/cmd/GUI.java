@@ -36,7 +36,7 @@ public class GUI implements CommandExecutor {
 	}
 	
 	public static void mainMenu(Player p){
-		Inventory inv = Bukkit.createInventory(null, 54, "§9Kits");
+		Inventory inv = Bukkit.createInventory(null, 54, "§9§lKits");
 		
 		inv.setItem(0, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(1, genPerspective(Material.LEAVES, "§1", (byte) 0));
@@ -87,7 +87,7 @@ public class GUI implements CommandExecutor {
 	}
 	
 	public static void ffaMenu(Player p){
-		Inventory inv = Bukkit.createInventory(null, 54, "§9Kits FireFFA");
+		Inventory inv = Bukkit.createInventory(null, 54, "§9§lKits Membre/FFA");
 		
 		inv.setItem(36, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(37, genPerspective(Material.LEAVES, "§1", (byte) 0));
@@ -172,7 +172,7 @@ public class GUI implements CommandExecutor {
 	}
 	
 	public static void fireMenu(Player p){
-		Inventory inv = Bukkit.createInventory(null, 54, "test");
+		Inventory inv = Bukkit.createInventory(null, 54, "§9§lKits Fire");
 		
 		genMenuRankModel(inv);
 		

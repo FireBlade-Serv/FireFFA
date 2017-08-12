@@ -73,7 +73,7 @@ public class Events implements Listener {
 			}
 		}
 		
-		if(inv.getName().equals("§9Kits")){
+		if(inv.getName().equals("§9§lKits")){
 			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lKits Membre/FFA", (byte) 0))){
 				e.setCancelled(true);
 				
@@ -87,7 +87,7 @@ public class Events implements Listener {
 				
 				GUI.fireMenu(p);
 			}
-		}else if(inv.getName().equals("§9Kits FireFFA")){
+		}else if(inv.getName().equals("§9§lKits Membre/FFA")){
 			e.setCancelled(true);
 			
 			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
