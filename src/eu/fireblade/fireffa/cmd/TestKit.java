@@ -70,8 +70,10 @@ public class TestKit implements CommandExecutor {
 				eu.fireblade.fireffa.items.Kits.kitProgrammeur(p);
 			} else if(args[0].equalsIgnoreCase("Patissier")) {
 				eu.fireblade.fireffa.items.Kits.kitPatissier(p);
-			}  else if(args[0].equalsIgnoreCase("Ours")) {
+			} else if(args[0].equalsIgnoreCase("Ours")) {
 				eu.fireblade.fireffa.items.Kits.kitOurs(p);
+			} else if(args[0].equalsIgnoreCase("Guerriergalactique")) {
+				eu.fireblade.fireffa.items.Kits.kitGuerriergalactique(p);
 			}
 		}
 		return false;

@@ -494,7 +494,18 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.WOOD_PICKAXE, ChatColor.DARK_GRAY+"Crocs de l'ourse", LoreCreator(ChatColor.BLUE+"Clique droit - Vole 2 coeurs à la cible", ChatColor.BLUE+"1 minute de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	
+	// MANQUE ABILITÉ
+	public static void kitGuerriergalactique (Player p) {
+		Clear(p);
+		
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_AQUA+"Tunique du guerrier galactique", 1, 222, 178, 51));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.AQUA+"Pantalon du guerrier galactique", 1, 222, 178, 51));
+		p.getInventory().setBoots(ItemGen(Material.LEATHER_BOOTS, ChatColor.AQUA+"Bottes du guerrier galactique", null, 1));
+		p.getInventory().setItem(0, ItemGen1(Material.FERMENTED_SPIDER_EYE, Enchantment.DAMAGE_ALL, 4, ChatColor.AQUA+"Poing du guerrier galactique", null, 1));
+		p.getInventory().setItem(1, ItemGen(Material.GOLD_NUGGET, ChatColor.AQUA+"Pouvoir du guerrier galactique", LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"20 secondes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	// MANQUE ABILITÉ
 	private static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
