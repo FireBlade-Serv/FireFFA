@@ -10,6 +10,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -167,6 +168,12 @@ public class GUI implements CommandExecutor {
 		inv.setItem(49, genPerspectiveEnch(Material.DETECTOR_RAIL, "§9Kit Informaticien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
 		inv.setItem(48, genPerspectiveEnch(Material.STICK, "§9Kit Gandalf", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
 		
+		
+		p.openInventory(inv);
+	}
+	
+	public static void fireMenu(Player p){
+		Inventory inv = Bukkit.createInventory(null, InventoryType.ENCHANTING, "test");
 		
 		p.openInventory(inv);
 	}
