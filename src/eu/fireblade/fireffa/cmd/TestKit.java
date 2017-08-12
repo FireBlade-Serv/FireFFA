@@ -66,6 +66,8 @@ public class TestKit implements CommandExecutor {
 				eu.fireblade.fireffa.items.Kits.kitTank(p);
 			} else if(args[0].equalsIgnoreCase("Voleurdame")) {
 				eu.fireblade.fireffa.items.Kits.kitVoleurdame(p);
+			} else if(args[0].equalsIgnoreCase("Programmeur")) {
+				eu.fireblade.fireffa.items.Kits.kitProgrammeur(p);
 			}
 		}
 		return false;

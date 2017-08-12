@@ -287,11 +287,11 @@ public class Kits {
 		PotionMeta PotionMeta = (PotionMeta) Potion.getItemMeta();
 		PotionMeta.setDisplayName(ChatColor.BLUE+"Vodka");
 		ArrayList<String> lore = new ArrayList<String>();
-		lore.add(ChatColor.BLUE+"Nausée");
-		lore.add(ChatColor.BLUE+"Force");
+		lore.add(ChatColor.BLUE+"Nausée I");
+		lore.add(ChatColor.BLUE+"Force I");
 		lore.add(ChatColor.BLUE+"1 minute");
 		PotionMeta.setLore(lore);
-		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 20*60, 1), true);
+		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 20*60, 0), true);
 		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20*60, 0), true);
 		Potion.setItemMeta(PotionMeta);
 
@@ -447,6 +447,21 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen2(Material.CAULDRON_ITEM, Enchantment.DAMAGE_ALL, 4, Enchantment.KNOCKBACK, 1, ChatColor.GRAY+"Tour de pc", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.WOOD_HOE, Enchantment.KNOCKBACK, 5, ChatColor.GRAY+"Tournevis", null, 1));
 		p.getInventory().setItem(2, ItemGen1(Material.POWERED_RAIL, Enchantment.FIRE_ASPECT, 2, ChatColor.GRAY+"Carte graphique (AMD)", null, 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	
+	public static void kitProgrammeur (Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_PURPLE+"Chapeau du programmeur", 1, 102, 127, 51));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_PURPLE+"Tunique du programmeur", 1, 25, 25, 25));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_PURPLE+"Pantalon du programmeur", 1, 25, 25, 25));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_PURPLE+"Bottes du programmeur", 1, 25, 25, 25));
+		p.getInventory().setItem(0, ItemGen1(Material.NETHER_BRICK_ITEM, Enchantment.DAMAGE_ALL, 4, ChatColor.DARK_PURPLE+"Command prompt: DAMAGE", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.BRICK, Enchantment.KNOCKBACK, 10, ChatColor.DARK_PURPLE+"Command prompt: KICK", null, 1));
+		p.getInventory().setItem(2, ItemGen(Material.IRON_INGOT, ChatColor.DARK_PURPLE+"Command prompt: BLIND", LoreCreator(ChatColor.BLUE+"Clique droit - Aveugle", ChatColor.BLUE+"5 secondes de récupération"), 1));
+		p.getInventory().setItem(3, ItemGen1(Material.GOLD_INGOT, Enchantment.FIRE_ASPECT, 2, ChatColor.DARK_PURPLE+"Command prompt: FLAME", null, 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
 	private static void Clear(Player p) {
