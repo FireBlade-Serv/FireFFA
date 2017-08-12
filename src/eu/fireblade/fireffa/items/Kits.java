@@ -320,7 +320,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.YELLOW+"Bottes du mineur", 1, 25, 25, 25));
 		p.getInventory().setItem(0, ItemGen2(Material.STONE_PICKAXE, Enchantment.DAMAGE_ALL, 2, Enchantment.KNOCKBACK, 1, ChatColor.YELLOW+"Pioche du mineur", null ,1));
 		p.getInventory().setItem(1, ItemGen1(Material.IRON_INGOT, Enchantment.DAMAGE_ALL, 3, ChatColor.YELLOW+"Lingot de la mort", null, 1));
-		p.getInventory().setItem(2, ItemGen2(Material.COAL, Enchantment.FIRE_ASPECT, 1, Enchantment.DAMAGE_ALL, 0-Integer.MAX_VALUE, ChatColor.YELLOW+"Charbon du mineur", null, 1));
+		p.getInventory().setItem(2, ItemGen2(Material.COAL, Enchantment.FIRE_ASPECT, 1, Enchantment.DAMAGE_ALL, 0-999, ChatColor.YELLOW+"Charbon du mineur", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	
