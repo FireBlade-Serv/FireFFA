@@ -556,6 +556,18 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.BEACON, ChatColor.AQUA+"Y=MX+P", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
+	// MANQUE ABILITÉ
+	public static void kitPyro(Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGen1(Material.LEATHER_HELMET, Enchantment.PROTECTION_FIRE, 10, ChatColor.RED+"Chapeau du pyro", null, 1));
+		p.getInventory().setChestplate(ItemGen1(Material.LEATHER_CHESTPLATE, Enchantment.PROTECTION_FIRE, 10, ChatColor.RED+"Tunique du pyro", null, 1));
+		p.getInventory().setLeggings(ItemGen1(Material.LEATHER_LEGGINGS, Enchantment.PROTECTION_FIRE, 10, ChatColor.RED+"Pantalon du pyro", null, 1));
+		p.getInventory().setBoots(ItemGen1(Material.LEATHER_BOOTS, Enchantment.PROTECTION_FIRE, 10, ChatColor.RED+"Bottes du pyro", null, 1));
+		p.getInventory().setItem(0, ItemGen1(Material.WOOD_SWORD, Enchantment.FIRE_ASPECT, 1, ChatColor.RED+"Épée lanceuse de boules de feu", LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1));
+		p.getInventory().setItem(1, ItemGen(Material.FIREBALL, ChatColor.RED+"Boule de feu", null, 6));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
 	
 	private static void Clear(Player p) {
 		p.getInventory().clear();

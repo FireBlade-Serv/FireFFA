@@ -82,6 +82,8 @@ public class TestKit implements CommandExecutor {
 				eu.fireblade.fireffa.items.Kits.kitBoucher(p);
 			} else if(args[0].equalsIgnoreCase("Mathematicien")) {
 				eu.fireblade.fireffa.items.Kits.kitMathematicien(p);
+			} else if(args[0].equalsIgnoreCase("Pyro")) {
+				eu.fireblade.fireffa.items.Kits.kitPyro(p);
 			}
 		}
 		return false;
