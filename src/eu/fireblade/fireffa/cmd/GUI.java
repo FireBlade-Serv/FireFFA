@@ -183,7 +183,7 @@ public class GUI implements CommandExecutor {
 		
 		if((p.hasPermission("fireffa.fire") || p.hasPermission("fireffa.ultra") || p.hasPermission("fireffa.ultime")) ||p.isOp()){
 			inv.setItem(20, genPerspective(Material.GLOWSTONE_DUST, "§9Kit Glowstone", (byte) 0));
-			inv.setItem(21, genPerspectiveEnch(Material.BARRIER, "§9Kit Cactus", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+			inv.setItem(21, genPerspectiveEnch(Material.CACTUS, "§9Kit Cactus", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
 			inv.setItem(22, genPerspective(Material.ARROW, "§9Kit Nuage", (byte) 0));
 			inv.setItem(23, genPerspective(Material.TNT, "§9Kit Djihadiste", (byte) 0));
 			inv.setItem(24, genPerspectiveEnch(Material.BOW, "§9Kit Archer élémentaire", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
