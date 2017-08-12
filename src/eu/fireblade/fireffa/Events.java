@@ -86,6 +86,12 @@ public class Events implements Listener {
 				p.closeInventory();
 				
 				GUI.fireMenu(p);
+			}else if(item.equals(GUI.genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Ultra",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 1))){
+				e.setCancelled(true);
+				
+				p.closeInventory();
+				
+				GUI.ultraMenu(p);
 			}else{
 				e.setCancelled(true);
 			}
@@ -98,6 +104,14 @@ public class Events implements Listener {
 				GUI.mainMenu(p);
 			}
 		}else if(inv.getName().equals("§9§lKits Fire")){
+			e.setCancelled(true);
+			
+			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
+				p.closeInventory();
+				
+				GUI.mainMenu(p);
+			}
+		}else if(inv.getName().equals("§9§lKits Ultra")){
 			e.setCancelled(true);
 			
 			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){

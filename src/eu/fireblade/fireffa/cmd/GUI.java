@@ -1,7 +1,6 @@
 package eu.fireblade.fireffa.cmd;
 
 import java.util.Arrays;
-import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
@@ -180,7 +179,7 @@ public class GUI implements CommandExecutor {
 		
 		inv.setItem(4, genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4));
 		
-		if((p.hasPermission("fireffa.fire") || p.hasPermission("fireffa.ultra") || p.hasPermission("fireffa.ultime")) ||p.isOp()){
+		if((p.hasPermission("fireffa.fire") || p.hasPermission("fireffa.ultra") || p.hasPermission("fireffa.ultime")) || p.isOp()){
 			inv.setItem(20, genPerspective(Material.GLOWSTONE_DUST, "§9Kit Glowstone", (byte) 0));
 			inv.setItem(21, genPerspectiveEnch(Material.CACTUS, "§9Kit Cactus", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
 			inv.setItem(22, genPerspective(Material.ARROW, "§9Kit Nuage", (byte) 0));
@@ -203,6 +202,36 @@ public class GUI implements CommandExecutor {
 		}
 		
 		p.openInventory(inv);
+	}
+	
+	public static void ultraMenu(Player p){
+		Inventory inv = Bukkit.createInventory(null, 54, "§9§lKits Ultra");
+		
+		genMenuRankModel(inv);
+		
+		inv.setItem(4, genPerspectiveEnch(Material.STAINED_GLASS, "§6§lKits Ultra",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 1));
+		
+		if((p.hasPermission("fireffa.ultra") || p.hasPermission("fireffa.ultime")) || p.isOp()){
+			inv.setItem(20, genPerspective(Material.ANVIL, "§9Kit Enclumex", (byte) 0));
+			inv.setItem(21, genPerspectiveEnch(Material.BOW, "§9Kit OITC Man",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+			inv.setItem(22, genPerspective(Material.NETHER_STAR, "§9Kit Domination", (byte) 0));
+			inv.setItem(23, genPerspectivePot("§9Kit Fantôme", PotionType.INVISIBILITY, false));
+			inv.setItem(24, genPerspective(Material.REDSTONE, "§9Kit RedMan", (byte) 0));
+			
+			inv.setItem(30, genPerspectiveEnch(Material.GOLD_SPADE, "§9Kit Pharaon",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+			inv.setItem(31, genPerspectiveEnch(Material.INK_SACK, "§9Kit Dieu",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 15));
+			inv.setItem(32, genPerspective(Material.SNOW_BALL, "§9Kit Swap", (byte) 0));
+		}else{
+			inv.setItem(20, genPerspectiveBlock("Kit Enclumex", GlobalRank.ULTRA));
+			inv.setItem(21, genPerspectiveBlock("Kit OITC Man", GlobalRank.ULTRA));
+			inv.setItem(22, genPerspectiveBlock("Kit Domination", GlobalRank.ULTRA));
+			inv.setItem(23, genPerspectiveBlock("Kit Fantôme", GlobalRank.ULTRA));
+			inv.setItem(24, genPerspectiveBlock("Kit RedMan", GlobalRank.ULTRA));
+			
+			inv.setItem(30, genPerspectiveBlock("Kit Pharaon", GlobalRank.ULTRA));
+			inv.setItem(31, genPerspectiveBlock("Kit Dieu", GlobalRank.ULTRA));
+			inv.setItem(32, genPerspectiveBlock("Kit Swap", GlobalRank.ULTRA));
+		}
 	}
 	
 	public static void genMenuRankModel(Inventory inv){
@@ -301,7 +330,7 @@ public class GUI implements CommandExecutor {
 		return item;
 	}
 	
-	public static ItemStack genPerspectivePot(String name, PotionType pt, boolean setsplash, List<String> list){
+	public static ItemStack genPerspectivePot(String name, PotionType pt, boolean setsplash){
 		Potion p = new Potion(pt);
 		p.setSplash(setsplash);
 		
@@ -309,7 +338,6 @@ public class GUI implements CommandExecutor {
 		ItemMeta meta = item.getItemMeta();
 		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_POTION_EFFECTS);
 		meta.setDisplayName(name);
-		meta.setLore(list);
 		item.setItemMeta(meta);
 		
 		return item;
