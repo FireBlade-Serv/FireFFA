@@ -76,6 +76,8 @@ public class TestKit implements CommandExecutor {
 				eu.fireblade.fireffa.items.Kits.kitGuerriergalactique(p);
 			} else if(args[0].equalsIgnoreCase("Esclave")) {
 				eu.fireblade.fireffa.items.Kits.kitEsclave(p);
+			} else if(args[0].equalsIgnoreCase("Domination")) {
+				eu.fireblade.fireffa.items.Kits.kitDomination(p);
 			}
 		}
 		return false;

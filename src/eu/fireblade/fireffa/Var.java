@@ -63,6 +63,8 @@ public class Var {
 	public static ArrayList<Player> guerriergalactique = new ArrayList<Player>();
 	
 	public static ArrayList<Player> esclave = new ArrayList<Player>();
+	
+	public static ArrayList<Player> domination = new ArrayList<Player>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	public static HashMap<Player, Integer> killStreak = new HashMap<Player, Integer>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------

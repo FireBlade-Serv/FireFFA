@@ -509,15 +509,30 @@ public class Kits {
 	public static void kitEsclave(Player p) {
 		Clear(p);
 		
-		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.BLACK+"Chapeau de l'esclave", 1, 76, 76, 76));
-		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.BLACK+"Tunique de l'esclave", 1, 76, 76, 76));
-		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.BLACK+"Pantalon de l'esclave", 1, 76, 76, 76));
-		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.BLACK+"Bottes de l'esclave", 1, 76, 76, 76));
-		p.getInventory().setItem(0, ItemGen1(Material.LEASH, Enchantment.DAMAGE_ALL, 4, ChatColor.BLACK+"Fouet volé", null, 1));
-		p.getInventory().setItem(1, ItemGen1(Material.WOOD_HOE, Enchantment.KNOCKBACK, 2, ChatColor.BLACK+"Hoe de l'esclave", null, 1));
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_GRAY+"Chapeau de l'esclave", 1, 76, 76, 76));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_GRAY+"Tunique de l'esclave", 1, 76, 76, 76));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_GRAY+"Pantalon de l'esclave", 1, 76, 76, 76));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_GRAY+"Bottes de l'esclave", 1, 76, 76, 76));
+		p.getInventory().setItem(0, ItemGen1(Material.LEASH, Enchantment.DAMAGE_ALL, 4, ChatColor.DARK_GRAY+"Fouet volé", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.WOOD_HOE, Enchantment.KNOCKBACK, 2, ChatColor.DARK_GRAY+"Hoe de l'esclave", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	
+	// OK
+	public static void kitDomination (Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.BLACK+"Chapeau de domination", 1, 25, 25, 25));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.BLACK+"Tunique de domination", 1, 25, 25, 25));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.BLACK+"Pantalon de domination", 1, 25, 25, 25));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.BLACK+"Bottes de domination", 1, 25, 25, 25));
+		p.getInventory().setItem(0, ItemGen1(Material.NETHER_STAR, Enchantment.DAMAGE_ALL, 2,ChatColor.BLACK+"Éclaire de terreur", LoreCreator(ChatColor.BLUE+"Clique droit - Fait tomber la foudre", ChatColor.BLUE+"30 secondes de récupération"),1));
+		p.getInventory().setItem(1, generatePotItem(PotionType.INSTANT_DAMAGE, 1, "Potion de domination", true));
+		p.getInventory().setItem(2, generatePotItem(PotionType.INSTANT_DAMAGE, 1, "Potion de domination", true));
+		p.getInventory().setItem(3, generatePotItem(PotionType.INSTANT_DAMAGE, 1, "Potion de domination", true));
+		p.getInventory().setItem(4, generatePotItem(PotionType.SLOWNESS, 1, "Potion anti-rebellion", true));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	// MANQUE ABILITÉ
 	private static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
