@@ -86,6 +86,8 @@ public class Events implements Listener {
 				p.closeInventory();
 				
 				GUI.fireMenu(p);
+			}else{
+				e.setCancelled(true);
 			}
 		}else if(inv.getName().equals("§9§lKits Membre/FFA")){
 			e.setCancelled(true);
@@ -95,6 +97,8 @@ public class Events implements Listener {
 				
 				GUI.mainMenu(p);
 			}
+		}else if(inv.getName().equals("§9§lKits Fire")){
+			e.setCancelled(true);
 		}
 	}
 
