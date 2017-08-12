@@ -1,6 +1,5 @@
 package eu.fireblade.fireffa.cmd;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.bukkit.Bukkit;
@@ -108,87 +107,66 @@ public class GUI implements CommandExecutor {
 		
 		//vagabond
 		inv.setItem(0, genPerspective(Material.STAINED_GLASS, "§b§lKits Vagabond", (byte) 3));
-		inv.setItem(9, genPerspective(Material.STONE_SWORD, "§9Chevalier", (byte) 0,
-				Arrays.asList("§9+ Peut facilement combo")));
-		inv.setItem(18, genPerspective(Material.BLAZE_POWDER, "§9Magicien", (byte) 0,
-				Arrays.asList("§9+ A des potions")));
-		inv.setItem(27, genPerspective(Material.BOW, "§9Archer Vagabond", (byte) 0,
-				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(9, genPerspective(Material.STONE_SWORD, "§9Kit Chevalier", (byte) 0));
+		inv.setItem(18, genPerspective(Material.BLAZE_POWDER, "§9Kit Magicien", (byte) 0));
+		inv.setItem(27, genPerspective(Material.BOW, "§9Kit Archer Vagabond", (byte) 0));
 		
 		//inquisiteur
 		inv.setItem(1, genPerspective(Material.STAINED_GLASS, "§e§lKits Inquisiteur", (byte) 4));
-		inv.setItem(10, genPerspective(Material.IRON_INGOT, "§9Mineur", (byte) 0,
-				Arrays.asList("§9+ Peut enflamer ses advairsaires")));
-		inv.setItem(19, genPerspective(Material.SUGAR_CANE, "§9Panda", (byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(28, genPerspective(Material.LEATHER_HELMET, "§9Ours", (byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(10, genPerspective(Material.IRON_INGOT, "§9Kit Mineur", (byte) 0));
+		inv.setItem(19, genPerspective(Material.SUGAR_CANE, "§9Kit Panda", (byte) 0));
+		inv.setItem(28, genPerspective(Material.LEATHER_HELMET, "§9Kit Ours", (byte) 0));
 		
 		//meurtrier
 		inv.setItem(2, genPerspective(Material.STAINED_GLASS, "§5§lKits Meurtrier", (byte) 2));
-		inv.setItem(11, genPerspectiveEnch(Material.GOLD_HELMET, "§9Tank", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
-				Arrays.asList("§9+ La meilleure armure","§9- Ne peut pas courir")));
-		inv.setItem(20, genPerspectiveEnch(Material.STICK, "§9Flic", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
-				Arrays.asList("§9+ A un pistolet")));
-		inv.setItem(29, genPerspective(Material.SHEARS, "§9Assassin", (byte) 0,
-				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(11, genPerspectiveEnch(Material.GOLD_HELMET, "§9Kit Tank", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+		inv.setItem(20, genPerspectiveEnch(Material.STICK, "§9Kit Flic", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+		inv.setItem(29, genPerspective(Material.SHEARS, "§9Kit Assassin", (byte) 0));
 		
 		//mercenaire
 		inv.setItem(3, genPerspective(Material.STAINED_GLASS, "§a§lKits Mercenaire", (byte) 5));
 		//inv.setItem(12, genPerspective(Material.CARROT_ITEM, "§9Lapin", (byte) 0,
 		//		Arrays.asList("§9+ A JumpBoost VI")));
-		inv.setItem(12, genPerspective(Material.FERMENTED_SPIDER_EYE, "§9Guerrier Galactique", (byte) 0,
-				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(21, genPerspectiveEnch(Material.RED_MUSHROOM, "§9Gameur", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(30, genPerspective(Material.CAKE, "§9Patissier", (byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(12, genPerspective(Material.FERMENTED_SPIDER_EYE, "§9Kit Guerrier Galactique", (byte) 0));
+		inv.setItem(21, genPerspectiveEnch(Material.RED_MUSHROOM, "§9Kit Gameur", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		inv.setItem(30, genPerspective(Material.CAKE, "§9Kit Patissier", (byte) 0));
 		
 		//bourreau
 		inv.setItem(4, genPerspective(Material.STAINED_GLASS, "§9§lKits Bourreau", (byte) 11));
-		inv.setItem(13, genPerspectiveEnch(Material.INK_SACK, "§9Grampa", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0,
-				Arrays.asList("§9+ Peut faire un gros recul")));
-		inv.setItem(22, genPerspective(Material.STONE_AXE, "§9Boucher", (byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(31, genPerspectiveEnch(Material.LEASH, "§9Esclave", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(13, genPerspectiveEnch(Material.INK_SACK, "§9Kit Grampa", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+		inv.setItem(22, genPerspective(Material.STONE_AXE, "§9Kit Boucher", (byte) 0));
+		inv.setItem(31, genPerspectiveEnch(Material.LEASH, "§9Kit Esclave", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
 		
 		//executeur
 		inv.setItem(5, genPerspective(Material.STAINED_GLASS, "§1§lKits Executeur", (byte) 13));
-		inv.setItem(14, genPerspective(Material.PORK, "§9Sauvage", (byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(23, genPerspectiveLeatherColor(Material.LEATHER_HELMET, "§9Archer d'élite", 1, 114, 113, 57,
-				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(32, genPerspectiveEnch(Material.SEEDS, "§9Moutarde", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(14, genPerspective(Material.PORK, "§9Kit Sauvage", (byte) 0));
+		inv.setItem(23, genPerspectiveLeatherColor(Material.LEATHER_HELMET, "§9Kit Archer d'élite", 1, 114, 113, 57));
+		inv.setItem(32, genPerspectiveEnch(Material.SEEDS, "§9Kit Moutarde", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
 		
 		//sanguinaire
 		inv.setItem(6, genPerspective(Material.STAINED_GLASS, "§c§lKits Sanguinaire", (byte) 14));
-		inv.setItem(15, genPerspectiveEnch(Material.WOOD_SWORD, "§9Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(24, genPerspectiveSkullItem("§9Enderman", "MHF_Enderman", 
-				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(33, genPerspective(Material.SAPLING, "§9Robin des bois", (byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(15, genPerspectiveEnch(Material.WOOD_SWORD, "§9Kit Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		inv.setItem(24, genPerspectiveSkullItem("§9Kit Enderman", "MHF_Enderman"));
+		inv.setItem(33, genPerspective(Material.SAPLING, "§9Kit Robin des bois", (byte) 0));
 		
 		//massacreur
 		inv.setItem(7, genPerspective(Material.STAINED_GLASS, "§6§lKits Massacreur", (byte) 1));
-		inv.setItem(16, genPerspective(Material.RAW_FISH, "§9Ocelot", (byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(25, genPerspective(Material.BRICK, "§9Rulio", (byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
-		inv.setItem(34, genPerspectiveEnch(Material.REDSTONE_COMPARATOR, "§9Mathématicien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(16, genPerspective(Material.RAW_FISH, "§9Kit Ocelot", (byte) 0));
+		inv.setItem(25, genPerspective(Material.BRICK, "§9Kit Rulio", (byte) 0));
+		inv.setItem(34, genPerspectiveEnch(Material.REDSTONE_COMPARATOR, "§9Kit Mathématicien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
 		
 		//déchiqueteur
 		inv.setItem(8, genPerspective(Material.STAINED_GLASS, "§7§lKits Déchiqueteur", (byte) 8));
-		inv.setItem(17, genPerspective(Material.DETECTOR_RAIL, "§9Informaticien", (byte) 0, 
-				Arrays.asList("§9+ ", "§9- ")));
+		inv.setItem(17, genPerspectiveEnch(Material.TORCH, "§9Kit FuriCat", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		inv.setItem(26, genPerspective(Material.COMPASS, "§9Kit Timer", (byte) 0));
+		inv.setItem(35, genPerspectiveEnch(Material.IRON_TRAPDOOR, "§9Kit TrapMan", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
 		
 		//deathgod
 		inv.setItem(40, genPerspective(Material.STAINED_GLASS, "§0§lKits DeathGod", (byte) 15));
-		inv.setItem(49, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Démolisseur", 1, 89, 38, 38,
-				Arrays.asList("§9+ Peut lancer des fireball")));
+		inv.setItem(50, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Kit Démolisseur", 1, 89, 38, 38));
+		inv.setItem(49, genPerspectiveEnch(Material.DETECTOR_RAIL, "§9Kit Informaticien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		inv.setItem(48, genPerspectiveEnch(Material.STICK, "§9Kit Gandalf", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		
 		
 		p.openInventory(inv);
 	}
@@ -202,33 +180,12 @@ public class GUI implements CommandExecutor {
 		return item;
 	}
 	
-	public static ItemStack genPerspective(Material m, String name, byte data, List<String> lore){
-		ItemStack item = new ItemStack(m, 1, data);
-		ItemMeta meta = item.getItemMeta();
-		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-		meta.setDisplayName(name);
-		meta.setLore(lore);
-		item.setItemMeta(meta);
-		return item;
-	}
-	
 	public static ItemStack genPerspectiveEnch(Material m, String name, Enchantment ench, int lvl, byte data){
 		ItemStack item = new ItemStack(m, 1, data);
 		ItemMeta meta = item.getItemMeta();
 		meta.addEnchant(ench, lvl, true);
 		meta.setDisplayName(name);
 		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
-		item.setItemMeta(meta);
-		return item;
-	}
-	
-	public static ItemStack genPerspectiveEnch(Material m, String name, Enchantment ench, int lvl, byte data, List<String> lore){
-		ItemStack item = new ItemStack(m, 1, data);
-		ItemMeta meta = item.getItemMeta();
-		meta.addEnchant(ench, lvl, true);
-		meta.setDisplayName(name);
-		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
-		meta.setLore(lore);
 		item.setItemMeta(meta);
 		return item;
 	}
@@ -247,23 +204,22 @@ public class GUI implements CommandExecutor {
 		return item;
 	}
 	
-	public static ItemStack genPerspectiveLeatherColor(Material leatherPiece, String n, int nombre, int red, int green, int blue, List<String> list) {
+	public static ItemStack genPerspectiveLeatherColor(Material leatherPiece, String n, int nombre, int red, int green, int blue) {
 		ItemStack item = new ItemStack(leatherPiece);
-		  LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
-		  meta.setDisplayName(n);
-		  meta.setColor(Color.fromBGR(blue, green, red));
-		  meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-		  meta.setLore(list);
-		  meta.spigot().setUnbreakable(true);
-		  item.setItemMeta(meta);
-		  return item;
+		LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
+		meta.setDisplayName(n);
+		meta.setColor(Color.fromBGR(blue, green, red));
+		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+		meta.spigot().setUnbreakable(true);
+		item.setItemMeta(meta);
+		
+		return item;
 	}
 	
-	public static ItemStack genPerspectiveSkullItem(String name, String owner, List<String> list){
+	public static ItemStack genPerspectiveSkullItem(String name, String owner){
 		ItemStack item = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
 		SkullMeta skullMeta = (SkullMeta) item.getItemMeta();
 		skullMeta.setOwner(owner);
-		skullMeta.setLore(list);
 		skullMeta.setDisplayName(name);
 		item.setItemMeta(skullMeta);
 		
