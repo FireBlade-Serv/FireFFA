@@ -14,6 +14,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.inventory.InventoryType.SlotType;
@@ -113,8 +114,10 @@ public class Events implements Listener {
 	public void onDamage(EntityDamageEvent e) {
 		Entity p = e.getEntity();
 		if (p.getType().equals(EntityType.PLAYER) && Var.piaf.contains(p)) {
-		}
+		}	if(e.getCause().equals(DamageCause.FALL)) {
+				e.setCancelled(true);
 	}
+}
 	
 	@EventHandler
 	public void onInteract (PlayerInteractEvent e) {

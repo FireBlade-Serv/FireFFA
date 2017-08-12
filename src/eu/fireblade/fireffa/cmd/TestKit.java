@@ -74,6 +74,8 @@ public class TestKit implements CommandExecutor {
 				eu.fireblade.fireffa.items.Kits.kitOurs(p);
 			} else if(args[0].equalsIgnoreCase("Guerriergalactique")) {
 				eu.fireblade.fireffa.items.Kits.kitGuerriergalactique(p);
+			} else if(args[0].equalsIgnoreCase("Esclave")) {
+				eu.fireblade.fireffa.items.Kits.kitEsclave(p);
 			}
 		}
 		return false;
