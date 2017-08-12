@@ -31,11 +31,12 @@ public class Kits {
 		ItemMeta itemM = item.getItemMeta();
 		itemM.setDisplayName(n);
 		itemM.spigot().setUnbreakable(true);
-		item.setItemMeta(itemM);
 		
 		if(lore != null){
 			itemM.setLore(lore);
 		}
+		
+		item.setItemMeta(itemM);
 		
 		return item;
 	}
@@ -155,7 +156,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 1));
 	}
-	// LORE NON FONCTIONNEL + MANQUE ABILITÉ
+	// MANQUE ABILITÉ
 	public static void kitTank(Player p) {
 		Clear(p);
 		
@@ -181,7 +182,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.getInventory().setItem(2, ItemGen(Material.FIREBALL, ChatColor.DARK_BLUE+"Munition", null, 12));
 	}
-	// LORE NON FONCTIONNEL + MANQUE ABILITÉ
+	// MANQUE ABILITÉ
 	public static void kitMagicien (Player p) {
 		Clear(p);
 		
@@ -232,7 +233,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
-	// LORE NON FONCTIONNEL + MANQUE ABILITÉ
+	// MANQUE ABILITÉ
 	public static void kitVoleurdame (Player p) {
 		Clear(p);
 		
@@ -250,7 +251,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.BLACK+"Puit de sang",LoreCreator(ChatColor.BLUE+"Clique droit - Utilise les âmes accumulées pour se régénerer", ChatColor.BLUE+"Consomme le puit de sang (Expérience)"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// (LORE NON FONCTIONNEL + MANQUE ABILITÉ) X2
+	// MANQUE ABILITÉ X2
 	public static void kitOITCman (Player p) {
 		Clear(p);
 		
@@ -311,7 +312,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.COAL , ChatColor.DARK_GRAY+"Pruneau",LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"Récupération 1 minute 30"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// LORE NON FONCTIONNEL + METTRE CHARCOAL A LA PLACE DE CHARBON
+	// METTRE CHARCOAL A LA PLACE DE CHARBON
 	public static void kitMineur(Player p) {
 		Clear(p);
 		
@@ -337,7 +338,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.DARK_RED+"Allah akbar",LoreCreator(ChatColor.BLUE+"Clique droit - Se faire exploser", ChatColor.BLUE+"Vous tue instantanément"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// LORE NON FONCTIONNEL + MANQUE ABILITÉ
+	// MANQUE ABILITÉ
 	public static void kitGamer (Player p) {
 		Clear(p);
 		
@@ -350,7 +351,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.RABBIT_FOOT, ChatColor.GREEN+"Super jump",LoreCreator(ChatColor.BLUE+"Clique droit - Saute à une hauteur de 5 blocs", ChatColor.BLUE+"Récupération 15 secondes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// (LORE NON FONCTIONNEL + MANQUE ABILITÉ) 
+	// MANQUE ABILITÉ
 	public static void kitSauvage (Player p) {
 		Clear(p);
 		
@@ -359,7 +360,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.GRILLED_PORK, ChatColor.DARK_PURPLE+"Nourriture charnue", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 3 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// LORE NON FONCTIONNEL + MANQUE ABILITÉ
+	// MANQUE ABILITÉ
 	public static void kitArcherelementaire (Player p) {
 		Clear(p);
 		
@@ -373,7 +374,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.BOW, ChatColor.GREEN+"Arc de glace", LoreCreator(ChatColor.BLUE+"Ses fléches ralentissent et aveugles", ChatColor.BLUE+"Pendant 2 secondes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));		
 	}
-	// LORE NON FONCTIONNEL + MANQUE ABILITÉ	
+	// MANQUE ABILITÉ	
 	public static void kitOcelot (Player p) {
 		Clear(p);
 		
@@ -437,7 +438,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.CLAY_BALL, ChatColor.WHITE+"Charge au sol", LoreCreator(ChatColor.BLUE+"Clique droit - Petite explosion", ChatColor.BLUE+"30 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// LORE NON FONCTIONELLE
+	// OK
 	public static void kitInformaticien (Player p) {
 		Clear(p);
 		
@@ -463,7 +464,15 @@ public class Kits {
 		p.getInventory().setItem(3, ItemGen1(Material.GOLD_INGOT, Enchantment.FIRE_ASPECT, 2, ChatColor.DARK_PURPLE+"Command prompt: FLAME", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// MANQUE ABILITÉ + ITEM BRICK 
+	public static void kitPatissier (Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.LIGHT_PURPLE+"Chapeau du patissier", 1, 102, 127, 51));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.LIGHT_PURPLE+"Tunique du patissier", 1, 25, 25, 25));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.LIGHT_PURPLE+"Pantalon du patissier", 1, 25, 25, 25));
+		p.getInventory().setBoots(ItemGen(Material.LEATHER_BOOTS, ChatColor.LIGHT_PURPLE+"Bottes du patissier", null, 1));
+	}	
 	private static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
