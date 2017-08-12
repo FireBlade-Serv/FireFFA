@@ -78,6 +78,8 @@ public class Events implements Listener {
 				p.closeInventory();
 				
 				KitCmd.ffaMenu(p);
+			}else{
+				e.setCancelled(true);
 			}
 		}else if(inv.getName().equals("§9Kits FireFFA")){
 			e.setCancelled(true);
