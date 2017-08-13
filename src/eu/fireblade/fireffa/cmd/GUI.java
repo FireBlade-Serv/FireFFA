@@ -526,7 +526,7 @@ public class GUI implements CommandExecutor, Listener {
 			}else if(compareItems(item, genPerspectiveEnch(Material.WOOD_SWORD, "§9Kit Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
 				Kits.kitPyro(p);
 				
-			}else if(compareItems(item, genPerspectiveSkullItem("§9Kit Enderman", "MHF_Enderman"))){
+			}else if(compareItems(item, genPerspective(Material.SKULL_ITEM, "§9Kit Enderman", (byte) 3))){
 				Kits.kitEnderman(p);
 				
 			}else if(compareItems(item, genPerspective(Material.SAPLING, "§9Kit Robin des bois", (byte) 0))){
