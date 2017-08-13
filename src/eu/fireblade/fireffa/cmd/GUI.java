@@ -153,7 +153,7 @@ public class GUI implements CommandExecutor, Listener {
 		//sanguinaire
 		inv.setItem(6, genPerspective(Material.STAINED_GLASS, "§c§lKits Sanguinaire", (byte) 14));
 		inv.setItem(15, genPerspectiveEnch(Material.WOOD_SWORD, "§9Kit Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
-		inv.setItem(24, genPerspectiveSkullItem("§9Kit Enderman", "MHF_Enderman"));
+		inv.setItem(24, genPerspective(Material.ENDER_PEARL, "§9Kit Enderman", (byte) 0));
 		inv.setItem(33, genPerspective(Material.SAPLING, "§9Kit Robin des bois", (byte) 0));
 		
 		//massacreur
@@ -192,7 +192,7 @@ public class GUI implements CommandExecutor, Listener {
 			inv.setItem(23, genPerspective(Material.TNT, "§9Kit Djihadiste", (byte) 0));
 			inv.setItem(24, genPerspectiveEnch(Material.BOW, "§9Kit Archer élémentaire", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
 			
-			inv.setItem(30, genPerspectiveSkullItem("§9Kit Ogre", "Shrek"));
+			inv.setItem(30, genPerspective(Material.ROTTEN_FLESH, "§9Kit Ogre", (byte) 0));
 			inv.setItem(31, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Kit Bouftout", 1, 255, 255, 255));
 			inv.setItem(32, genPerspective(Material.CARROT_ITEM, "§9Kit Lapin", (byte) 0));
 		}else{
@@ -243,7 +243,7 @@ public class GUI implements CommandExecutor, Listener {
 	}
 	
 	public static void ultimateMenu(Player p){
-		Inventory inv = Bukkit.createInventory(null, 54, "§9§lKits Ultra");
+		Inventory inv = Bukkit.createInventory(null, 54, "§9§lKits Ultimate");
 		
 		genMenuRankModel(inv);
 		
@@ -527,7 +527,7 @@ public class GUI implements CommandExecutor, Listener {
 			}else if(compareItems(item, genPerspectiveEnch(Material.WOOD_SWORD, "§9Kit Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
 				Kits.kitPyro(p);
 				Var.pyro.add(p);
-			}else if(compareItems(item, genPerspective(Material.SKULL_ITEM, "§9Kit Enderman", (byte) 3))){
+			}else if(compareItems(item, genPerspective(Material.ENDER_PEARL, "§9Kit Enderman", (byte) 0))){
 				Kits.kitEnderman(p);
 				Var.enderman.add(p);
 			}else if(compareItems(item, genPerspective(Material.SAPLING, "§9Kit Robin des bois", (byte) 0))){
@@ -587,7 +587,7 @@ public class GUI implements CommandExecutor, Listener {
 			}else if(compareItems(item, genPerspectiveEnch(Material.BOW, "§9Kit Archer élémentaire", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitArcherelementaire(p);
 				Var.archerélémentaire.add(p);
-			}else if(compareItems(item, genPerspectiveSkullItem("§9Kit Ogre", "Shrek"))){
+			}else if(compareItems(item, genPerspective(Material.ROTTEN_FLESH, "§9Kit Ogre", (byte) 0))){
 				Kits.kitOgre(p);
 				Var.ogre.add(p);
 				
