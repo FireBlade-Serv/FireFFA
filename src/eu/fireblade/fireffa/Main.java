@@ -1,6 +1,5 @@
 package eu.fireblade.fireffa;
 
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -30,8 +29,6 @@ public class Main extends JavaPlugin{
 		Var.host = getConfig().getString("sqlhost");
 		Var.user = getConfig().getString("sqluser");
 		Var.password = getConfig().getString("sqlpassword");
-		
-		Bukkit.broadcastMessage("test sql config => "+Var.host+" - "+Var.user+" - "+Var.password+".");
 	}
 	
 	@Override
