@@ -592,7 +592,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.INK_SACK, "§5Transformation", LoreCreator("§9Clique droit - te transforme en chauve souris", "§940 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	
+	// manque abilité
 	public static void kitNuage(Player p) {
 		Clear(p);
 		
@@ -600,13 +600,49 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGen2ColorLeather(Material.LEATHER_CHESTPLATE, Enchantment.ARROW_DAMAGE, 10, "§fPlastron Nuage", 1, 255, 255, 255));
 		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.ARROW_DAMAGE, 10, "§fPantalon Nuage", 1, 255, 255, 255));
 		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.ARROW_DAMAGE, 10, "§fBottes Nuage", 1, 255, 255, 255));
-		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§fépée Nuage", LoreCreator("Oh les beaux nuages", "tu peux planer"), 1));
-		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, "§fArc Nuage",  null, 1));
-		p.getInventory().setItem(1, ItemGen(Material.ARROW, "Flèche", null, 1));
+		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§9épée Nuage", LoreCreator("Oh les beaux nuages", "tu peux planer"), 1));
+		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, "§9Arc Nuage",  null, 1));
+		p.getInventory().setItem(1, ItemGen(Material.ARROW, "§9Flèche", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 		
 	}
+	// manque abilité
+	public static void kitTimer(Player p) {
+		Clear(p);
+		
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, "§3Chapeau du Timer", 1, 102, 153, 216));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§3Plastron du Timer", 1, 102, 153, 216));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§3Pantalon du timer", 1, 102, 153, 216));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§3Bottes du Timer", 1, 102, 153, 216));
+		p.getInventory().setItem(0, ItemGen1(Material.WATCH, Enchantment.DAMAGE_ALL, 2, "§9Montre du Temps", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5, "§9Ejecteur Temporel", LoreCreator("§9Clique droit - permet de frezze 5s", "§930 secondes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	// manque abilité
+	public static void kitRobinDesBois(Player p) {
+	    Clear(p);
+	    
+	    p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, "§2Chapeau des bois", 1, 114, 165, 38));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§2Tunique des bois", 1, 114, 165, 38));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§2Pantalon des bois", 1, 114, 165, 38));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§2Bottes des bois", 1, 114, 165, 38));
+		p.getInventory().setItem(0, ItemGen1(Material.WOOD_SWORD, Enchantment.DAMAGE_ALL, 1, "&9épée des bois", LoreCreator("§9clique droit - vole un item aléatoire au joueur", "§930 secondes de récupération"), 1));
+		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_DAMAGE, 1, "§&9Arc des bois", null, 1));
+		p.getInventory().setItem(1, ItemGen(Material.ARROW, "§9Flèche", null, 16));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	// manque abilité
+	public static void kitGandalf(Player p) {
+	    Clear(p);
+	    
+	    p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, "§2Chapeau de Gandalf", 1, 153, 153, 153 ));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§2Tunique de Gandalf", 1, 153, 153, 153));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§2Pantalon de gandalf", 1, 153, 153, 153));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§2Bottes de Gandalf", 1, 153, 153, 153));
+		p.getInventory().setItem(0, ItemGen2(Material.STICK, Enchantment.DAMAGE_ALL, 3, Enchantment.KNOCKBACK, 2, "§9You Shall Not Pass", LoreCreator("§9Clique droit - éjecte le joueur", "§920 secondes de récupération"), 1));
+	}   
+	
 	// MANQUE ABILITÉ
 	private static void Clear(Player p) {
 		p.getInventory().clear();
