@@ -7,11 +7,11 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -135,6 +135,16 @@ public class Kits {
 		potion.setItemMeta(meta);
 		
 		return potion;
+	}
+	
+	public static ItemStack generateSkull(String name, String owner){
+		ItemStack item = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
+		SkullMeta meta = (SkullMeta) item.getItemMeta();
+		meta.setOwner(owner);
+		meta.setDisplayName(name);
+		item.setItemMeta(meta);
+		
+		return item;
 	}
 	
 	
@@ -806,18 +816,21 @@ public class Kits {
 	//manque abilité ! pas finis !
 	public static void kitOgre(Player p) {
 	    Clear(p);
-	    p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fTunique d'ogre", 1, 102, 127, 51));
-		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon d'ogre", 1, 102, 127, 51));
-		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes d'ogre", 1, 102, 127, 51));
+	    
+	    p.getInventory().setHelmet(generateSkull("§2Ogre", "Shrek"));
+	    p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§2Tunique d'ogre", 1, 102, 127, 51));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§2Pantalon d'ogre", 1, 102, 127, 51));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§2Bottes d'ogre", 1, 102, 127, 51));
 		p.getInventory().setItem(0, ItemGen1(Material.LEVER, Enchantment.DAMAGE_ALL, 1, "§9Massue", LoreCreator("§9Vous avez 15% de chance de os", null), 1));
 		
 	}
 	//manque abilité ! pas finis !
 	public static void kitEnderman(Player p) {
 	    Clear(p);
-	    p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fTunique d'Enderman", 1, 102, 127, 51));
-		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon d'Enderman", 1, 102, 127, 51));
-		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes d'Enderman", 1, 102, 127, 51));
+	    p.getInventory().setHelmet(generateSkull("§7Enderman", "MHF_Enderman"));
+	    p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§7Tunique d'Enderman", 1, 102, 127, 51));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§7Pantalon d'Enderman", 1, 102, 127, 51));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§7Bottes d'Enderman", 1, 102, 127, 51));
 		p.getInventory().setItem(0, ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 3, "§9Main de l'enderman", LoreCreator("§9Clique droit - vous tp aléatoirement", "§930 secondes de récupération"), 1));
 		
 	    
