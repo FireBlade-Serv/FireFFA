@@ -23,6 +23,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
 
+import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.util.GlobalRank;
 
@@ -472,6 +473,7 @@ public class GUI implements CommandExecutor, Listener {
 			}else if(compareItems(item, genPerspective(Material.STONE_SWORD, "§9Kit Chevalier", (byte) 0))){
 				Kits.kitChevalier(p);
 			
+				Var.chevalier.add(p);
 			}else if(compareItems(item, genPerspective(Material.BLAZE_POWDER, "§9Kit Magicien", (byte) 0))){
 				Kits.kitMagicien(p);
 			
