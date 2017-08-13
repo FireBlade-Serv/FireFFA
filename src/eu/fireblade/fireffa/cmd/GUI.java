@@ -23,6 +23,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
 
+import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.util.GlobalRank;
 
 public class GUI implements CommandExecutor, Listener {
@@ -468,6 +469,96 @@ public class GUI implements CommandExecutor, Listener {
 				p.closeInventory();
 				
 				GUI.mainMenu(p);
+			}else if(compareItems(item, genPerspective(Material.STONE_SWORD, "§9Kit Chevalier", (byte) 0))){
+				Kits.kitChevalier(p);
+			
+			}else if(compareItems(item, genPerspective(Material.BLAZE_POWDER, "§9Kit Magicien", (byte) 0))){
+				Kits.kitMagicien(p);
+			
+			}else if(compareItems(item, genPerspective(Material.BOW, "§9Kit Archer Vagabond", (byte) 0))){
+				Kits.kitArchervagabon(p);
+			
+			}else if(compareItems(item, genPerspective(Material.IRON_INGOT, "§9Kit Mineur", (byte) 0))){
+				Kits.kitMineur(p);
+			
+			}else if(compareItems(item, genPerspective(Material.SUGAR_CANE, "§9Kit Panda", (byte) 0))){
+				Kits.kitPanda(p);
+				
+			}else if(compareItems(item, genPerspective(Material.LEATHER_HELMET, "§9Kit Ours", (byte) 0))){
+				Kits.kitOurs(p);
+				
+			}else if(compareItems(item, genPerspectiveEnch(Material.GOLD_HELMET, "§9Kit Tank", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
+				Kits.kitTank(p);
+				
+			}else if(compareItems(item, genPerspectiveEnch(Material.STICK, "§9Kit Flic", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
+				Kits.kitFlic(p);
+				
+			}else if(compareItems(item, genPerspective(Material.SHEARS, "§9Kit Assassin", (byte) 0))){
+				Kits.kitAssassin(p);
+				
+			}else if(compareItems(item, genPerspective(Material.FERMENTED_SPIDER_EYE, "§9Kit Guerrier Galactique", (byte) 0))){
+				Kits.kitGuerriergalactique(p);
+				
+			}else if(compareItems(item, genPerspectiveEnch(Material.RED_MUSHROOM, "§9Kit Gameur", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
+				Kits.kitGamer(p);
+				
+			}else if(compareItems(item, genPerspective(Material.CAKE, "§9Kit Patissier", (byte) 0))){
+				Kits.kitPatissier(p);
+				
+			}else if(compareItems(item, genPerspectiveEnch(Material.INK_SACK, "§9Kit Grampa", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
+				Kits.kitGrampa(p);
+				
+			}else if(compareItems(item, genPerspective(Material.STONE_AXE, "§9Kit Boucher", (byte) 0))){
+				Kits.kitBoucher(p);
+				
+			}else if(compareItems(item, genPerspectiveEnch(Material.LEASH, "§9Kit Esclave", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
+				Kits.kitEsclave(p);
+				
+			}else if(compareItems(item, genPerspective(Material.PORK, "§9Kit Sauvage", (byte) 0))){
+				Kits.kitSauvage(p);
+				
+			}else if(compareItems(item, genPerspectiveLeatherColor(Material.LEATHER_HELMET, "§9Kit Archer d'élite", 1, 114, 113, 57))){
+				Kits.kitArcherelite(p);
+				
+			}else if(compareItems(item, genPerspectiveEnch(Material.SEEDS, "§9Kit Moutarde", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
+				Kits.kitMoutarde(p);
+				
+			}else if(compareItems(item, genPerspectiveEnch(Material.WOOD_SWORD, "§9Kit Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
+				Kits.kitPyro(p);
+				
+			}else if(compareItems(item, genPerspectiveSkullItem("§9Kit Enderman", "MHF_Enderman"))){
+				Kits.kitEnderman(p);
+				
+			}else if(compareItems(item, genPerspective(Material.SAPLING, "§9Kit Robin des bois", (byte) 0))){
+				Kits.kitRobinDesBois(p);
+				
+			}else if(compareItems(item, genPerspective(Material.RAW_FISH, "§9Kit Ocelot", (byte) 0))){
+				Kits.kitOcelot(p);
+				
+			}else if(compareItems(item, genPerspective(Material.BRICK, "§9Kit Rulio", (byte) 0))){
+				Kits.kitRulio(p);
+				
+			}else if(compareItems(item, genPerspectiveEnch(Material.REDSTONE_COMPARATOR, "§9Kit Mathématicien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
+				Kits.kitMathematicien(p);
+				
+			}else if(compareItems(item, genPerspectiveEnch(Material.TORCH, "§9Kit FuriCat", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
+				Kits.kitFuricat(p);
+				
+			}else if(compareItems(item, genPerspective(Material.COMPASS, "§9Kit Timer", (byte) 0))){
+				Kits.kitTimer(p);
+			
+			}else if(compareItems(item, genPerspectiveEnch(Material.IRON_TRAPDOOR, "§9Kit TrapMan", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
+				Kits.kitTrapman(p);
+				
+			}else if(compareItems(item, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Kit Démolisseur", 1, 89, 38, 38))){
+				Kits.kitDemolisseur(p);
+				
+			}else if(compareItems(item, genPerspectiveEnch(Material.DETECTOR_RAIL, "§9Kit Informaticien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
+				Kits.kitInformaticien(p);
+				
+			}else if(compareItems(item, genPerspectiveEnch(Material.STICK, "§9Kit Gandalf", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
+				Kits.kitGandalf(p);
+			
 			}
 		}else if(inv.getName().equals("§9§lKits Fire")){
 			e.setCancelled(true);
