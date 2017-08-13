@@ -584,18 +584,18 @@ public class GUI implements CommandExecutor, Listener {
 				Kits.kitJihadist(p);
 				Var.jihadist.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Archer élémentaire", GlobalRank.FIRE))){
+			}else if(compareItems(item, genPerspectiveEnch(Material.BOW, "§9Kit Archer élémentaire", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitArcherelementaire(p);
 				Var.archerélémentaire.add(p);
-			}else if(compareItems(item, genPerspectiveBlock("Kit Ogre", GlobalRank.FIRE))){
+			}else if(compareItems(item, genPerspectiveSkullItem("§9Kit Ogre", "Shrek"))){
 				Kits.kitOgre(p);
 				Var.ogre.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Bouftout", GlobalRank.FIRE))){
+			}else if(compareItems(item, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Kit Bouftout", 1, 255, 255, 255))){
 				Kits.kitBoufTout(p);
 				Var.bouftout.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Lapin", GlobalRank.FIRE))){
+			}else if(compareItems(item, genPerspective(Material.CARROT_ITEM, "§9Kit Lapin", (byte) 0))){
 				Kits.kitLapin(p);
 				Var.lapin.add(p);
 			}
@@ -614,7 +614,7 @@ public class GUI implements CommandExecutor, Listener {
 				Kits.kitOITCman(p);
 				Var.OITCman.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Domination", GlobalRank.ULTRA))){
+			}else if(compareItems(item, genPerspective(Material.NETHER_STAR, "§9Kit Domination", (byte) 0))){
 				Kits.kitDomination(p);
 				Var.domination.add(p);
 				
@@ -626,15 +626,15 @@ public class GUI implements CommandExecutor, Listener {
 				Kits.kitRedMan(p);
 				Var.redman.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Pharaon", GlobalRank.ULTRA))){
+			}else if(compareItems(item, genPerspectiveEnch(Material.GOLD_SPADE, "§9Kit Pharaon",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitPharaon(p);
 				Var.pharaon.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Dieu", GlobalRank.ULTRA))){
+			}else if(compareItems(item, genPerspectiveEnch(Material.INK_SACK, "§9Kit Dieu",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 15))){
 				Kits.kitDieu(p);
 				Var.dieu.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Swap", GlobalRank.ULTRA))){
+			}else if(compareItems(item, genPerspective(Material.SNOW_BALL, "§9Kit Swap", (byte) 0))){
 				Kits.kitSwap(p); 
 				Var.swap.add(p);
 			}
@@ -646,35 +646,35 @@ public class GUI implements CommandExecutor, Listener {
 				
 				GUI.mainMenu(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Golem", GlobalRank.ULTIMATE))){
+			}else if(compareItems(item, genPerspective(Material.IRON_BLOCK, "§9Kit Golem", (byte) 0))){
 				Kits.kitGolem(p);
 				Var.golem.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Voleur d'âmes", GlobalRank.ULTIMATE))){
+			}else if(compareItems(item, genPerspectiveSkullItem("§9Kit Voleur d'âmes"))){
 				Kits.kitVoleurdame(p);
 				Var.voleurdame.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Vampire", GlobalRank.ULTIMATE))){
+			}else if(compareItems(item, genPerspective(Material.INK_SACK, "§9Kit Vampire", (byte) 0))){
 				Kits.kitVampire(p);
 				Var.vampire.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Programmeur", GlobalRank.ULTIMATE))){
+			}else if(compareItems(item, genPerspective(Material.NETHER_BRICK_ITEM, "§9Kit Programmeur", (byte) 0))){
 				Kits.kitProgrammeur(p);
 				Var.programmeur.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Copy", GlobalRank.ULTIMATE))){
+			}else if(compareItems(item, genPerspective(Material.STRING, "§9Kit Copy", (byte) 0))){
 				Kits.kitCopy(p);
 				Var.copy.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Fiesta", GlobalRank.ULTIMATE))){
+			}else if(compareItems(item, genPerspective(Material.GOLD_SPADE, "§9Kit Fiesta", (byte) 0))){
 				Kits.kitFiesta(p);
 				Var.fiesta.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Power", GlobalRank.ULTIMATE))){
+			}else if(compareItems(item, genPerspectiveEnch(Material.REDSTONE_TORCH_ON, "§9Kit Power",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 15))){
 				Kits.kitPower(p);
 				Var.power.add(p);
 				
-			}else if(compareItems(item, genPerspectiveBlock("Kit Invocation", GlobalRank.ULTIMATE))){
+			}else if(compareItems(item, genPerspective(Material.DRAGON_EGG, "§9Kit Invocation", (byte) 0))){
 				Kits.kitInvocation(p);
 				Var.invocation.add(p);
 			}
