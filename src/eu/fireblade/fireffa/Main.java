@@ -6,7 +6,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import eu.fireblade.fireffa.util.Config;
 import eu.fireblade.fireffa.util.Tp;
 
-
 public class Main extends JavaPlugin{
 	
 	public static Plugin plugin;

@@ -3,13 +3,10 @@ package eu.fireblade.fireffa;
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -58,17 +55,20 @@ public class Events implements Listener {
 
 	@EventHandler
 	public void onDeath(PlayerDeathEvent e) {
-		Player victime = e.getEntity();
-		Player p = victime.getKiller();
+		Entity victime = e.getEntity();
 		
-		if (victime.getType().equals(EntityType.PLAYER) && p.getType().equals(EntityType.PLAYER)) {
+		if(!(victime instanceof Player)){
+			return;
+		}
+		
+		Player p = (Player) victime;
+		Player jawad = p.getKiller();
 			
-			if(!victime.equals(p)){
-				if(p.getHealth() >= 14){
-					p.setHealth(p.getMaxHealth());
-				}else{
-					p.setHealth(p.getHealth() + 5);
-				}
+		if(!jawad.equals(p)){
+			if(jawad.getHealth() >= 14){
+				jawad.setHealth(jawad.getMaxHealth());
+			}else{
+				jawad.setHealth(jawad.getHealth() + 6);
 			}
 		}
 		
@@ -76,7 +76,7 @@ public class Events implements Listener {
 			
             public void run(){
                 if(p.isDead()){
-					((CraftPlayer) victime).getHandle().playerConnection.a(new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN));
+                	 ((CraftPlayer) p).getHandle().playerConnection.a(new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN));
                 }
             }
             
@@ -86,24 +86,14 @@ public class Events implements Listener {
 
 			@Override
 			public void run() {
-				Tp.tpSpawn(victime);
+				Tp.tpSpawn(p);
 				
-				Kits.Clear(victime);
+				Kits.Clear(p);
 				
-				GUI.mainMenu(victime);
+				GUI.mainMenu(p);
 			}
 			
 		}, 10L);
-	}
-	
-	@EventHandler
-	public void onDamage(EntityDamageEvent e) {
-		Entity p = e.getEntity();
-		if (p.getType().equals(EntityType.PLAYER) && Var.piaf.contains(p)) {
-			if(e.getCause().equals(DamageCause.FALL)) {
-				e.setCancelled(true);
-			}
-		}
-	}		
+	}	
 }
 
