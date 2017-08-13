@@ -641,8 +641,19 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§2Pantalon de gandalf", 1, 153, 153, 153));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§2Bottes de Gandalf", 1, 153, 153, 153));
 		p.getInventory().setItem(0, ItemGen2(Material.STICK, Enchantment.DAMAGE_ALL, 3, Enchantment.KNOCKBACK, 2, "§9You Shall Not Pass", LoreCreator("§9Clique droit - éjecte le joueur", "§920 secondes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}   
-	
+	public static void kitGlowstone(Player p) {
+		Clear(p);
+		p.getInventory().setHelmet(ItemGen(Material.GLOWSTONE, "§eUniforme Glostone", null, 1));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§eUniforme Glowstone", 1, 229, 229, 51));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§eUniforme Glowstone", 1, 229, 229, 51));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§eUniforme Glowstone", 1, 229, 229, 51));
+		p.getInventory().setItem(0, ItemGen2(Material.GLOWSTONE_DUST, Enchantment.DAMAGE_ALL, 2, Enchantment.FIRE_ASPECT, 2, "§9Lumière puissante", null, 1));
+		p.getInventory().setItem(1, ItemGen(Material.TORCH, "§9L'aveugleur", LoreCreator("§9Clique droit - aveugle 5 secondes", "§920 secondes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1));
+	}
 	// MANQUE ABILITÉ
 	private static void Clear(Player p) {
 		p.getInventory().clear();
