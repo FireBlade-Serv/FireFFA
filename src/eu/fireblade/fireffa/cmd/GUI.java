@@ -645,7 +645,6 @@ public class GUI implements CommandExecutor, Listener {
 				p.closeInventory();
 				
 				GUI.mainMenu(p);
-				
 			}else if(compareItems(item, genPerspective(Material.IRON_BLOCK, "§9Kit Golem", (byte) 0))){
 				Kits.kitGolem(p);
 				Var.golem.add(p);
