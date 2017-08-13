@@ -119,6 +119,8 @@ public class Var {
 	public static ArrayList<Player> dieu = new ArrayList<Player>();
 	
 	public static ArrayList<Player> invocation = new ArrayList<Player>();
+	
+	public static ArrayList<Player> archervagabon = new ArrayList<Player>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	public static HashMap<Player, Integer> killStreak = new HashMap<Player, Integer>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
