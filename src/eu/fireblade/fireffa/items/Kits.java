@@ -7,6 +7,7 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
@@ -39,7 +40,9 @@ public class Kits {
 		item.setItemMeta(itemM);
 		
 		return item;
-	}
+		
+		
+    }
 		
 	public static ItemStack ItemGen1(Material m, Enchantment ench, int level, String n, ArrayList<String> lore, int nombre) {
 		ItemStack item = new ItemStack(m, nombre);
@@ -643,9 +646,11 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen2(Material.STICK, Enchantment.DAMAGE_ALL, 3, Enchantment.KNOCKBACK, 2, "§9You Shall Not Pass", LoreCreator("§9Clique droit - éjecte le joueur", "§920 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}   
+	// manque abilité
 	public static void kitGlowstone(Player p) {
 		Clear(p);
-		p.getInventory().setHelmet(ItemGen(Material.GLOWSTONE, "§eUniforme Glostone", null, 1));
+		
+		p.getInventory().setHelmet(ItemGen(Material.GLOWSTONE, "§eUniforme Glowstone", null, 1));
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§eUniforme Glowstone", 1, 229, 229, 51));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§eUniforme Glowstone", 1, 229, 229, 51));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§eUniforme Glowstone", 1, 229, 229, 51));
@@ -654,6 +659,173 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1));
 	}
+	// manque abilité
+    public static void kitSwap(Player p) {
+		Clear(p);
+		
+		p.getInventory().setChestplate(ItemGen(Material.LEATHER_CHESTPLATE, "§6Plastron swap", null, 1));
+		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§9épée swap", null, 1));
+		p.getInventory().setItem(1, ItemGen(Material.SNOW_BALL, "swaper", LoreCreator("§9Lancer la boule - Swap votre inventaire avec le joueur toucher", null), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+    }
+    //manque abilité
+    public static void kitRulio(Player p) {
+		Clear(p);
+		p.getInventory().setChestplate(ItemGen(Material.LEATHER_CHESTPLATE, "§6Tunique de Travail", null, 1));
+		p.getInventory().setLeggings(ItemGen(Material.LEATHER_CHESTPLATE, "§6Pantalon de travail", null, 1));
+		p.getInventory().setItem(0, ItemGen1(Material.BRICK, Enchantment.DAMAGE_ALL, 2, "§9Brique", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.STONE_SLAB2, Enchantment.KNOCKBACK, 6, "§9Dalle", null, 1));
+		p.getInventory().setItem(2, ItemGen(Material.NAME_TAG, "§9Truelle", LoreCreator("§Clique Droit - donne poison 5s", "§15 secondes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+    
+    }
+	//manque abilité
+	public static void kitCopy(Player p) {
+		Clear(p);
+		p.getInventory().setItem(0, ItemGen(Material.STRING, "§9Copieur d'arme", LoreCreator("§9Clique Droit - copie l'arme ennemi", null), 1));
+		p.getInventory().setItem(1, ItemGen(Material.TRIPWIRE_HOOK, "§9Copieur d'armure", LoreCreator("§9Clique Droit - copie l'armure ennemi", null), 1));
+		p.getInventory().setItem(2, ItemGen(Material.FEATHER, "§9Plumart", LoreCreator("§9Clique Droit - saut de plusieurs blocs", null), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	//manque abilité
+	public static void kitPharaon(Player p) {
+		Clear(p);
+		p.getInventory().setHelmet(ItemGen(Material.GOLD_HELMET, "§eCouronne", null, 1));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§eToge", 1, 216, 127, 51));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§eToge", 1, 216, 127, 51));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§eChausson", 1, 216, 127, 51));
+		p.getInventory().setItem(0, ItemGen2(Material.GOLD_SPADE, Enchantment.DAMAGE_ALL, 1, Enchantment.FIRE_ASPECT, 2, "§9Sceptre du Pharaon", LoreCreator("§9Clique Droit - donne nausé 5s", "§930 secondes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	//manque abilité
+	public static void kitFuricat(Player p) {
+		Clear(p);
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, "§2Chapeau furicat", 1, 127, 204, 25));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§dTunique furicat", 1, 242, 127, 165));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§3Pantalon furicat", 1, 102, 153, 216));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§cBottes furicat", 1, 153, 51, 51));
+		p.getInventory().setItem(0, ItemGen2(Material.TORCH, Enchantment.DAMAGE_ALL, 2, Enchantment.FIRE_ASPECT, 1, "§9Titute", LoreCreator("§9Clique Droit - Aveugle 5s", "§915 secondes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		
+	}
+	//manque abilité
+	public static void kitRedMan(Player p) {
+		Clear(p);
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, "§2Chapeau Redman", 1, 242, 127, 165));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§2Plastron Redman", 1, 242, 127, 165));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§2Pantalon Redman", 1, 242, 127, 165));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§2Bottes Redman", 1, 242, 127, 165));
+		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 2, "§9Bou Boum", LoreCreator("§9Cliqque Droit - Lance des TNT", null), 1));
+		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, "§9Poudre de Regen", LoreCreator("§9Regen 2 coeurs", null), 1));
+		p.getInventory().setItem(2, ItemGen(Material.TNT, "§9Recharge", null, 20));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		
+	}
+	//OK !
+	public static void kitTrapman(Player p) {
+		Clear(p);
+		p.getInventory().setHelmet(ItemGen2ColorLeather(Material.LEATHER_HELMET, Enchantment.PROTECTION_EXPLOSIONS, 4, "§cChapeau TrapMant", 1, 153, 51, 51));
+		p.getInventory().setChestplate(ItemGen2ColorLeather(Material.LEATHER_CHESTPLATE, Enchantment.PROTECTION_EXPLOSIONS, 4, "§cTunique TrapMant", 1, 153, 51, 51));
+		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.PROTECTION_EXPLOSIONS, 4, "§cPantalon TrapMant", 1, 153, 51, 51));
+		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.PROTECTION_FALL, 4, "§cBottes TrapMant", 1, 153, 51, 51));
+		p.getInventory().setItem(0, ItemGen1(Material.TRAP_DOOR, Enchantment.DAMAGE_ALL, 2, "§9Chestar", null, 1));
+		p.getInventory().setItem(1, ItemGen2(Material.IRON_TRAPDOOR, Enchantment.FIRE_ASPECT, 1, Enchantment.KNOCKBACK, 2, "§9Dolouris", null, 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	//manque abilité
+	public static void kitGolem(Player p) {
+		Clear(p);
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, "§fChapeau Golem", 1, 255, 255, 255 ));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fTunique Golem", 1, 255, 255, 255));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon Golem", 1, 255, 255, 255));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes Golem", 1, 255, 255, 255));
+		p.getInventory().setItem(0, ItemGen(Material.IRON_INGOT, "§9Balanceur", LoreCreator("§9Clique Droit - expulse vos ennemis", null), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	
+	}
+	//manque abilité
+	public static void kitBoufTout(Player p) {
+		Clear(p);
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fTunique BoufTout", 1, 255, 255, 255));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon BoufTout", 1, 76, 127, 153));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes BoufTout", 1, 102, 76, 51));
+		p.getInventory().setItem(0, ItemGen1(Material.COOKED_BEEF, Enchantment.DAMAGE_ALL, 3, "§9Steak Saignant", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.COOKED_CHICKEN, Enchantment.FIRE_ASPECT, 2, "§9Poulet Brûlant", LoreCreator("§9Clique Droit - vole 3 coeurs", "§930 secondes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+	}
+	//manque abilité
+	public static void kitEnclumex(Player p) {
+		Clear(p);
+		p.getInventory().setHelmet(ItemGen(Material.ANVIL, "Chapeau EnClumex", null, 1));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fPlastron EnClumex", 1, 76, 76, 76));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon EnClumex", 1, 76, 76, 76));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes EnClumex", 1, 76, 76, 76));
+		p.getInventory().setItem(0, ItemGen1(Material.IRON_BLOCK, Enchantment.DAMAGE_ALL, 1, "§9Enclumax", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 10, "§9UltiMax", LoreCreator("§9Clique Gauche - tue votre ennemis ", "§930 secondes de récupération"), 1) );
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		
+	}
+	//manque abilité
+	public static void kitFiesta(Player p) {
+		Clear(p);
+		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, "§2Chapeau fiesta", 1, 127, 204, 25));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§dTunique fiesta", 1, 242, 127, 165));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§3Pantalon fiesta", 1, 102, 153, 216));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§cBottes fiesta", 1, 153, 51, 51));
+		p.getInventory().setItem(0, ItemGen2(Material.ARROW, Enchantment.DAMAGE_ALL, 2, Enchantment.KNOCKBACK, 3, "§9Cotillon", LoreCreator("§9Clique Droit - tp les joueurs sur 10 blocs", "§940 secodnes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+			
+	}
+	//manque abilité
+	public static void kitPower(Player p) {
+		Clear(p);
+		p.getInventory().setItem(0, ItemGen(Material.STICK, "§9Jumper", LoreCreator("§9Clique droit - jump de 12 blocs", "15 secondes de récupération"), 1));
+		p.getInventory().setItem(1, ItemGen(Material.SLIME_BALL, "§9Poing", LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1));
+			
+	}
+	//manque abilité
+	public static void kitDieu(Player p) {
+	    Clear(p);
+	    p.getInventory().setHelmet(ItemGen2ColorLeather(Material.LEATHER_HELMET, Enchantment.ARROW_DAMAGE, 10, "§fChapeau Golem", 1, 255, 255, 255 ));
+		p.getInventory().setChestplate(ItemGen2ColorLeather(Material.LEATHER_CHESTPLATE, Enchantment.ARROW_DAMAGE, 10, "§fTunique Golem", 1, 255, 255, 255));
+		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.ARROW_DAMAGE, 10, "§fPantalon Golem", 1, 255, 255, 255));
+		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.ARROW_DAMAGE, 10, "§fBottes Golem", 1, 255, 255, 255));
+		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 15, "Bâton d'expulsion", null, 1));
+		p.getInventory().setItem(0, ItemGen1(Material.INK_SACK, Enchantment.DAMAGE_ALL, 2, "§9sac aux pêchers", null, 1));
+		
+	}
+	//manque abilité
+	public static void kitInvocation(Player p) {
+	    Clear(p);
+	    p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, "§fChapeau d'invocation", 1, 25, 25, 25 ));
+		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fTunique d'invocation", 1, 76, 127, 153));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon d'invocation", 1, 76, 127, 153));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes d'invocation", 1, 76, 127, 153));
+		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 1, "§9Invocation Stick", LoreCreator("§9Clique Droit - invoque un bouclier pendant 10s", "§945 secondes de récupération"), 1));
+	}
+	//manque abilité ! pas finis !
+	public static void kitOgre(Player p) {
+	    Clear(p);
+	    p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fTunique d'ogre", 1, 102, 127, 51));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon d'ogre", 1, 102, 127, 51));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes d'ogre", 1, 102, 127, 51));
+		p.getInventory().setItem(0, ItemGen1(Material.LEVER, Enchantment.DAMAGE_ALL, 1, "§9Massue", LoreCreator("§9Vous avez 15% de chance de os", null), 1));
+		
+	}
+	//manque abilité ! pas finis !
+	public static void kitEnderman(Player p) {
+	    Clear(p);
+	    p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fTunique d'Enderman", 1, 102, 127, 51));
+		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon d'Enderman", 1, 102, 127, 51));
+		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes d'Enderman", 1, 102, 127, 51));
+		p.getInventory().setItem(0, ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 3, "§9Main de l'enderman", LoreCreator("§9Clique droit - vous tp aléatoirement", "§930 secondes de récupération"), 1));
+		
+	    
+	    
+				
+	}
+	
+	
 	// MANQUE ABILITÉ
 	private static void Clear(Player p) {
 		p.getInventory().clear();

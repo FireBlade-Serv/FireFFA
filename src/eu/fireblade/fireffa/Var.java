@@ -73,6 +73,50 @@ public class Var {
 	public static ArrayList<Player> pyro = new ArrayList<Player>();
 	
 	public static ArrayList<Player> moutarde = new ArrayList<Player>();
+
+	public static ArrayList<Player> vampire = new ArrayList<Player>();
+	
+	public static ArrayList<Player> nuage = new ArrayList<Player>();
+	
+	public static ArrayList<Player> timer = new ArrayList<Player>();
+	
+	public static ArrayList<Player> robindesbois = new ArrayList<Player>();
+	
+	public static ArrayList<Player> gandalf = new ArrayList<Player>();
+	
+	public static ArrayList<Player> glowstone = new ArrayList<Player>();
+	
+	public static ArrayList<Player> enderman = new ArrayList<Player>();
+	
+	public static ArrayList<Player> rulio = new ArrayList<Player>();
+	
+	public static ArrayList<Player> copy = new ArrayList<Player>();
+	
+	public static ArrayList<Player> pharaon = new ArrayList<Player>();
+	
+	public static ArrayList<Player> furicat = new ArrayList<Player>();
+	
+	public static ArrayList<Player> redman = new ArrayList<Player>();
+	
+	public static ArrayList<Player> trapman = new ArrayList<Player>();
+	
+	public static ArrayList<Player> swap = new ArrayList<Player>();
+	
+	public static ArrayList<Player> golem = new ArrayList<Player>();
+	
+	public static ArrayList<Player> ogre = new ArrayList<Player>();
+	
+	public static ArrayList<Player> bouftout = new ArrayList<Player>();
+	
+	public static ArrayList<Player> enclumex = new ArrayList<Player>();
+	
+	public static ArrayList<Player> fiesta = new ArrayList<Player>();
+	
+	public static ArrayList<Player> power = new ArrayList<Player>();
+	
+	public static ArrayList<Player> dieu = new ArrayList<Player>();
+	
+	public static ArrayList<Player> invocation = new ArrayList<Player>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	public static HashMap<Player, Integer> killStreak = new HashMap<Player, Integer>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
