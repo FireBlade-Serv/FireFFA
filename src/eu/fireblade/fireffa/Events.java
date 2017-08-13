@@ -89,8 +89,12 @@ public class Events implements Listener {
 				p.closeInventory();
 				
 				GUI.ultraMenu(p);
-			}else{
+			}else if(item.equals(GUI.genPerspectiveEnch(Material.STAINED_GLASS, "§c§lKits Ultimate",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 14))){
 				e.setCancelled(true);
+				
+				p.closeInventory();
+				
+				GUI.ultimateMenu(p);
 			}
 		}else if(inv.getName().equals("§9§lKits Membre/FFA")){
 			e.setCancelled(true);
