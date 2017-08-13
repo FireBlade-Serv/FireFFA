@@ -840,7 +840,7 @@ public class Kits {
 	
 	
 	// MANQUE ABILITÉ
-	private static void Clear(Player p) {
+	public static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
 		p.getInventory().setChestplate(null);

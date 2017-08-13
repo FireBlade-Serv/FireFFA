@@ -15,6 +15,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 
+import eu.fireblade.fireffa.cmd.GUI;
+import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.util.Scoreboard;
 import eu.fireblade.fireffa.util.Tp;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
@@ -78,6 +80,19 @@ public class Events implements Listener {
             }
             
         });
+		
+		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
+
+			@Override
+			public void run() {
+				Tp.tpSpawn(p);
+				
+				Kits.Clear(p);
+				
+				GUI.mainMenu(p);
+			}
+			
+		}, 10L);
 	}
 	
 	@EventHandler

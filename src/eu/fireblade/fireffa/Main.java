@@ -3,6 +3,7 @@ package eu.fireblade.fireffa;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import eu.fireblade.fireffa.util.Config;
 import eu.fireblade.fireffa.util.Tp;
 
 
@@ -14,6 +15,8 @@ public class Main extends JavaPlugin{
 	public void onEnable() {
 		getLogger().info("FireFFA ON");
 		getLogger().info("Plugin by Glowstoner ,_goldocelot_ & baptistego!");
+		
+		plugin = this;
 		
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.cmd.GUI(), this);
 		getServer().getPluginManager().registerEvents(new Events(), this);
@@ -29,14 +32,14 @@ public class Main extends JavaPlugin{
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 		
-		Var.host = getConfig().getString("sqlhost");
-		Var.user = getConfig().getString("sqluser");
-		Var.password = getConfig().getString("sqlpassword");
+		Config.getConfig();
 	}
 	
 	@Override
 	public void onDisable() {
 		getLogger().info("FireFFA OFF");
+		
+		plugin = null;
 	}
 
 }

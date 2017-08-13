@@ -257,7 +257,7 @@ public class GUI implements CommandExecutor, Listener {
 			inv.setItem(24, genPerspective(Material.STRING, "§9Kit Copy", (byte) 0));
 			
 			inv.setItem(30, genPerspective(Material.GOLD_SPADE, "§9Kit Fiesta", (byte) 0));
-			inv.setItem(31, genPerspectiveEnch(Material.REDSTONE_TORCH_ON, "§9Kit Power",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 15));
+			inv.setItem(31, genPerspectiveEnch(Material.REDSTONE_TORCH_ON, "§9Kit Power",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 1));
 			inv.setItem(32, genPerspective(Material.DRAGON_EGG, "§9Kit Invocation", (byte) 0));
 		}else{
 			inv.setItem(20, genPerspectiveBlock("Kit Golem", GlobalRank.ULTIMATE));
@@ -669,7 +669,7 @@ public class GUI implements CommandExecutor, Listener {
 				Kits.kitFiesta(p);
 				Var.fiesta.add(p);
 				
-			}else if(compareItems(item, genPerspectiveEnch(Material.REDSTONE_TORCH_ON, "§9Kit Power",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 15))){
+			}else if(compareItems(item, genPerspectiveEnch(Material.REDSTONE_TORCH_ON, "§9Kit Power",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 1))){
 				Kits.kitPower(p);
 				Var.power.add(p);
 				
