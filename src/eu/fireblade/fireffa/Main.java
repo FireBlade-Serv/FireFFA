@@ -27,9 +27,9 @@ public class Main extends JavaPlugin{
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 		
-		Var.host = Main.plugin.getConfig().getString("sqlhost");
-		Var.user = Main.plugin.getConfig().getString("sqluser");
-		Var.password = Main.plugin.getConfig().getString("sqlpassword");
+		Var.host = getConfig().getString("sqlhost");
+		Var.user = getConfig().getString("sqluser");
+		Var.password = getConfig().getString("sqlpassword");
 		
 		Bukkit.broadcastMessage("test sql config => "+Var.host+" - "+Var.user+" - "+Var.password+".");
 	}
