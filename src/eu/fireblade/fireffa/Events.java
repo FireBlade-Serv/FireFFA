@@ -71,9 +71,7 @@ public class Events implements Listener {
 			@Override
 			public void run() {
 				if(p.isDead()){
-					PacketPlayInClientCommand packet = new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN);
-					
-					((CraftPlayer) p).getHandle().playerConnection.a(packet);
+					((CraftPlayer) p).getHandle().playerConnection.a(new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN));
 				}
 			}
 			
