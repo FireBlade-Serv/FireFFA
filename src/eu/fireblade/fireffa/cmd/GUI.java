@@ -427,6 +427,10 @@ public class GUI implements CommandExecutor, Listener {
 		final Inventory inv = e.getClickedInventory();
 		final ItemStack item = e.getCurrentItem();
 		
+		if(e.getSlotType().equals(SlotType.OUTSIDE)){
+			return;
+		}
+		
 		if(e.getSlotType().equals(SlotType.ARMOR)){
 			e.setCancelled(true);
 		}
