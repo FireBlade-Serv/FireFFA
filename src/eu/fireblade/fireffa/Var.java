@@ -8,6 +8,8 @@ import org.bukkit.entity.Player;
 
 public class Var {
 	
+	public static String SqlUrlBase = "jdbc:mysql://", host, user, password;
+	
 	public static ArrayList<Player> démolisseur = new ArrayList<Player>();
 	
 	public static ArrayList<Player> fantôme = new ArrayList<Player>();

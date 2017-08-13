@@ -3,6 +3,7 @@ package eu.fireblade.fireffa;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import eu.fireblade.fireffa.util.Config;
 import eu.fireblade.fireffa.util.Tp;
 
 
@@ -22,6 +23,11 @@ public class Main extends JavaPlugin{
 		getCommand("tkit").setExecutor(new eu.fireblade.fireffa.cmd.TestKit());
 		
 		Tp.loadSpawnPoint();
+		
+		getConfig().options().copyDefaults(true);
+		saveConfig();
+		
+		Config.getConfig();
 	}
 	
 	@Override
