@@ -1,6 +1,5 @@
 package eu.fireblade.fireffa;
 
-
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Entity;
@@ -62,20 +61,23 @@ public class Events implements Listener {
 		
 		if (d.getType().equals(EntityType.PLAYER) && p.getType().equals(EntityType.PLAYER)) {
 			if(d != p){
-				p.setHealth(p.getHealth() + 5);
+				if(p.getHealth() >= 14){
+					p.setHealth(p.getMaxHealth());
+				}else{
+					p.setHealth(p.getHealth() + 5);
+				}
 			}
 		}
 		
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
-
-			@Override
-			public void run() {
-				if(p.isDead()){
-					((CraftPlayer) p).getHandle().playerConnection.a(new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN));
-				}
-			}
 			
-		});
+            public void run(){
+                if(p.isDead()){
+                    ((CraftPlayer)p).getHandle().playerConnection.a(new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN));
+                }
+            }
+            
+        });
 	}
 	
 	@EventHandler
