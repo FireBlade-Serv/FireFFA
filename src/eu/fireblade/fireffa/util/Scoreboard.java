@@ -18,7 +18,7 @@ public class Scoreboard {
 		gs.setLine("§8§l >>", 7);
 		gs.setLine("§7", 8);
 		gs.setLine("§7§lKill Restant :", 9);
-		gs.setLine("§8&l >>", 10);
+		gs.setLine("§8§l >>", 10);
 		gs.setLine("§7", 11);
 		gs.setLine("§7§lKillStreak :", 12);
 		gs.setLine("§8§l >>", 13);
