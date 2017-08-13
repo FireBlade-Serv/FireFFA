@@ -343,7 +343,7 @@ public class GUI implements CommandExecutor, Listener {
 		meta.setDisplayName("§c"+name);
 		
 		meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
-		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
 		
 		if(minRank.equals(GlobalRank.FIRE)){
 			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Fire !"));
@@ -411,6 +411,14 @@ public class GUI implements CommandExecutor, Listener {
 		item.setItemMeta(meta);
 		
 		return item;
+	}
+	
+	public static boolean compareItems(ItemStack item, ItemStack itemComp){
+		if(item.equals(itemComp)){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	@EventHandler
