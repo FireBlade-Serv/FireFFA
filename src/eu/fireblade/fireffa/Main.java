@@ -21,6 +21,8 @@ public class Main extends JavaPlugin{
 		getCommand("kit").setExecutor(new eu.fireblade.fireffa.cmd.GUI());
 		getCommand("tkit").setExecutor(new eu.fireblade.fireffa.cmd.TestKit());
 		
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.aptitudes.Démolisseur(), this);
+		
 		Tp.loadSpawnPoint();
 		
 		getConfig().options().copyDefaults(true);
