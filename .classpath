@@ -2,10 +2,10 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="src/eu/fireblade/fireffa/lib/GlowstoneAPI.jar"/>
 	<classpathentry kind="lib" path="src/eu/fireblade/fireffa/lib/NametagEdit.jar"/>
 	<classpathentry kind="lib" path="src/eu/fireblade/fireffa/lib/PermissionsEx.jar"/>
 	<classpathentry kind="lib" path="src/eu/fireblade/fireffa/lib/spigot-api-1.8.8-R0.1-SNAPSHOT-latest-shaded.jar"/>
 	<classpathentry kind="lib" path="src/eu/fireblade/fireffa/lib/spigot.jar"/>
+	<classpathentry kind="lib" path="src/eu/fireblade/fireffa/lib/GlowstoneAPI.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

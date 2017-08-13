@@ -1,8 +1,10 @@
 package eu.fireblade.fireffa;
 
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Fireball;
@@ -22,6 +24,8 @@ import org.bukkit.event.weather.WeatherChangeEvent;
 import eu.fireblade.fireffa.util.Tp;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.md_5.bungee.api.ChatColor;
+import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand;
+import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand.EnumClientCommand;
 
 public class Events implements Listener {
 	
@@ -64,6 +68,19 @@ public class Events implements Listener {
 				p.setHealth(p.getHealth() + 5);
 			}
 		}
+		
+		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
+
+			@Override
+			public void run() {
+				if(p.isDead()){
+					PacketPlayInClientCommand packet = new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN);
+					
+					((CraftPlayer) p).getHandle().playerConnection.a(packet);
+				}
+			}
+			
+		});
 	}
 	
 	@EventHandler
