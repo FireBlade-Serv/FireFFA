@@ -590,9 +590,11 @@ public class GUI implements CommandExecutor, Listener {
 			}else if(compareItems(item, genPerspectiveBlock("Kit Ogre", GlobalRank.FIRE))){
 				Kits.kitOgre(p);
 				Var.ogre.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Bouftout", GlobalRank.FIRE))){
 				Kits.kitBoufTout(p);
 				Var.bouftout.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Lapin", GlobalRank.FIRE))){
 				Kits.kitLapin(p);
 				Var.lapin.add(p);
@@ -607,24 +609,31 @@ public class GUI implements CommandExecutor, Listener {
 			}else if(compareItems(item, genPerspective(Material.ANVIL, "§9Kit Enclumex", (byte) 0))){
 				Kits.kitEnclumex(p);
 				Var.enclumex.add(p);
+				
 			}else if(compareItems(item, genPerspectiveEnch(Material.BOW, "§9Kit OITC Man",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitOITCman(p);
 				Var.OITCman.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Domination", GlobalRank.ULTRA))){
 				Kits.kitDomination(p);
 				Var.domination.add(p);
+				
 			}else if(compareItems(item, genPerspectivePot("§9Kit Fantôme", PotionType.INVISIBILITY, false))){
 				Kits.kitFantome(p);
 				Var.fantôme.add(p);
+				
 			}else if(compareItems(item, genPerspective(Material.REDSTONE, "§9Kit RedMan", (byte) 0))){
 				Kits.kitRedMan(p);
 				Var.redman.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Pharaon", GlobalRank.ULTRA))){
 				Kits.kitPharaon(p);
 				Var.pharaon.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Dieu", GlobalRank.ULTRA))){
 				Kits.kitDieu(p);
 				Var.dieu.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Swap", GlobalRank.ULTRA))){
 				Kits.kitSwap(p); 
 				Var.swap.add(p);
@@ -640,24 +649,31 @@ public class GUI implements CommandExecutor, Listener {
 			}else if(compareItems(item, genPerspectiveBlock("Kit Golem", GlobalRank.ULTIMATE))){
 				Kits.kitGolem(p);
 				Var.golem.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Voleur d'âmes", GlobalRank.ULTIMATE))){
 				Kits.kitVoleurdame(p);
 				Var.voleurdame.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Vampire", GlobalRank.ULTIMATE))){
 				Kits.kitVampire(p);
 				Var.vampire.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Programmeur", GlobalRank.ULTIMATE))){
 				Kits.kitProgrammeur(p);
 				Var.programmeur.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Copy", GlobalRank.ULTIMATE))){
 				Kits.kitCopy(p);
 				Var.copy.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Fiesta", GlobalRank.ULTIMATE))){
 				Kits.kitFiesta(p);
 				Var.fiesta.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Power", GlobalRank.ULTIMATE))){
 				Kits.kitPower(p);
 				Var.power.add(p);
+				
 			}else if(compareItems(item, genPerspectiveBlock("Kit Invocation", GlobalRank.ULTIMATE))){
 				Kits.kitInvocation(p);
 				Var.invocation.add(p);

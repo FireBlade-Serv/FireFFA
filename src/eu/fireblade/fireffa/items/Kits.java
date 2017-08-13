@@ -640,9 +640,9 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§2Tunique des bois", 1, 114, 165, 38));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§2Pantalon des bois", 1, 114, 165, 38));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§2Bottes des bois", 1, 114, 165, 38));
-		p.getInventory().setItem(0, ItemGen1(Material.WOOD_SWORD, Enchantment.DAMAGE_ALL, 1, "&9épée des bois", LoreCreator("§9clique droit - vole un item aléatoire au joueur", "§930 secondes de récupération"), 1));
-		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_DAMAGE, 1, "§&9Arc des bois", null, 1));
-		p.getInventory().setItem(1, ItemGen(Material.ARROW, "§9Flèche", null, 16));
+		p.getInventory().setItem(0, ItemGen1(Material.WOOD_SWORD, Enchantment.DAMAGE_ALL, 1, "§9épée des bois", LoreCreator("§9clique droit - vole un item aléatoire au joueur", "§930 secondes de récupération"), 1));
+		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_DAMAGE, 1, "§9Arc des bois", null, 1));
+		p.getInventory().setItem(2, ItemGen(Material.ARROW, "§9Flèche", null, 16));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	// manque abilité
