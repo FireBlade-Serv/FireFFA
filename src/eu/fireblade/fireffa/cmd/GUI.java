@@ -236,6 +236,38 @@ public class GUI implements CommandExecutor {
 		p.openInventory(inv);
 	}
 	
+	public static void ultimateMenu(Player p){
+		Inventory inv = Bukkit.createInventory(null, 54, "§9§lKits Ultra");
+		
+		genMenuRankModel(inv);
+		
+		inv.setItem(4, genPerspectiveEnch(Material.STAINED_GLASS, "§c§lKits Ultimate",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 1));
+		
+		if(p.hasPermission("fireffa.ultime") || p.isOp()){
+			inv.setItem(20, genPerspective(Material.IRON_BLOCK, "§9Kit Golem", (byte) 0));
+			inv.setItem(21, genPerspectiveSkullItem("§9Kit Voleur d'âmes"));
+			inv.setItem(22, genPerspective(Material.INK_SACK, "§9Kit Vampire", (byte) 0));
+			inv.setItem(23, genPerspective(Material.NETHER_BRICK_ITEM, "§9Kit Programmeur", (byte) 0));
+			inv.setItem(24, genPerspective(Material.STRING, "§9Kit Copy", (byte) 0));
+			
+			inv.setItem(30, genPerspective(Material.GOLD_SPADE, "§9Kit Fiesta", (byte) 0));
+			inv.setItem(31, genPerspectiveEnch(Material.REDSTONE_TORCH_ON, "§9Kit Power",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 15));
+			inv.setItem(32, genPerspective(Material.DRAGON_EGG, "§9Kit Invocation", (byte) 0));
+		}else{
+			inv.setItem(20, genPerspectiveBlock("Kit Golem", GlobalRank.ULTIMATE));
+			inv.setItem(21, genPerspectiveBlock("Kit Voleur d'âmes", GlobalRank.ULTIMATE));
+			inv.setItem(22, genPerspectiveBlock("Kit Vampire", GlobalRank.ULTIMATE));
+			inv.setItem(23, genPerspectiveBlock("Kit Programmeur", GlobalRank.ULTIMATE));
+			inv.setItem(24, genPerspectiveBlock("Kit Copy", GlobalRank.ULTIMATE));
+			
+			inv.setItem(30, genPerspectiveBlock("Kit Fiesta", GlobalRank.ULTIMATE));
+			inv.setItem(31, genPerspectiveBlock("Kit Power", GlobalRank.ULTIMATE));
+			inv.setItem(32, genPerspectiveBlock("Kit Invocation", GlobalRank.ULTIMATE));
+		}
+		
+		p.openInventory(inv);
+	}
+	
 	public static void genMenuRankModel(Inventory inv){
 		inv.setItem(0, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(1, genPerspective(Material.LEAVES, "§1", (byte) 0));
@@ -363,6 +395,16 @@ public class GUI implements CommandExecutor {
 		skullMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 		skullMeta.setDisplayName(name);
 		item.setItemMeta(skullMeta);
+		
+		return item;
+	}
+	
+	public static ItemStack genPerspectiveSkullItem(String name){
+		ItemStack item = new ItemStack(Material.SKULL_ITEM, 1, (byte) 1);
+		ItemMeta meta = item.getItemMeta();
+		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+		meta.setDisplayName(name);
+		item.setItemMeta(meta);
 		
 		return item;
 	}

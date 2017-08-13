@@ -116,6 +116,14 @@ public class Events implements Listener {
 				
 				GUI.mainMenu(p);
 			}
+		}else if(inv.getName().equals("§9§lKits Ultimate")){
+			e.setCancelled(true);
+			
+			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
+				p.closeInventory();
+				
+				GUI.mainMenu(p);
+			}
 		}
 	}
 
