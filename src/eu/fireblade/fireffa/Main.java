@@ -15,6 +15,7 @@ public class Main extends JavaPlugin{
 		getLogger().info("FireFFA ON");
 		getLogger().info("Plugin by Glowstoner & _goldocelot_ !");
 		
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.cmd.GUI(), this);
 		getServer().getPluginManager().registerEvents(new Events(), this);
 		
 		getCommand("kit").setExecutor(new eu.fireblade.fireffa.cmd.GUI());

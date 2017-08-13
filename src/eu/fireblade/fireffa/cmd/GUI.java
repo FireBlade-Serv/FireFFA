@@ -10,6 +10,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -21,7 +25,7 @@ import org.bukkit.potion.PotionType;
 
 import eu.fireblade.fireffa.util.GlobalRank;
 
-public class GUI implements CommandExecutor {
+public class GUI implements CommandExecutor, Listener {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {		
@@ -407,5 +411,76 @@ public class GUI implements CommandExecutor {
 		item.setItemMeta(meta);
 		
 		return item;
+	}
+	
+	@EventHandler
+	public void onClick(InventoryClickEvent e){
+		final Player p = (Player) e.getWhoClicked();
+		final Inventory inv = e.getClickedInventory();
+		final ItemStack item = e.getCurrentItem();
+		
+		if(e.getSlotType().equals(SlotType.ARMOR)){
+			e.setCancelled(true);
+		}
+		
+		if(inv.getName().equals("§9§lKits")){
+			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lKits Membre/FFA", (byte) 0))){
+				e.setCancelled(true);
+				
+				p.closeInventory();
+				
+				GUI.ffaMenu(p);
+			}else if(item.equals(GUI.genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4))){
+				e.setCancelled(true);
+				
+				p.closeInventory();
+				
+				GUI.fireMenu(p);
+			}else if(item.equals(GUI.genPerspectiveEnch(Material.STAINED_GLASS, "§6§lKits Ultra",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 1))){
+				e.setCancelled(true);
+				
+				p.closeInventory();
+				
+				GUI.ultraMenu(p);
+			}else if(item.equals(GUI.genPerspectiveEnch(Material.STAINED_GLASS, "§c§lKits Ultimate",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 14))){
+				e.setCancelled(true);
+				
+				p.closeInventory();
+				
+				GUI.ultimateMenu(p);
+			}
+		}else if(inv.getName().equals("§9§lKits Membre/FFA")){
+			e.setCancelled(true);
+			
+			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
+				p.closeInventory();
+				
+				GUI.mainMenu(p);
+			}
+		}else if(inv.getName().equals("§9§lKits Fire")){
+			e.setCancelled(true);
+			
+			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
+				p.closeInventory();
+				
+				GUI.mainMenu(p);
+			}
+		}else if(inv.getName().equals("§9§lKits Ultra")){
+			e.setCancelled(true);
+			
+			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
+				p.closeInventory();
+				
+				GUI.mainMenu(p);
+			}
+		}else if(inv.getName().equals("§9§lKits Ultimate")){
+			e.setCancelled(true);
+			
+			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
+				p.closeInventory();
+				
+				GUI.mainMenu(p);
+			}
+		}
 	}
 }

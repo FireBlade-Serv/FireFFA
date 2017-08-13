@@ -3,7 +3,6 @@ package eu.fireblade.fireffa;
 
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Fireball;
@@ -15,16 +14,11 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 
-import eu.fireblade.fireffa.cmd.GUI;
 import eu.fireblade.fireffa.util.Tp;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.md_5.bungee.api.ChatColor;
@@ -58,77 +52,6 @@ public class Events implements Listener {
 	@EventHandler
 	public void onDamage(EntityDamageByEntityEvent e){
 		
-	}
-	
-	@EventHandler
-	public void onClick(InventoryClickEvent e){
-		final Player p = (Player) e.getWhoClicked();
-		final Inventory inv = e.getClickedInventory();
-		final ItemStack item = e.getCurrentItem();
-		
-		if(e.getSlotType().equals(SlotType.ARMOR)){
-			e.setCancelled(true);
-		}
-		
-		if(inv.getName().equals("§9§lKits")){
-			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lKits Membre/FFA", (byte) 0))){
-				e.setCancelled(true);
-				
-				p.closeInventory();
-				
-				GUI.ffaMenu(p);
-			}else if(item.equals(GUI.genPerspectiveEnch(Material.STAINED_GLASS, "§e§lKits Fire",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 4))){
-				e.setCancelled(true);
-				
-				p.closeInventory();
-				
-				GUI.fireMenu(p);
-			}else if(item.equals(GUI.genPerspectiveEnch(Material.STAINED_GLASS, "§6§lKits Ultra",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 1))){
-				e.setCancelled(true);
-				
-				p.closeInventory();
-				
-				GUI.ultraMenu(p);
-			}else if(item.equals(GUI.genPerspectiveEnch(Material.STAINED_GLASS, "§c§lKits Ultimate",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 14))){
-				e.setCancelled(true);
-				
-				p.closeInventory();
-				
-				GUI.ultimateMenu(p);
-			}
-		}else if(inv.getName().equals("§9§lKits Membre/FFA")){
-			e.setCancelled(true);
-			
-			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
-				p.closeInventory();
-				
-				GUI.mainMenu(p);
-			}
-		}else if(inv.getName().equals("§9§lKits Fire")){
-			e.setCancelled(true);
-			
-			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
-				p.closeInventory();
-				
-				GUI.mainMenu(p);
-			}
-		}else if(inv.getName().equals("§9§lKits Ultra")){
-			e.setCancelled(true);
-			
-			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
-				p.closeInventory();
-				
-				GUI.mainMenu(p);
-			}
-		}else if(inv.getName().equals("§9§lKits Ultimate")){
-			e.setCancelled(true);
-			
-			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lMenu Principal", (byte) 0))){
-				p.closeInventory();
-				
-				GUI.mainMenu(p);
-			}
-		}
 	}
 
 	@EventHandler
