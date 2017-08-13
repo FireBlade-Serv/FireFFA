@@ -58,11 +58,12 @@ public class Events implements Listener {
 
 	@EventHandler
 	public void onDeath(PlayerDeathEvent e) {
-		Player d = e.getEntity();
-		Player p = d.getKiller();
+		Player victime = e.getEntity();
+		Player p = victime.getKiller();
 		
-		if (d.getType().equals(EntityType.PLAYER) && p.getType().equals(EntityType.PLAYER)) {
-			if(d != p){
+		if (victime.getType().equals(EntityType.PLAYER) && p.getType().equals(EntityType.PLAYER)) {
+			
+			if(!victime.equals(p)){
 				if(p.getHealth() >= 14){
 					p.setHealth(p.getMaxHealth());
 				}else{
@@ -75,7 +76,7 @@ public class Events implements Listener {
 			
             public void run(){
                 if(p.isDead()){
-                    ((CraftPlayer)p).getHandle().playerConnection.a(new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN));
+					((CraftPlayer) victime).getHandle().playerConnection.a(new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN));
                 }
             }
             
@@ -85,11 +86,11 @@ public class Events implements Listener {
 
 			@Override
 			public void run() {
-				Tp.tpSpawn(p);
+				Tp.tpSpawn(victime);
 				
-				Kits.Clear(p);
+				Kits.Clear(victime);
 				
-				GUI.mainMenu(p);
+				GUI.mainMenu(victime);
 			}
 			
 		}, 10L);
