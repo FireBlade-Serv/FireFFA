@@ -801,7 +801,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.ARROW_DAMAGE, 10, "§fPantalon Golem", 1, 255, 255, 255));
 		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.ARROW_DAMAGE, 10, "§fBottes Golem", 1, 255, 255, 255));
 		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 15, "Bâton d'expulsion", null, 1));
-		p.getInventory().setItem(0, ItemGen1(Material.INK_SACK, Enchantment.DAMAGE_ALL, 2, "§9sac aux pêchers", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.INK_SACK, Enchantment.DAMAGE_ALL, 2, "§9sac aux pêchers", null, 1));
 		
 	}
 	//manque abilité
