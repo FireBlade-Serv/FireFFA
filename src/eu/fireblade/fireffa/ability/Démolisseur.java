@@ -1,4 +1,4 @@
-package eu.fireblade.fireffa.aptitudes;
+package eu.fireblade.fireffa.ability;
 
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -23,9 +23,7 @@ public class Démolisseur implements Listener {
 		final Player p = e.getPlayer();
 		final Action a = e.getAction();
 		
-		p.sendMessage("risitas tast");
-		
-		if(a.equals(Action.RIGHT_CLICK_AIR) && e.getItem().equals(Kits.ItemGen2(Material.IRON_AXE, Enchantment.DAMAGE_ALL, 1, 
+		if((a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)) && e.getItem().equals(Kits.ItemGen2(Material.IRON_AXE, Enchantment.DAMAGE_ALL, 1, 
 				Enchantment.KNOCKBACK, 2, ChatColor.DARK_RED+"Hache de guerre",
 				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1))){
 			
