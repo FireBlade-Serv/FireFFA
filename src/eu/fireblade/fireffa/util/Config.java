@@ -8,9 +8,9 @@ import eu.fireblade.fireffa.Var;
 public class Config {
 	
 	public static void getConfig(){
-		Var.host = Main.plugin.getConfig().getString("sql-host");
-		Var.user = Main.plugin.getConfig().getString("sql-user");
-		Var.password = Main.plugin.getConfig().getString("sql-password");
+		Var.host = Main.plugin.getConfig().getString("sqlhost");
+		Var.user = Main.plugin.getConfig().getString("sqluser");
+		Var.password = Main.plugin.getConfig().getString("sqlpassword");
 		
 		Bukkit.broadcastMessage("test sql config => "+Var.host+" - "+Var.user+" - "+Var.password+".");
 	}
