@@ -34,11 +34,13 @@ public class Fantôme implements Listener {
 			
 			if(cooldown.contains(p)) {
 				p.sendMessage(ChatColor.GOLD+"[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
-				p.playSound(p.getLocation(), Sound.BLAZE_DEATH, 30, 30);
+				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 				
 				return;
 			}else {
 				applyVector(p);
+				
+				p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
 				
 				cooldown.add(p);
 				
@@ -46,10 +48,12 @@ public class Fantôme implements Listener {
 
 					@Override
 					public void run() {
-						GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre attaque est prête !", 20, 30, 20);
-						gt.send();
-						
-						p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
+						if(Var.fantôme.contains(p)){
+							GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre attaque est prête !", 20, 30, 20);
+							gt.send();
+							
+							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
+						}
 						
 						cooldown.remove(p);
 					}
