@@ -64,7 +64,7 @@ public class Fantôme implements Listener {
 	}
 	
 	private static void applyVector(Player p){
-		Vector vector = p.getLocation().getDirection().multiply(4);
+		Vector vector = p.getLocation().getDirection().multiply(3);
 		
 		
 		p.setVelocity(vector);

@@ -54,9 +54,9 @@ public class VoleurÂmes implements Listener {
 					p.setLevel(p.getLevel() + 1);
 					
 					if(soul.containsKey(p)){
-						soul.replace(p, soul.get(p) + 1.5d);
+						soul.replace(p, soul.get(p) + 3.0d);
 					}else{
-						soul.put(p, 1.5d);
+						soul.put(p, 3.0d);
 					}
 					
 					p.playSound(p.getLocation(), Sound.CAT_MEOW, 30, 30);
@@ -109,18 +109,18 @@ public class VoleurÂmes implements Listener {
 					
 					p.playSound(p.getLocation(), Sound.WITHER_DEATH, 30, 30);
 					
-					if(p.getHealth() + 1.5d >= p.getMaxHealth()){
+					if(p.getHealth() + 3.0d >= p.getMaxHealth()){
 						p.setLevel(p.getLevel() - 1);
 						
 						p.setHealth(p.getMaxHealth());
 						
-						soul.replace(p, soul.get(p) - 1.5);
+						soul.replace(p, soul.get(p) - 3.0d);
 					}else{
 						p.setHealth(p.getHealth() + soul.get(p));
 						
 						p.setLevel(p.getLevel() - 1);
 						
-						soul.replace(p, soul.get(p) - 1.5);
+						soul.replace(p, soul.get(p) - 3.0d);
 					}
 				}else{
 					p.sendMessage("§6[§eFireFFA§6] §fVous ne possedez aucune âme!");
