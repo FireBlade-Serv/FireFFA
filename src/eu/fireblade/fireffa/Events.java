@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
@@ -97,6 +98,17 @@ public class Events implements Listener {
 			}
 			
 		}, 10L);
-	}	
+	}
+	
+	@EventHandler
+	public void onPlayerRightClickPlayer(PlayerInteractAtEntityEvent e){
+		final Player p = e.getPlayer();
+		final Entity entity = e.getRightClicked();
+		
+		if(entity instanceof Player){
+			Player target = (Player) entity;
+			
+			Bukkit.getPluginManager().callEvent(new eu.fireblade.fireffa.util.PlayerInteractAtPlayerEvent(p, target, p.getItemInHand(), p.getWorld()));
+		}
+	}
 }
-

@@ -46,6 +46,8 @@ public class Magicien implements Listener {
 						}else{
 							damage(bolossV2);
 							
+							jawadV2.playSound(jawadV2.getLocation(), Sound.LEVEL_UP, 30, 30);
+							
 							jawadV2.getInventory().removeItem(Kits.ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", null, 1));
 							
 							cooldown.add(jawadV2);
@@ -55,10 +57,12 @@ public class Magicien implements Listener {
 								@Override
 								public void run() {
 									if(Var.magicien.contains(jawadV2)){
-										GlowstoneTitle gt = new GlowstoneTitle(jawadV2, "", "§9Votre attaque est prête !", 20, 30, 20);
-										gt.send();
-										
-										jawadV2.playSound(jawadV2.getLocation(), Sound.ORB_PICKUP, 30, 30);
+										if(jawadV2.getInventory().containsAtLeast(Kits.ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", null, 1), 1)){
+											GlowstoneTitle gt = new GlowstoneTitle(jawadV2, "", "§9Votre attaque est prête !", 20, 30, 20);
+											gt.send();
+											
+											jawadV2.playSound(jawadV2.getLocation(), Sound.ORB_PICKUP, 30, 30);
+										}
 									}
 									
 									cooldown.remove(jawadV2);
@@ -79,6 +83,8 @@ public class Magicien implements Listener {
 	private static void damage(Player victime){
 		victime.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 50, 1));
 		victime.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 50, 1));
+		
+		victime.playSound(victime.getLocation(), Sound.WITHER_DEATH, 30, 30);
 		
 		victime.sendMessage("[§eFireFFA§6] §fUn magicien vous à lancé un mauvais sort !");
 	}
