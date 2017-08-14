@@ -46,7 +46,7 @@ public class Magicien implements Listener {
 						}else{
 							damage(bolossV2);
 							
-							jawadV2.getInventory().remove(Kits.ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", null, 1));
+							jawadV2.getInventory().removeItem(Kits.ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", null, 1));
 							
 							cooldown.add(jawadV2);
 							
