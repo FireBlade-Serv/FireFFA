@@ -62,15 +62,18 @@ public class Events implements Listener {
 		}
 		
 		Player p = (Player) victime;
-		Player jawad = p.getKiller();
 		
-		if(!jawad.equals(p)){
-			if(jawad.getHealth() >= 14){
-				jawad.setHealth(jawad.getMaxHealth());
-			}else{
-				jawad.setHealth(jawad.getHealth() + 6);
+		try{
+			Player jawad = p.getKiller();
+		
+			if(!jawad.equals(p)){
+				if(jawad.getHealth() >= 14){
+					jawad.setHealth(jawad.getMaxHealth());
+				}else{
+					jawad.setHealth(jawad.getHealth() + 6);
+				}
 			}
-		}
+		}catch(Exception ex){}
 		
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
 			
