@@ -1,6 +1,7 @@
 package eu.fireblade.fireffa.ability;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -26,6 +27,8 @@ public class VoleurÂmes implements Listener {
 	
 	private static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
+	private static HashMap<Player, Double> soul = new HashMap<Player, Double>();
+	
 	@EventHandler
 	public void onPlayerClick(PlayerInteractAtPlayerEvent e){
 		final Player p = e.getPlayer();
@@ -49,6 +52,12 @@ public class VoleurÂmes implements Listener {
 					cooldown.add(p);
 					
 					p.setLevel(p.getLevel() + 1);
+					
+					if(soul.containsKey(p)){
+						soul.replace(p, soul.get(p) + 1.5d);
+					}else{
+						soul.put(p, 1.5d);
+					}
 					
 					p.playSound(p.getLocation(), Sound.CAT_MEOW, 30, 30);
 					
@@ -83,27 +92,30 @@ public class VoleurÂmes implements Listener {
 		final Action a = e.getAction();
 		final ItemStack item = e.getItem();
 		
-		if(a.equals(Action.RIGHT_CLICK_AIR) && a.equals(Action.RIGHT_CLICK_BLOCK)){
+		if(a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)){
 			if(item.equals(Kits.ItemGen(Material.REDSTONE, ChatColor.BLACK+"Puit de sang",
 					Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Utilise les âmes accumulées pour se régénerer",
 							ChatColor.BLUE+"Consomme le puit de sang (Expérience)"), 1))){
+				if(!Var.voleurdame.contains(p)){
+					return;
+				}
 				
-				if(p.getLevel() != 0){
+				if(soul.get(p) != 0){
 					p.sendMessage("§6[§eFireFFA§6] §fLes âmes que vous avez capturées entrent dans votre corps !");
 					
 					p.playSound(p.getLocation(), Sound.WITHER_DEATH, 30, 30);
 					
-					if(p.getHealth() + p.getLevel() * 1.5d >= p.getMaxHealth()){
+					if(p.getHealth() + soul.get(p) >= p.getMaxHealth()){
 						p.setLevel(0);
 						
 						p.setHealth(p.getMaxHealth());
 					}else{
-						p.setHealth(p.getHealth() + p.getLevel() * 1.5d);
+						p.setHealth(p.getHealth() + soul.get(p));
 						
 						p.setLevel(0);
 					}
 				}else{
-					p.sendMessage("§6[§eFireFFA§6] §fVous avez aucune âme !");
+					p.sendMessage("§6[§eFireFFA§6] §fVous ne possedez aucune âme!");
 				}
 			}
 		}
@@ -116,7 +128,7 @@ public class VoleurÂmes implements Listener {
 			if(!p.getGameMode().equals(GameMode.CREATIVE)){
 				p.setHealth(p.getHealth() - 3);
 				
-				p.sendMessage("[§eFireFFA§6] §fVotre âme vous a été volée !");
+				p.sendMessage("§6[§eFireFFA§6] §fVotre âme vous a été volée !");
 				
 				p.playSound(p.getLocation(), Sound.GHAST_SCREAM, 30, 30);
 			}
