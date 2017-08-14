@@ -100,7 +100,7 @@ public class VoleurÂmes implements Listener {
 					return;
 				}
 				
-				if(soul.get(p) != 0){
+				if(soul.get(p) != 0.0d){
 					p.sendMessage("§6[§eFireFFA§6] §fLes âmes que vous avez capturées entrent dans votre corps !");
 					
 					p.playSound(p.getLocation(), Sound.WITHER_DEATH, 30, 30);
@@ -120,6 +120,8 @@ public class VoleurÂmes implements Listener {
 					}
 				}else{
 					p.sendMessage("§6[§eFireFFA§6] §fVous ne possedez aucune âme!");
+					
+					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 				}
 			}
 		}
