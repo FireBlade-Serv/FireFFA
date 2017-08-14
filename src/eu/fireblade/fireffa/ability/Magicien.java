@@ -37,7 +37,7 @@ public class Magicien implements Listener {
 						ChatColor.BLUE+"Baguette magique", Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Ralentit et aveugle",
 								ChatColor.BLUE+"Consomme une poudre magique"), 1))){
 					
-					if(jawadV2.getInventory().containsAtLeast(Kits.ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", null, 3), 1)){
+					if(jawadV2.getInventory().containsAtLeast(Kits.ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", null, 1), 1)){
 						if(cooldown.contains(jawadV2)){
 							jawadV2.sendMessage(ChatColor.GOLD+"[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 							jawadV2.playSound(jawadV2.getLocation(), Sound.ITEM_BREAK, 30, 30);
@@ -45,6 +45,8 @@ public class Magicien implements Listener {
 							return;
 						}else{
 							damage(bolossV2);
+							
+							jawadV2.getInventory().remove(Kits.ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", null, 1));
 							
 							cooldown.add(jawadV2);
 							
@@ -75,8 +77,8 @@ public class Magicien implements Listener {
 	}
 	
 	private static void damage(Player victime){
-		victime.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 2, 0));
-		victime.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 2, 0));
+		victime.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 50, 1));
+		victime.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 50, 1));
 		
 		victime.sendMessage("[§eFireFFA§6] §fUn magicien vous à lancé un mauvais sort !");
 	}
