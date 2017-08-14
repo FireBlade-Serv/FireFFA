@@ -100,6 +100,10 @@ public class VoleurÂmes implements Listener {
 					return;
 				}
 				
+				if(!soul.containsKey(p)){
+					soul.put(p, 0.0d);
+				}
+				
 				if(soul.get(p) != 0.0d){
 					p.sendMessage("§6[§eFireFFA§6] §fLes âmes que vous avez capturées entrent dans votre corps !");
 					
