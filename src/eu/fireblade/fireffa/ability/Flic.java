@@ -2,9 +2,7 @@ package eu.fireblade.fireffa.ability;
 
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
@@ -25,12 +23,13 @@ public class Flic implements Listener {
 		final Action a = e.getAction();
 		
 		if((a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)) && e.getItem().equals(
-				Kits.ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 3, ChatColor.DARK_BLUE+"Matraque", null, 1)) && Var.démolisseur.contains(p)){
+				Kits.ItemGen(Material.FLINT_AND_STEEL, ChatColor.DARK_BLUE+"Flingue",
+						Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une munition"), 1)) && Var.flic.contains(p)){
 			
 			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 12), 1)) {
-				p.launchProjectile(Fireball.class);
+				p.launchProjectile(Snowball.class);
 				p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
-				p.getInventory().removeItem(Kits.ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 12));
+				p.getInventory().removeItem(Kits.ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 1));
 			} else {
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 				p.sendMessage(ChatColor.GOLD+"[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de munitions.");
