@@ -109,18 +109,18 @@ public class VoleurÂmes implements Listener {
 					
 					p.playSound(p.getLocation(), Sound.WITHER_DEATH, 30, 30);
 					
-					if(p.getHealth() + soul.get(p) >= p.getMaxHealth()){
-						p.setLevel(0);
+					if(p.getHealth() + 1.5d >= p.getMaxHealth()){
+						p.setLevel(p.getLevel() - 1);
 						
 						p.setHealth(p.getMaxHealth());
 						
-						soul.replace(p, 0.0d);
+						soul.replace(p, soul.get(p) - 1.5);
 					}else{
 						p.setHealth(p.getHealth() + soul.get(p));
 						
-						p.setLevel(0);
+						p.setLevel(p.getLevel() - 1);
 						
-						soul.replace(p, 0.0d);
+						soul.replace(p, soul.get(p) - 1.5);
 					}
 				}else{
 					p.sendMessage("§6[§eFireFFA§6] §fVous ne possedez aucune âme!");
