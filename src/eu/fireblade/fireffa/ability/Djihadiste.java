@@ -16,7 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.items.Kits;
 
-public class Jihadiste implements Listener {
+public class Djihadiste implements Listener {
 	
 	@EventHandler
 	public void onInteract(PlayerInteractEvent e){
@@ -34,9 +34,11 @@ public class Jihadiste implements Listener {
 					
 					TNTPrimed tnt = (TNTPrimed) primed;
 					
-					tnt.setFuseTicks(15);
+					tnt.setFuseTicks(5);
 					tnt.setCustomName("§4ALLAH AKBAR !!!");
 					tnt.setCustomNameVisible(true);
+					
+					p.setHealth(0);
 				}
 			}
 		}

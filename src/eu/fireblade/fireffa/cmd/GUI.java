@@ -80,7 +80,7 @@ public class GUI implements CommandExecutor, Listener {
 		inv.setItem(46, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(47, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(48, genPerspective(Material.LEAVES, "§1", (byte) 0));
-		inv.setItem(49, genPerspectiveEnch(Material.EMERALD, "Plugin by Glowstoner & _goldocelot_",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+		inv.setItem(49, genPerspectiveEnch(Material.EMERALD, "Plugin by Glowstoner, _goldocelot_ & bapristego",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
 		inv.setItem(50, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(51, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(52, genPerspective(Material.LEAVES, "§1", (byte) 0));
