@@ -39,7 +39,7 @@ public class Magicien implements Listener {
 					
 					if(jawadV2.getInventory().containsAtLeast(Kits.ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", null, 1), 1)){
 						if(cooldown.contains(jawadV2)){
-							jawadV2.sendMessage(ChatColor.GOLD+"[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
+							jawadV2.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 							jawadV2.playSound(jawadV2.getLocation(), Sound.ITEM_BREAK, 30, 30);
 							
 							return;
@@ -73,7 +73,7 @@ public class Magicien implements Listener {
 					}else{
 						jawadV2.playSound(jawadV2.getLocation(), Sound.ITEM_BREAK, 30, 30);
 						
-						jawadV2.sendMessage(ChatColor.GOLD+"[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de poudre magique.");
+						jawadV2.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de poudre magique.");
 					}
 				}
 			}
@@ -86,7 +86,7 @@ public class Magicien implements Listener {
 		
 		victime.playSound(victime.getLocation(), Sound.WITHER_DEATH, 30, 30);
 		
-		victime.sendMessage("[§eFireFFA§6] §fUn magicien vous à lancé un mauvais sort !");
+		victime.sendMessage("§6[§eFireFFA§6] §fUn magicien vous à lancé un mauvais sort !");
 	}
 
 }

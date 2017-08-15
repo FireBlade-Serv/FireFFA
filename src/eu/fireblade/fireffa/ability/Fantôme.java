@@ -33,7 +33,7 @@ public class Fantôme implements Listener {
 				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Téléporte", ChatColor.BLUE+"Utilisable toute les minutes"), 1)) && Var.fantôme.contains(p)){
 			
 			if(cooldown.contains(p)) {
-				p.sendMessage(ChatColor.GOLD+"[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
+				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 				
 				return;
@@ -65,7 +65,6 @@ public class Fantôme implements Listener {
 	
 	private static void applyVector(Player p){
 		Vector vector = p.getLocation().getDirection().multiply(3);
-		
 		
 		p.setVelocity(vector);
 	}

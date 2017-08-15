@@ -80,7 +80,9 @@ public class Events implements Listener {
 			
             public void run(){
                 if(p.isDead()){
-                	 ((CraftPlayer) p).getHandle().playerConnection.a(new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN));
+                	PacketPlayInClientCommand packet = new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN);
+                	
+                	 ((CraftPlayer) p).getHandle().playerConnection.a(packet);
                 }
             }
             
@@ -95,6 +97,8 @@ public class Events implements Listener {
 				Kits.Clear(p);
 				
 				GUI.mainMenu(p);
+				
+				p.setLevel(0);
 			}
 			
 		}, 10L);
@@ -108,7 +112,17 @@ public class Events implements Listener {
 		if(entity instanceof Player){
 			Player target = (Player) entity;
 			
-			Bukkit.getPluginManager().callEvent(new eu.fireblade.fireffa.util.PlayerInteractAtPlayerEvent(p, target, p.getItemInHand(), p.getWorld()));
+			Bukkit.getPluginManager().callEvent(new eu.fireblade.fireffa.events.PlayerInteractAtPlayerEvent(p, target, p.getItemInHand(), p.getWorld()));
+		}
+	}
+	
+	@EventHandler
+	public void onKill(PlayerDeathEvent e){
+		final Player entity = e.getEntity();
+		final Player jawad = entity.getKiller();
+		
+		if(jawad instanceof Player){
+			Bukkit.getPluginManager().callEvent(new eu.fireblade.fireffa.events.PlayerKillEvent(entity, jawad, jawad.getItemInHand(), entity.getWorld()));
 		}
 	}
 }

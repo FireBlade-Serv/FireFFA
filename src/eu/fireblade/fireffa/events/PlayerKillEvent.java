@@ -1,4 +1,4 @@
-package eu.fireblade.fireffa.util;
+package eu.fireblade.fireffa.events;
 
 import org.bukkit.World;
 import org.bukkit.entity.Player;
@@ -6,27 +6,27 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
-public class PlayerInteractAtPlayerEvent extends Event {
+public class PlayerKillEvent extends Event {
 
 	public static final HandlerList handlers = new HandlerList();
 	
-	private Player p, target;
+	private Player victim, killer;
 	private ItemStack item;
 	private World world;
 	
-	public PlayerInteractAtPlayerEvent(Player p, Player target, ItemStack item, World world) {
-		this.p = p;
-		this.target = target;
+	public PlayerKillEvent(Player victim, Player killer, ItemStack item, World world) {
+		this.victim = victim;
+		this.killer = killer;
 		this.item = item;
 		this.world = world;
 	}
 	
 	public Player getPlayer(){
-		return p;
+		return victim;
 	}
 	
-	public Player getTarget(){
-		return target;
+	public Player getKiller(){
+		return killer;
 	}
 	
 	public ItemStack getItemInHand(){

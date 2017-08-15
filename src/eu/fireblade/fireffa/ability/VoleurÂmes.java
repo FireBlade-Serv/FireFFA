@@ -19,8 +19,8 @@ import org.bukkit.inventory.ItemStack;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.events.PlayerInteractAtPlayerEvent;
 import eu.fireblade.fireffa.items.Kits;
-import eu.fireblade.fireffa.util.PlayerInteractAtPlayerEvent;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class VoleurÂmes implements Listener {
@@ -107,7 +107,7 @@ public class VoleurÂmes implements Listener {
 				if(soul.get(p) != 0.0d){
 					p.sendMessage("§6[§eFireFFA§6] §fLes âmes que vous avez capturées entrent dans votre corps !");
 					
-					p.playSound(p.getLocation(), Sound.WITHER_DEATH, 30, 30);
+					p.playSound(p.getLocation(), Sound.VILLAGER_YES, 30, 30);
 					
 					if(p.getHealth() + 3.0d >= p.getMaxHealth()){
 						p.setLevel(p.getLevel() - 1);

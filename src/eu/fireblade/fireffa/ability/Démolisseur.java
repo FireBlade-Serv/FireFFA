@@ -34,7 +34,7 @@ public class Démolisseur implements Listener {
 				p.getInventory().removeItem(Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1));
 			} else {
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
-				p.sendMessage(ChatColor.GOLD+"[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de boule de feu.");
+				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de boule de feu.");
 			}
 		}
 	}

@@ -7,6 +7,7 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
@@ -37,6 +38,8 @@ public class Kits {
 			itemM.setLore(lore);
 		}
 		
+		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+		
 		item.setItemMeta(itemM);
 		
 		return item;
@@ -54,6 +57,8 @@ public class Kits {
 			itemM.setLore(lore);
 		}
 		
+		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+		
 		itemM.addEnchant(ench, level, true);
 		item.setItemMeta(itemM);
 		
@@ -69,6 +74,8 @@ public class Kits {
 		if(lore != null){
 			itemM.setLore(lore);
 		}
+		
+		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
 		
 		itemM.addEnchant(ench, level, true);
 		itemM.addEnchant(ench2, level2, true);
@@ -88,6 +95,8 @@ public class Kits {
 		if(lore != null){
 			itemM.setLore(lore);
 		}
+		
+		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
 		
 		itemM.addEnchant(ench, level, true);
 		itemM.addEnchant(ench2, level2, true);
@@ -323,7 +332,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGen(Material.LEATHER_BOOTS, ChatColor.DARK_GRAY+"Bottes du grampa", null, 1));
 		p.getInventory().setItem(0, ItemGen1(Material.INK_SACK, Enchantment.DAMAGE_ALL, 4, ChatColor.DARK_GRAY+"Dentier", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 10, ChatColor.DARK_GRAY+"Canne", null, 1));
-		ItemStack charcoal = new ItemStack(Material.COAL, 1, (byte) 1);
+		ItemStack charcoal = new ItemStack(Material.COAL, 1, (byte) 0);
 		ItemMeta charcoalM = charcoal.getItemMeta();
 		charcoalM.setDisplayName(ChatColor.DARK_GRAY+"Pruneau");
 		charcoalM.setLore(LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"Récupération 1 minute 30"));
@@ -341,7 +350,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.YELLOW+"Bottes du mineur", 1, 25, 25, 25));
 		p.getInventory().setItem(0, ItemGen2(Material.STONE_PICKAXE, Enchantment.DAMAGE_ALL, 2, Enchantment.KNOCKBACK, 1, ChatColor.YELLOW+"Pioche du mineur", null ,1));
 		p.getInventory().setItem(1, ItemGen1(Material.IRON_INGOT, Enchantment.DAMAGE_ALL, 3, ChatColor.YELLOW+"Lingot de la mort", null, 1));
-		p.getInventory().setItem(2, ItemGen2(Material.COAL, Enchantment.FIRE_ASPECT, 1, Enchantment.DAMAGE_ALL, 0-999, ChatColor.YELLOW+"Charbon du mineur", null, 1));
+		p.getInventory().setItem(2, ItemGen1(Material.COAL, Enchantment.FIRE_ASPECT, 1, ChatColor.YELLOW+"Charbon du mineur", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	// OK

@@ -21,15 +21,19 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new Events(), this);
 		
 		getCommand("kit").setExecutor(new eu.fireblade.fireffa.cmd.GUI());
-		getCommand("tkit").setExecutor(new eu.fireblade.fireffa.cmd.TestKit());
 		
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Démolisseur(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Fantôme(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Flic(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Magicien(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.VoleurÂmes(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.OITCMan(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Grampa(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Jihadiste(), this);
 		
 		Tp.loadSpawnPoint();
+		
+		saveDefaultConfig();
 		
 		getConfig().options().copyDefaults(true);
 		saveConfig();

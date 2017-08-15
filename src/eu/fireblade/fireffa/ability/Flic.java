@@ -32,7 +32,7 @@ public class Flic implements Listener {
 				p.getInventory().removeItem(Kits.ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 1));
 			} else {
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
-				p.sendMessage(ChatColor.GOLD+"[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de munitions.");
+				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de munitions.");
 			}
 		}
 	}
