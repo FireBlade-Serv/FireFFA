@@ -9,6 +9,7 @@ import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -33,7 +34,7 @@ public class Jihadiste implements Listener {
 					
 					TNTPrimed tnt = (TNTPrimed) primed;
 					
-					tnt.setFuseTicks(5);
+					tnt.setFuseTicks(15);
 					tnt.setCustomName("§4ALLAH AKBAR !!!");
 					tnt.setCustomNameVisible(true);
 				}
@@ -41,6 +42,12 @@ public class Jihadiste implements Listener {
 		}
 	}
 	
-	
-
+	@EventHandler
+	public void onExplode(EntityExplodeEvent e){
+		final Entity entity = e.getEntity();
+		
+		if(entity instanceof TNTPrimed){
+			e.setCancelled(true);
+		}
+	}
 }
