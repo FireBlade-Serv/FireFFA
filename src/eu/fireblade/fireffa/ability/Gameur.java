@@ -83,7 +83,7 @@ public class Gameur implements Listener {
 					
 				return;
 			}else{
-				p.setVelocity(new Vector(0, 5, 0));
+				p.setVelocity(new Vector(0, 1, 0));
 				
 				p.playSound(p.getLocation(), Sound.BAT_TAKEOFF, 30, 30);
 				
