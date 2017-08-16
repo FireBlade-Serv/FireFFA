@@ -46,7 +46,7 @@ public class Ocelot implements Listener {
 				if(cooldown.contains(p)){
 					p.playSound(p.getLocation(), Sound.CAT_HISS, 30, 30);
 					
-					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown.");
+					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 					
 					return;
 				}else{
