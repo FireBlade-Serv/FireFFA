@@ -135,7 +135,7 @@ public class Gameur implements Listener {
 				nod.remove(p);
 			}
 			
-		}, 45L);
+		}, 30L);
 	}
 
 }
