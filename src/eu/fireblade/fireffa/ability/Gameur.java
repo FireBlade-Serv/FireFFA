@@ -48,7 +48,7 @@ public class Gameur implements Listener {
 					
 				return;
 			}else{
-				p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 3, 0));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 40, 0));
 				
 				p.playSound(p.getEyeLocation(), Sound.VILLAGER_IDLE, 30, 30);
 				
@@ -135,7 +135,7 @@ public class Gameur implements Listener {
 				nod.remove(p);
 			}
 			
-		}, 100L);
+		}, 45L);
 	}
 
 }
