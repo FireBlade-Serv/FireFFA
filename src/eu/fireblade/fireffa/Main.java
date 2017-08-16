@@ -32,6 +32,7 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Djihadiste(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Gameur(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Sauvage(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.ArcherElementaire(), this);
 		
 		Tp.loadSpawnPoint();
 		

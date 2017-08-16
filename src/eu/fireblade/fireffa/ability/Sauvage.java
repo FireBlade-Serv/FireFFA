@@ -6,27 +6,21 @@ import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
 import net.md_5.bungee.api.ChatColor;
 
 public class Sauvage implements Listener {
 	
 	@EventHandler
-	public void onInteract(PlayerInteractEvent e){
+	public void onInteract(PlayerRightClickInteractEvent e){
 		final Player p = e.getPlayer();
 		final ItemStack item = e.getItem();
-		final Action a = e.getAction();
-		
-		if(!a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)){
-			return;
-		}
-		
+
 		if(item.equals(Kits.ItemGen(Material.GRILLED_PORK, ChatColor.DARK_PURPLE+"Nourriture charnue", 
 				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 3 coeurs", ChatColor.BLUE+"1 utilisation"), 1))){
 			
