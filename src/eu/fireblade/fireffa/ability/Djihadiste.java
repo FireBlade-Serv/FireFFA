@@ -1,6 +1,7 @@
 package eu.fireblade.fireffa.ability;
 
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
@@ -38,7 +39,9 @@ public class Djihadiste implements Listener {
 					tnt.setCustomName("§4ALLAH AKBAR !!!");
 					tnt.setCustomNameVisible(true);
 					
-					p.setHealth(0);
+					if(!p.getGameMode().equals(GameMode.CREATIVE)){
+						p.setHealth(0);
+					}
 				}
 			}
 		}

@@ -38,7 +38,7 @@ public class Kits {
 			itemM.setLore(lore);
 		}
 		
-		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE, ItemFlag.HIDE_POTION_EFFECTS);
 		
 		item.setItemMeta(itemM);
 		
@@ -57,7 +57,7 @@ public class Kits {
 			itemM.setLore(lore);
 		}
 		
-		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE, ItemFlag.HIDE_POTION_EFFECTS);
 		
 		itemM.addEnchant(ench, level, true);
 		item.setItemMeta(itemM);
@@ -75,7 +75,7 @@ public class Kits {
 			itemM.setLore(lore);
 		}
 		
-		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE, ItemFlag.HIDE_POTION_EFFECTS);
 		
 		itemM.addEnchant(ench, level, true);
 		itemM.addEnchant(ench2, level2, true);
@@ -96,7 +96,7 @@ public class Kits {
 			itemM.setLore(lore);
 		}
 		
-		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+		itemM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE, ItemFlag.HIDE_POTION_EFFECTS);
 		
 		itemM.addEnchant(ench, level, true);
 		itemM.addEnchant(ench2, level2, true);
@@ -375,7 +375,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.GREEN+"Pantalon du gamer", 1, 127, 204, 25 ));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.GREEN+"Bottes du gamer", 1, 127, 204, 25));
 		p.getInventory().setItem(0, ItemGen2(Material.WOOD_SWORD, Enchantment.DAMAGE_ALL, 2, Enchantment.KNOCKBACK, 8, ChatColor.GREEN+"Épée du hero", null, 1));
-		p.getInventory().setItem(1, ItemGen(Material.RED_MUSHROOM, ChatColor.GREEN+"Super champignon",LoreCreator(ChatColor.BLUE+"Clique droit - Force 2, 5 secondes", ChatColor.BLUE+"Récupération 30 secondes"), 1));
+		p.getInventory().setItem(1, ItemGen(Material.RED_MUSHROOM, ChatColor.GREEN+"Super champignon",LoreCreator(ChatColor.BLUE+"Clique droit - Force 1, 3 secondes", ChatColor.BLUE+"Récupération 30 secondes"), 1));
 		p.getInventory().setItem(2, ItemGen(Material.RABBIT_FOOT, ChatColor.GREEN+"Super jump",LoreCreator(ChatColor.BLUE+"Clique droit - Saute à une hauteur de 5 blocs", ChatColor.BLUE+"Récupération 15 secondes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
