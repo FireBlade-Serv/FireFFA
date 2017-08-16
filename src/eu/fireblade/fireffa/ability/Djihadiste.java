@@ -38,6 +38,7 @@ public class Djihadiste implements Listener {
 					tnt.setFuseTicks(5);
 					tnt.setCustomName("§4ALLAH AKBAR !!!");
 					tnt.setCustomNameVisible(true);
+					tnt.setYield(6.5f);
 					
 					if(!p.getGameMode().equals(GameMode.CREATIVE)){
 						p.setHealth(0);
@@ -52,7 +53,7 @@ public class Djihadiste implements Listener {
 		final Entity entity = e.getEntity();
 		
 		if(entity instanceof TNTPrimed){
-			e.setCancelled(true);
+			e.setCancelled(false);
 		}
 	}
 }
