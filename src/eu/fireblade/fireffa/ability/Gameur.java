@@ -48,7 +48,7 @@ public class Gameur implements Listener {
 					
 				return;
 			}else{
-				p.addPotionEffect(new PotionEffect(PotionEffectType.HARM, 3, 0));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 3, 0));
 				
 				p.playSound(p.getEyeLocation(), Sound.VILLAGER_IDLE, 30, 30);
 				
