@@ -30,7 +30,7 @@ public class Timer implements Listener {
  			Player Trouduc2 = (Player) Trouduc;
  					
  				
- 				Timer1.getItemInHand().equals(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5,
+ 				if(Timer1.getItemInHand().equals(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5,
  						ChatColor.BLUE+"Ejecteur Temporel", Kits.LoreCreator(ChatColor.BLUE+"Immobilise l'adversaire", ChatColor.BLUE+"pendant 5 secondes"), 1))){
 				
 			
@@ -65,7 +65,7 @@ public class Timer implements Listener {
 							
 						}, 600L);
 					}
-				}
+				
  			}
  		}
 	}
