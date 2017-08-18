@@ -53,7 +53,7 @@ public class Djihadiste implements Listener {
 		final Entity entity = e.getEntity();
 		
 		if(entity instanceof TNTPrimed){
-			e.setCancelled(false);
+			e.setCancelled(true);
 		}
 	}
 }
