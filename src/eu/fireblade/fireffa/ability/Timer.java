@@ -28,13 +28,9 @@ public class Timer implements Listener {
 	
  		if(Trouduc instanceof Player){
  			Player Trouduc2 = (Player) Trouduc;
- 			
- 			Bukkit.broadcastMessage("loul");
-		
- 			if(Var.timer.contains(Timer1)){
- 				Bukkit.broadcastMessage("loulx2");
+ 					
  				
- 				if(Timer1.getItemInHand().equals(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5,
+ 				Timer1.getItemInHand().equals(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5,
  						ChatColor.BLUE+"Ejecteur Temporel", Kits.LoreCreator(ChatColor.BLUE+"Immobilise l'adversaire", ChatColor.BLUE+"pendant 5 secondes"), 1))){
 				
 			
