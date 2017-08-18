@@ -1,13 +1,19 @@
 package eu.fireblade.fireffa;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Effect;
+import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -54,7 +60,14 @@ public class Events implements Listener {
 	
 	@EventHandler
 	public void onDamage(EntityDamageByEntityEvent e){
+		final Entity entity = e.getEntity();
+		final World w = entity.getWorld();
 		
+		if(!entity.getType().equals(EntityType.DROPPED_ITEM)) {
+			if(entity instanceof Player) {
+				w.playEffect(entity.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
+			}
+		}
 	}
 
 	@EventHandler
@@ -137,6 +150,20 @@ public class Events implements Listener {
 		
 		if(a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)){
 			Bukkit.getPluginManager().callEvent(new eu.fireblade.fireffa.events.PlayerRightClickInteractEvent(p, item, p.getWorld()));
+		}
+	}
+	
+	@EventHandler
+	public void onDamage(EntityDamageEvent e) {
+		final Entity entity = e.getEntity();
+		final World w = entity.getWorld();
+		final double damage = e.getDamage();
+		final DamageCause cause = e.getCause();
+		
+		if(entity instanceof Player) {
+			Player p = (Player) entity;
+			
+			Bukkit.getPluginManager().callEvent(new eu.fireblade.fireffa.events.PlayerDamageEvent(p, w, damage, cause));
 		}
 	}
 }
