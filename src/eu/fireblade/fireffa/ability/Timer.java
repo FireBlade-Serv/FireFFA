@@ -11,8 +11,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
@@ -20,22 +18,21 @@ import eu.fireblade.fireffa.items.Kits;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.md_5.bungee.api.ChatColor;
 
- public class Timer implements Listener {
+public class Timer implements Listener {
 
- private static ArrayList<Player> cooldown = new ArrayList<Player>();
+	private static ArrayList<Player> cooldown = new ArrayList<Player>();
 
-@EventHandler
-public void onDamage(PlayerInteractAtEntityEvent e){
-	final Player Timer1 = e.getPlayer();
-	final Entity Trouduc = e.getRightClicked();
+ 	@EventHandler
+ 	public void onDamage(PlayerInteractAtEntityEvent e){
+ 		final Player Timer1 = e.getPlayer();
+ 		final Entity Trouduc = e.getRightClicked();
 	
-	if(Trouduc instanceof Player){
-		Player Trouduc2 = (Player) Trouduc;
+ 		if(Trouduc instanceof Player){
+ 			Player Trouduc2 = (Player) Trouduc;
 		
-		if(Var.timer.contains(Timer1)){
-			if(Timer1.getItemInHand().equals(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5,
-					ChatColor.BLUE+"Ejecteur Temporel", Kits.LoreCreator(ChatColor.BLUE+"Immobilise l'adversaire",
-							ChatColor.BLUE+"pendant 5 secondes"), 1))){
+ 			if(Var.timer.contains(Timer1)){
+ 				if(Timer1.getItemInHand().equals(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5,
+ 						ChatColor.BLUE+"Ejecteur Temporel", Kits.LoreCreator(ChatColor.BLUE+"Immobilise l'adversaire", ChatColor.BLUE+"pendant 5 secondes"), 1))){
 				
 			
 					if(cooldown.contains(Timer1)){
@@ -67,20 +64,21 @@ public void onDamage(PlayerInteractAtEntityEvent e){
 								cooldown.remove(Timer1);
 							}
 							
-						}, 900L);
+						}, 600L);
 					}
 				}
-		}}
-		}
-private static void damage(Player batard){
+ 			}
+ 		}
+	}
+ 	
+ 	private static void damage(Player batard){
+ 		batard.setWalkSpeed(0.0f);
 	
-	
-	batard.setWalkSpeed(0.0f);
-	
-	batard.playSound(batard.getLocation(), Sound.PORTAL_TRAVEL, 30, 30);
-	
-	batard.sendMessage("§6[§eFireFFA§6] §fTu es piégé dans une boucle temporelle!");
-}}
+ 		batard.playSound(batard.getLocation(), Sound.PORTAL_TRAVEL, 30, 30);
+		
+ 		batard.sendMessage("§6[§eFireFFA§6] §fTu es piégé dans une boucle temporelle!");
+ 	}
+}
 
 
 
