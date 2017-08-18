@@ -56,7 +56,7 @@ public class Timer implements Listener {
 
 							@Override
 							public void run() {
-								if(Var.voleurdame.contains(Timer1)){
+								if(Var.timer.contains(Timer1)){
 									GlowstoneTitle gt = new GlowstoneTitle(Timer1, "", "§9Votre attaque est prête !", 20, 30, 20);
 									gt.send();
 										
