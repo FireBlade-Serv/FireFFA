@@ -624,8 +624,8 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.ARROW_DAMAGE, 10, "§fPantalon Nuage", 1, 255, 255, 255));
 		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.ARROW_DAMAGE, 10, "§fBottes Nuage", 1, 255, 255, 255));
 		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§9épée Nuage", LoreCreator("Oh les beaux nuages", "tu peux planer"), 1));
-		p.getInventory().setItem(2, ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, "§9Arc Nuage",  null, 1));
-		p.getInventory().setItem(3, ItemGen(Material.ARROW, "§9Flèche", null, 1));
+		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, "§9Arc Nuage",  null, 1));
+		p.getInventory().setItem(2, ItemGen(Material.ARROW, "§9Flèche", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 		
