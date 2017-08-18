@@ -6,14 +6,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.events.PlayerInteractAtPlayerEvent;
 import eu.fireblade.fireffa.items.Kits;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.md_5.bungee.api.ChatColor;
@@ -23,14 +22,18 @@ public class Timer implements Listener {
 	private static ArrayList<Player> cooldown = new ArrayList<Player>();
 
  	@EventHandler
- 	public void onDamage(PlayerInteractAtEntityEvent e){
+ 	public void onDamage(PlayerInteractAtPlayerEvent e){
  		final Player Timer1 = e.getPlayer();
- 		final Entity Trouduc = e.getRightClicked();
+ 		final Player Trouduc = e.getTarget();
 	
  		if(Trouduc instanceof Player){
  			Player Trouduc2 = (Player) Trouduc;
+ 			
+ 			Bukkit.broadcastMessage("loul");
 		
  			if(Var.timer.contains(Timer1)){
+ 				Bukkit.broadcastMessage("loulx2");
+ 				
  				if(Timer1.getItemInHand().equals(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5,
  						ChatColor.BLUE+"Ejecteur Temporel", Kits.LoreCreator(ChatColor.BLUE+"Immobilise l'adversaire", ChatColor.BLUE+"pendant 5 secondes"), 1))){
 				
