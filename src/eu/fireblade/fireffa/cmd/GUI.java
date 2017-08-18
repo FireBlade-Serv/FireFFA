@@ -80,7 +80,7 @@ public class GUI implements CommandExecutor, Listener {
 		inv.setItem(46, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(47, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(48, genPerspective(Material.LEAVES, "§1", (byte) 0));
-		inv.setItem(49, genPerspectiveEnch(Material.EMERALD, "Plugin by Glowstoner, _goldocelot_ & bapristego",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+		inv.setItem(49, genPerspectiveEnch(Material.EMERALD, "Plugin by Glowstoner, _goldocelot_ & baptistego",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
 		inv.setItem(50, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(51, genPerspective(Material.LEAVES, "§1", (byte) 0));
 		inv.setItem(52, genPerspective(Material.LEAVES, "§1", (byte) 0));
@@ -438,6 +438,8 @@ public class GUI implements CommandExecutor, Listener {
 		}
 		
 		if(inv.getName().equals("§9§lKits")){
+			e.setCancelled(true);
+			
 			if(item.equals(GUI.genPerspective(Material.STAINED_GLASS, "§f§lKits Membre/FFA", (byte) 0))){
 				e.setCancelled(true);
 				
