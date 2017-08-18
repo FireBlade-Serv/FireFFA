@@ -235,7 +235,7 @@ public class Kits {
 	public static void kitCactus (Player p) {
 		Clear(p);
 		
-		p.getInventory().setHelmet(ItemGen(Material.CACTUS, Enchantment.THORNS, 4, ChatColor.GREEN+"Chapeau du cactus", 1, 127, 204, 25));
+		p.getInventory().setHelmet(ItemGen1(Material.CACTUS, Enchantment.THORNS, 4, ChatColor.GREEN+"Chapeau du cactus",null, 1));
 		p.getInventory().setChestplate(ItemGen2ColorLeather(Material.LEATHER_CHESTPLATE, Enchantment.THORNS, 4, ChatColor.GREEN+"Tunique du cactus", 1, 127, 204, 25));
 		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.THORNS, 4, ChatColor.GREEN+"Pantalon du cactus", 1, 127, 204, 25));
 		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.THORNS, 4, ChatColor.GREEN+"Bottes du cactus", 1, 127, 204, 25));
