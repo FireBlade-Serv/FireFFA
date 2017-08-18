@@ -104,7 +104,7 @@ public class VoleurÂmes implements Listener {
 					soul.put(p, 0.0d);
 				}
 				
-				if(soul.get(p) != 0.0d){
+				if(soul.get(p) >= 3.0d){
 					p.sendMessage("§6[§eFireFFA§6] §fLes âmes que vous avez capturées entrent dans votre corps !");
 					
 					p.playSound(p.getLocation(), Sound.VILLAGER_YES, 30, 30);
