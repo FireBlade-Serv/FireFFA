@@ -69,6 +69,8 @@ public class Events implements Listener {
 		}
 		
 		if(entity instanceof ArmorStand) {
+			e.setCancelled(true);
+			
 			return;
 		}
 		
@@ -80,7 +82,6 @@ public class Events implements Listener {
 		as.setCustomNameVisible(true);
 		as.setVisible(false);
 		as.setGravity(false);
-		as.setHealth(Double.MAX_VALUE);
 		
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 
