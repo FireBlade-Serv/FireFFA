@@ -9,6 +9,7 @@ import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -66,6 +67,19 @@ public class Patissier implements Listener {
 						
 					}, 600L);
 				}
+			}
+		}
+	}
+	
+	@EventHandler
+	public void onEat(PlayerItemConsumeEvent e) {
+		final Player p = e.getPlayer();
+		
+		if(Var.patissier.contains(p)) {
+			if(e.getItem().equals(Kits.ItemGen(Material.COOKIE, ChatColor.LIGHT_PURPLE+"Cookie du patisser", 
+				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs + vitesse 2, 15 secondes", ChatColor.BLUE+"30 secondes de récupération"), 1))) {
+				
+				e.setCancelled(true);
 			}
 		}
 	}
