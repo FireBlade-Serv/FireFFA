@@ -46,6 +46,8 @@ public class Patissier implements Listener {
 					
 					p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 300, 1));
 					
+					p.playSound(p.getLocation(), Sound.COW_IDLE, 30, 30);
+					
 					cooldown.add(p);
 					
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
