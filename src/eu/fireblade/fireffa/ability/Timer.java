@@ -87,6 +87,8 @@ public class Timer implements Listener {
 				batard.playSound(batard.getLocation(), Sound.PORTAL_TRAVEL, 30, 30);
 				
 				batard.sendMessage("§6[§eFireFFA§6] §fTu es sorti de la boucle temporelle!");
+				
+				batard.setWalkSpeed(0.2f);
 			}
 			
 		}, 100L);
