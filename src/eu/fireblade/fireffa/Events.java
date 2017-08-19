@@ -86,7 +86,7 @@ public class Events implements Listener {
 
 			@Override
 			public void run() {
-				as.setHealth(0);
+				as.remove();
 			}
 			
 		}, 40L);
