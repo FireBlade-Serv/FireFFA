@@ -30,7 +30,9 @@ public class Timer implements Listener {
  			Player Trouduc2 = (Player) Trouduc;
  					
  			if(Var.timer.contains(Timer1)){ 				
- 				if(Timer1.getItemInHand().equals(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5, "§9Ejecteur Temporel", Kits.LoreCreator("§9Clique droit - permet de frezze 5s", "§930 secondes de récupération"), 1)));
+ 				if(!Timer1.getItemInHand().equals(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5, "§9Ejecteur Temporel", Kits.LoreCreator("§9Clique droit - permet de frezze 5s", "§930 secondes de récupération"), 1))) {
+ 					return;
+ 				}
  						
 				
  				if(Timer1.getInventory().containsAtLeast(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5, "§9Ejecteur Temporel", Kits.LoreCreator("§9Clique droit - permet de frezze 5s", "§930 secondes de récupération"), 1), 1)){
@@ -77,6 +79,17 @@ public class Timer implements Listener {
  		batard.playSound(batard.getLocation(), Sound.PORTAL_TRAVEL, 30, 30);
 		
  		batard.sendMessage("§6[§eFireFFA§6] §fTu es piégé dans une boucle temporelle!");
+ 		
+ 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
+
+			@Override
+			public void run() {
+				batard.playSound(batard.getLocation(), Sound.PORTAL_TRAVEL, 30, 30);
+				
+				batard.sendMessage("§6[§eFireFFA§6] §fTu es sorti de la boucle temporelle!");
+			}
+			
+		}, 100L);
  	}
 }
 
