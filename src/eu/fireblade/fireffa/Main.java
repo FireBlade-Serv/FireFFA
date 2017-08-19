@@ -36,6 +36,7 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Ocelot(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.ArcherElite(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.PandaRoux(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.DevDePacotille(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Timer(), this);
 		
 		Tp.loadSpawnPoint();

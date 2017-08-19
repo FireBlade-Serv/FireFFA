@@ -38,7 +38,7 @@ public class Timer implements Listener {
  				if(Timer1.getInventory().containsAtLeast(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5, "§9Ejecteur Temporel", Kits.LoreCreator("§9Clique droit - permet de frezze 5s", "§930 secondes de récupération"), 1), 1)){
 					if(cooldown.contains(Timer1)){
 						Timer1.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
-						Timer1.playSound(Timer1.getLocation(), Sound.ENDERMAN_TELEPORT, 30, 30);
+						Timer1.playSound(Timer1.getLocation(), Sound.ITEM_BREAK, 30, 30);
 						
 						return;
 					}else{
