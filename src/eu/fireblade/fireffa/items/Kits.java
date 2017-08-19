@@ -178,7 +178,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 0));
 	}
-	// MANQUE ABILITÉ
+	// OK
 	public static void kitTank(Player p) {
 		Clear(p);
 		
@@ -192,7 +192,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, Integer.MAX_VALUE, 0));
 	}
-	// MANQUE ABILITÉ
+	// OK
 	public static void kitFlic (Player p) {
 		Clear(p);
 		
@@ -205,7 +205,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.getInventory().setItem(2, ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 12));
 	}
-	// MANQUE ABILITÉ
+	// OK
 	public static void kitMagicien (Player p) {
 		Clear(p);
 		
@@ -219,7 +219,7 @@ public class Kits {
 		p.getInventory().setItem(3, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLUE+"Potion déstructrice du magicien", true));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// OK
 	public static void kitChevalier (Player p) {
 		Clear(p);
 		
@@ -274,7 +274,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.BLACK+"Puit de sang",LoreCreator(ChatColor.BLUE+"Clique droit - Utilise les âmes accumulées pour se régénerer", ChatColor.BLUE+"Consomme le puit de sang (Expérience)"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ X2
+	// OK
 	public static void kitOITCman (Player p) {
 		Clear(p);
 		
@@ -284,7 +284,7 @@ public class Kits {
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 0));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE LE REGIVE DE FLECHE SI KILL
+	// OK
 	public static void kitLapin (Player p) {
 		Clear(p);
 		
@@ -312,7 +312,7 @@ public class Kits {
 		PotionMeta.setDisplayName(ChatColor.BLUE+"Vodka");
 		ArrayList<String> lore = new ArrayList<String>();
 		lore.add(ChatColor.BLUE+"Nausée I");
-		lore.add(ChatColor.BLUE+"Force I");
+		lore.add(ChatColor.BLUE+"Vitesse I");
 		lore.add(ChatColor.BLUE+"1 minute");
 		PotionMeta.setLore(lore);
 		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.SPEED, 20*60, 0), true);
