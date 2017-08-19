@@ -52,7 +52,7 @@ public class Patissier implements Listener {
 
 						@Override
 						public void run() {
-							if(Var.panda.contains(p)){
+							if(Var.patissier.contains(p)){
 								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre attaque est prête !", 20, 30, 20);
 								gt.send();
 								
