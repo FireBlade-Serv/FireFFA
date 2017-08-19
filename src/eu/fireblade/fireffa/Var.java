@@ -125,4 +125,12 @@ public class Var {
 	public static HashMap<Player, Integer> killStreak = new HashMap<Player, Integer>();
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
 	public static ArrayList<Location> spawn = new ArrayList<Location>();
+	
+	public static void clearKitArray(Player p) {
+		if(démolisseur.contains(p)) {
+			démolisseur.remove(p);
+		}else if(fantôme.contains(p)) {
+			fantôme.contains(p);
+		}
+	}
 }

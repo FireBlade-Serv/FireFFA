@@ -5,8 +5,8 @@ import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -36,11 +36,11 @@ public class Events implements Listener {
 	public void onJoin(PlayerJoinEvent e){
 		final Player p = e.getPlayer();
 		
-		e.setJoinMessage("§6[§eFireFFA§6] §e"+p.getName()+"§f à rejoint le FireFFA !");
+		e.setJoinMessage("Â§6[Â§eFireFFAÂ§6] Â§e"+p.getName()+"Â§f Ã  rejoint le FireFFA !");
 		
 		Tp.tpSpawn(p);
 		
-		GlowstoneTitle gt = new GlowstoneTitle(p, "§6Bienvenue sur le FFA !", "§l"+p.getName(), 20, 50, 20);
+		GlowstoneTitle gt = new GlowstoneTitle(p, "Â§6Bienvenue sur le FFA !", "Â§l"+p.getName(), 20, 50, 20);
 		gt.send();
 		
 		Scoreboard.displayScoreboard(p);
@@ -55,19 +55,28 @@ public class Events implements Listener {
 	public void onQuit(PlayerQuitEvent e){
 		final Player p = e.getPlayer();
 		
-		e.setQuitMessage("§6[§eFireFFA§6] §e"+p.getName()+"§f à quitté le FireFFA !");
+		e.setQuitMessage("Â§6[Â§eFireFFAÂ§6] Â§e"+p.getName()+"Â§f Ã  quittÃ© le FireFFA !");
 	}
 	
 	@EventHandler
 	public void onDamage(EntityDamageByEntityEvent e){
 		final Entity entity = e.getEntity();
 		final World w = entity.getWorld();
+		final double damage = e.getDamage();
 		
-		if(!entity.getType().equals(EntityType.DROPPED_ITEM)) {
-			if(entity instanceof Player) {
-				w.playEffect(entity.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
-			}
+		if(entity instanceof Player) {
+			w.playEffect(entity.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
 		}
+		
+		Entity eNas = w.spawn(entity.getLocation(), ArmorStand.class);
+		
+		ArmorStand as = (ArmorStand) eNas;
+		
+		as.setCustomName("Â§cÂ§l - "+damage+" â¤");
+		as.setCustomNameVisible(true);
+		as.setVisible(false);
+		as.setGravity(false);
+		as.setHealth(Double.MAX_VALUE);
 	}
 
 	@EventHandler
@@ -77,6 +86,8 @@ public class Events implements Listener {
 		if(!(victime instanceof Player)){
 			return;
 		}
+		
+		
 		
 		Player p = (Player) victime;
 		
