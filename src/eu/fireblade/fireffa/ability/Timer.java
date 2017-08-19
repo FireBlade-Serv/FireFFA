@@ -29,11 +29,11 @@ public class Timer implements Listener {
  		if(Trouduc instanceof Player){
  			Player Trouduc2 = (Player) Trouduc;
  					
- 				
+ 			if(Var.timer.contains(Timer1)){
  				if(Timer1.getItemInHand().equals(Kits.ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5,
  						ChatColor.BLUE+"Ejecteur Temporel", Kits.LoreCreator(ChatColor.BLUE+"Immobilise l'adversaire", ChatColor.BLUE+"pendant 5 secondes"), 1))){
 				
-			
+ 				if(Timer1.getInventory().containsAtLeast(Kits.ItemGen(Material.COMPASS, ChatColor.BLUE+"Ejecteur Temporel", null, 1), 1)){
 					if(cooldown.contains(Timer1)){
 						Timer1.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 						Timer1.playSound(Timer1.getLocation(), Sound.ENDERMAN_TELEPORT, 30, 30);
@@ -65,11 +65,11 @@ public class Timer implements Listener {
 							
 						}, 600L);
 					}
-				
+ 				}
  			}
  		}
 	}
- 	
+ }
  	private static void damage(Player batard){
  		batard.setWalkSpeed(0.0f);
 	
