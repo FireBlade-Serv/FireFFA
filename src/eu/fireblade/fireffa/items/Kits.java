@@ -366,7 +366,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.DARK_RED+"Allah akbar",LoreCreator(ChatColor.BLUE+"Clique droit - Se faire exploser", ChatColor.BLUE+"Vous tue instantanément"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// OK
 	public static void kitGamer (Player p) {
 		Clear(p);
 		
@@ -379,7 +379,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.RABBIT_FOOT, ChatColor.GREEN+"Super jump",LoreCreator(ChatColor.BLUE+"Clique droit - Saute à une hauteur de 5 blocs", ChatColor.BLUE+"Récupération 15 secondes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// OK
 	public static void kitSauvage (Player p) {
 		Clear(p);
 		
@@ -388,7 +388,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.GRILLED_PORK, ChatColor.DARK_PURPLE+"Nourriture charnue", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 3 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// OK
 	public static void kitArcherelementaire (Player p) {
 		Clear(p);
 		
@@ -402,7 +402,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.BOW, ChatColor.GREEN+"Arc de glace", LoreCreator(ChatColor.BLUE+"Ses fléches ralentissent et aveugles", ChatColor.BLUE+"Pendant 2 secondes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));		
 	}
-	// MANQUE ABILITÉ	
+	// OK	
 	public static void kitOcelot (Player p) {
 		Clear(p);
 		
@@ -420,7 +420,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.STRING, ChatColor.YELLOW+"Ficelle de pelote laine", null, 3));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));			
 	}
-	// MANQUE ABILITÉ
+	// OK
 	public static void kitArchervagabon (Player p) {
 		Clear(p);
 		
@@ -442,7 +442,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.ARROW, ChatColor.RED+"Fléche de l'archer élite", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// OK
 	public static void kitAssassin (Player p) {
 		Clear(p);
 		
@@ -801,7 +801,8 @@ public class Kits {
 		Clear(p);
 		p.getInventory().setItem(0, ItemGen(Material.STICK, "§9Jumper", LoreCreator("§9Clique droit - jump de 12 blocs", "15 secondes de récupération"), 1));
 		p.getInventory().setItem(1, ItemGen(Material.SLIME_BALL, "§9Poing", LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1));
-			
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		
 	}
 	//manque abilité
 	public static void kitDieu(Player p) {
@@ -812,6 +813,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.ARROW_DAMAGE, 10, "§fBottes Golem", 1, 255, 255, 255));
 		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 15, "Bâton d'expulsion", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.INK_SACK, Enchantment.DAMAGE_ALL, 2, "§9sac aux pêchers", null, 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
 	//manque abilité
@@ -822,6 +824,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon d'invocation", 1, 76, 127, 153));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes d'invocation", 1, 76, 127, 153));
 		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 1, "§9Invocation Stick", LoreCreator("§9Clique Droit - invoque un bouclier pendant 10s", "§945 secondes de récupération"), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	//manque abilité ! pas finis !
 	public static void kitOgre(Player p) {
@@ -832,6 +835,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§2Pantalon d'ogre", 1, 102, 127, 51));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§2Bottes d'ogre", 1, 102, 127, 51));
 		p.getInventory().setItem(0, ItemGen1(Material.LEVER, Enchantment.DAMAGE_ALL, 1, "§9Massue", LoreCreator("§9Vous avez 15% de chance de os", null), 1));
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
 	//manque abilité ! pas finis !
@@ -842,13 +846,8 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§7Pantalon d'Enderman", 1, 102, 127, 51));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§7Bottes d'Enderman", 1, 102, 127, 51));
 		p.getInventory().setItem(0, ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 3, "§9Main de l'enderman", LoreCreator("§9Clique droit - vous tp aléatoirement", "§930 secondes de récupération"), 1));
-		
-	    
-	    
-				
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));			
 	}
-	
-	
 	// MANQUE ABILITÉ
 	public static void Clear(Player p) {
 		p.getInventory().clear();
