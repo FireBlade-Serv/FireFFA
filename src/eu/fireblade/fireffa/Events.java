@@ -68,6 +68,10 @@ public class Events implements Listener {
 			w.playEffect(entity.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
 		}
 		
+		if(entity instanceof ArmorStand) {
+			return;
+		}
+		
 		Entity eNas = w.spawn(entity.getLocation(), ArmorStand.class);
 		
 		ArmorStand as = (ArmorStand) eNas;
@@ -77,6 +81,15 @@ public class Events implements Listener {
 		as.setVisible(false);
 		as.setGravity(false);
 		as.setHealth(Double.MAX_VALUE);
+		
+		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+
+			@Override
+			public void run() {
+				as.setHealth(0);
+			}
+			
+		}, 40L);
 	}
 
 	@EventHandler
