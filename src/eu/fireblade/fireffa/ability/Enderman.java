@@ -81,7 +81,7 @@ public class Enderman implements Listener {
 		if(entity instanceof Player){
 			Player p = (Player) entity;
 			
-			if(Var.gamer.contains(p) && nod.contains(p)){
+			if(Var.enderman.contains(p) && nod.contains(p)){
 				if(e.getCause().equals(DamageCause.FALL)){
 					e.setCancelled(true);
 				}
