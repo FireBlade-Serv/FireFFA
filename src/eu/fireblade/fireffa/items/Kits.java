@@ -502,7 +502,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGen(Material.LEATHER_BOOTS, ChatColor.LIGHT_PURPLE+"Bottes du patissier", null, 1));
 		p.getInventory().setItem(0, ItemGen1(Material.PUMPKIN_PIE, Enchantment.DAMAGE_ALL, 2, ChatColor.LIGHT_PURPLE+"Tarte aux épines", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.CAKE, Enchantment.KNOCKBACK, 4, ChatColor.LIGHT_PURPLE+"Gâteau dans ta face", null, 1));
-		p.getInventory().setItem(3, ItemGen(Material.COOKIE, ChatColor.LIGHT_PURPLE+"Cookie du patisser", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs + vitesse 2, 15 secondes", ChatColor.BLUE+"30 secondes de récupération"), 1));
+		p.getInventory().setItem(2, ItemGen(Material.COOKIE, ChatColor.LIGHT_PURPLE+"Cookie du patisser", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs + vitesse 2, 15 secondes", ChatColor.BLUE+"30 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}	
 	// OK
@@ -514,7 +514,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGen(Material.LEATHER_LEGGINGS, ChatColor.DARK_GRAY+"Pantalon de l'ourse", null, 1));
 		p.getInventory().setBoots(ItemGen(Material.LEATHER_BOOTS, ChatColor.DARK_GRAY+"Bottes de l'ourse", null, 1));
 		p.getInventory().setItem(0, ItemGen1(Material.STONE_HOE, Enchantment.DAMAGE_ALL, 2, ChatColor.DARK_GRAY+"Griffe de l'ourse", null, 1));
-		p.getInventory().setItem(1, ItemGen(Material.WOOD_PICKAXE, ChatColor.DARK_GRAY+"Crocs de l'ourse", LoreCreator(ChatColor.BLUE+"Clique droit - Vole 2 coeurs à la cible", ChatColor.BLUE+"1 minute de récupération"), 1));
+		p.getInventory().setItem(1, ItemGen(Material.WOOD_PICKAXE, ChatColor.DARK_GRAY+"Crocs de l'ours", LoreCreator(ChatColor.BLUE+"Clique droit - Vole 2 coeurs à la cible", ChatColor.BLUE+"1 minute de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	// MANQUE ABILITÉ
