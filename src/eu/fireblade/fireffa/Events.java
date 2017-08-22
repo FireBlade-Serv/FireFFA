@@ -140,6 +140,8 @@ public class Events implements Listener {
 				GUI.mainMenu(p);
 				
 				p.setLevel(0);
+				
+				Var.clearKitArray(p);
 			}
 			
 		}, 10L);
