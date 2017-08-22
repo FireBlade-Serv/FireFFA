@@ -2,7 +2,6 @@ package eu.fireblade.fireffa.ability;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.enchantments.Enchantment;
