@@ -32,17 +32,13 @@ public class Ogre implements Listener {
 			}
 			
 			if(dp.getItemInHand().equals(Kits.ItemGen1(Material.LEVER, Enchantment.DAMAGE_ALL, 1, "§9Massue", 
-					Kits.LoreCreator("§9Vous avez 35% de chance de faire plus de dégats", null), 1))){
+					Kits.LoreCreator("§9Vous avez 15% de chance de faire plus de dégats", null), 1))){
 				
 				
 				int random = ThreadLocalRandom.current().nextInt(100);
 				
-				if (random <= 35) {
-					if(tp.getHealth() <= 6) {
-						tp.setHealth(0.0d);
-					}else {
-						tp.setHealth(tp.getHealth() - 6);
-					}
+				if (random <= 15) {
+					e.setDamage(6.25d);
 					
 					dp.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez infligé un gros coup.");
 					dp.playSound(dp.getLocation(), Sound.GHAST_DEATH, 30, 30);
