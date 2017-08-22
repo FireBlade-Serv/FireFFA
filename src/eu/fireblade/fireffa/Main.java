@@ -39,6 +39,7 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.DevDePacotille(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Patissier(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Ours(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Ogre(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Timer(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Enderman(), this);
 		

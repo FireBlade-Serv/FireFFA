@@ -834,7 +834,7 @@ public class Kits {
 	    p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§2Tunique d'ogre", 1, 102, 127, 51));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§2Pantalon d'ogre", 1, 102, 127, 51));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§2Bottes d'ogre", 1, 102, 127, 51));
-		p.getInventory().setItem(0, ItemGen1(Material.LEVER, Enchantment.DAMAGE_ALL, 1, "§9Massue", LoreCreator("§9Vous avez 35% de chance de faire plus de dégat", null), 1));
+		p.getInventory().setItem(0, ItemGen1(Material.LEVER, Enchantment.DAMAGE_ALL, 1, "§9Massue", LoreCreator("§9Vous avez 35% de chance de faire plus de dégats", null), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
