@@ -36,9 +36,7 @@ public class Ogre implements Listener {
 					Kits.LoreCreator("§9Vous avez 35% de chance de faire plus de dégats", null), 1))){
 				
 				
-				Bukkit.broadcastMessage("goldocelot gros pd (à 50%)");
-				
-				int random = ThreadLocalRandom.current().nextInt(35);
+				int random = ThreadLocalRandom.current().nextInt(100);
 				
 				if (random <= 35) {
 					if(tp.getHealth() <= 6) {
