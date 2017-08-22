@@ -1,7 +1,6 @@
 package eu.fireblade.fireffa.ability;
 
-
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -30,17 +29,17 @@ public class Ogre implements Listener {
 			
 			if(dp.getItemInHand().equals(Kits.ItemGen1(Material.LEVER, Enchantment.DAMAGE_ALL, 1, "§9Massue", Kits.LoreCreator("§9Vous avez 35% de chance de faire plus de dégat", null), 1))){
 				
-				Random r = new Random();
-				int rn = 0 + r.nextInt(100);
-				if (rn <= 35) {
-					tp.damage(6.25);
+				int random = ThreadLocalRandom.current().nextInt(0, 100);
+				if (random <= 35) {
+					if(tp.getHealth() <= 6) {
+						tp.setHealth(0.0d);
+					}else {
+						tp.setHealth(tp.getHealth() - 6);
+					}
 					dp.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez infligé un gros coup.");
 					dp.playSound(dp.getLocation(), Sound.GHAST_DEATH, 30, 30);
 					tp.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Le joueur "+ dp.getName() +"vous a infligé un gros coup.");
 					tp.playSound(dp.getLocation(), Sound.GHAST_DEATH, 30, 30);
-					rn = 0;
-				} else {
-					rn = 0;
 				}
 			}
 		}
