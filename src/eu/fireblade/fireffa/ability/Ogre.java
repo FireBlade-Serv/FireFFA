@@ -38,6 +38,9 @@ public class Ogre implements Listener {
 					dp.playSound(dp.getLocation(), Sound.GHAST_DEATH, 30, 30);
 					tp.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Le joueur "+ dp.getName() +"vous a infligé un gros coup.");
 					tp.playSound(dp.getLocation(), Sound.GHAST_DEATH, 30, 30);
+					rn = 0;
+				} else {
+					rn = 0;
 				}
 			}
 		}
