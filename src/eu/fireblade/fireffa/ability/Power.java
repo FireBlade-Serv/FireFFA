@@ -106,6 +106,7 @@ public class Power implements Listener {
 		}
 	}
 	
+	@EventHandler
 	public void OnDamage(EntityDamageByEntityEvent e) {
 		Entity d = e.getDamager();
 		Entity t = e.getEntity();
@@ -118,6 +119,8 @@ public class Power implements Listener {
 				e.setDamage(dp.getLevel());
 				dp.setLevel(0);
 				inload.remove(dp);
+				
+				max.replace(dp, 0);
 			}
 		}
 	}
