@@ -9,9 +9,11 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.inventory.ItemStack;
@@ -80,7 +82,7 @@ public class Power implements Listener {
 				@Override
 				public void run() {
 					if(max.get(p) < 10){
-						if(Var.power.contains(p)) {
+						if(Var.power.contains(p) && inload.contains(p)) {
 							max.replace(p, max.get(p) + 1);
 							p.setLevel(max.get(p));
 						}
@@ -92,6 +94,22 @@ public class Power implements Listener {
 				}
 				
 			}, 20L, 20L));
+		}
+	}
+	
+	public void OnDamage(EntityDamageByEntityEvent e) {
+		Entity d = e.getDamager();
+		Entity t = e.getEntity();
+		
+		if(d.getType().equals(EntityType.PLAYER) && t.getType().equals(EntityType.PLAYER)) {
+			Player dp = (Player) d;
+			
+			if(Var.power.contains(dp) && dp.getItemInHand().equals(Kits.ItemGen(Material.SLIME_BALL, "§9Poing",
+				Kits.LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1))) {
+				e.setDamage(dp.getLevel());
+				dp.setLevel(0);
+				inload.remove(dp);
+			}
 		}
 	}
 	
