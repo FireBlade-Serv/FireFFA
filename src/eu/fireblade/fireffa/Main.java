@@ -43,6 +43,7 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Timer(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.GuerrierGalactique(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Enderman(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Power(), this);
 		
 		Tp.loadSpawnPoint();
 		
