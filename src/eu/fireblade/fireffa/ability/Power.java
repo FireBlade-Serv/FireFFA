@@ -139,7 +139,7 @@ public class Power implements Listener {
 				nod.remove(p);
 			}
 			
-		}, 30L);
+		}, 100L);
 	}
 
 }
