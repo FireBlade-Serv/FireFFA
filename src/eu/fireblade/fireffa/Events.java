@@ -90,7 +90,7 @@ public class Events implements Listener {
 				as.remove();
 			}
 			
-		}, 30L);
+		}, 10L);
 	}
 
 	@EventHandler

@@ -1,6 +1,8 @@
 package eu.fireblade.fireffa.ability;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -23,16 +25,19 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Power implements Listener {
 
-	final static ArrayList<Player> cooldown = new ArrayList<Player>();
-	final static ArrayList<Player> nod = new ArrayList<Player>();
-	final static ArrayList<Player> inload = new ArrayList<Player>();
+	private static ArrayList<Player> cooldown = new ArrayList<Player>();
+	private static ArrayList<Player> nod = new ArrayList<Player>();
+	private static ArrayList<Player> inload = new ArrayList<Player>();
+	
+	private static Map<Player, Integer> max = new HashMap<Player, Integer>();
+	private static Map<Player, Integer> tasks = new HashMap<Player, Integer>();
 	
 	@EventHandler
 	public void OnClick(PlayerRightClickInteractEvent e) {
 		final Player p = e.getPlayer();
 		final ItemStack i = e.getItem();
 		
-		if(Var.power.contains(p) && i == Kits.ItemGen(Material.STICK, "§9Jumper", Kits.LoreCreator("§9Clique droit - jump de 12 blocs", "15 secondes de récupération"), 1)){
+		if(Var.power.contains(p) && i.equals(Kits.ItemGen(Material.STICK, "§9Jumper", Kits.LoreCreator("§9Clique droit - jump de 12 blocs", "15 secondes de récupération"), 1))){
 			
 			if(cooldown.contains(p)){
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
@@ -65,26 +70,28 @@ public class Power implements Listener {
 				}, 300L);
 			
 			}
-		} else if (Var.power.contains(p) && !(inload.contains(p)) && i == Kits.ItemGen(Material.SLIME_BALL, "§9Poing", Kits.LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1)) {
+		} else if (Var.power.contains(p) && !(inload.contains(p)) && i.equals(Kits.ItemGen(Material.SLIME_BALL, "§9Poing",
+				Kits.LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1))) {
 			
 			inload.add(p);
-			int task = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
-				int max = 0;
+			
+			tasks.replace(p, Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
 				
 				@Override
 				public void run() {
-					if(max < 10){
+					if(max.get(p) < 10){
 						if(Var.power.contains(p)) {
-							max++;
-							p.setLevel(max);
+							max.replace(p, max.get(p) + 1);
+							p.setLevel(max.get(p));
 						}
 					}else {
-						Bukkit.getScheduler().cancelTask(task);
-						max = 0;
+						max.replace(p, 0);
+						
+						Bukkit.getScheduler().cancelTask(tasks.get(p));
 					}
 				}
 				
-			}, 20L, 20L);
+			}, 20L, 20L));
 		}
 	}
 	
