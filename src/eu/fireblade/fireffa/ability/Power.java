@@ -47,7 +47,7 @@ public class Power implements Listener {
 					
 				return;
 			} else {
-				p.setVelocity(new Vector(0, 2, 0));
+				p.setVelocity(new Vector(0.0f, 1.2f, 0.0f));
 				
 				p.playSound(p.getLocation(), Sound.BAT_TAKEOFF, 30, 30);
 				
@@ -76,6 +76,14 @@ public class Power implements Listener {
 				Kits.LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1))) {
 			
 			inload.add(p);
+			
+			if(!tasks.containsKey(p)) {
+				tasks.put(p, 0);
+			}
+			
+			if(!max.containsKey(p)) {
+				max.put(p, 0);
+			}
 			
 			tasks.replace(p, Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
 				
