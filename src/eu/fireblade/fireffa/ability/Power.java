@@ -85,6 +85,7 @@ public class Power implements Listener {
 						if(Var.power.contains(p) && inload.contains(p)) {
 							max.replace(p, max.get(p) + 1);
 							p.setLevel(max.get(p));
+							p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
 						}
 					}else {
 						max.replace(p, 0);
