@@ -807,16 +807,16 @@ public class Kits {
 	//manque abilité
 	public static void kitDieu(Player p) {
 	    Clear(p);
-	    p.getInventory().setHelmet(ItemGen2ColorLeather(Material.LEATHER_HELMET, Enchantment.ARROW_DAMAGE, 10, "§fChapeau Golem", 1, 255, 255, 255 ));
-		p.getInventory().setChestplate(ItemGen2ColorLeather(Material.LEATHER_CHESTPLATE, Enchantment.ARROW_DAMAGE, 10, "§fTunique Golem", 1, 255, 255, 255));
-		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.ARROW_DAMAGE, 10, "§fPantalon Golem", 1, 255, 255, 255));
-		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.ARROW_DAMAGE, 10, "§fBottes Golem", 1, 255, 255, 255));
+	    p.getInventory().setHelmet(ItemGen2ColorLeather(Material.LEATHER_HELMET, Enchantment.ARROW_DAMAGE, 10, "§fChapeau Dieu", 1, 255, 255, 255 ));
+		p.getInventory().setChestplate(ItemGen2ColorLeather(Material.LEATHER_CHESTPLATE, Enchantment.ARROW_DAMAGE, 10, "§fTunique Dieu", 1, 255, 255, 255));
+		p.getInventory().setLeggings(ItemGen2ColorLeather(Material.LEATHER_LEGGINGS, Enchantment.ARROW_DAMAGE, 10, "§fPantalon Dieu", 1, 255, 255, 255));
+		p.getInventory().setBoots(ItemGen2ColorLeather(Material.LEATHER_BOOTS, Enchantment.ARROW_DAMAGE, 10, "§fBottes Dieu", 1, 255, 255, 255));
 		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 15, "Bâton d'expulsion", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.INK_SACK, Enchantment.DAMAGE_ALL, 2, "§9sac aux pêchers", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
-	//manque abilité
+	//ok
 	public static void kitInvocation(Player p) {
 	    Clear(p);
 	    p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, "§fChapeau d'invocation", 1, 25, 25, 25 ));
