@@ -89,12 +89,16 @@ public class Power implements Listener {
 				max.put(p, -1);
 			}
 			
+			if(!(max.get(p) == -1)) {
+				return;
+			}
+			
 			tasks.replace(p, Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
 				
 				@Override
 				public void run() {
 					if(max.get(p) < 10){
-						if(Var.power.contains(p) && inload.contains(p) && max.get(p) == -1) {
+						if(Var.power.contains(p) && inload.contains(p)) {
 							max.replace(p, max.get(p) + 1);
 							p.setLevel(max.get(p));
 							p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
