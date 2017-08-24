@@ -35,8 +35,7 @@ public class Fiesta implements Listener {
 		
 		if (Var.fiesta.contains(p) && i.equals(Kits.ItemGen2(Material.ARROW, Enchantment.DAMAGE_ALL, 2, Enchantment.KNOCKBACK, 3, "§9Cotillon", 
 				Kits.LoreCreator("§9Clique Droit - tp les joueurs sur 10 blocs", "§940 secodnes de récupération"), 1))) {
-		
-		if(playeronarea.size() == 0) {				
+			
 			if(cooldown.contains(p)){
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
@@ -49,52 +48,52 @@ public class Fiesta implements Listener {
 						playeronarea.add(ponarea);
 					}
 				} 
+				if(playeronarea.size() != 0) {
+					playeronarea.add(p);
 				
-				playeronarea.add(p);
-				
-				for (Player inList : playeronarea) {
-					loc.add(inList.getLocation());
-				}
-				int a = 0;
-				int b = 1;
-				for ( int pn = 0 ; pn < loc.size() ; pn++) {
-					if( b < loc.size()) {					
-						playeronarea.get(a).teleport(loc.get(b));
-						a++;
-						b++;
-					}else {
-						b = 0;
-						playeronarea.get(a).teleport(loc.get(b));
+					for (Player inList : playeronarea) {
+						loc.add(inList.getLocation());
 					}
-				}
-				loc.clear();
-				playeronarea.clear();
-				a = 0;
-				b = 1;
-				
-				cooldown.add(p);
-				
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
-
-					@Override
-					public void run() {
-						if(Var.fiesta.contains(p)){
-							GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous pouvez utiliser votre Cotillon !", 20, 30, 20);
-							gt.send();
-							
-							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
+					int a = 0;
+					int b = 1;
+					for ( int pn = 0 ; pn < loc.size() ; pn++) {
+						if( b < loc.size()) {					
+							playeronarea.get(a).teleport(loc.get(b));
+							a++;
+							b++;
+						}else {
+							b = 0;
+							playeronarea.get(a).teleport(loc.get(b));
 						}
-						
-						cooldown.remove(p);
 					}
+					loc.clear();
+					playeronarea.clear();
+					a = 0;
+					b = 1;
+				
+					cooldown.add(p);
+				
+					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+
+						@Override
+						public void run() {
+							if(Var.fiesta.contains(p)){
+								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous pouvez utiliser votre Cotillon !", 20, 30, 20);
+								gt.send();
+							
+								p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
+							}
+						
+							cooldown.remove(p);
+						}
 					
-				}, 800L);			
-			}
-			}else {
-				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Il n'y a personne dans la zone !");
-				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
-					
-				return;
+					}, 800L);			
+				}else {
+					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Il n'y a personne dans la zone !");
+					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
+						
+					return;
+				}
 			}
 		}
 	}
