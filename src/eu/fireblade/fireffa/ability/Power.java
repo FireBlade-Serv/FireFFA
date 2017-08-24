@@ -94,7 +94,7 @@ public class Power implements Listener {
 				@Override
 				public void run() {
 					if(max.get(p) < 10){
-						if(Var.power.contains(p) && inload.contains(p)) {
+						if(Var.power.contains(p) && inload.contains(p) && max.get(p) == -1) {
 							max.replace(p, max.get(p) + 1);
 							p.setLevel(max.get(p));
 							p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
@@ -126,7 +126,7 @@ public class Power implements Listener {
 				dp.setLevel(0);
 				inload.remove(dp);
 				
-				max.replace(dp, 0);
+				max.replace(dp, -1);
 			}
 		}
 	}
@@ -156,7 +156,7 @@ public class Power implements Listener {
 				nod.remove(p);
 			}
 			
-		}, 30L);
+		}, 40L);
 	}
 
 }
