@@ -2,10 +2,8 @@ package eu.fireblade.fireffa.ability;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -49,13 +47,12 @@ public class Fiesta implements Listener {
 						playeronarea.add(ponarea);
 					}
 				} 
+				
 				playeronarea.add(p);
-				for (int pn = 0 ; pn < playeronarea.size() ; pn++) {
-					loc.put(playeronarea.get(0), playeronarea.get(0).getLocation());
+				
+				for (Player inList : playeronarea) {
+					loc.put(inList, inList.getLocation());
 					playeronarea.remove(0);
-				}
-				for (int pn2 = 0 ; pn2 < loc.size() ; pn2++) {
-					loc.get(key)
 				}
 			}
 		}	

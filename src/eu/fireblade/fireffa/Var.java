@@ -6,6 +6,10 @@ import java.util.HashMap;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import eu.fireblade.fireffa.ability.Fantôme;
+import eu.fireblade.fireffa.ability.Magicien;
+import eu.fireblade.fireffa.ability.VoleurÂmes;
+
 public class Var {
 	
 	public static String SqlUrlBase = "jdbc:mysql://", host, user, password;
@@ -131,12 +135,20 @@ public class Var {
 			démolisseur.remove(p);
 		}else if(fantôme.contains(p)) {
 			fantôme.remove(p);
+			
+			if(Fantôme.cooldown.contains(p)) {
+				Fantôme.cooldown.remove(p);
+			}
 		}else if(tank.contains(p)) {
 			tank.remove(p);
 		}else if(flic.contains(p)) {
 			flic.remove(p);
 		}else if(magicien.contains(p)) {
 			magicien.remove(p);
+			
+			if(Magicien.cooldown.contains(p)) {
+				Magicien.cooldown.remove(p);
+			}
 		}else if(chevalier.contains(p)) {
 			chevalier.remove(p);
 		}else if(cactus.contains(p)) {
@@ -145,8 +157,18 @@ public class Var {
 			piaf.remove(p);
 		}else if(voleurdame.contains(p)) {
 			voleurdame.remove(p);
+			
+			if(VoleurÂmes.cooldown.contains(p)) {
+				VoleurÂmes.cooldown.remove(p);
+			}
+			
+			if(VoleurÂmes.soul.containsKey(p)) {
+				VoleurÂmes.soul.remove(p);
+			}
 		}else if(OITCman.contains(p)) {
 			OITCman.remove(p);
+			
+			
 		}else if(lapin.contains(p)) {
 			lapin.remove(p);
 		}else if(russe.contains(p)) {

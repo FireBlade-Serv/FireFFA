@@ -21,7 +21,7 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Fantôme implements Listener {
 	
-	private static ArrayList<Player> cooldown = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
 	@EventHandler
 	public void onInteract(PlayerInteractEvent e){
@@ -68,5 +68,4 @@ public class Fantôme implements Listener {
 		
 		p.setVelocity(vector);
 	}
-
 }

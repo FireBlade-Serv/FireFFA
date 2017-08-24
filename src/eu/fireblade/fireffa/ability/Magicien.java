@@ -22,7 +22,7 @@ import net.md_5.bungee.api.ChatColor;
 
 public class Magicien implements Listener {
 	
-	private static ArrayList<Player> cooldown = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
 	@EventHandler
 	public void onDamage(PlayerInteractAtEntityEvent e){
