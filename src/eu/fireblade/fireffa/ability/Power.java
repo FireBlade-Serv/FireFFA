@@ -86,7 +86,7 @@ public class Power implements Listener {
 			}
 			
 			if(!max.containsKey(p)) {
-				max.put(p, 0);
+				max.put(p, -1);
 			}
 			
 			tasks.replace(p, Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
