@@ -72,8 +72,12 @@ public class Power implements Listener {
 				}, 300L);
 			
 			}
-		} else if (Var.power.contains(p) && !(inload.contains(p)) && i.equals(Kits.ItemGen(Material.SLIME_BALL, "§9Poing",
+		} else if (Var.power.contains(p) && i.equals(Kits.ItemGen(Material.SLIME_BALL, "§9Poing",
 				Kits.LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1))) {
+			
+			if(inload.contains(p)) {
+				return;
+			}
 			
 			inload.add(p);
 			
@@ -96,13 +100,15 @@ public class Power implements Listener {
 							p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
 						}
 					}else {
-						max.replace(p, 0);
+						max.replace(p, -1);
+						
+						inload.remove(p);
 						
 						Bukkit.getScheduler().cancelTask(tasks.get(p));
 					}
 				}
 				
-			}, 20L, 20L));
+			}, 0L, 20L));
 		}
 	}
 	
