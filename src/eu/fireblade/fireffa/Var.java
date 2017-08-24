@@ -167,14 +167,14 @@ public class Var {
 			}
 		}else if(OITCman.contains(p)) {
 			OITCman.remove(p);
-			
-			
 		}else if(lapin.contains(p)) {
 			lapin.remove(p);
 		}else if(russe.contains(p)) {
 			russe.remove(p);
 		}else if(grampa.contains(p)) {
 			grampa.remove(p);
+			
+			
 		}else if(mineur.contains(p)) {
 			mineur.remove(p);
 		}else if(jihadist.contains(p)) {

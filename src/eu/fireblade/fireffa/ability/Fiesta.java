@@ -67,8 +67,8 @@ public class Fiesta implements Listener {
 						}else {
 							b = 0;
 							playeronarea.get(a).teleport(loc.get(b));
-							playeronarea.get(a).playSound(playeronarea.get(a).getLocation(), Sound.FIREWORK_LAUNCH, 30, 30);
-							GlowstoneTitle gt = new GlowstoneTitle(playeronarea.get(a), "", ChatColor.LIGHT_PURPLE+"C'est la fête!", 20, 30, 20);
+							playeronarea.get(b).playSound(playeronarea.get(b).getLocation(), Sound.FIREWORK_LAUNCH, 30, 30);
+							GlowstoneTitle gt = new GlowstoneTitle(playeronarea.get(b), "", ChatColor.LIGHT_PURPLE+"C'est la fête!", 20, 30, 20);
 							gt.send();
 						}
 					}
