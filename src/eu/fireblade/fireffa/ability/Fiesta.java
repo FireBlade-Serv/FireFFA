@@ -43,7 +43,7 @@ public class Fiesta implements Listener {
 					
 				return;
 			}else {
-				for (Entity onarea : p.getNearbyEntities(20, 20, 20)) {
+				for (Entity onarea : p.getNearbyEntities(10, 10, 10)) {
 					if(onarea.getType().equals(EntityType.PLAYER)) {
 						Player ponarea = (Player) onarea;
 						playeronarea.add(ponarea);
