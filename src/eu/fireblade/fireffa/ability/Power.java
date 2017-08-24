@@ -128,6 +128,8 @@ public class Power implements Listener {
 				dp.setLevel(0);
 				inload.remove(dp);
 				
+				Bukkit.getScheduler().cancelTask(tasks.get(dp));
+				
 				max.replace(dp, -1);
 			}
 		}
