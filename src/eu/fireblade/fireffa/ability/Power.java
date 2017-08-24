@@ -89,7 +89,7 @@ public class Power implements Listener {
 				max.put(p, -1);
 			}
 			
-			if(!(max.get(p) == -1) || inload.contains(p)) {
+			if(!(max.get(p) == -1) || !inload.contains(p)) {
 				return;
 			}
 			
