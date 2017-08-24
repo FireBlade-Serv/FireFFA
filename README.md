@@ -1,3 +1,3 @@
 # FireFFA
 
-flem d'écrire 
+Le FFA de FireBlade !
