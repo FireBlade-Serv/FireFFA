@@ -1,8 +1,6 @@
 package eu.fireblade.fireffa.ability;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -68,6 +66,11 @@ public class Fiesta implements Listener {
 						playeronarea.get(a).teleport(loc.get(b));
 					}
 				}
+				loc.clear();
+				playeronarea.clear();
+				a = 0;
+				b = 1;
+				
 				cooldown.add(p);
 				
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
