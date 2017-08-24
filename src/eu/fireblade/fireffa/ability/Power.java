@@ -89,7 +89,7 @@ public class Power implements Listener {
 				max.put(p, -1);
 			}
 			
-			if(!(max.get(p) == -1)) {
+			if(!(max.get(p) == -1) || inload.contains(p)) {
 				return;
 			}
 			
@@ -98,14 +98,12 @@ public class Power implements Listener {
 				@Override
 				public void run() {
 					if(max.get(p) < 10){
-						if(Var.power.contains(p) && inload.contains(p)) {
+						if(Var.power.contains(p)) {
 							max.replace(p, max.get(p) + 1);
 							p.setLevel(max.get(p));
 							p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
 						}
 					}else {
-						max.replace(p, -1);
-						
 						inload.remove(p);
 						
 						Bukkit.getScheduler().cancelTask(tasks.get(p));
