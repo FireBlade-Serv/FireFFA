@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -16,16 +17,18 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
+import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
+import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Fiesta implements Listener {
 	
 	private static ArrayList<Player> cooldown = new ArrayList<Player>();
 	private static ArrayList<Player> playeronarea = new ArrayList<Player>();
 	
-	private static Map<Player, Location> loc = new HashMap<Player, Location>();
+	private static ArrayList<Location> loc = new ArrayList<Location>();
 	
 	@EventHandler
 	public void OnClick(PlayerRightClickInteractEvent e) {
@@ -51,9 +54,37 @@ public class Fiesta implements Listener {
 				playeronarea.add(p);
 				
 				for (Player inList : playeronarea) {
-					loc.put(inList, inList.getLocation());
-					playeronarea.remove(0);
+					loc.add(inList.getLocation());
 				}
+				int a = 0;
+				int b = 1;
+				for ( int pn = 0 ; pn < loc.size() ; pn++) {
+					if( b < loc.size()) {					
+						playeronarea.get(a).teleport(loc.get(b));
+						a++;
+						b++;
+					}else {
+						b = 0;
+						playeronarea.get(a).teleport(loc.get(b));
+					}
+				}
+				cooldown.add(p);
+				
+				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+
+					@Override
+					public void run() {
+						if(Var.fiesta.contains(p)){
+							GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous pouvez utiliser votre Cotillon !", 20, 30, 20);
+							gt.send();
+							
+							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
+						}
+						
+						cooldown.remove(p);
+					}
+					
+				}, 800L);			
 			}
 		}	
 	}
