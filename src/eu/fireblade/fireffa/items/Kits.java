@@ -781,7 +781,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon EnClumex", 1, 76, 76, 76));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes EnClumex", 1, 76, 76, 76));
 		p.getInventory().setItem(0, ItemGen1(Material.IRON_BLOCK, Enchantment.DAMAGE_ALL, 1, "§9Enclumax", null, 1));
-		p.getInventory().setItem(1, ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, Integer.MAX_VALUE, "§9UltiMax", LoreCreator("§9Clique Gauche - tue votre ennemis ", "§930 secondes de récupération"), 1) );
+		p.getInventory().setItem(1, ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 999, "§9UltiMax", LoreCreator("§9Clique Gauche - tue votre ennemis ", "§930 secondes de récupération"), 1) );
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}

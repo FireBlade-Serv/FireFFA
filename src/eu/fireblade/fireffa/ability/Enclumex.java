@@ -32,7 +32,7 @@ public class Enclumex implements Listener {
 			Player pp = (Player) p;
 			Player pt = (Player) t;
 			
-			if(pp.getItemInHand().equals(Kits.ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, Integer.MAX_VALUE, "§9UltiMax", 
+			if(pp.getItemInHand().equals(Kits.ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 999, "§9UltiMax", 
 					Kits.LoreCreator("§9Clique Gauche - tue votre ennemis ", "§930 secondes de récupération"), 1)) && Var.enclumex.contains(pp)){
 				
 				pp.playSound(pp.getLocation(), Sound.ANVIL_LAND, 30, 30);
@@ -40,7 +40,7 @@ public class Enclumex implements Listener {
 				pp.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez enclumé "+pt.getName()+" !");
 				GlowstoneTitle gt = new GlowstoneTitle(pt, "", ChatColor.GRAY+"Vous vous êtes fait enclumé !", 20, 30, 20);
 				gt.send();
-				pp.getInventory().remove(Kits.ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, Integer.MAX_VALUE, "§9UltiMax", 
+				pp.getInventory().remove(Kits.ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 999, "§9UltiMax", 
 					Kits.LoreCreator("§9Clique Gauche - tue votre ennemis ", "§930 secondes de récupération"), 1));
 				
 				cooldown.add(pp);
@@ -50,7 +50,7 @@ public class Enclumex implements Listener {
 					@Override
 					public void run() {
 						if(Var.enclumex.contains(p)){
-							pp.getInventory().setItem(1, Kits.ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, Integer.MAX_VALUE, "§9UltiMax", 
+							pp.getInventory().setItem(1, Kits.ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 999, "§9UltiMax", 
 									Kits.LoreCreator("§9Clique Gauche - tue votre ennemis ", "§930 secondes de récupération"), 1) );
 							pp.playSound(pp.getLocation(), Sound.ANVIL_USE, 30, 30);
 							GlowstoneTitle gt = new GlowstoneTitle(pt, "", ChatColor.GRAY+"Vous avez récupéré votre UltiMax !", 20, 30, 20);
