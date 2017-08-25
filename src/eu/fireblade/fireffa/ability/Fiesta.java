@@ -3,7 +3,6 @@ package eu.fireblade.fireffa.ability;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -20,6 +19,7 @@ import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
+import net.md_5.bungee.api.ChatColor;
 
 public class Fiesta implements Listener {
 	
