@@ -61,7 +61,7 @@ public class Enclumex implements Listener {
 						cooldown.remove(p);
 					}
 					
-				}, 900L);
+				}, 600L);
 			} else {
 				return;
 			}
