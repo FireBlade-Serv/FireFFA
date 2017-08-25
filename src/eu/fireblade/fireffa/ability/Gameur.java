@@ -25,8 +25,8 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Gameur implements Listener {
 	
-	private static ArrayList<Player> cooldown = new ArrayList<Player>();
-	private static ArrayList<Player> cooldown2 = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown2 = new ArrayList<Player>();
 	
 	private static ArrayList<Player> nod = new ArrayList<Player>();
 	
@@ -65,7 +65,9 @@ public class Gameur implements Listener {
 							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 						}
 						
-						cooldown.remove(p);
+						if(cooldown.contains(p)) {
+							cooldown.remove(p);
+						}
 					}
 					
 				}, 600L);
@@ -102,7 +104,9 @@ public class Gameur implements Listener {
 							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 						}
 						
-						cooldown2.remove(p);
+						if(cooldown2.contains(p)) {
+							cooldown2.remove(p);
+						}
 					}
 					
 				}, 300L);

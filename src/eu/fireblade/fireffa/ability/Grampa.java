@@ -21,7 +21,7 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Grampa implements Listener {
 	
-	private static ArrayList<Player> cooldown = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
 	private static ItemStack getItem(){
 		ItemStack charcoal = new ItemStack(Material.COAL, 1, (byte) 0);
@@ -63,7 +63,9 @@ public class Grampa implements Listener {
 									p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 								}
 								
-								cooldown.remove(p);
+								if(cooldown.contains(p)) {
+									cooldown.remove(p);
+								}
 							}
 							
 						}, 1800L);

@@ -65,7 +65,9 @@ public class Magicien implements Listener {
 										}
 									}
 									
-									cooldown.remove(jawadV2);
+									if(cooldown.contains(jawadV2)) {
+										cooldown.remove(jawadV2);
+									}
 								}
 								
 							}, 100L);

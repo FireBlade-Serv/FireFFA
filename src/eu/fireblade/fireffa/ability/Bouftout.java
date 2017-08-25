@@ -56,7 +56,9 @@ public class Bouftout implements Listener {
 								
 							}
 							
-							cooldown.remove(p);
+							if(cooldown.contains(p)) {
+								cooldown.remove(p);
+							}
 						}
 						
 					}, 600L);

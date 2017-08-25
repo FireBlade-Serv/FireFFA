@@ -66,7 +66,9 @@ public class Power implements Listener {
 							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 						}
 						
-						cooldown.remove(p);
+						if(cooldown.contains(p)) {
+							cooldown.remove(p);
+						}
 					}
 					
 				}, 300L);
@@ -104,7 +106,9 @@ public class Power implements Listener {
 							p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
 						}
 					}else {
-						inload.remove(p);
+						if(inload.contains(p)) {
+							inload.remove(p);
+						}
 						
 						Bukkit.getScheduler().cancelTask(tasks.get(p));
 					}

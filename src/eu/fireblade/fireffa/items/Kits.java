@@ -548,7 +548,7 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.BLACK+"Tunique de domination", 1, 25, 25, 25));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.BLACK+"Pantalon de domination", 1, 25, 25, 25));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.BLACK+"Bottes de domination", 1, 25, 25, 25));
-		p.getInventory().setItem(0, ItemGen1(Material.NETHER_STAR, Enchantment.DAMAGE_ALL, 3,ChatColor.BLACK+"Éclaire de terreur", LoreCreator(ChatColor.BLUE+"Clique droit - Fait tomber la foudre", ChatColor.BLUE+"30 secondes de récupération"),1));
+		p.getInventory().setItem(0, ItemGen1(Material.NETHER_STAR, Enchantment.DAMAGE_ALL, 3,ChatColor.BLACK+"Éclair de terreur", LoreCreator(ChatColor.BLUE+"Clique droit - Fait tomber la foudre", ChatColor.BLUE+"30 secondes de récupération"),1));
 		p.getInventory().setItem(1, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLACK+"Potion de domination", true));
 		p.getInventory().setItem(2, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLACK+"Potion de domination", true));
 		p.getInventory().setItem(3, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLACK+"Potion de domination", true));

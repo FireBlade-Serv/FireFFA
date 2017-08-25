@@ -6,8 +6,17 @@ import java.util.HashMap;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import eu.fireblade.fireffa.ability.DevDePacotille;
+import eu.fireblade.fireffa.ability.Domination;
 import eu.fireblade.fireffa.ability.Fantôme;
+import eu.fireblade.fireffa.ability.Gameur;
+import eu.fireblade.fireffa.ability.Grampa;
+import eu.fireblade.fireffa.ability.GuerrierGalactique;
 import eu.fireblade.fireffa.ability.Magicien;
+import eu.fireblade.fireffa.ability.Ocelot;
+import eu.fireblade.fireffa.ability.Ours;
+import eu.fireblade.fireffa.ability.PandaRoux;
+import eu.fireblade.fireffa.ability.Patissier;
 import eu.fireblade.fireffa.ability.VoleurÂmes;
 
 public class Var {
@@ -174,39 +183,77 @@ public class Var {
 		}else if(grampa.contains(p)) {
 			grampa.remove(p);
 			
-			
+			if(Grampa.cooldown.contains(p)) {
+				Grampa.cooldown.remove(p);
+			}
 		}else if(mineur.contains(p)) {
 			mineur.remove(p);
 		}else if(jihadist.contains(p)) {
 			jihadist.remove(p);
 		}else if(gamer.contains(p)) {
 			gamer.remove(p);
+			
+			if(Gameur.cooldown.contains(p)) {
+				Gameur.cooldown.remove(p);
+			}
+			
+			if(Gameur.cooldown2.contains(p)) {
+				Gameur.cooldown2.remove(p);
+			}
 		}else if(sauvage.contains(p)) {
 			sauvage.remove(p);
 		}else if(archerélémentaire.contains(p)) {
 			archerélémentaire.remove(p);
 		}else if(ocelot.contains(p)) {
 			ocelot.remove(p);
+			
+			if(Ocelot.cooldown.contains(p)) {
+				Ocelot.cooldown.remove(p);
+			}
 		}else if(archerélite.contains(p)) {
 			archerélite.remove(p);
 		}else if(assassin.contains(p)) {
 			assassin.remove(p);
 		}else if(panda.contains(p)) {
 			panda.remove(p);
+			
+			if(PandaRoux.cooldown.contains(p)) {
+				PandaRoux.cooldown.remove(p);
+			}
 		}else if(informaticien.contains(p)) {
 			informaticien.remove(p);
 		}else if(programmeur.contains(p)) {
 			programmeur.remove(p);
+			
+			if(DevDePacotille.cooldown.contains(p)) {
+				DevDePacotille.cooldown.remove(p);
+			}
 		}else if(patissier.contains(p)) {
 			patissier.remove(p);
+			
+			if(Patissier.cooldown.contains(p)) {
+				Patissier.cooldown.remove(p);
+			}
 		}else if(ours.contains(p)) {
 			ours.remove(p);
+			
+			if(Ours.cooldown.contains(p)) {
+				Ours.cooldown.remove(p);
+			}
 		}else if(guerriergalactique.contains(p)) {
 			guerriergalactique.remove(p);
+			
+			if(GuerrierGalactique.cooldown.contains(p)) {
+				GuerrierGalactique.cooldown.remove(p);
+			}
 		}else if(esclave.contains(p)) {
 			esclave.remove(p);
 		}else if(domination.contains(p)) {
 			domination.remove(p);
+			
+			if(Domination.cooldown.contains(p)) {
+				Domination.cooldown.remove(p);
+			}
 		}else if(boucher.contains(p)) {
 			boucher.remove(p);
 		}else if(mathématicien.contains(p)) {

@@ -22,7 +22,7 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Patissier implements Listener {
 	
-	private static ArrayList<Player> cooldown = new ArrayList<Player>(); 
+	public static ArrayList<Player> cooldown = new ArrayList<Player>(); 
 
 	@EventHandler
 	public void onInteract(PlayerRightClickInteractEvent e) {
@@ -62,7 +62,9 @@ public class Patissier implements Listener {
 								p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 							}
 							
-							cooldown.remove(p);
+							if(cooldown.contains(p)) {
+								cooldown.remove(p);
+							}
 						}
 						
 					}, 600L);

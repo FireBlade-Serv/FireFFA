@@ -19,7 +19,7 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Ours implements Listener {
 	
-	private static ArrayList<Player> cooldown = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
 	@EventHandler
 	public void onInteract(PlayerInteractAtPlayerEvent e) {
@@ -53,7 +53,9 @@ public class Ours implements Listener {
 								p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 							}
 							
-							cooldown.remove(p);
+							if(cooldown.contains(p)) {
+								cooldown.remove(p);
+							}
 						}
 						
 					}, 1200L);

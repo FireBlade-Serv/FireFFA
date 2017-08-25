@@ -62,7 +62,9 @@ public class Timer implements Listener {
 									
 								}
 								
-								cooldown.remove(Timer1);
+								if(cooldown.contains(Timer1)) {
+									cooldown.remove(Timer1);
+								}
 							}
 							
 						}, 600L);

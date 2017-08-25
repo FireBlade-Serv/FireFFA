@@ -6,41 +6,46 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.World;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
-import eu.fireblade.fireffa.events.PlayerInteractAtPlayerEvent;
+import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
 import fr.glowstoner.api.bukkit.GlowstoneTick;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
-public class DevDePacotille implements Listener {
+public class Domination implements Listener {
 	
 	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
 	@EventHandler
-	public void onInteract(PlayerInteractAtPlayerEvent e) {
+	public void onClick(PlayerRightClickInteractEvent e) {
 		final Player p = e.getPlayer();
-		final Player target = e.getTarget();
-		final ItemStack item = e.getItemInHand();
+		final ItemStack item = e.getItem();
+		final World w = e.getWorld();
 		
-		if(item.equals(Kits.ItemGen(Material.IRON_INGOT, ChatColor.DARK_PURPLE+"Command prompt: BLIND",
-				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Aveugle", ChatColor.BLUE+"5 secondes de récupération"), 1))) {
+		if(item.equals(Kits.ItemGen1(Material.NETHER_STAR, Enchantment.DAMAGE_ALL, 3,ChatColor.BLACK+"Éclair de terreur", 
+				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Fait tomber la foudre", ChatColor.BLUE+"30 secondes de récupération"),1))) {
 			
-			if(Var.programmeur.contains(p)) {
+			if(Var.domination.contains(p)) {
 				if(cooldown.contains(p)) {
 					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 					
 					return;
 				}else {
-					blind(p, target);
+					p.playSound(p.getEyeLocation(), Sound.IRONGOLEM_DEATH, 30, 30);
+					
+					w.strikeLightning(p.getLocation());
 					
 					cooldown.add(p);
 					
@@ -48,7 +53,7 @@ public class DevDePacotille implements Listener {
 
 						@Override
 						public void run() {
-							if(Var.programmeur.contains(p)){
+							if(Var.domination.contains(p)){
 								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre attaque est prête !", 20, 30, 20);
 								gt.send();
 								
@@ -60,18 +65,24 @@ public class DevDePacotille implements Listener {
 							}
 						}
 						
-					}, new GlowstoneTick(5).getTicks());
+					}, new GlowstoneTick(30).getTicks());
 				}
 			}
 		}
 	}
 	
-	private static void blind(Player p, Player target) {
-		p.playSound(p.getLocation(), Sound.IRONGOLEM_HIT, 30, 30);
+	@EventHandler
+	public void onDamage(EntityDamageEvent e) {
+		final Entity entity = e.getEntity();
+		final DamageCause cause = e.getCause();
 		
-		target.playSound(p.getLocation(), Sound.PIG_DEATH, 30, 30);
-		
-		target.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 60, 0));
+		if(entity instanceof Player) {
+			Player p = (Player) entity;
+			
+			if(Var.domination.contains(p) && cause.equals(DamageCause.LIGHTNING)) {
+				e.setCancelled(true);
+			}
+		}
 	}
 
 }

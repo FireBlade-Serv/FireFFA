@@ -55,7 +55,9 @@ public class Fantôme implements Listener {
 							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 						}
 						
-						cooldown.remove(p);
+						if(cooldown.contains(p)) {
+							cooldown.remove(p);
+						}
 					}
 					
 				}, 300L);

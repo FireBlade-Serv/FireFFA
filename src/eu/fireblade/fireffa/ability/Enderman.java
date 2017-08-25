@@ -67,7 +67,9 @@ public class Enderman implements Listener {
 							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);						
 					}
 					
-					cooldown.remove(p);
+					if(cooldown.contains(p)) {
+						cooldown.remove(p);
+					}
 				}
 				
 			}, 600L);			

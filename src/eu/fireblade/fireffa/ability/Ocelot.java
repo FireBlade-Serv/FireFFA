@@ -22,7 +22,7 @@ import net.md_5.bungee.api.ChatColor;
 
 public class Ocelot implements Listener {
 	
-	private static ArrayList<Player> cooldown = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
 	private static ItemStack getItem(){
 		ItemStack bonemeal = new ItemStack(Material.INK_SACK, 1, (short)15);
