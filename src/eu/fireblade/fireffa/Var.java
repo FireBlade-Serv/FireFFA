@@ -146,6 +146,7 @@ public class Var {
 	public static ArrayList<Location> spawn = new ArrayList<Location>();
 	
 	public static void clearKitArray(Player p) {
+
 		if(démolisseur.contains(p)) {
 			démolisseur.remove(p);
 		}else if(fantôme.contains(p)) {
@@ -352,4 +353,282 @@ public class Var {
 			archervagabon.remove(p);
 		}
 	}
+	
+	public static void switchArray(Player p, Player t) {
+		if(démolisseur.contains(t)) {
+			démolisseur.remove(t);
+			swap.add(t);
+			démolisseur.add(p);
+			swap.remove(p);
+		}else if(fantôme.contains(t)) {
+			fantôme.remove(t);
+			swap.add(t);
+			fantôme.add(p);
+			swap.remove(p);
+		}else if(tank.contains(t)) {
+			tank.remove(t);
+			swap.add(t);
+			tank.add(p);
+			swap.remove(p);
+		}else if(flic.contains(t)) {
+			flic.remove(t);
+			swap.add(t);
+			flic.add(p);
+			swap.remove(p);
+		}else if(magicien.contains(t)) {
+			magicien.remove(t);
+			swap.add(t);
+			magicien.add(p);
+			swap.remove(p);	
+		}else if(chevalier.contains(t)) {
+			chevalier.remove(t);
+			swap.add(t);
+			chevalier.add(p);
+			swap.remove(p);
+		}else if(cactus.contains(t)) {
+			cactus.remove(t);
+			swap.add(t);
+			cactus.add(p);
+			swap.remove(p);
+		}else if(piaf.contains(t)) {
+			piaf.remove(t);
+			swap.add(t);
+			piaf.add(p);
+			swap.remove(p);
+		}else if(voleurdame.contains(t)) {
+			voleurdame.remove(t);
+			swap.add(t);
+			voleurdame.add(p);
+			swap.remove(p);
+		}else if(OITCman.contains(t)) {
+			OITCman.remove(t);
+			swap.add(t);
+			OITCman.add(p);
+			swap.remove(p);
+		}else if(lapin.contains(t)) {
+			lapin.remove(t);
+			swap.add(t);
+			lapin.add(p);
+			swap.remove(p);
+		}else if(russe.contains(t)) {
+			russe.remove(t);
+			swap.add(t);
+			russe.add(p);
+			swap.remove(p);
+		}else if(grampa.contains(t)) {
+			grampa.remove(t);
+			swap.add(t);
+			grampa.add(p);
+			swap.remove(p);
+		}else if(mineur.contains(t)) {
+			mineur.remove(t);
+			swap.add(t);
+			mineur.add(p);
+			swap.remove(p);mineur.remove(t);
+		}else if(jihadist.contains(t)) {
+			jihadist.remove(t);
+			swap.add(t);
+			jihadist.add(p);
+			swap.remove(p);
+		}else if(gamer.contains(t)) {
+			gamer.remove(t);
+			swap.add(t);
+			gamer.add(p);
+			swap.remove(p);gamer.remove(t);
+		}else if(sauvage.contains(t)) {
+			sauvage.remove(t);
+			swap.add(t);
+			sauvage.add(p);
+			swap.remove(p);
+		}else if(archerélémentaire.contains(t)) {
+			archerélémentaire.remove(t);
+			swap.add(t);
+			archerélémentaire.add(p);
+			swap.remove(p);
+		}else if(ocelot.contains(t)) {
+			ocelot.remove(t);
+			swap.add(t);
+			ocelot.add(p);
+			swap.remove(p);
+		}else if(archerélite.contains(t)) {
+			archerélite.remove(t);
+			swap.add(t);
+			archerélite.add(p);
+			swap.remove(p);
+		}else if(assassin.contains(t)) {
+			assassin.remove(t);
+			swap.add(t);
+			assassin.add(p);
+			swap.remove(p);
+		}else if(panda.contains(t)) {
+			panda.remove(t);
+			swap.add(t);
+			panda.add(p);
+			swap.remove(p);
+		}else if(informaticien.contains(t)) {
+			informaticien.remove(t);
+			swap.add(t);
+			informaticien.add(p);
+			swap.remove(p);
+		}else if(programmeur.contains(t)) {
+			programmeur.remove(t);
+			swap.add(t);
+			programmeur.add(p);
+			swap.remove(p);
+		}else if(patissier.contains(t)) {
+			patissier.remove(t);
+			swap.add(t);
+			patissier.add(p);
+			swap.remove(p);
+		}else if(ours.contains(t)) {
+			ours.remove(t);
+			swap.add(t);
+			ours.add(p);
+			swap.remove(p);
+		}else if(guerriergalactique.contains(t)) {
+			guerriergalactique.remove(t);
+			swap.add(t);
+			guerriergalactique.add(p);
+			swap.remove(p);
+		}else if(esclave.contains(t)) {
+			esclave.remove(t);
+			swap.add(t);
+			esclave.add(p);
+			swap.remove(p);
+		}else if(domination.contains(t)) {
+			domination.remove(t);
+			swap.add(t);
+			domination.add(p);
+			swap.remove(p);
+		}else if(boucher.contains(t)) {
+			boucher.remove(t);
+			swap.add(t);
+			boucher.add(p);
+			swap.remove(p);
+		}else if(mathématicien.contains(t)) {
+			mathématicien.remove(t);
+			swap.add(t);
+			mathématicien.add(p);
+			swap.remove(p);
+		}else if(pyro.contains(t)) {
+			pyro.remove(t);
+			swap.add(t);
+			pyro.add(p);
+			swap.remove(p);
+		}else if(moutarde.contains(t)) {
+			moutarde.remove(t);
+			swap.add(t);
+			moutarde.add(p);
+			swap.remove(p);
+		}else if(vampire.contains(t)) {
+			vampire.remove(t);
+			swap.add(t);
+			vampire.add(p);
+			swap.remove(p);
+		}else if(nuage.contains(t)) {
+			nuage.remove(t);
+			swap.add(t);
+			nuage.add(p);
+			swap.remove(p);
+		}else if(timer.contains(t)) {
+			timer.remove(t);
+			swap.add(t);
+			timer.add(p);
+			swap.remove(p);
+		}else if(robindesbois.contains(t)) {
+			robindesbois.remove(t);
+			swap.add(t);
+			robindesbois.add(p);
+			swap.remove(p);
+		}else if(gandalf.contains(t)) {
+			gandalf.remove(t);
+			swap.add(t);
+			gandalf.add(p);
+			swap.remove(p);
+		}else if(glowstone.contains(t)) {
+			glowstone.remove(t);
+		}else if(enderman.contains(t)) {
+			enderman.remove(t);
+			swap.add(t);
+			enderman.add(p);
+			swap.remove(p);
+		}else if(rulio.contains(t)) {
+			rulio.remove(t);
+			swap.add(t);
+			rulio.add(p);
+			swap.remove(p);
+		}else if(copy.contains(t)) {
+			copy.remove(t);
+			swap.add(t);
+			copy.add(p);
+			swap.remove(p);
+		}else if(pharaon.contains(t)) {
+			pharaon.remove(t);
+			swap.add(t);
+			pharaon.add(p);
+			swap.remove(p);
+		}else if(furicat.contains(t)) {
+			furicat.remove(t);
+			swap.add(t);
+			furicat.add(p);
+			swap.remove(p);
+		}else if(redman.contains(t)) {
+			redman.remove(t);
+			swap.add(t);
+			redman.add(p);
+			swap.remove(p);
+		}else if(trapman.contains(t)) {
+			trapman.remove(t);
+			swap.add(t);
+			trapman.add(p);
+			swap.remove(p);
+		}else if(swap.contains(t)) {
+		}else if(golem.contains(t)) {
+			golem.remove(t);
+			swap.add(t);
+			golem.add(p);
+			swap.remove(p);
+		}else if(ogre.contains(t)) {
+			ogre.remove(t);
+			swap.add(t);
+			ogre.add(p);
+			swap.remove(p);
+		}else if(bouftout.contains(t)) {
+			bouftout.remove(t);
+			swap.add(t);
+			bouftout.add(p);
+			swap.remove(p);
+		}else if(enclumex.contains(t)) {
+			enclumex.remove(t);
+			swap.add(t);
+			enclumex.add(p);
+			swap.remove(p);
+		}else if(fiesta.contains(t)) {
+			fiesta.remove(t);
+			swap.add(t);
+			fiesta.add(p);
+			swap.remove(p);
+		}else if(power.contains(t)) {
+			power.remove(t);
+			swap.add(t);
+			power.add(p);
+			swap.remove(p);
+		}else if(dieu.contains(t)) {
+			dieu.remove(t);
+			swap.add(t);
+			dieu.add(p);
+			swap.remove(p);
+		}else if(invocation.contains(t)) {
+			invocation.remove(t);
+			swap.add(t);
+			invocation.add(p);
+			swap.remove(p);
+		}else if(archervagabon.contains(t)) {
+			archervagabon.remove(t);
+			swap.add(t);
+			archervagabon.add(p);
+			swap.remove(p);
+		}
+	}
 }
+
