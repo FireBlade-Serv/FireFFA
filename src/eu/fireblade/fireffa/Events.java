@@ -11,12 +11,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
@@ -59,7 +60,7 @@ public class Events implements Listener {
 	}
 	
 	@EventHandler
-	public void onDamage(EntityDamageByEntityEvent e){
+	public void onDamage(EntityDamageEvent e){
 		final Entity entity = e.getEntity();
 		final World w = entity.getWorld();
 		final double damage = e.getDamage();
@@ -74,7 +75,7 @@ public class Events implements Listener {
 			return;
 		}
 		
-		Entity eNas = w.spawn(entity.getLocation(), ArmorStand.class);
+		Entity eNas = w.spawn(entity.getLocation().add(0.0d, 1.3d, 0.0d), ArmorStand.class);
 		
 		ArmorStand as = (ArmorStand) eNas;
 		
@@ -148,6 +149,29 @@ public class Events implements Listener {
 	}
 	
 	@EventHandler
+	public void onHit(ProjectileHitEvent e) {
+		final Entity entity = e.getEntity();
+		
+		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+
+			@Override
+			public void run() {
+				entity.remove();
+			}
+			
+		}, 3L);
+	}
+	
+	@EventHandler
+	public void onEat(PlayerItemConsumeEvent e) {
+		final ItemStack item = e.getItem();
+	
+		if(!item.equals(Kits.Bouf(Material.CARROT_ITEM, 1)) || !item.getType().equals(Material.POTION)) {
+			e.setCancelled(true);
+		}
+	}
+	
+	@EventHandler
 	public void onPlayerRightClickPlayer(PlayerInteractAtEntityEvent e){
 		final Player p = e.getPlayer();
 		final Entity entity = e.getRightClicked();
@@ -181,7 +205,7 @@ public class Events implements Listener {
 	}
 	
 	@EventHandler
-	public void onDamage(EntityDamageEvent e) {
+	public void onDamageEvent(EntityDamageEvent e) {
 		final Entity entity = e.getEntity();
 		final World w = entity.getWorld();
 		final double damage = e.getDamage();

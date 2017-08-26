@@ -156,7 +156,7 @@ public class Kits {
 		return item;
 	}
 	
-	
+	// FAIT
 	public static void kitDemolisseur(Player p) {
 		Clear(p);
 		
@@ -168,7 +168,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.getInventory().setItem(1, ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 16));
 	}
-	// OK
+	// FAIT
 	public static void kitFantome(Player p) {
 		Clear(p);
 		
@@ -178,7 +178,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 0));
 	}
-	// OK
+	// FAIT
 	public static void kitTank(Player p) {
 		Clear(p);
 		
@@ -192,7 +192,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, Integer.MAX_VALUE, 0));
 	}
-	// OK
+	// FAIT
 	public static void kitFlic (Player p) {
 		Clear(p);
 		
@@ -205,7 +205,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.getInventory().setItem(2, ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 12));
 	}
-	// OK
+	// FAIT
 	public static void kitMagicien (Player p) {
 		Clear(p);
 		
@@ -219,7 +219,7 @@ public class Kits {
 		p.getInventory().setItem(3, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLUE+"Potion déstructrice du magicien", true));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitChevalier (Player p) {
 		Clear(p);
 		
@@ -231,7 +231,7 @@ public class Kits {
 		p.getInventory().setItem(1, generatePotItem(PotionType.INSTANT_HEAL, 2, ChatColor.GRAY+"Potion curative du chevalier", false));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitCactus (Player p) {
 		Clear(p);
 		
@@ -243,7 +243,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2));
 	}
-	// OK
+	// FAIT
 	public static void kitPiaf (Player p) {
 		Clear(p);
 		
@@ -256,7 +256,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
-	// MANQUE ABILITÉ
+	// FAIT
 	public static void kitVoleurdame (Player p) {
 		Clear(p);
 		
@@ -274,7 +274,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.BLACK+"Puit de sang",LoreCreator(ChatColor.BLUE+"Clique droit - Utilise les âmes accumulées pour se régénerer", ChatColor.BLUE+"Consomme le puit de sang (Expérience)"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitOITCman (Player p) {
 		Clear(p);
 		
@@ -284,7 +284,7 @@ public class Kits {
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 0));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitLapin (Player p) {
 		Clear(p);
 		
@@ -297,7 +297,7 @@ public class Kits {
 		p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 6));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitRusse(Player p) {
 		Clear(p);
 		
@@ -322,7 +322,7 @@ public class Kits {
 		p.getInventory().setItem(1, Potion);
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitGrampa(Player p) {
 		Clear(p);
 		
@@ -340,7 +340,7 @@ public class Kits {
 		p.getInventory().setItem(2, charcoal);
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitMineur(Player p) {
 		Clear(p);
 		
@@ -353,7 +353,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen1(Material.COAL, Enchantment.FIRE_ASPECT, 1, ChatColor.YELLOW+"Charbon du mineur", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitJihadist (Player p) {
 		Clear(p);
 		
@@ -366,7 +366,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.DARK_RED+"Allah akbar",LoreCreator(ChatColor.BLUE+"Clique droit - Se faire exploser", ChatColor.BLUE+"Vous tue instantanément"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitGamer (Player p) {
 		Clear(p);
 		
@@ -379,7 +379,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.RABBIT_FOOT, ChatColor.GREEN+"Super jump",LoreCreator(ChatColor.BLUE+"Clique droit - Saute à une hauteur de 5 blocs", ChatColor.BLUE+"Récupération 15 secondes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitSauvage (Player p) {
 		Clear(p);
 		
@@ -388,7 +388,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.GRILLED_PORK, ChatColor.DARK_PURPLE+"Nourriture charnue", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 3 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitArcherelementaire (Player p) {
 		Clear(p);
 		
@@ -402,7 +402,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.BOW, ChatColor.GREEN+"Arc de glace", LoreCreator(ChatColor.BLUE+"Ses fléches ralentissent et aveugles", ChatColor.BLUE+"Pendant 2 secondes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));		
 	}
-	// OK	
+	// FAIT
 	public static void kitOcelot (Player p) {
 		Clear(p);
 		
@@ -420,7 +420,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.STRING, ChatColor.YELLOW+"Ficelle de pelote laine", null, 3));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));			
 	}
-	// OK
+	// FAIT
 	public static void kitArchervagabon (Player p) {
 		Clear(p);
 		
@@ -433,7 +433,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.DARK_GREEN+"Fléche de l'archer vagabon", null, 32));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitArcherelite (Player p) {
 		Clear(p);
 		
@@ -442,7 +442,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.ARROW, ChatColor.RED+"Fléche de l'archer élite", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitAssassin (Player p) {
 		Clear(p);
 		
@@ -454,7 +454,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.SHEARS, Enchantment.DAMAGE_ALL, 4, ChatColor.BLACK+"Couteau de l'égorgeur", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitPanda (Player p) {
 		Clear(p);
 		
@@ -466,7 +466,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.CLAY_BALL, ChatColor.WHITE+"Charge au sol", LoreCreator(ChatColor.BLUE+"Clique droit - Petite explosion", ChatColor.BLUE+"30 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitInformaticien (Player p) {
 		Clear(p);
 		
@@ -478,7 +478,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen1(Material.POWERED_RAIL, Enchantment.FIRE_ASPECT, 2, ChatColor.GRAY+"Carte graphique (AMD)", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitProgrammeur (Player p) {
 		Clear(p);
 		
@@ -492,7 +492,7 @@ public class Kits {
 		p.getInventory().setItem(3, ItemGen1(Material.GOLD_INGOT, Enchantment.FIRE_ASPECT, 2, ChatColor.DARK_PURPLE+"Command prompt: FLAME", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// FAIT
 	public static void kitPatissier (Player p) {
 		Clear(p);
 		
@@ -505,7 +505,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.COOKIE, ChatColor.LIGHT_PURPLE+"Cookie du patisser", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs + vitesse 2, 15 secondes", ChatColor.BLUE+"30 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}	
-	// OK
+	// FAIT
 	public static void kitOurs (Player p) {
 		Clear(p);
 		
@@ -517,7 +517,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.WOOD_PICKAXE, ChatColor.DARK_GRAY+"Crocs de l'ours", LoreCreator(ChatColor.BLUE+"Clique droit - Vole 2 coeurs à la cible", ChatColor.BLUE+"1 minute de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// FAIT
 	public static void kitGuerriergalactique (Player p) {
 		Clear(p);
 		
@@ -528,7 +528,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.GOLD_NUGGET, ChatColor.AQUA+"Pouvoir du guerrier galactique", LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"20 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// FAIT
 	public static void kitEsclave(Player p) {
 		Clear(p);
 		
@@ -540,7 +540,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.WOOD_HOE, Enchantment.KNOCKBACK, 2, ChatColor.DARK_GRAY+"Hoe de l'esclave", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// OK
+	// FAIT
 	public static void kitDomination (Player p) {
 		Clear(p);
 		
@@ -555,7 +555,7 @@ public class Kits {
 		p.getInventory().setItem(4, generatePotItem(PotionType.SLOWNESS, 1, ChatColor.BLACK+"Potion anti-rebellion", true));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// FAIT
 	public static void kitBoucher(Player p) {
 		Clear(p);
 		

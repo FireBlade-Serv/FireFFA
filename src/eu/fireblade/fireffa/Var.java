@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import eu.fireblade.fireffa.ability.Bouftout;
 import eu.fireblade.fireffa.ability.DevDePacotille;
 import eu.fireblade.fireffa.ability.Domination;
+import eu.fireblade.fireffa.ability.Démolisseur;
 import eu.fireblade.fireffa.ability.Enclumex;
 import eu.fireblade.fireffa.ability.Enderman;
 import eu.fireblade.fireffa.ability.Fantôme;
@@ -148,6 +149,10 @@ public class Var {
 	public static void clearKitArray(Player p) {
 		if(démolisseur.contains(p)) {
 			démolisseur.remove(p);
+			
+			if(Démolisseur.tasks.containsKey(p)) {
+				Démolisseur.tasks.remove(p);
+			}
 		}else if(fantôme.contains(p)) {
 			fantôme.remove(p);
 			

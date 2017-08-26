@@ -1,8 +1,15 @@
 package eu.fireblade.fireffa.ability;
 
+import java.util.HashMap;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.World;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftEntity;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
@@ -11,13 +18,19 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.ExplosionPrimeEvent;
+import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
 
+import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.items.Kits;
 import net.md_5.bungee.api.ChatColor;
 
 public class Démolisseur implements Listener {
+	
+	public static HashMap<Player, Integer> tasks = new HashMap<Player, Integer>();
 
 	@EventHandler
 	public void onInteract (PlayerInteractEvent e) {
@@ -35,6 +48,58 @@ public class Démolisseur implements Listener {
 			} else {
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de boule de feu.");
+			}
+		}
+	}
+	
+	@EventHandler
+	public void onLaunch(ProjectileLaunchEvent e) {
+		final Entity entity = e.getEntity();
+		final World w = entity.getWorld();
+		
+		if(entity instanceof Fireball) {
+			final Fireball ar = (Fireball) entity;
+			
+			if(ar.getShooter() instanceof Player) {
+				final Player p = (Player) ar.getShooter();
+				
+				if(!tasks.containsKey(p)) {
+					tasks.put(p, 0);
+				}
+				
+				final Entity truc = w.spawn(ar.getLocation(), ArmorStand.class);
+				
+				ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
+				SkullMeta skullM = (SkullMeta) skull.getItemMeta();
+				skullM.setOwner("Satan");
+				skull.setItemMeta(skullM);
+				
+				ArmorStand as = (ArmorStand) truc;
+				
+				as.setCustomName("§4§lROTOTOOOO");
+				as.setCustomNameVisible(true);
+				as.setVisible(false);
+				as.setHelmet(skull);
+				
+				ar.setPassenger(truc);
+				
+				tasks.replace(p, Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
+
+					@Override
+					public void run() {
+						if(ar.isDead() || ar.equals(null) || ((CraftEntity)ar).getHandle().onGround) {
+							ar.remove();
+							truc.remove();
+							
+							Bukkit.getScheduler().cancelTask(tasks.get(p));
+						}else {
+							w.playEffect(ar.getLocation(), Effect.FLAME, 1);
+							
+							w.playSound(ar.getLocation(), Sound.ENDERMAN_SCREAM, 30, 30);
+						}
+					}
+					
+				}, 0L, 3L));
 			}
 		}
 	}
