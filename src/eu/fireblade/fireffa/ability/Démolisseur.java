@@ -46,6 +46,10 @@ public class Démolisseur implements Listener {
 				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1)) && Var.démolisseur.contains(p)){
 			
 			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1), 1)) {
+				if(inLoad.contains(p)) {
+					return;
+				}
+				
 				p.launchProjectile(Fireball.class);
 				p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
 				p.getInventory().removeItem(Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1));
