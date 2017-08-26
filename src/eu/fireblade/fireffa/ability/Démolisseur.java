@@ -3,11 +3,11 @@ package eu.fireblade.fireffa.ability;
 import java.util.HashMap;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftEntity;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
@@ -27,6 +27,8 @@ import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.items.Kits;
 import net.md_5.bungee.api.ChatColor;
+import net.minecraft.server.v1_8_R3.EnumParticle;
+import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
 
 public class Démolisseur implements Listener {
 	
@@ -98,9 +100,13 @@ public class Démolisseur implements Listener {
 							
 							Bukkit.getScheduler().cancelTask(tasks.get(p));
 						}else {
-							for(int i = 0 ; i <= 500 ; i++) {
-								w.playEffect(ar.getLocation(), Effect.FLAME, 0);
+							PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.DRIP_LAVA, true,
+									(float) entity.getLocation().getX(), (float) entity.getLocation().getY(), (float) entity.getLocation().getZ(), 1, 1, 1, 1, 3);
+							
+							for(Player online : Bukkit.getOnlinePlayers()) {
+								((CraftPlayer)online).getHandle().playerConnection.sendPacket(ppowp);
 							}
+							
 						}
 					}
 					
