@@ -1,5 +1,6 @@
 package eu.fireblade.fireffa.ability;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.bukkit.Bukkit;
@@ -33,6 +34,7 @@ import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
 public class Démolisseur implements Listener {
 	
 	public static HashMap<Player, Integer> tasks = new HashMap<Player, Integer>();
+	public static ArrayList<Player> inLoad = new ArrayList<Player>();
 
 	@EventHandler
 	public void onInteract (PlayerInteractEvent e) {
@@ -44,6 +46,10 @@ public class Démolisseur implements Listener {
 				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1)) && Var.démolisseur.contains(p)){
 			
 			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1), 1)) {
+				if(inLoad.contains(p)) {
+					return;
+				}
+				
 				p.launchProjectile(Fireball.class);
 				p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
 				p.getInventory().removeItem(Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1));
@@ -67,7 +73,9 @@ public class Démolisseur implements Listener {
 				
 				if(!tasks.containsKey(p)) {
 					tasks.put(p, 0);
-				}else {
+				}
+				
+				if(inLoad.contains(p)) {
 					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez déjà une boulle de feu en execution !");
 					
@@ -92,6 +100,8 @@ public class Démolisseur implements Listener {
 				
 				w.playSound(ar.getLocation(), Sound.ENDERMAN_SCREAM, 30, 30);
 				
+				inLoad.add(p);
+				
 				tasks.replace(p, Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
 
 					@Override
@@ -99,6 +109,8 @@ public class Démolisseur implements Listener {
 						if(ar.isDead() || ar.equals(null) || ((CraftEntity)ar).getHandle().onGround) {
 							ar.remove();
 							truc.remove();
+							
+							inLoad.remove(p);
 							
 							Bukkit.getScheduler().cancelTask(tasks.get(p));
 						}else {
@@ -108,7 +120,6 @@ public class Démolisseur implements Listener {
 							for(Player online : Bukkit.getOnlinePlayers()) {
 								((CraftPlayer)online).getHandle().playerConnection.sendPacket(ppowp);
 							}
-							
 						}
 					}
 					
