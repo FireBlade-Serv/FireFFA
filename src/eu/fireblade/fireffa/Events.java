@@ -166,7 +166,7 @@ public class Events implements Listener {
 	public void onEat(PlayerItemConsumeEvent e) {
 		final ItemStack item = e.getItem();
 	
-		if(item.equals(Kits.Bouf(Material.CARROT_ITEM, 1))) {
+		if(item.getType().equals(Material.CARROT_ITEM)) {
 			return;
 		}
 		
