@@ -35,7 +35,7 @@ public class Golem implements Listener {
 			if(!cooldown.contains(p)) {
 			
 				cooldown.add(p);
-				Vector vector = p.getLocation().getDirection().multiply(1);
+				Vector vector = p.getLocation().getDirection().multiply(3);
 				t.setVelocity(vector);
 				p.playSound(p.getLocation(), Sound.FALL_BIG, 30, 30);
 				t.playSound(p.getLocation(), Sound.FALL_BIG, 30, 30);

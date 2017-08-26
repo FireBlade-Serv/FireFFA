@@ -35,12 +35,13 @@ public class RedMan implements Listener {
 		if(Var.redman.contains(p) && i.equals(Kits.ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 2, "§9Boum Boum", 
 				Kits.LoreCreator("§9Cliqque Droit - Lance des TNT", "§9Consomme une recharge"), 1))) {
 			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.TNT, "§9Recharge", null, 1), 1)) {
-				p.getInventory().remove(Kits.ItemGen(Material.TNT, "§9Recharge", null, 1));
+				p.getInventory().removeItem(Kits.ItemGen(Material.TNT, "§9Recharge", null, 1));
+				
 				Entity primed = w.spawn(p.getLocation(), TNTPrimed.class);
 				
 				TNTPrimed tnt = (TNTPrimed) primed;
 				
-				tnt.setFuseTicks(50);
+				tnt.setFuseTicks(30);
 				tnt.setCustomName("§4TNT !!!");
 				tnt.setCustomNameVisible(true);
 				tnt.setYield(4.5f);
