@@ -759,7 +759,7 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fTunique Golem", 1, 255, 255, 255));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon Golem", 1, 255, 255, 255));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes Golem", 1, 255, 255, 255));
-		p.getInventory().setItem(0, ItemGen(Material.IRON_INGOT, "§9Balanceur", LoreCreator("§9Clique Droit - expulse vos ennemis", null), 1));
+		p.getInventory().setItem(0, ItemGen(Material.IRON_INGOT, "§9Balanceur", LoreCreator("§9Clique Droit - expulse vos ennemis", "§95 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	
 	}
