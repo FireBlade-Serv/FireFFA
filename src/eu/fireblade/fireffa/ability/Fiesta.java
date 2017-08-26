@@ -23,7 +23,7 @@ import net.md_5.bungee.api.ChatColor;
 
 public class Fiesta implements Listener {
 	
-	private static ArrayList<Player> cooldown = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	private static ArrayList<Player> playeronarea = new ArrayList<Player>();
 	
 	private static ArrayList<Location> loc = new ArrayList<Location>();

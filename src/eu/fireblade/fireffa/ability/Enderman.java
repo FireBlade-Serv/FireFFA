@@ -26,7 +26,7 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Enderman implements Listener {
 	
-	private static ArrayList<Player> cooldown = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
 	private static ArrayList<Player> nod = new ArrayList<Player>();
 

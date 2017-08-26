@@ -48,6 +48,7 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Fiesta(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Enclumex(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Bouftout(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Boucher(), this);
 		
 		Tp.loadSpawnPoint();
 		

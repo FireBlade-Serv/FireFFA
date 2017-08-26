@@ -6,9 +6,13 @@ import java.util.HashMap;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import eu.fireblade.fireffa.ability.Bouftout;
 import eu.fireblade.fireffa.ability.DevDePacotille;
 import eu.fireblade.fireffa.ability.Domination;
+import eu.fireblade.fireffa.ability.Enclumex;
+import eu.fireblade.fireffa.ability.Enderman;
 import eu.fireblade.fireffa.ability.Fantôme;
+import eu.fireblade.fireffa.ability.Fiesta;
 import eu.fireblade.fireffa.ability.Gameur;
 import eu.fireblade.fireffa.ability.Grampa;
 import eu.fireblade.fireffa.ability.GuerrierGalactique;
@@ -17,6 +21,8 @@ import eu.fireblade.fireffa.ability.Ocelot;
 import eu.fireblade.fireffa.ability.Ours;
 import eu.fireblade.fireffa.ability.PandaRoux;
 import eu.fireblade.fireffa.ability.Patissier;
+import eu.fireblade.fireffa.ability.Power;
+import eu.fireblade.fireffa.ability.Timer;
 import eu.fireblade.fireffa.ability.VoleurÂmes;
 
 public class Var {
@@ -267,7 +273,11 @@ public class Var {
 		}else if(nuage.contains(p)) {
 			nuage.remove(p);
 		}else if(timer.contains(p)) {
-			timer.remove(p);
+			timer.remove(p); 
+			
+			if(Timer.cooldown.contains(p)) {
+				Timer.cooldown.remove(p);
+			}
 		}else if(robindesbois.contains(p)) {
 			robindesbois.remove(p);
 		}else if(gandalf.contains(p)) {
@@ -276,6 +286,10 @@ public class Var {
 			glowstone.remove(p);
 		}else if(enderman.contains(p)) {
 			enderman.remove(p);
+			
+			if(Enderman.cooldown.contains(p)) {
+				Enderman.cooldown.remove(p);
+			}
 		}else if(rulio.contains(p)) {
 			rulio.remove(p);
 		}else if(copy.contains(p)) {
@@ -296,12 +310,40 @@ public class Var {
 			ogre.remove(p);
 		}else if(bouftout.contains(p)) {
 			bouftout.remove(p);
+			
+			if(Bouftout.cooldown.contains(p)) {
+				Bouftout.cooldown.remove(p);
+			}
 		}else if(enclumex.contains(p)) {
 			enclumex.remove(p);
+			
+			if(Enclumex.cooldown.contains(p)) {
+				Enclumex.cooldown.remove(p);
+			}
 		}else if(fiesta.contains(p)) {
 			fiesta.remove(p);
+			
+			if(Fiesta.cooldown.contains(p)) {
+				Fiesta.cooldown.remove(p);
+			}
 		}else if(power.contains(p)) {
 			power.remove(p);
+			
+			if(Power.cooldown.contains(p)) {
+				Power.cooldown.remove(p);
+			}
+			
+			if(Power.inload.contains(p)) {
+				Power.inload.remove(p);
+			}
+			
+			if(Power.max.containsKey(p)) {
+				Power.max.remove(p);
+			}
+			
+			if(Power.tasks.containsKey(p)) {
+				Power.tasks.remove(p);
+			}
 		}else if(dieu.contains(p)) {
 			dieu.remove(p);
 		}else if(invocation.contains(p)) {

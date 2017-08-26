@@ -27,12 +27,12 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Power implements Listener {
 
-	private static ArrayList<Player> cooldown = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	private static ArrayList<Player> nod = new ArrayList<Player>();
-	private static ArrayList<Player> inload = new ArrayList<Player>();
+	public static ArrayList<Player> inload = new ArrayList<Player>();
 	
-	private static Map<Player, Integer> max = new HashMap<Player, Integer>();
-	private static Map<Player, Integer> tasks = new HashMap<Player, Integer>();
+	public static Map<Player, Integer> max = new HashMap<Player, Integer>();
+	public static Map<Player, Integer> tasks = new HashMap<Player, Integer>();
 	
 	@EventHandler
 	public void OnClick(PlayerRightClickInteractEvent e) {
