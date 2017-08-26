@@ -31,6 +31,7 @@ import net.md_5.bungee.api.ChatColor;
 public class Démolisseur implements Listener {
 	
 	public static HashMap<Player, Integer> tasks = new HashMap<Player, Integer>();
+	public static HashMap<Player, Entity> Fentity = new HashMap<Player, Entity>();
 
 	@EventHandler
 	public void onInteract (PlayerInteractEvent e) {
@@ -65,6 +66,8 @@ public class Démolisseur implements Listener {
 				
 				if(!tasks.containsKey(p)) {
 					tasks.put(p, 0);
+				}else {
+					
 				}
 				
 				final Entity truc = w.spawn(ar.getLocation(), ArmorStand.class);
@@ -96,7 +99,7 @@ public class Démolisseur implements Listener {
 							Bukkit.getScheduler().cancelTask(tasks.get(p));
 						}else {
 							for(int i = 0 ; i <= 500 ; i++) {
-								w.playEffect(ar.getLocation(), Effect.FLAME, 1);
+								w.playEffect(ar.getLocation(), Effect.FLAME, 0);
 							}
 						}
 					}
