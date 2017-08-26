@@ -51,6 +51,7 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Boucher(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Golem(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.RedMan(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Furicat(), this);
 		
 		Tp.loadSpawnPoint();
 		
