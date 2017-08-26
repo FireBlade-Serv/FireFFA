@@ -33,7 +33,6 @@ import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
 public class Démolisseur implements Listener {
 	
 	public static HashMap<Player, Integer> tasks = new HashMap<Player, Integer>();
-	public static HashMap<Player, Entity> Fentity = new HashMap<Player, Entity>();
 
 	@EventHandler
 	public void onInteract (PlayerInteractEvent e) {
@@ -69,7 +68,8 @@ public class Démolisseur implements Listener {
 				if(!tasks.containsKey(p)) {
 					tasks.put(p, 0);
 				}else {
-					
+					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
+					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez déjà une boulle de feu en execution !");
 				}
 				
 				final Entity truc = w.spawn(ar.getLocation(), ArmorStand.class);
