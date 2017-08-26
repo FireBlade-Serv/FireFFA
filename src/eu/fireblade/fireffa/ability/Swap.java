@@ -30,7 +30,9 @@ public class Swap implements Listener {
 					Var.switchArray(p, target);
 					
 					ItemStack [] pItems = p.getInventory().getContents();
+					ItemStack [] pArmor = p.getInventory().getArmorContents();
 					ItemStack [] tItems = target.getInventory().getContents();
+					ItemStack [] tArmor = target.getInventory().getArmorContents();
 					
 					target.sendMessage("§6[§eFireFFA§6] §cVotre kit à été swap par "+p.getName()+" !");
 					p.sendMessage("§6[§eFireFFA§6] §aVous avez swap le kit de "+target.getName()+" !");
@@ -39,7 +41,9 @@ public class Swap implements Listener {
 					target.playSound(target.getLocation(), Sound.PIG_DEATH, 30, 30);
 					
 					target.getInventory().setContents(pItems);
+					target.getInventory().setArmorContents(pArmor);
 					p.getInventory().setContents(tItems);
+					p.getInventory().setArmorContents(tArmor);
 				}
 			}
 		}
