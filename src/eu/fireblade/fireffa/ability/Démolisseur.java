@@ -100,7 +100,7 @@ public class Démolisseur implements Listener {
 							
 							Bukkit.getScheduler().cancelTask(tasks.get(p));
 						}else {
-							PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.DRIP_LAVA, true,
+							PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.LAVA, true,
 									(float) entity.getLocation().getX(), (float) entity.getLocation().getY(), (float) entity.getLocation().getZ(), 1, 1, 1, 1, 3);
 							
 							for(Player online : Bukkit.getOnlinePlayers()) {
