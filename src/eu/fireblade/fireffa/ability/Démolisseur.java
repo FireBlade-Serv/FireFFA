@@ -47,6 +47,9 @@ public class Démolisseur implements Listener {
 			
 			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1), 1)) {
 				if(inLoad.contains(p)) {
+					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
+					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez déjà une boulle de feu en execution !");
+					
 					return;
 				}
 				
@@ -75,10 +78,7 @@ public class Démolisseur implements Listener {
 					tasks.put(p, 0);
 				}
 				
-				if(inLoad.contains(p)) {
-					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
-					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez déjà une boulle de feu en execution !");
-					
+				if(inLoad.contains(p)) {					
 					return;
 				}
 				
