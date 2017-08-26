@@ -6,7 +6,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,7 +19,7 @@ import eu.fireblade.fireffa.events.PlayerInteractAtPlayerEvent;
 import eu.fireblade.fireffa.items.Kits;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
-public class Pharaon implements Listener {
+public class Rulio implements Listener {
 
 	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
@@ -30,10 +29,9 @@ public class Pharaon implements Listener {
 		final Player target = e.getTarget();
 		final ItemStack item = e.getItemInHand();
 		
-		if(item.equals(Kits.ItemGen2(Material.GOLD_SPADE, Enchantment.DAMAGE_ALL, 1, Enchantment.FIRE_ASPECT, 2, "§9Sceptre du Pharaon", 
-				Kits.LoreCreator("§9Clique Droit - donne nausé 5s", "§930 secondes de récupération"), 1))) {
+		if(item.equals(Kits.ItemGen(Material.NAME_TAG, "§9Truelle", Kits.LoreCreator("§Clique Droit - donne poison 5s", "§15 secondes de récupération"), 1))) {
 			
-			if(Var.pharaon.contains(p)) {
+			if(Var.rulio.contains(p)) {
 				if(cooldown.contains(p)) {
 					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
@@ -48,7 +46,7 @@ public class Pharaon implements Listener {
 
 						@Override
 						public void run() {
-							if(Var.pharaon.contains(p)){
+							if(Var.rulio.contains(p)){
 								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre attaque est prête !", 20, 30, 20);
 								gt.send();
 								
@@ -59,7 +57,7 @@ public class Pharaon implements Listener {
 								cooldown.remove(p);
 							}
 						}						
-					}, 600L);
+					}, 300L);
 				}
 			}
 		}
@@ -70,7 +68,6 @@ public class Pharaon implements Listener {
 		
 		target.playSound(p.getLocation(), Sound.PORTAL_TRAVEL, 30, 30);
 		
-		target.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 100, 0));
+		target.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 0));
 	}
-
 }
