@@ -38,7 +38,7 @@ public class VoleurÂmes implements Listener {
 		
 		if(Var.voleurdame.contains(p)){
 			if(item.equals(Kits.ItemGen(Material.STONE_SWORD, 
-					ChatColor.BLACK+"Épée du voleur d'âme",Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Vole 1,5 coeurs",
+					ChatColor.BLACK+"Épée du voleur d'âme",Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Vole une âme (1,5 coeurs)",
 							ChatColor.BLUE+"45 secondes de récupération"), 1))){
 				
 				if(cooldown.contains(p)){
@@ -107,7 +107,7 @@ public class VoleurÂmes implements Listener {
 				}
 				
 				if(soul.get(p) >= 3.0d){
-					p.sendMessage("§6[§eFireFFA§6] §fLes âmes que vous avez capturées entrent dans votre corps !");
+					p.sendMessage("§6[§eFireFFA§6] §cLes âmes que vous avez capturées entrent dans votre corps !");
 					
 					p.playSound(p.getLocation(), Sound.VILLAGER_YES, 30, 30);
 					
@@ -125,7 +125,7 @@ public class VoleurÂmes implements Listener {
 						soul.replace(p, soul.get(p) - 3.0d);
 					}
 				}else{
-					p.sendMessage("§6[§eFireFFA§6] §fVous ne possedez aucune âme!");
+					p.sendMessage("§6[§eFireFFA§6] §cVous ne possedez aucune âme!");
 					
 					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 				}

@@ -270,7 +270,7 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.BLACK+"Tunique du voleur d'âme", 1, 25, 25, 25));
 		p.getInventory().setLeggings(ItemGen(Material.CHAINMAIL_LEGGINGS, ChatColor.BLACK+"Jambiére de maile du voleur d'âme", null, 1));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.BLACK+"Bottes du voleur d'âme", 1, 25, 25, 25));
-		p.getInventory().setItem(0, ItemGen(Material.STONE_SWORD, ChatColor.BLACK+"Épée du voleur d'âme",LoreCreator(ChatColor.BLUE+"Clique droit - Vole 1,5 coeurs", ChatColor.BLUE+"45 secondes de récupération"), 1));
+		p.getInventory().setItem(0, ItemGen(Material.STONE_SWORD, ChatColor.BLACK+"Épée du voleur d'âme",LoreCreator(ChatColor.BLUE+"Clique droit - Vole une âme (1,5 coeurs)", ChatColor.BLUE+"45 secondes de récupération"), 1));
 		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.BLACK+"Puit de sang",LoreCreator(ChatColor.BLUE+"Clique droit - Utilise les âmes accumulées pour se régénerer", ChatColor.BLUE+"Consomme le puit de sang (Expérience)"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
@@ -567,7 +567,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.MUTTON, ChatColor.DARK_RED+"Viande fraiche", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// FAIT
 	public static void kitMathematicien(Player p) {
 		Clear(p);
 		
@@ -576,7 +576,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.AQUA+"Bottes du mathématicien", 1, 25, 25, 25));
 		p.getInventory().setItem(0, ItemGen1(Material.FISHING_ROD, Enchantment.DAMAGE_ALL, 2, ChatColor.AQUA+"Compa", null, 1));
 		p.getInventory().setItem(1, ItemGen2(Material.REDSTONE_COMPARATOR, Enchantment.DAMAGE_ALL, 3, Enchantment.FIRE_ASPECT, 1, ChatColor.AQUA+"Calculatrice", null, 1));
-		p.getInventory().setItem(2, ItemGen(Material.BEACON, ChatColor.AQUA+"Y=MX+P", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
+		p.getInventory().setItem(2, ItemGen(Material.BEACON, ChatColor.AQUA+"Y=MX+P", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 3 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	// MANQUE ABILITÉ
@@ -685,7 +685,7 @@ public class Kits {
 		
 		p.getInventory().setChestplate(ItemGen(Material.LEATHER_CHESTPLATE, "§6Plastron swap", null, 1));
 		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§9épée swap", null, 1));
-		p.getInventory().setItem(1, ItemGen(Material.SNOW_BALL, "swaper", LoreCreator("§9Lancer la boule - Swap votre inventaire avec le joueur toucher", null), 1));
+		p.getInventory().setItem(1, ItemGen(Material.SNOW_BALL, "swaper", LoreCreator("§9Lancer la boule - Swap votre inventaire avec le joueur touché", null), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
     }
     //manque abilité

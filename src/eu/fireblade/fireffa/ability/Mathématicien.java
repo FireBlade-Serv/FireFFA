@@ -14,25 +14,25 @@ import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
 import net.md_5.bungee.api.ChatColor;
 
-public class Sauvage implements Listener {
+public class Mathématicien implements Listener {
 	
 	@EventHandler
 	public void onInteract(PlayerRightClickInteractEvent e){
 		final Player p = e.getPlayer();
 		final ItemStack item = e.getItem();
 
-		if(item.equals(Kits.ItemGen(Material.GRILLED_PORK, ChatColor.DARK_PURPLE+"Nourriture charnue", 
+		if(item.equals(Kits.ItemGen(Material.BEACON, ChatColor.AQUA+"Y=MX+P", 
 				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 3 coeurs", ChatColor.BLUE+"1 utilisation"), 1))){
 			
-			if(Var.sauvage.contains(p)){
+			if(Var.mathématicien.contains(p)){
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
 
 					@Override
 					public void run() {
-						p.getInventory().removeItem(Kits.ItemGen(Material.GRILLED_PORK, ChatColor.DARK_PURPLE+"Nourriture charnue", 
+						p.getInventory().removeItem(Kits.ItemGen(Material.BEACON, ChatColor.AQUA+"Y=MX+P", 
 								Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 3 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
 						
-						p.playSound(p.getLocation(), Sound.BURP, 30, 30);
+						p.playSound(p.getLocation(), Sound.VILLAGER_YES, 30, 30);
 						
 						if(p.getHealth() >= 14){
 							p.setHealth(p.getMaxHealth());

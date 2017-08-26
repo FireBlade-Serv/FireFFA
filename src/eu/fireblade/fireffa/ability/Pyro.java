@@ -31,7 +31,7 @@ import net.md_5.bungee.api.ChatColor;
 import net.minecraft.server.v1_8_R3.EnumParticle;
 import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
 
-public class Démolisseur implements Listener {
+public class Pyro implements Listener {
 	
 	public static HashMap<Player, Integer> tasks = new HashMap<Player, Integer>();
 	public static ArrayList<Player> inLoad = new ArrayList<Player>();
@@ -41,11 +41,11 @@ public class Démolisseur implements Listener {
 		final Player p = e.getPlayer();
 		final Action a = e.getAction();
 		
-		if((a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)) && e.getItem().equals(Kits.ItemGen2(Material.IRON_AXE, Enchantment.DAMAGE_ALL, 1, 
-				Enchantment.KNOCKBACK, 2, ChatColor.DARK_RED+"Hache de guerre",
-				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1)) && Var.démolisseur.contains(p)){
+		if((a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)) && 
+				e.getItem().equals(Kits.ItemGen1(Material.WOOD_SWORD, Enchantment.FIRE_ASPECT, 1, ChatColor.RED+"Épée lanceuse de boules de feu", 
+				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1)) && Var.pyro.contains(p)){
 			
-			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1), 1)) {
+			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FIREBALL, ChatColor.RED+"Boule de feu", null, 1), 1)) {
 				if(inLoad.contains(p)) {
 					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez déjà une boulle de feu en execution !");
@@ -55,7 +55,7 @@ public class Démolisseur implements Listener {
 				
 				p.launchProjectile(Fireball.class);
 				p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
-				p.getInventory().removeItem(Kits.ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 1));
+				p.getInventory().removeItem(Kits.ItemGen(Material.FIREBALL, ChatColor.RED+"Boule de feu", null, 1));
 			} else {
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de boule de feu.");
@@ -74,7 +74,7 @@ public class Démolisseur implements Listener {
 			if(ar.getShooter() instanceof Player) {
 				final Player p = (Player) ar.getShooter();
 				
-				if(!Var.démolisseur.contains(p)) {
+				if(!Var.pyro.contains(p)) {
 					return;
 				}
 				
@@ -95,7 +95,7 @@ public class Démolisseur implements Listener {
 				
 				ArmorStand as = (ArmorStand) truc;
 				
-				as.setCustomName("§4§lTES TAS TOS");
+				as.setCustomName("§6§lTES TAS TOS");
 				as.setCustomNameVisible(true);
 				as.setVisible(false);
 				as.setArms(true);
@@ -110,7 +110,7 @@ public class Démolisseur implements Listener {
 				
 				ar.setPassenger(truc);
 				
-				w.playSound(ar.getLocation(), Sound.ENDERMAN_SCREAM, 30, 30);
+				w.playSound(ar.getLocation(), Sound.BLAZE_BREATH, 30, 30);
 				
 				inLoad.add(p);
 				
@@ -126,7 +126,7 @@ public class Démolisseur implements Listener {
 							
 							Bukkit.getScheduler().cancelTask(tasks.get(p));
 						}else {
-							PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.SPELL_WITCH, true,
+							PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.LAVA, true,
 									(float) entity.getLocation().getX(), (float) entity.getLocation().getY(), (float) entity.getLocation().getZ(), 1, 1, 1, 1, 30);
 							
 							for(Player online : Bukkit.getOnlinePlayers()) {
