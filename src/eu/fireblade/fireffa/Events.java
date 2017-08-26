@@ -166,9 +166,15 @@ public class Events implements Listener {
 	public void onEat(PlayerItemConsumeEvent e) {
 		final ItemStack item = e.getItem();
 	
-		if(!item.equals(Kits.Bouf(Material.CARROT_ITEM, 1)) || !item.getType().equals(Material.POTION)) {
-			e.setCancelled(true);
+		if(item.equals(Kits.Bouf(Material.CARROT_ITEM, 1))) {
+			return;
 		}
+		
+		if(item.getType().equals(Material.POTION)) {
+			return;
+		}
+		
+		e.setCancelled(true);
 	}
 	
 	@EventHandler

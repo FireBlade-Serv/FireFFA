@@ -83,6 +83,8 @@ public class Démolisseur implements Listener {
 				
 				ar.setPassenger(truc);
 				
+				w.playSound(ar.getLocation(), Sound.ENDERMAN_SCREAM, 30, 30);
+				
 				tasks.replace(p, Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
 
 					@Override
@@ -93,9 +95,9 @@ public class Démolisseur implements Listener {
 							
 							Bukkit.getScheduler().cancelTask(tasks.get(p));
 						}else {
-							w.playEffect(ar.getLocation(), Effect.FLAME, 1);
-							
-							w.playSound(ar.getLocation(), Sound.ENDERMAN_SCREAM, 30, 30);
+							for(int i = 0 ; i <= 500 ; i++) {
+								w.playEffect(ar.getLocation(), Effect.FLAME, 1);
+							}
 						}
 					}
 					
