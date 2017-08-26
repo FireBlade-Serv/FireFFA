@@ -58,6 +58,7 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Swap(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Mathématicien(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Pyro(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Glowstone(), this);
 		
 		Tp.loadSpawnPoint();
 		
