@@ -735,8 +735,8 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§2Plastron Redman", 1, 242, 127, 165));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§2Pantalon Redman", 1, 242, 127, 165));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§2Bottes Redman", 1, 242, 127, 165));
-		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 2, "§9Bou Boum", LoreCreator("§9Cliqque Droit - Lance des TNT", null), 1));
-		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, "§9Poudre de Regen", LoreCreator("§9Regen 2 coeurs", null), 1));
+		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 2, "§9Boum Boum", LoreCreator("§9Cliqque Droit - Lance des TNT", "§9Consomme une recharge"), 1));
+		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, "§9Poudre de Regen", LoreCreator("§9Regen 2 coeurs", "§9 20 secondes de récupérations"), 1));
 		p.getInventory().setItem(2, ItemGen(Material.TNT, "§9Recharge", null, 20));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
