@@ -41,12 +41,12 @@ public class RedMan implements Listener {
 				
 				TNTPrimed tnt = (TNTPrimed) primed;
 				
-				tnt.setFuseTicks(30);
+				tnt.setFuseTicks(20);
 				tnt.setCustomName("§4TNT !!!");
 				tnt.setCustomNameVisible(true);
-				tnt.setYield(4.5f);
+				tnt.setYield(2.5f);
 				
-				primed.setVelocity(p.getLocation().getDirection().multiply(3));
+				primed.setVelocity(p.getLocation().getDirection().multiply(2));
 			}else {
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de recharge !");
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);

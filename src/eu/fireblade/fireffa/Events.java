@@ -75,7 +75,7 @@ public class Events implements Listener {
 			return;
 		}
 		
-		Entity eNas = w.spawn(entity.getLocation().add(0.0d, 1.3d, 0.0d), ArmorStand.class);
+		Entity eNas = w.spawn(entity.getLocation().add(0.0d, 0.3d, 0.0d), ArmorStand.class);
 		
 		ArmorStand as = (ArmorStand) eNas;
 		
