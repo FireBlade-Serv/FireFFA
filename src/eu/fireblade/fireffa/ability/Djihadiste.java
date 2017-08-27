@@ -43,6 +43,8 @@ public class Djihadiste implements Listener {
 					if(!p.getGameMode().equals(GameMode.CREATIVE)){
 						p.setHealth(0);
 					}
+					
+					
 				}
 			}
 		}

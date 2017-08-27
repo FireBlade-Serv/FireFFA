@@ -198,6 +198,7 @@ public class Events implements Listener {
 		}
 	}
 	
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onKill(PlayerDeathEvent e){
 		final Player entity = e.getEntity();
