@@ -88,8 +88,12 @@ public class RobinDesBois implements Listener {
 					}else if(helmet.contains(targetAll.get(item).getType())) {
 						t.getInventory().setBoots(null);
 					}else {
-						t.getInventory().remove(targetAll.get(item));
+						t.getInventory().removeItem(targetAll.get(item));
 					}
+					
+					p.playSound(p.getLocation(), Sound.VILLAGER_YES, 30, 30);
+					t.playSound(t.getLocation(), Sound.VILLAGER_HAGGLE, 30, 30);
+					
 					cooldown.add(p);
 				
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
