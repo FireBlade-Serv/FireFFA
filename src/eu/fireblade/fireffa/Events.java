@@ -214,7 +214,7 @@ public class Events implements Listener {
 	@EventHandler
 	public void onKillStreak(PlayerDeathEvent e){
 		final Player p = e.getEntity();
-		final Player k = e.getEntity();
+		final Player k = e.getEntity().getKiller();
 	
 		if(p instanceof Player && k instanceof Player) {
 			Var.killStreak.replace(k, Var.killStreak.get(k) + 1);	
