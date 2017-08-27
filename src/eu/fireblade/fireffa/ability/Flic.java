@@ -121,7 +121,7 @@ public class Flic implements Listener {
 						}
 					}
 					
-				}, 0L, 3L));
+				}, 0L, 1L));
 			}
 		}
 	}
