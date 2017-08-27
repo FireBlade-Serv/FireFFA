@@ -39,7 +39,7 @@ public class Golem implements Listener {
 				
 				vector.multiply(1.3f);
 				
-				vector.add(new Vector(0.0f, 1.0f, 0.0f));
+				vector.add(new Vector(0.0f, 1.3f, 0.0f));
 				
 				t.setVelocity(vector);
 				p.playSound(p.getLocation(), Sound.FALL_BIG, 30, 30);

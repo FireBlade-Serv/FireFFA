@@ -256,7 +256,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
-	// FAIT
+	// manque abilité
 	public static void kitVoleurdame (Player p) {
 		Clear(p);
 		
@@ -442,7 +442,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.ARROW, ChatColor.RED+"Fléche de l'archer élite", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// FAIT
+	// A MODIF
 	public static void kitAssassin (Player p) {
 		Clear(p);
 		
@@ -555,7 +555,7 @@ public class Kits {
 		p.getInventory().setItem(4, generatePotItem(PotionType.SLOWNESS, 1, ChatColor.BLACK+"Potion anti-rebellion", true));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// FAIT
+	// A BUFF (0 degat eclaire + cac trop faible)
 	public static void kitBoucher(Player p) {
 		Clear(p);
 		
@@ -579,7 +579,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.BEACON, ChatColor.AQUA+"Y=MX+P", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 3 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// FAIT
 	public static void kitPyro(Player p) {
 		Clear(p);
 		
@@ -591,7 +591,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.FIREBALL, ChatColor.RED+"Boule de feu", null, 6));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// MANQUE ABILITÉ
+	// FAIT
 	public static void kitMoutarde(Player p) {
 		Clear(p);
 		
@@ -642,7 +642,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5, "§9Ejecteur Temporel", LoreCreator("§9Clique droit - permet de frezze 5s", "§930 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// manque abilité
+	// FAIT
 	public static void kitRobinDesBois(Player p) {
 	    Clear(p);
 	    
@@ -666,7 +666,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen2(Material.STICK, Enchantment.DAMAGE_ALL, 3, Enchantment.KNOCKBACK, 2, "§9You Shall Not Pass", LoreCreator("§9Clique droit - éjecte le joueur", "§920 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}   
-	// manque abilité
+	// FAIT
 	public static void kitGlowstone(Player p) {
 		Clear(p);
 		
@@ -679,7 +679,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1));
 	}
-	// manque abilité
+	// FAIT
     public static void kitSwap(Player p) {
 		Clear(p);
 		
@@ -728,7 +728,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
-	//manque abilité
+	//FAIT
 	public static void kitRedMan(Player p) {
 		Clear(p);
 		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, "§2Chapeau Redman", 1, 242, 127, 165));
@@ -763,7 +763,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	
 	}
-	//manque abilité
+	//FAIT
 	public static void kitBoufTout(Player p) {
 		Clear(p);
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fTunique BoufTout", 1, 255, 255, 255));
@@ -773,7 +773,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.COOKED_CHICKEN, Enchantment.FIRE_ASPECT, 2, "§9Poulet Brûlant", LoreCreator("§9Clique Droit - vole 3 coeurs", "§930 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	//manque abilité
+	//FAIT
 	public static void kitEnclumex(Player p) {
 		Clear(p);
 		p.getInventory().setHelmet(ItemGen(Material.ANVIL, "Chapeau EnClumex", null, 1));
@@ -796,7 +796,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 			
 	}
-	//manque abilité
+	//FAIT
 	public static void kitPower(Player p) {
 		Clear(p);
 		p.getInventory().setItem(0, ItemGen(Material.STICK, "§9Jumper", LoreCreator("§9Clique droit - jump de 12 blocs", "15 secondes de récupération"), 1));
@@ -804,7 +804,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
-	//manque abilité
+	//FAIT
 	public static void kitDieu(Player p) {
 	    Clear(p);
 	    p.getInventory().setHelmet(ItemGen2ColorLeather(Material.LEATHER_HELMET, Enchantment.ARROW_DAMAGE, 10, "§fChapeau Dieu", 1, 255, 255, 255 ));
@@ -826,7 +826,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 1, "§9Invocation Stick", LoreCreator("§9Clique Droit - invoque un bouclier pendant 10s", "§945 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	//manque abilité ! pas finis !
+	//MANQUE ABILITé
 	public static void kitOgre(Player p) {
 	    Clear(p);
 	    
@@ -838,7 +838,7 @@ public class Kits {
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
-	//manque abilité ! pas finis !
+	//FAIT
 	public static void kitEnderman(Player p) {
 	    Clear(p);
 	    p.getInventory().setHelmet(generateSkull("§7Enderman", "MHF_Enderman"));
@@ -848,7 +848,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 3, "§9Main de l'enderman", LoreCreator("§9Clique droit - vous tp aléatoirement", "§930 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));			
 	}
-	// MANQUE ABILITÉ
+	// FAIT
 	public static void Clear(Player p) {
 		p.getInventory().clear();
 		p.getInventory().setHelmet(null);
