@@ -14,6 +14,7 @@ public class PlayerKillEvent extends Event {
 	private ItemStack item;
 	private World world;
 	
+	@Deprecated
 	public PlayerKillEvent(Player victim, Player killer, ItemStack item, World world) {
 		this.victim = victim;
 		this.killer = killer;
