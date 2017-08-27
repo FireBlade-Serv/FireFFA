@@ -43,12 +43,18 @@ public class RobinDesBois implements Listener {
 				int iOra = r.nextInt(1);
 				if (iOra == 0) {
 					Random r2 = new Random();
-					int Itemx = -1 + r2.nextInt(targetItem.length);
+					int Itemx = r2.nextInt(targetItem.length);
+					if (Itemx > r2.nextInt(targetItem.length) - 1) {
+						Itemx--;
+					}
 					t.getInventory().remove(targetItem[Itemx]);
 					p.getInventory().addItem(targetItem[Itemx]);
 				} else if(iOra == 1) {
 					Random r3 = new Random();
-					int Armorx = -1 + r3.nextInt(targetArmor.length);
+					int Armorx = r3.nextInt(targetArmor.length);
+					if (Armorx > r3.nextInt(targetItem.length) - 1) {
+						Armorx--;
+					}
 					t.getInventory().remove(targetArmor[Armorx]);
 					p.getInventory().addItem(targetArmor[Armorx]);
 				}
