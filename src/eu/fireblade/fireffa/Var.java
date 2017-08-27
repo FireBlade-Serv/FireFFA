@@ -24,6 +24,7 @@ import eu.fireblade.fireffa.ability.Patissier;
 import eu.fireblade.fireffa.ability.Power;
 import eu.fireblade.fireffa.ability.Timer;
 import eu.fireblade.fireffa.ability.VoleurÂmes;
+import eu.fireblade.fireffa.items.Kits;
 
 public class Var {
 	
@@ -424,7 +425,7 @@ public class Var {
 			mineur.remove(t);
 			swap.add(t);
 			mineur.add(p);
-			swap.remove(p);mineur.remove(t);
+			swap.remove(p);
 		}else if(jihadist.contains(t)) {
 			jihadist.remove(t);
 			swap.add(t);
@@ -547,6 +548,9 @@ public class Var {
 			swap.remove(p);
 		}else if(glowstone.contains(t)) {
 			glowstone.remove(t);
+			swap.add(t);
+			glowstone.add(p);
+			swap.remove(p);
 		}else if(enderman.contains(t)) {
 			enderman.remove(t);
 			swap.add(t);
@@ -628,6 +632,122 @@ public class Var {
 			swap.add(t);
 			archervagabon.add(p);
 			swap.remove(p);
+		}
+	}
+	
+	public static void getKit(Player t) {
+		if(démolisseur.contains(t)) {
+			Kits.kitDemolisseur(t);
+		}else if(fantôme.contains(t)) {
+			Kits.kitFantome(t);
+		}else if(tank.contains(t)) {
+			Kits.kitTank(t);
+		}else if(flic.contains(t)) {
+			Kits.kitFlic(t);
+		}else if(magicien.contains(t)) {
+			Kits.kitMagicien(t);
+		}else if(chevalier.contains(t)) {
+			Kits.kitChevalier(t);
+		}else if(cactus.contains(t)) {
+			Kits.kitCactus(t);
+		}else if(piaf.contains(t)) {
+			Kits.kitPiaf(t);
+		}else if(voleurdame.contains(t)) {
+			Kits.kitVoleurdame(t);
+		}else if(OITCman.contains(t)) {
+			Kits.kitOITCman(t);
+		}else if(lapin.contains(t)) {
+			Kits.kitLapin(t);
+		}else if(russe.contains(t)) {
+			Kits.kitRusse(t);
+		}else if(grampa.contains(t)) {
+			Kits.kitGrampa(t);
+		}else if(mineur.contains(t)) {
+			Kits.kitMineur(t);
+		}else if(jihadist.contains(t)) {
+			Kits.kitJihadist(t);
+		}else if(gamer.contains(t)) {
+			Kits.kitGamer(t);
+		}else if(sauvage.contains(t)) {
+			Kits.kitSauvage(t);
+		}else if(archerélémentaire.contains(t)) {
+			Kits.kitArcherelementaire(t);
+		}else if(ocelot.contains(t)) {
+			Kits.kitOcelot(t);
+		}else if(archerélite.contains(t)) {
+			Kits.kitArcherelite(t);
+		}else if(assassin.contains(t)) {
+			Kits.kitAssassin(t);
+		}else if(panda.contains(t)) {
+			Kits.kitPanda(t);
+		}else if(informaticien.contains(t)) {
+			Kits.kitInformaticien(t);
+		}else if(programmeur.contains(t)) {
+			Kits.kitProgrammeur(t);
+		}else if(patissier.contains(t)) {
+			Kits.kitPatissier(t);
+		}else if(ours.contains(t)) {
+			Kits.kitOurs(t);
+		}else if(guerriergalactique.contains(t)) {
+			Kits.kitGuerriergalactique(t);
+		}else if(esclave.contains(t)) {
+			Kits.kitEsclave(t);
+		}else if(domination.contains(t)) {
+			Kits.kitDomination(t);
+		}else if(boucher.contains(t)) {
+			Kits.kitBoucher(t);
+		}else if(mathématicien.contains(t)) {
+			Kits.kitMathematicien(t);
+		}else if(pyro.contains(t)) {
+			Kits.kitPyro(t);
+		}else if(moutarde.contains(t)) {
+			Kits.kitMoutarde(t);
+		}else if(vampire.contains(t)) {
+			Kits.kitVampire(t);
+		}else if(nuage.contains(t)) {
+			Kits.kitNuage(t);
+		}else if(timer.contains(t)) {
+			Kits.kitTimer(t);
+		}else if(robindesbois.contains(t)) {
+			Kits.kitRobinDesBois(t);
+		}else if(gandalf.contains(t)) {
+			Kits.kitGandalf(t);
+		}else if(glowstone.contains(t)) {
+			Kits.kitGlowstone(t);
+		}else if(enderman.contains(t)) {
+			Kits.kitEnderman(t);
+		}else if(rulio.contains(t)) {
+			Kits.kitRulio(t);
+		}else if(copy.contains(t)) {
+			Kits.kitCopy(t);
+		}else if(pharaon.contains(t)) {
+			Kits.kitPharaon(t);
+		}else if(furicat.contains(t)) {
+			Kits.kitFuricat(t);
+		}else if(redman.contains(t)) {
+			Kits.kitRedMan(t);
+		}else if(trapman.contains(t)) {
+			Kits.kitTrapman(t);
+		}else if(swap.contains(t)) {
+			Kits.kitSwap(t);
+		}else if(golem.contains(t)) {
+			Kits.kitGolem(t);
+		}else if(ogre.contains(t)) {
+			Kits.kitOgre(t);
+		}else if(bouftout.contains(t)) {
+			Kits.kitBoufTout(t);
+		}else if(enclumex.contains(t)) {
+			Kits.kitEnclumex(t);
+		}else if(fiesta.contains(t)) {
+			Kits.kitFiesta(t);
+		}else if(power.contains(t)) {
+			Kits.kitPower(t);
+		}else if(dieu.contains(t)) {
+			Kits.kitDieu(t);
+		}else if(invocation.contains(t)) {
+			Kits.kitInvocation(t);
+		}else if(archervagabon.contains(t)) {
+			Kits.kitArchervagabon(t);
 		}
 	}
 }

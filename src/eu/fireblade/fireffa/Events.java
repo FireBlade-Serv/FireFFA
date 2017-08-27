@@ -1,6 +1,7 @@
 package eu.fireblade.fireffa;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -22,6 +23,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import eu.fireblade.fireffa.cmd.GUI;
 import eu.fireblade.fireffa.items.Kits;
@@ -45,6 +48,8 @@ public class Events implements Listener {
 		gt.send();
 		
 		Scoreboard.displayScoreboard(p);
+		
+		Var.killStreak.put(p, 0);
 	}
 	
 	@EventHandler
@@ -57,6 +62,8 @@ public class Events implements Listener {
 		final Player p = e.getPlayer();
 		
 		e.setQuitMessage("§6[§eFireFFA§6] §e"+p.getName()+"§f à quitté le FireFFA !");
+		
+		Var.killStreak.remove(p);
 	}
 	
 	@EventHandler
@@ -143,6 +150,8 @@ public class Events implements Listener {
 				p.setLevel(0);
 				
 				Var.clearKitArray(p);
+				
+				Var.killStreak.replace(p, 0);
 			}
 			
 		}, 10L);
@@ -199,6 +208,30 @@ public class Events implements Listener {
 		}
 	}
 	
+	@EventHandler
+	public void onKillStreak(PlayerDeathEvent e){
+		final Player p = e.getEntity();
+		final Player k = e.getEntity();
+	
+		if(p instanceof Player && k instanceof Player) {
+			Var.killStreak.replace(k, Var.killStreak.get(k)+1);	
+			if(Var.killStreak.get(k) % 5== 0){
+				Var.getKit(k);
+				Bukkit.broadcastMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Le joueur "+k.getName()+"est en série de "+Var.killStreak.get(k)+" kill !");
+				k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 5 kill, votre kit est reset !");
+			}else if(Var.killStreak.get(k) % 10 == 0) {
+				k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 10 kill, vous obtenez résistance ");
+				k.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 1200, 0));
+			}else if(Var.killStreak.get(k) % 15 == 0) {
+				k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 15 kill, vous obtenez régénération ! ");
+				k.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1200, 0));
+			}else if(Var.killStreak.get(k) % 20 == 0) {
+				k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 15 kill, vous obtenez régénération ! ");
+				k.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 1200, 0));
+			}
+		}
+	}
+
 	@EventHandler
 	public void onRightClickInteract(PlayerInteractEvent e){
 		final Action a = e.getAction();
