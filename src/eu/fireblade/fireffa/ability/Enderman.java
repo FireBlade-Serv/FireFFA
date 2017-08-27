@@ -50,12 +50,12 @@ public class Enderman implements Listener {
 				int x = -127 + r.nextInt(254);
 				int z = -127 + r.nextInt(254);
 				
-				Location l = new Location(p.getWorld(),x,0,z);
-				l.setY(p.getWorld().getHighestBlockYAt(l));
+				Location l = new Location(p.getWorld(),x,1,z);
+				Location newL = new Location(p.getWorld(), x, p.getWorld().getHighestBlockYAt(l), z);
 				
 				cooldown.add(p);
 				p.playSound(l, Sound.ENDERMAN_TELEPORT, 30, 30);
-				p.teleport(l);
+				p.teleport(newL);
 				noDamage(p);
 				
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
