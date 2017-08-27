@@ -1,7 +1,7 @@
 name: FireFFA
 main: eu.fireblade.fireffa.Main
 author: [Glowstoner, _goldocelot_, baptistego]
-version: Alpha v1.33.03
+version: Alpha v1.33.04
 commands:
  kit:
   description: Cette commande vous give un kit specifique !

@@ -113,7 +113,7 @@ public class Flic implements Listener {
 							Bukkit.getScheduler().cancelTask(tasks.get(p));
 						}else {
 							PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.SMOKE_NORMAL, true,
-									(float) entity.getLocation().getX(), (float) entity.getLocation().getY(), (float) entity.getLocation().getZ(), 1, 1, 1, 1, 30);
+									(float) entity.getLocation().getX(), (float) entity.getLocation().getY(), (float) entity.getLocation().getZ(), 0, 0, 0, 0, 30);
 							
 							for(Player online : Bukkit.getOnlinePlayers()) {
 								((CraftPlayer)online).getHandle().playerConnection.sendPacket(ppowp);
