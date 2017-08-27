@@ -23,6 +23,7 @@ public class RobinDesBois implements Listener {
 
 	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
+	@SuppressWarnings("unlikely-arg-type")
 	@EventHandler
 	public void onInteract(PlayerInteractAtPlayerEvent e){
 		final Player p = e.getPlayer();
@@ -40,6 +41,30 @@ public class RobinDesBois implements Listener {
 					ItemStack[] targetItem = t.getInventory().getContents();
 					ItemStack[] targetArmor = t.getInventory().getArmorContents();
 					ArrayList<ItemStack> targetAll = new ArrayList<ItemStack>();
+					ArrayList<Material> helmet = new ArrayList<Material>();
+					helmet.add(Material.LEATHER_HELMET);
+					helmet.add(Material.IRON_HELMET);
+					helmet.add(Material.GOLD_HELMET);
+					helmet.add(Material.DIAMOND_HELMET);
+					helmet.add(Material.CHAINMAIL_HELMET);
+					ArrayList<Material> chestplate = new ArrayList<Material>();
+					chestplate.add(Material.LEATHER_CHESTPLATE);
+					chestplate.add(Material.IRON_CHESTPLATE);
+					chestplate.add(Material.GOLD_CHESTPLATE);
+					chestplate.add(Material.DIAMOND_CHESTPLATE);
+					chestplate.add(Material.CHAINMAIL_CHESTPLATE);
+					ArrayList<Material> leggings = new ArrayList<Material>();
+					leggings.add(Material.LEATHER_LEGGINGS);
+					leggings.add(Material.IRON_LEGGINGS);
+					leggings.add(Material.GOLD_LEGGINGS);
+					leggings.add(Material.DIAMOND_LEGGINGS);
+					leggings.add(Material.CHAINMAIL_LEGGINGS);
+					ArrayList<Material> boots = new ArrayList<Material>();
+					boots.add(Material.LEATHER_BOOTS);
+					boots.add(Material.IRON_BOOTS);
+					boots.add(Material.GOLD_BOOTS);
+					boots.add(Material.DIAMOND_BOOTS);
+					boots.add(Material.CHAINMAIL_BOOTS);
 					for(ItemStack inList : targetItem) {
 						if(inList != null) {
 							targetAll.add(inList);
@@ -54,7 +79,17 @@ public class RobinDesBois implements Listener {
 					int item = r.nextInt(targetAll.size());
 					if(item > targetAll.size() - 1) item--;
 					p.getInventory().addItem(targetAll.get(item));
-					t.getInventory().remove(targetAll.get(item));
+					if(helmet.contains(targetAll.get(item))){
+						t.getInventory().setHelmet(null);
+					}else if(chestplate.contains(targetAll.get(item))) {
+						t.getInventory().setChestplate(null);
+					}else if (leggings.contains(targetAll.get(item))) {
+						t.getInventory().setLeggings(null);
+					}else if(boots.contains(targetAll.get(item))) {
+						t.getInventory().setBoots(null);
+					}else {
+						t.getInventory().remove(targetAll.get(item));
+					}
 					cooldown.add(p);
 				
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
