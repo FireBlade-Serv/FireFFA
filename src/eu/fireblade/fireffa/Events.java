@@ -152,6 +152,8 @@ public class Events implements Listener {
 				Var.clearKitArray(p);
 				
 				Var.killStreak.replace(p, 0);
+				
+				Scoreboard.displayScoreboard(p);
 			}
 			
 		}, 10L);
@@ -215,7 +217,7 @@ public class Events implements Listener {
 		final Player k = e.getEntity();
 	
 		if(p instanceof Player && k instanceof Player) {
-			Var.killStreak.replace(k, Var.killStreak.get(k)+1);	
+			Var.killStreak.replace(k, Var.killStreak.get(k) + 1);	
 			if(Var.killStreak.get(k) % 5== 0){
 				Var.getKit(k);
 				Bukkit.broadcastMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Le joueur "+k.getName()+"est en série de "+Var.killStreak.get(k)+" kill !");
