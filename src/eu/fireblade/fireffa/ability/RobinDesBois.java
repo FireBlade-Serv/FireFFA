@@ -47,6 +47,7 @@ public class RobinDesBois implements Listener {
 					helmet.add(Material.GOLD_HELMET);
 					helmet.add(Material.DIAMOND_HELMET);
 					helmet.add(Material.CHAINMAIL_HELMET);
+					helmet.add(Material.SKULL);
 					ArrayList<Material> chestplate = new ArrayList<Material>();
 					chestplate.add(Material.LEATHER_CHESTPLATE);
 					chestplate.add(Material.IRON_CHESTPLATE);
