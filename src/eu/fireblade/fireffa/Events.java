@@ -222,7 +222,7 @@ public class Events implements Listener {
 		
 		if(Var.killStreak.get(k) % 5== 0){
 			Var.getKit(k);
-			Bukkit.broadcastMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Le joueur "+k.getName()+"est en série de "+Var.killStreak.get(k)+" kill !");
+			Bukkit.broadcastMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Le joueur "+k.getName()+" est en série de "+Var.killStreak.get(k)+" kill !");
 			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 5 kill, votre kit est reset !");
 		}else if(Var.killStreak.get(k) % 10 == 0) {
 			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 10 kill, vous obtenez résistance ");
