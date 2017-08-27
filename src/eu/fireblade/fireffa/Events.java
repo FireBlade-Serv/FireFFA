@@ -224,13 +224,19 @@ public class Events implements Listener {
 			Var.getKit(k);
 			Bukkit.broadcastMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Le joueur "+k.getName()+" est en série de "+Var.killStreak.get(k)+" kill !");
 			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 5 kill, votre kit est reset !");
-		}else if(Var.killStreak.get(k) % 10 == 0) {
+		}
+		
+		if(Var.killStreak.get(k) % 10 == 0) {
 			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 10 kill, vous obtenez résistance ");
 			k.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 1200, 0));
-		}else if(Var.killStreak.get(k) % 15 == 0) {
+		}
+		
+		if(Var.killStreak.get(k) % 15 == 0) {
 			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 15 kill, vous obtenez régénération ! ");
 			k.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1200, 0));
-		}else if(Var.killStreak.get(k) % 20 == 0) {
+		}
+		
+		if(Var.killStreak.get(k) % 20 == 0) {
 			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 15 kill, vous obtenez régénération ! ");
 			k.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 1200, 0));
 		}
