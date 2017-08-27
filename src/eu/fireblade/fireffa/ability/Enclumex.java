@@ -53,7 +53,7 @@ public class Enclumex implements Listener {
 							pp.getInventory().setItem(1, Kits.ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 999, "§9UltiMax", 
 									Kits.LoreCreator("§9Clique Gauche - tue votre ennemis ", "§930 secondes de récupération"), 1) );
 							pp.playSound(pp.getLocation(), Sound.ANVIL_USE, 30, 30);
-							GlowstoneTitle gt = new GlowstoneTitle(pt, "", ChatColor.GRAY+"Vous avez récupéré votre UltiMax !", 20, 30, 20);
+							GlowstoneTitle gt = new GlowstoneTitle(pp, "", ChatColor.GRAY+"Vous avez récupéré votre UltiMax !", 20, 30, 20);
 							gt.send();
 							
 						}
