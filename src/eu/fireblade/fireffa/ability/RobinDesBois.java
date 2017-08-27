@@ -23,7 +23,6 @@ public class RobinDesBois implements Listener {
 
 	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
-	@SuppressWarnings("unlikely-arg-type")
 	@EventHandler
 	public void onInteract(PlayerInteractAtPlayerEvent e){
 		final Player p = e.getPlayer();
@@ -80,13 +79,13 @@ public class RobinDesBois implements Listener {
 					int item = r.nextInt(targetAll.size());
 					if(item > targetAll.size() - 1) item--;
 					p.getInventory().addItem(targetAll.get(item));
-					if(helmet.contains(targetAll.get(item))){
+					if(targetAll.get(item).getType().equals(helmet)){
 						t.getInventory().setHelmet(null);
-					}else if(chestplate.contains(targetAll.get(item))) {
+					}else if(targetAll.get(item).getType().equals(chestplate)) {
 						t.getInventory().setChestplate(null);
-					}else if (leggings.contains(targetAll.get(item))) {
+					}else if (targetAll.get(item).getType().equals(leggings)) {
 						t.getInventory().setLeggings(null);
-					}else if(boots.contains(targetAll.get(item))) {
+					}else if(targetAll.get(item).getType().equals(boots)) {
 						t.getInventory().setBoots(null);
 					}else {
 						t.getInventory().remove(targetAll.get(item));
