@@ -214,24 +214,25 @@ public class Events implements Listener {
 	@EventHandler
 	public void onKillStreak(PlayerDeathEvent e){
 		final Player p = e.getEntity();
-		final Player k = e.getEntity().getKiller();
+		final Player k = p.getKiller();
 	
-		if(p instanceof Player && k instanceof Player) {
-			Var.killStreak.replace(k, Var.killStreak.get(k) + 1);	
-			if(Var.killStreak.get(k) % 5== 0){
-				Var.getKit(k);
-				Bukkit.broadcastMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Le joueur "+k.getName()+"est en série de "+Var.killStreak.get(k)+" kill !");
-				k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 5 kill, votre kit est reset !");
-			}else if(Var.killStreak.get(k) % 10 == 0) {
-				k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 10 kill, vous obtenez résistance ");
-				k.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 1200, 0));
-			}else if(Var.killStreak.get(k) % 15 == 0) {
-				k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 15 kill, vous obtenez régénération ! ");
-				k.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1200, 0));
-			}else if(Var.killStreak.get(k) % 20 == 0) {
-				k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 15 kill, vous obtenez régénération ! ");
-				k.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 1200, 0));
-			}
+		Var.killStreak.replace(k, Var.killStreak.get(k) + 1);	
+		
+		Scoreboard.displayScoreboard(k);
+		
+		if(Var.killStreak.get(k) % 5== 0){
+			Var.getKit(k);
+			Bukkit.broadcastMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Le joueur "+k.getName()+"est en série de "+Var.killStreak.get(k)+" kill !");
+			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 5 kill, votre kit est reset !");
+		}else if(Var.killStreak.get(k) % 10 == 0) {
+			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 10 kill, vous obtenez résistance ");
+			k.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 1200, 0));
+		}else if(Var.killStreak.get(k) % 15 == 0) {
+			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 15 kill, vous obtenez régénération ! ");
+			k.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1200, 0));
+		}else if(Var.killStreak.get(k) % 20 == 0) {
+			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 15 kill, vous obtenez régénération ! ");
+			k.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 1200, 0));
 		}
 	}
 
