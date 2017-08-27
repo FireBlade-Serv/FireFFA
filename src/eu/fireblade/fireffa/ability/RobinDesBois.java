@@ -54,7 +54,7 @@ public class RobinDesBois implements Listener {
 					int item = r.nextInt(targetAll.size());
 					if(item > targetAll.size() - 1) item--;
 					p.getInventory().addItem(targetAll.get(item));
-					p.getInventory().remove(targetAll.get(item));
+					t.getInventory().remove(targetAll.get(item));
 					cooldown.add(p);
 				
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
