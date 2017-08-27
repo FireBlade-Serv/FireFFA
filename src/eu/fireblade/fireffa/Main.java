@@ -1,5 +1,7 @@
 package eu.fireblade.fireffa;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -60,6 +62,10 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Pyro(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Glowstone(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Gandalf(), this);
+		
+		for (Player online : Bukkit.getOnlinePlayers()){
+			Var.killStreak.put(online, 0);
+		}
 		
 		Tp.loadSpawnPoint();
 		
