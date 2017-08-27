@@ -37,30 +37,25 @@ public class RobinDesBois implements Listener {
 				
 				return;
 			}else {
-				ItemStack[] targetItem = t.getInventory().getContents();
-				ItemStack[] targetArmor = t.getInventory().getArmorContents();
-				Random r = new Random();
-				int iOra = r.nextInt(1);
-				if (iOra == 0) {
-					Random r2 = new Random();
-					int Itemx = r2.nextInt(targetItem.length);
-					if (Itemx > r2.nextInt(targetItem.length) - 1) {
-						Itemx--;
+					ItemStack[] targetItem = t.getInventory().getContents();
+					ItemStack[] targetArmor = t.getInventory().getArmorContents();
+					ArrayList<ItemStack> targetAll = new ArrayList<ItemStack>();
+					for(ItemStack inList : targetItem) {
+						if(inList != null) {
+							targetAll.add(inList);
+						}
 					}
-					t.getInventory().remove(targetItem[Itemx]);
-					p.getInventory().addItem(targetItem[Itemx]);
-				} else if(iOra == 1) {
-					Random r3 = new Random();
-					int Armorx = r3.nextInt(targetArmor.length);
-					if (Armorx > r3.nextInt(targetItem.length) - 1) {
-						Armorx--;
+					for(ItemStack inList : targetArmor) {
+						if(inList != null) {
+							targetAll.add(inList);
+						}
 					}
-					t.getInventory().remove(targetArmor[Armorx]);
-					p.getInventory().addItem(targetArmor[Armorx]);
-				}
-				targetItem = null;
-				targetArmor = null;
-				cooldown.add(p);
+					Random r = new Random();
+					int item = r.nextInt(targetAll.size());
+					if(item > targetAll.size() - 1) item--;
+					p.getInventory().addItem(targetAll.get(item));
+					p.getInventory().remove(targetAll.get(item));
+					cooldown.add(p);
 				
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 
