@@ -63,6 +63,7 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Glowstone(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Gandalf(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Invocation(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.RobinDesBois(), this);
 		
 		for (Player online : Bukkit.getOnlinePlayers()){
 			Var.killStreak.put(online, 0);
