@@ -79,13 +79,13 @@ public class RobinDesBois implements Listener {
 					int item = r.nextInt(targetAll.size());
 					if(item > targetAll.size() - 1) item--;
 					p.getInventory().addItem(targetAll.get(item));
-					if(targetAll.get(item).getType().equals(helmet)){
+					if(helmet.contains(targetAll.get(item).getType())){
 						t.getInventory().setHelmet(null);
-					}else if(targetAll.get(item).getType().equals(chestplate)) {
+					}else if(helmet.contains(targetAll.get(item).getType())) {
 						t.getInventory().setChestplate(null);
-					}else if (targetAll.get(item).getType().equals(leggings)) {
+					}else if (helmet.contains(targetAll.get(item).getType())) {
 						t.getInventory().setLeggings(null);
-					}else if(targetAll.get(item).getType().equals(boots)) {
+					}else if(helmet.contains(targetAll.get(item).getType())) {
 						t.getInventory().setBoots(null);
 					}else {
 						t.getInventory().remove(targetAll.get(item));
