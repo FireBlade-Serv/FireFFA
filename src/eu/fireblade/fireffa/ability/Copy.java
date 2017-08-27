@@ -48,14 +48,14 @@ public class Copy implements Listener {
 				p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
 				GlowstoneTitle gt = new GlowstoneTitle(p, "", ChatColor.BLUE+"Arme copiée !", 20, 30, 20);
 				gt.send();
-			} else if (item.equals(Kits.ItemGen(Material.FEATHER, "§9Plumart", Kits.LoreCreator("§9Clique Droit - saut de plusieurs blocs", "§915 secondes de récupérations"), 1))){
+			} else if (item.equals(Kits.ItemGen(Material.FEATHER, "§9Plumart", Kits.LoreCreator("§9Clique Droit - saut de plusieurs blocs", "§915 secondes de récupération"), 1))){
 				if(cooldown.contains(p)) {
 					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 					
 					return;
 				} else {
-					p.setVelocity(new Vector(0, 1, 0));
+					p.setVelocity(new Vector(0.0f, 1.4f, 0.0f));
 					
 					p.playSound(p.getLocation(), Sound.BAT_TAKEOFF, 30, 30);
 					
@@ -74,7 +74,7 @@ public class Copy implements Listener {
 								p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 							}
 							
-							if(Var.copy.contains(p)) {
+							if(cooldown.contains(p)) {
 								cooldown.remove(p);
 							}
 						}
@@ -110,6 +110,6 @@ public class Copy implements Listener {
 				nod.remove(p);
 			}
 			
-		}, 30L);
+		}, 15L);
 	}
 }

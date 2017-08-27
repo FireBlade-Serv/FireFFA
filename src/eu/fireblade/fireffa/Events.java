@@ -47,9 +47,9 @@ public class Events implements Listener {
 		GlowstoneTitle gt = new GlowstoneTitle(p, "§6Bienvenue sur le FFA !", "§l"+p.getName(), 20, 50, 20);
 		gt.send();
 		
-		Scoreboard.displayScoreboard(p);
-		
 		Var.killStreak.put(p, 0);
+		
+		Scoreboard.displayScoreboard(p);
 	}
 	
 	@EventHandler
@@ -170,7 +170,7 @@ public class Events implements Listener {
 				entity.remove();
 			}
 			
-		}, 3L);
+		}, 1L);
 	}
 	
 	@EventHandler
