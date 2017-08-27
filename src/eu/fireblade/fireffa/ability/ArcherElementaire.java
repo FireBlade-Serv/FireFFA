@@ -13,7 +13,6 @@ import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
@@ -95,7 +94,7 @@ public class ArcherElementaire implements Listener {
 
 					@Override
 					public void run() {
-						if(ball.isDead() || ball.equals(null) || ((Craft) ball).isOnGround()) {
+						if(ball.isDead() || ball.equals(null) || ((CraftArrow) ball).isOnGround()) {
 							inLoad.remove(p);
 							
 							Bukkit.getScheduler().cancelTask(tasks.get(p));
