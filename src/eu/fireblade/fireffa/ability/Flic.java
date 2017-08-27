@@ -103,6 +103,8 @@ public class Flic implements Listener {
 					return;
 				}
 				
+				inLoad.add(p);
+				
 				tasks.replace(p, Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
 
 					@Override
