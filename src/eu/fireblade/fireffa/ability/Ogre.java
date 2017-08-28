@@ -31,7 +31,7 @@ public class Ogre implements Listener {
 				return;
 			}
 			
-			if(dp.getItemInHand().equals(Kits.ItemGen1(Material.LEVER, Enchantment.DAMAGE_ALL, 1, "§9Massue", 
+			if(dp.getItemInHand().equals(Kits.ItemGen1(Material.LEVER, Enchantment.DAMAGE_ALL, 1, "§2Massue", 
 					Kits.LoreCreator("§9Vous avez 15% de chance de faire plus de dégats", null), 1))){
 				
 				

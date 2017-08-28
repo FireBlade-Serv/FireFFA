@@ -37,7 +37,7 @@ public class Invocation implements Listener {
 		Player p = e.getPlayer();
 		ItemStack i = e.getItem();
 		
-		if(Var.invocation.contains(p) && i.equals(Kits.ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 1, "§9Invocation Stick", 
+		if(Var.invocation.contains(p) && i.equals(Kits.ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 1, "§fInvocation Stick", 
 				Kits.LoreCreator("§9Clique Droit - invoque un bouclier pendant 10s", "§945 secondes de récupération"), 1))) {
 			if(cooldown.contains(p)) {
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");

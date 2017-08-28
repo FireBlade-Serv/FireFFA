@@ -37,7 +37,7 @@ public class Enderman implements Listener {
 		final ItemStack item = e.getItem();
 		
 		if((a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)) && item.equals(Kits.ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 3,
-				"§9Main de l'enderman", Kits.LoreCreator("§9Clique droit - vous tp aléatoirement", "§930 secondes de récupération"), 1)) && Var.enderman.contains(p)){
+				"§7Main de l'enderman", Kits.LoreCreator("§9Clique droit - vous tp aléatoirement", "§930 secondes de récupération"), 1)) && Var.enderman.contains(p)){
 			
 			if(cooldown.contains(p)) {
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
