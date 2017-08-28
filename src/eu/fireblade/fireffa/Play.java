@@ -70,7 +70,7 @@ public class Play implements Listener {
 					p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
 				}else {
 					Bukkit.getScheduler().cancelTask(task.get(p));
-					GlowstoneTitle gt = new GlowstoneTitle(p, "ChatColor.RED+\"Go !\"", "", 20, 30, 20);
+					GlowstoneTitle gt = new GlowstoneTitle(p, ChatColor.RED+"Go !", "", 20, 30, 20);
 					gt.send();
 					p.playSound(p.getLocation(), Sound.WITHER_SPAWN, 30, 30);
 					timer.remove(p);
