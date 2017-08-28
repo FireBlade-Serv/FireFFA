@@ -10,6 +10,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -42,7 +43,7 @@ public class Play implements Listener {
 		}, 100L);
 	}
 	
-	public static void timerBeforePvp(Player p) {
+	public static void timerBeforePvp(Player p, ItemStack[] tab1, ItemStack[] tab2) {
 		
 		if(!task.containsKey(p)) {
 			task.put(p, 0);
@@ -73,6 +74,8 @@ public class Play implements Listener {
 					p.playSound(p.getLocation(), Sound.WITHER_SPAWN, 30, 30);
 					timer.remove(p);
 					task.remove(p);
+					p.getInventory().setContents(tab1);
+					p.getInventory().setArmorContents(tab2);
 				}
 				
 			}
@@ -90,9 +93,16 @@ public class Play implements Listener {
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 0, false, false));
 		p.setHealth(p.getMaxHealth());
 		p.setFoodLevel(20);
+		ItemStack[] item = p.getInventory().getContents();
+		ItemStack[] armor = p.getInventory().getArmorContents();
+		p.getInventory().clear();
+		p.getInventory().setHelmet(null);
+		p.getInventory().setChestplate(null);
+		p.getInventory().setLeggings(null);
+		p.getInventory().setBoots(null);
 		invulnerability.add(p);
 		removeInvu(p);
-		timerBeforePvp(p);
+		timerBeforePvp(p, item, armor);
 		
 	}
 }
