@@ -555,7 +555,7 @@ public class Kits {
 		p.getInventory().setItem(4, generatePotItem(PotionType.SLOWNESS, 1, ChatColor.BLACK+"Potion anti-rebellion", true));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
-	// A BUFF (0 degat eclaire + cac trop faible)
+	// FAIT
 	public static void kitBoucher(Player p) {
 		Clear(p);
 		
