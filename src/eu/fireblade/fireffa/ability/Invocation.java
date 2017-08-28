@@ -10,7 +10,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.enchantments.Enchantment;
@@ -30,10 +29,9 @@ public class Invocation implements Listener {
 
 	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	public static Map<Player, List<Block>> Oblocks = new HashMap<Player, List<Block>>();
-	public static Map<Player, List<Location>> OLocs = new HashMap<Player, List<Location>>();
+	public static Map<Player, List<Block>> Nblocks = new HashMap<Player, List<Block>>();
 	
 	
-	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void OnInteract(PlayerRightClickInteractEvent e) {
 		Player p = e.getPlayer();
@@ -47,7 +45,6 @@ public class Invocation implements Listener {
 				
 				return;
 			}else {
-				cooldown.add(p);
 	
 				if(Oblocks.containsKey(p)) {
 					Oblocks.replace(p, new ArrayList<>());
@@ -55,22 +52,13 @@ public class Invocation implements Listener {
 					Oblocks.put(p, new ArrayList<>());	
 				}
 				
-				if(OLocs.containsKey(p)) {
-					OLocs.replace(p, new ArrayList<>());
+				if(Nblocks.containsKey(p)) {
+					Nblocks.replace(p, new ArrayList<>());
 				}else {
-					OLocs.put(p, new ArrayList<>());	
+					Nblocks.put(p, new ArrayList<>());	
 				}
 				
 				getBlockAtPlayer(p);
-				
-				List<Block> oblocks = Oblocks.get(p);
-				List<Location> olocs = OLocs.get(p);
-				
-				for(int index = 0 ; index <= olocs.size() - 1 ; index++) {
-					Block b = p.getWorld().getBlockAt(olocs.get(index));
-					b.setType(oblocks.get(index).getType());
-					b.setData(oblocks.get(index).getData());
-				}
 			}
 		}
 	}
@@ -235,36 +223,28 @@ public class Invocation implements Listener {
  
 	}
 	
-	private static Block getBlockRelative(Player p, int x, int y, int z){
+	@SuppressWarnings("deprecation")
+	private static void getBlockRelative(Player p, int x, int y, int z){
 	    Location newLoc = new Location(p.getWorld(), p.getLocation().getX() + x, p.getLocation().getY() + y, p.getLocation().getZ() + z);
 	    
-	    List<Block> list = Oblocks.get(p);
-	    list.add(newLoc.getBlock());
+	    final Material oldm = newLoc.getBlock().getType();
+		final byte oldb = newLoc.getBlock().getData();
 	    
-	    List<Location> list2 = OLocs.get(p);
-	    list2.add(newLoc.getBlock().getLocation());
+	    Block newb = newLoc.getBlock();
 	    
-	    Oblocks.replace(p, list);
-	    OLocs.replace(p, list2);
+	    newb.setType(Material.ICE);
 	    
-	    replace(newLoc.getBlock(), p.getWorld(), p);
-	    
-	    setIce(newLoc.getBlock());
-	    
-	    return newLoc.getBlock();
-	}
-	
-	private static void setIce(Block b) {
-		b.setType(Material.ICE);
-	}
-	
-	private static void replace(Block old, World w, Player p) {
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+	    Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 
 			@Override
 			public void run() {
+				newb.setType(oldm);
+				newb.setData(oldb);
+				
+				Bukkit.broadcastMessage("§6oldb type -> "+oldm.toString()+" §9newb type -> "+newb.getType().toString());
+				
 				PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.SMOKE_LARGE, true,
-						(float) old.getLocation().getX(), (float) old.getLocation().getY(), (float) old.getLocation().getZ(), 1, 1, 1, 1, 20);
+						(float) newb.getLocation().getX(), (float) newb.getLocation().getY(), (float) newb.getLocation().getZ(), 1, 1, 1, 1, 20);
 				
 				for(Player online : Bukkit.getOnlinePlayers()) {
 					((CraftPlayer)online).getHandle().playerConnection.sendPacket(ppowp);

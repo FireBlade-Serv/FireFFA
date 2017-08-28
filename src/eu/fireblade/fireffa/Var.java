@@ -16,6 +16,7 @@ import eu.fireblade.fireffa.ability.Fiesta;
 import eu.fireblade.fireffa.ability.Gameur;
 import eu.fireblade.fireffa.ability.Grampa;
 import eu.fireblade.fireffa.ability.GuerrierGalactique;
+import eu.fireblade.fireffa.ability.Invocation;
 import eu.fireblade.fireffa.ability.Magicien;
 import eu.fireblade.fireffa.ability.Ocelot;
 import eu.fireblade.fireffa.ability.Ours;
@@ -353,6 +354,10 @@ public class Var {
 			dieu.remove(p);
 		}else if(invocation.contains(p)) {
 			invocation.remove(p);
+			
+			if(Invocation.cooldown.contains(p)) {
+				Invocation.cooldown.remove(p);
+			}
 		}else if(archervagabon.contains(p)) {
 			archervagabon.remove(p);
 		}
