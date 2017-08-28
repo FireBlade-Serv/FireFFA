@@ -28,6 +28,8 @@ public class Main extends JavaPlugin{
 		
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.Play(), this);
 		
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.util.NearbyPlayerLocationCalculator(), this);
+		
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Démolisseur(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Fantôme(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Flic(), this);
