@@ -78,17 +78,22 @@ public class RobinDesBois implements Listener {
 					Random r = new Random();
 					int item = r.nextInt(targetAll.size());
 					if(item > targetAll.size() - 1) item--;
-					p.getInventory().addItem(targetAll.get(item));
+
 					if(helmet.contains(targetAll.get(item).getType())){
 						t.getInventory().setHelmet(null);
-					}else if(helmet.contains(targetAll.get(item).getType())) {
+						p.getInventory().setHelmet(targetAll.get(item));
+					}else if(chestplate.contains(targetAll.get(item).getType())) {
 						t.getInventory().setChestplate(null);
-					}else if (helmet.contains(targetAll.get(item).getType())) {
+						p.getInventory().setChestplate(targetAll.get(item));
+					}else if (leggings.contains(targetAll.get(item).getType())) {
 						t.getInventory().setLeggings(null);
-					}else if(helmet.contains(targetAll.get(item).getType())) {
+						p.getInventory().setLeggings(targetAll.get(item));
+					}else if(boots.contains(targetAll.get(item).getType())) {
 						t.getInventory().setBoots(null);
+						p.getInventory().setBoots(targetAll.get(item));
 					}else {
 						t.getInventory().removeItem(targetAll.get(item));
+						p.getInventory().addItem(targetAll.get(item));
 					}
 					
 					p.playSound(p.getLocation(), Sound.VILLAGER_YES, 30, 30);

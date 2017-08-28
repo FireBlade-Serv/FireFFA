@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import eu.fireblade.fireffa.util.Config;
+import eu.fireblade.fireffa.util.Methods;
 import eu.fireblade.fireffa.util.Tp;
 
 public class Main extends JavaPlugin{
@@ -79,7 +79,7 @@ public class Main extends JavaPlugin{
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 		
-		Config.getConfig();
+		Methods.getConfig();
 	}
 	
 	@Override
