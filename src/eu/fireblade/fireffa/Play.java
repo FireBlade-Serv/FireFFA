@@ -60,7 +60,7 @@ public class Play implements Listener {
 
 			@Override
 			public void run() {
-				if (timer.get(p) < 5) {
+				if (timer.get(p) < 4) {
 					timer.replace(p, timer.get(p)+1);
 					int number = 5-timer.get(p);
 					GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9"+number, 20, 30, 20);
@@ -68,6 +68,9 @@ public class Play implements Listener {
 					p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
 				}else {
 					Bukkit.getScheduler().cancelTask(task.get(p));
+					GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Go !", 20, 30, 20);
+					gt.send();
+					p.playSound(p.getLocation(), Sound.WITHER_SPAWN, 30, 30);
 				}
 				
 			}
