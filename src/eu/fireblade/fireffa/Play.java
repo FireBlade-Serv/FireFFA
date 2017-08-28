@@ -88,6 +88,8 @@ public class Play implements Listener {
 		p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 100, 0, false, false));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 0, false, false));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 0, false, false));
+		p.setHealth(p.getMaxHealth());
+		p.setFoodLevel(20);
 		invulnerability.add(p);
 		removeInvu(p);
 		timerBeforePvp(p);
