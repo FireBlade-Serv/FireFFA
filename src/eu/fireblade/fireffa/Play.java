@@ -9,7 +9,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
@@ -24,6 +26,7 @@ public class Play implements Listener {
 	public static HashMap<Player, Integer> task = new HashMap<Player, Integer>();
 	public static HashMap<Player, Integer> timer = new HashMap<Player, Integer>();
 	
+	@EventHandler
 	public void onDamage(EntityDamageEvent e) {
 		Entity entity = e.getEntity();
 		 if(entity instanceof Player) {
@@ -33,6 +36,20 @@ public class Play implements Listener {
 			 }
 		 }
 	}
+	
+	@EventHandler
+	public void onPlayerDamage(EntityDamageByEntityEvent e) {
+		Entity et = e.getDamager();
+		Entity t = e.getEntity();
+		if (et instanceof Player && t instanceof Player) {
+			Player p = (Player) et;
+			Player targ = (Player) t;
+			if(invulnerability.contains(p) || invulnerability.contains(targ)) {
+				e.setCancelled(true);
+			}
+		}
+	}
+	
 	
 	public static void removeInvu(Player p) {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
