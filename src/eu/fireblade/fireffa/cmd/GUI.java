@@ -262,13 +262,13 @@ public class GUI implements CommandExecutor, Listener {
 		if(p.hasPermission("fireffa.ultime") || p.isOp()){
 			inv.setItem(20, genPerspective(Material.IRON_BLOCK, "§9Kit Golem", (byte) 0));
 			inv.setItem(21, genPerspectiveSkullItem("§9Kit Voleur d'âmes"));
-			inv.setItem(22, genPerspective(Material.INK_SACK, "§9Kit Vampire", (byte) 0));
+			inv.setItem(22, genPerspective(Material.FEATHER, "§9Kit Piaf", (byte) 0));
 			inv.setItem(23, genPerspective(Material.NETHER_BRICK_ITEM, "§9Kit Programmeur", (byte) 0));
 			inv.setItem(24, genPerspective(Material.STRING, "§9Kit Copy", (byte) 0));
 			
 			inv.setItem(30, genPerspective(Material.GOLD_SPADE, "§9Kit Fiesta", (byte) 0));
 			inv.setItem(31, genPerspectiveEnch(Material.REDSTONE_ORE, "§9Kit Power",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
-			inv.setItem(32, genPerspective(Material.DRAGON_EGG, "§9Kit Invocation", (byte) 0));
+			inv.setItem(32, genPerspective(Material.POTION, "§9Kit Russe", (byte) 0));
 		}else{
 			inv.setItem(20, genPerspectiveBlock("Kit Golem", GlobalRank.ULTIMATE));
 			inv.setItem(21, genPerspectiveBlock("Kit Voleur d'âmes", GlobalRank.ULTIMATE));
@@ -700,9 +700,9 @@ public class GUI implements CommandExecutor, Listener {
 				Kits.kitVoleurdame(p);
 				Var.voleurdame.add(p);
 				Play.onPlay(p);
-			}else if(compareItems(item, genPerspective(Material.INK_SACK, "§9Kit Vampire", (byte) 0))){
-				Kits.kitVampire(p);
-				Var.vampire.add(p);
+			}else if(compareItems(item, genPerspective(Material.FEATHER, "§9Kit Piaf", (byte) 0))){
+				Kits.kitPiaf(p);
+				Var.piaf.add(p);
 				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.NETHER_BRICK_ITEM, "§9Kit Programmeur", (byte) 0))){
 				Kits.kitProgrammeur(p);
@@ -720,9 +720,9 @@ public class GUI implements CommandExecutor, Listener {
 				Kits.kitPower(p);
 				Var.power.add(p);
 				Play.onPlay(p);
-			}else if(compareItems(item, genPerspective(Material.DRAGON_EGG, "§9Kit Invocation", (byte) 0))){
-				Kits.kitInvocation(p);
-				Var.invocation.add(p);
+			}else if(compareItems(item, genPerspective(Material.POTION, "§9Kit Russe", (byte) 0))){
+				Kits.kitRusse(p);
+				Var.russe.add(p);
 				Play.onPlay(p);
 			}
 		}
