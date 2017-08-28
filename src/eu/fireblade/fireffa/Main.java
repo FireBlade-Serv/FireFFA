@@ -65,6 +65,7 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Invocation(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.RobinDesBois(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Moutarde(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Nuage(), this);
 		
 		
 		for (Player online : Bukkit.getOnlinePlayers()){
