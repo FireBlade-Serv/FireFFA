@@ -28,7 +28,9 @@ public class Play implements Listener {
 		Entity entity = e.getEntity();
 		 if(entity instanceof Player) {
 			Player p = (Player) entity;
-			 if(invulnerability.contains(p)); e.setCancelled(true);
+			 if(invulnerability.contains(p)) {
+				 e.setCancelled(true);
+			 }
 		 }
 	}
 	
