@@ -71,14 +71,15 @@ public class Play implements Listener {
 					GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Go !", 20, 30, 20);
 					gt.send();
 					p.playSound(p.getLocation(), Sound.WITHER_SPAWN, 30, 30);
+					timer.remove(p);
+					task.remove(p);
 				}
 				
 			}
 			
 		}, 0L, 20L));
 		
-		timer.remove(p);
-		task.remove(p);
+		
 	}
 	
 	public static void onPlay(Player p) {
