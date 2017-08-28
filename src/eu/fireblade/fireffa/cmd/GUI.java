@@ -41,7 +41,7 @@ public class GUI implements CommandExecutor, Listener {
 		
 		if(Var.inGame.contains(sender)) {
 			Player p = (Player) sender;
-			p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous ne pouvez pas changer de kit en jeux !");
+			p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous ne pouvez pas changer de kit en jeu !");
 			p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 			return false;
 		}

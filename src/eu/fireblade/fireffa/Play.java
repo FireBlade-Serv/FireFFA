@@ -73,6 +73,9 @@ public class Play implements Listener {
 			}
 			
 		}, 0L, 20L));
+		
+		timer.remove(p);
+		task.remove(p);
 	}
 	
 	public static void onPlay(Player p) {
@@ -80,6 +83,7 @@ public class Play implements Listener {
 		Tp.randomtp(p);
 		p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 100, 0, false, false));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 0, false, false));
+		p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 0, false, false));
 		invulnerability.add(p);
 		removeInvu(p);
 		timerBeforePvp(p);
