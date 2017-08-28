@@ -3,8 +3,10 @@ package eu.fireblade.fireffa.cmd;
 import java.util.Arrays;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,6 +25,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
 
+import eu.fireblade.fireffa.Play;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.util.GlobalRank;
@@ -33,6 +36,13 @@ public class GUI implements CommandExecutor, Listener {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {		
 		if(!(sender instanceof Player)){
 			sender.sendMessage("§cVous ne pouvez pas executer cette commande sur la console");
+			return false;
+		}
+		
+		if(Var.inGame.contains(sender)) {
+			Player p = (Player) sender;
+			p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous ne pouvez pas changer de kit en jeux !");
+			p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 			return false;
 		}
 		
@@ -475,93 +485,123 @@ public class GUI implements CommandExecutor, Listener {
 			}else if(compareItems(item, genPerspective(Material.STONE_SWORD, "§9Kit Chevalier", (byte) 0))){
 				Kits.kitChevalier(p);
 				Var.chevalier.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.BLAZE_POWDER, "§9Kit Magicien", (byte) 0))){
 				Kits.kitMagicien(p);
 			    Var.magicien.add(p);
+			    Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.BOW, "§9Kit Archer Vagabond", (byte) 0))){
 				Kits.kitArchervagabon(p);
 			    Var.archervagabon.add(p);
+			    Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.IRON_INGOT, "§9Kit Mineur", (byte) 0))){
 				Kits.kitMineur(p);
 			    Var.mineur.add(p);
+			    Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.SUGAR_CANE, "§9Kit Panda", (byte) 0))){
 				Kits.kitPanda(p);
 				Var.panda.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.LEATHER_HELMET, "§9Kit Ours", (byte) 0))){
 				Kits.kitOurs(p);
 				Var.ours.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.GOLD_HELMET, "§9Kit Tank", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitTank(p);
 				Var.tank.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.STICK, "§9Kit Flic", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitFlic(p);
 				Var.flic.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.SHEARS, "§9Kit Assassin", (byte) 0))){
 				Kits.kitAssassin(p);
 				Var.assassin.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.FERMENTED_SPIDER_EYE, "§9Kit Guerrier Galactique", (byte) 0))){
 				Kits.kitGuerriergalactique(p);
 				Var.guerriergalactique.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.RED_MUSHROOM, "§9Kit Gameur", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
 				Kits.kitGamer(p);
 				Var.gamer.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.CAKE, "§9Kit Patissier", (byte) 0))){
 				Kits.kitPatissier(p);
 				Var.patissier.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.INK_SACK, "§9Kit Grampa", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitGrampa(p);
 				Var.grampa.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.STONE_AXE, "§9Kit Boucher", (byte) 0))){
 				Kits.kitBoucher(p);
 				Var.boucher.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.LEASH, "§9Kit Esclave", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
 				Kits.kitEsclave(p);
 				Var.esclave.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.PORK, "§9Kit Sauvage", (byte) 0))){
 				Kits.kitSauvage(p);
 				Var.sauvage.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveLeatherColor(Material.LEATHER_HELMET, "§9Kit Archer d'élite", 1, 114, 113, 57))){
 				Kits.kitArcherelite(p);
 				Var.archerélite.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.SEEDS, "§9Kit Moutarde", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
 				Kits.kitMoutarde(p);
 				Var.moutarde.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.WOOD_SWORD, "§9Kit Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
 				Kits.kitPyro(p);
 				Var.pyro.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.ENDER_PEARL, "§9Kit Enderman", (byte) 0))){
 				Kits.kitEnderman(p);
 				Var.enderman.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.SAPLING, "§9Kit Robin des bois", (byte) 0))){
 				Kits.kitRobinDesBois(p);
 				Var.robindesbois.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.RAW_FISH, "§9Kit Ocelot", (byte) 0))){
 				Kits.kitOcelot(p);
 				Var.ocelot.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.BRICK, "§9Kit Rulio", (byte) 0))){
 				Kits.kitRulio(p);
 				Var.rulio.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.REDSTONE_COMPARATOR, "§9Kit Mathématicien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
 				Kits.kitMathematicien(p);
 				Var.mathématicien.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.TORCH, "§9Kit FuriCat", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
 				Kits.kitFuricat(p);
 				Var.furicat.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.COMPASS, "§9Kit Timer", (byte) 0))){
 				Kits.kitTimer(p);
 			    Var.timer.add(p);
+			    Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.IRON_TRAPDOOR, "§9Kit TrapMan", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
 				Kits.kitTrapman(p);
 				Var.trapman.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Kit Démolisseur", 1, 89, 38, 38))){
 				Kits.kitDemolisseur(p);
 				Var.démolisseur.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.DETECTOR_RAIL, "§9Kit Informaticien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
 				Kits.kitInformaticien(p);
 				Var.informaticien.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.STICK, "§9Kit Gandalf", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0))){
 				Kits.kitGandalf(p);
 			    Var.gandalf.add(p);
+			    Play.onPlay(p);
 			}else{
 				e.setCancelled(true);
 			}
@@ -575,33 +615,35 @@ public class GUI implements CommandExecutor, Listener {
 			}else if(compareItems(item, genPerspective(Material.GLOWSTONE_DUST, "§9Kit Glowstone", (byte) 0))){
 				Kits.kitGlowstone(p);
 				Var.glowstone.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.CACTUS, "§9Kit Cactus", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitCactus(p);
 				Var.cactus.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.ARROW, "§9Kit Nuage", (byte) 0))){
 				Kits.kitNuage(p);
 				Var.nuage.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.TNT, "§9Kit Djihadiste", (byte) 0))){
 				Kits.kitJihadist(p);
 				Var.jihadist.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.BOW, "§9Kit Archer élémentaire", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitArcherelementaire(p);
 				Var.archerélémentaire.add(p);
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.ROTTEN_FLESH, "§9Kit Ogre", (byte) 0))){
 				Kits.kitOgre(p);
 				Var.ogre.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Kit Bouftout", 1, 255, 255, 255))){
 				Kits.kitBoufTout(p);
 				Var.bouftout.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.CARROT_ITEM, "§9Kit Lapin", (byte) 0))){
 				Kits.kitLapin(p);
 				Var.lapin.add(p);
+				Play.onPlay(p);
 			}
 		}else if(inv.getName().equals("§9§lKits Ultra")){
 			e.setCancelled(true);
@@ -613,34 +655,35 @@ public class GUI implements CommandExecutor, Listener {
 			}else if(compareItems(item, genPerspective(Material.ANVIL, "§9Kit Enclumex", (byte) 0))){
 				Kits.kitEnclumex(p);
 				Var.enclumex.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.BOW, "§9Kit OITC Man",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitOITCman(p);
 				Var.OITCman.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.NETHER_STAR, "§9Kit Domination", (byte) 0))){
 				Kits.kitDomination(p);
 				Var.domination.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectivePot("§9Kit Fantôme", PotionType.INVISIBILITY, false))){
 				Kits.kitFantome(p);
 				Var.fantôme.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.REDSTONE, "§9Kit RedMan", (byte) 0))){
 				Kits.kitRedMan(p);
 				Var.redman.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.GOLD_SPADE, "§9Kit Pharaon",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitPharaon(p);
 				Var.pharaon.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.INK_SACK, "§9Kit Dieu",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 15))){
 				Kits.kitDieu(p);
 				Var.dieu.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.SNOW_BALL, "§9Kit Swap", (byte) 0))){
 				Kits.kitSwap(p); 
 				Var.swap.add(p);
+				Play.onPlay(p);
 			}
 		}else if(inv.getName().equals("§9§lKits Ultimate")){
 			e.setCancelled(true);
@@ -652,34 +695,35 @@ public class GUI implements CommandExecutor, Listener {
 			}else if(compareItems(item, genPerspective(Material.IRON_BLOCK, "§9Kit Golem", (byte) 0))){
 				Kits.kitGolem(p);
 				Var.golem.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveSkullItem("§9Kit Voleur d'âmes"))){
 				Kits.kitVoleurdame(p);
 				Var.voleurdame.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.INK_SACK, "§9Kit Vampire", (byte) 0))){
 				Kits.kitVampire(p);
 				Var.vampire.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.NETHER_BRICK_ITEM, "§9Kit Programmeur", (byte) 0))){
 				Kits.kitProgrammeur(p);
 				Var.programmeur.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.STRING, "§9Kit Copy", (byte) 0))){
 				Kits.kitCopy(p);
 				Var.copy.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.GOLD_SPADE, "§9Kit Fiesta", (byte) 0))){
 				Kits.kitFiesta(p);
 				Var.fiesta.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspectiveEnch(Material.REDSTONE_ORE, "§9Kit Power",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitPower(p);
 				Var.power.add(p);
-				
+				Play.onPlay(p);
 			}else if(compareItems(item, genPerspective(Material.DRAGON_EGG, "§9Kit Invocation", (byte) 0))){
 				Kits.kitInvocation(p);
 				Var.invocation.add(p);
+				Play.onPlay(p);
 			}
 		}
 	}

@@ -64,6 +64,7 @@ public class Events implements Listener {
 		e.setQuitMessage("§6[§eFireFFA§6] §e"+p.getName()+"§f à quitté le FireFFA !");
 		
 		Var.killStreak.remove(p);
+		Var.inGame.remove(p);
 	}
 	
 	@EventHandler
@@ -152,6 +153,8 @@ public class Events implements Listener {
 				Var.clearKitArray(p);
 				
 				Var.killStreak.replace(p, 0);
+				
+				Var.inGame.remove(p);
 				
 				Scoreboard.displayScoreboard(p);
 			}

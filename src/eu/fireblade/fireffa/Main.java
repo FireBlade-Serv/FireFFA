@@ -24,6 +24,8 @@ public class Main extends JavaPlugin{
 		
 		getCommand("kit").setExecutor(new eu.fireblade.fireffa.cmd.GUI());
 		
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.Play(), this);
+		
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Démolisseur(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Fantôme(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Flic(), this);
