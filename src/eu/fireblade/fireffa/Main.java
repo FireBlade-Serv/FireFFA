@@ -5,10 +5,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import eu.fireblade.fireffa.ability.nms.VampireObject;
 import eu.fireblade.fireffa.util.Methods;
 import eu.fireblade.fireffa.util.Tp;
-import net.minecraft.server.v1_8_R3.EntityBat;
 
 public class Main extends JavaPlugin{
 	
@@ -88,8 +86,6 @@ public class Main extends JavaPlugin{
 		saveConfig();
 		
 		Methods.getConfig();
-		
-		VampireObject.registerEntity("§5Vampire", 65, EntityBat.class, VampireObject.class);
 	}
 	
 	@Override

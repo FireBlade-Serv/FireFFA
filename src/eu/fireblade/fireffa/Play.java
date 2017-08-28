@@ -1,11 +1,11 @@
 package eu.fireblade.fireffa;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -17,6 +17,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
+import eu.fireblade.fireffa.items.Kits;
+import eu.fireblade.fireffa.util.NearbyPlayerLocationCalculator;
 import eu.fireblade.fireffa.util.Tp;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
@@ -50,6 +53,18 @@ public class Play implements Listener {
 		}
 	}
 	
+	@EventHandler
+	public void onRightClickInteract(PlayerRightClickInteractEvent e) {
+		final Player p = e.getPlayer();
+		final ItemStack item = e.getItem();
+		
+		if(Var.inGame.contains(p)) {
+			if(item.equals(Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1))) {
+				NearbyPlayerLocationCalculator.getDirection(p);
+				NearbyPlayerLocationCalculator.send(p);
+			}
+		}
+	}
 	
 	public static void removeInvu(Player p) {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
@@ -124,5 +139,6 @@ public class Play implements Listener {
 		removeInvu(p);
 		timerBeforePvp(p, item, armor);
 		
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 }
