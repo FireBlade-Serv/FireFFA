@@ -15,7 +15,6 @@ public class Tp {
 	}
 
 	public static void loadSpawnPoint() {
-		Var.spawn.add(new Location(Bukkit.getWorld("World"), 68.5, 71, 22.5, 127, 0));
 		Var.spawn.add(new Location(Bukkit.getWorld("World"), 94.5, 93, -79.5, -1, 0));
 		Var.spawn.add(new Location(Bukkit.getWorld("World"), 100, 75, 2, 140, 0));
 		Var.spawn.add(new Location(Bukkit.getWorld("World"), 38.5, 65, -118.5, 13, 0));
@@ -26,6 +25,6 @@ public class Tp {
 	
 	public static void randomtp(Player p) {
 		Random r = new Random();
-		p.teleport(Var.spawn.get(-1 + r.nextInt(7)));
+		p.teleport(Var.spawn.get(-1 + r.nextInt(6)));
 	}
 }
