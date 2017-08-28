@@ -44,20 +44,7 @@ public class Invocation implements Listener {
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 				
 				return;
-			}else {
-	
-				if(Oblocks.containsKey(p)) {
-					Oblocks.replace(p, new ArrayList<>());
-				}else {
-					Oblocks.put(p, new ArrayList<>());	
-				}
-				
-				if(Nblocks.containsKey(p)) {
-					Nblocks.replace(p, new ArrayList<>());
-				}else {
-					Nblocks.put(p, new ArrayList<>());	
-				}
-				
+			}else {				
 				getBlockAtPlayer(p);
 			}
 		}
@@ -230,6 +217,10 @@ public class Invocation implements Listener {
 	    final Material oldm = newLoc.getBlock().getType();
 		final byte oldb = newLoc.getBlock().getData();
 	    
+		if(!oldm.equals(Material.AIR)) {
+			return;
+		}
+		
 	    Block newb = newLoc.getBlock();
 	    
 	    newb.setType(Material.ICE);
@@ -241,9 +232,7 @@ public class Invocation implements Listener {
 				newb.setType(oldm);
 				newb.setData(oldb);
 				
-				Bukkit.broadcastMessage("§6oldb type -> "+oldm.toString()+" §9newb type -> "+newb.getType().toString());
-				
-				PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.SMOKE_LARGE, true,
+				PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.CLOUD, true,
 						(float) newb.getLocation().getX(), (float) newb.getLocation().getY(), (float) newb.getLocation().getZ(), 1, 1, 1, 1, 20);
 				
 				for(Player online : Bukkit.getOnlinePlayers()) {
