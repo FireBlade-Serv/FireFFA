@@ -111,6 +111,8 @@ public class Play implements Listener {
 					task.remove(p);
 					p.getInventory().setContents(tab1);
 					p.getInventory().setArmorContents(tab2);
+					
+					p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 				}
 				
 			}
@@ -138,7 +140,5 @@ public class Play implements Listener {
 		invulnerability.add(p);
 		removeInvu(p);
 		timerBeforePvp(p, item, armor);
-		
-		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 }
