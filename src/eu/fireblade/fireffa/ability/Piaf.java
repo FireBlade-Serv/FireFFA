@@ -2,8 +2,11 @@ package eu.fireblade.fireffa.ability;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.World;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -37,20 +40,23 @@ public class Piaf implements Listener {
 	public static void onRightClick(PlayerRightClickInteractEvent e) {
 		Player p = e.getPlayer();
 		ItemStack i = e.getItem();
+		World w = e.getWorld();
 		
-		if (Var.piaf.contains(p) && i.equals(Kits.ItemGen(Material.FEATHER, ChatColor.GRAY+"Vol",
+		if (Var.piaf.contains(p) && i.equals(Kits.ItemGen1(Material.SUGAR, Enchantment.DAMAGE_ALL, 4, ChatColor.GRAY+"Fiente",
 				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Propulse en hauteur", ChatColor.BLUE+"Utilisable 25 fois"), 1))) {
-			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FEATHER, ChatColor.GRAY+"Vol",
-				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Propulse en hauteur", ChatColor.BLUE+"Utilisable 25 fois"), 1), 1)) {
+			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FEATHER, ChatColor.GRAY+"Vol", null, 1), 1)) {
 				
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 
 					@Override
 					public void run() {
-						p.getInventory().removeItem(Kits.ItemGen(Material.FEATHER, ChatColor.GRAY+"Vol",
-								Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Propulse en hauteur", ChatColor.BLUE+"Utilisable 25 fois"), 1));
+						p.getInventory().removeItem(Kits.ItemGen(Material.FEATHER, ChatColor.GRAY+"Vol", null, 1));
 						
 						p.setVelocity(new Vector(0.0f, 1.3f, 0.0f));
+						
+						for(int index = 0 ; index <= 50 ; index++) {
+							w.playEffect(p.getLocation(), Effect.FLAME, 1);
+						}
 					}
 					
 				});
