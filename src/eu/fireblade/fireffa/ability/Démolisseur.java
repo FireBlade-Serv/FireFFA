@@ -17,6 +17,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.ExplosionPrimeEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
@@ -95,6 +96,8 @@ public class Démolisseur implements Listener {
 				
 				ArmorStand as = (ArmorStand) truc;
 				
+				ar.setYield(5.0f);
+				
 				as.setCustomName("§4§lTES TAS TOS");
 				as.setCustomNameVisible(true);
 				as.setVisible(false);
@@ -158,4 +161,12 @@ public class Démolisseur implements Listener {
 		}
 	}
 	
+	@EventHandler
+	public void onDamage(EntityDamageByEntityEvent e) {
+		final Entity entity = e.getEntity();
+		
+		if(entity instanceof Fireball) {
+			e.setDamage(0.0d);
+		}
+	}
 }
