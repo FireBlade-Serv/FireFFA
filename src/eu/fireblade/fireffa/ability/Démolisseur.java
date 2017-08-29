@@ -96,7 +96,7 @@ public class Démolisseur implements Listener {
 				
 				ArmorStand as = (ArmorStand) truc;
 				
-				ar.setYield(5.0f);
+				ar.setYield(3.0f);
 				
 				as.setCustomName("§4§lTES TAS TOS");
 				as.setCustomNameVisible(true);
