@@ -39,7 +39,7 @@ public class Piaf implements Listener {
 		ItemStack i = e.getItem();
 		
 		if (Var.piaf.contains(p) && i.equals(Kits.ItemGen(Material.FEATHER, ChatColor.GRAY+"Vol",
-				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Propulse en hauteur", ChatColor.BLUE+"Utilisable 25 fois"), 25))) {
+				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Propulse en hauteur", ChatColor.BLUE+"Utilisable 25 fois"), 1))) {
 			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FEATHER, ChatColor.GRAY+"Vol",
 				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Propulse en hauteur", ChatColor.BLUE+"Utilisable 25 fois"), 1), 1)) {
 				
