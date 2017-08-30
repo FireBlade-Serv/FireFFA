@@ -25,6 +25,12 @@ public class Tp {
 	
 	public static void randomtp(Player p) {
 		Random r = new Random();
-		p.teleport(Var.spawn.get(-1 + r.nextInt(6)));
+		int n = r.nextInt(6);
+		
+		if(n == 0) {
+			p.teleport(Var.spawn.get(0));
+		}else {
+			p.teleport(Var.spawn.get(n - 1));
+		}
 	}
 }
