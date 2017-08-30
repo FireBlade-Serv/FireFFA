@@ -81,6 +81,8 @@ public class ArcherElementaire implements Listener {
 					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez déjà une flèche en execution !");
 					
+					p.getInventory().addItem(Kits.ItemGen(Material.ARROW, ChatColor.GREEN+"Fléche de l'arche élémentaire", null, 1));
+					
 					e.setCancelled(true);
 					
 					return;
