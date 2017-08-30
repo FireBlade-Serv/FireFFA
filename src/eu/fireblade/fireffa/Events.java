@@ -111,8 +111,8 @@ public class Events implements Listener {
 			return;
 		}
 		
-		if(entity instanceof Player) {
-			Player p = (Player) entity;
+		if(damager instanceof Player) {
+			Player p = (Player) damager;
 			
 			if(cause.equals(DamageCause.BLOCK_EXPLOSION)) {
 				if(Var.panda.contains(p)) {
@@ -124,7 +124,8 @@ public class Events implements Listener {
 				}
 			}else if(cause.equals(DamageCause.ENTITY_ATTACK)) {
 				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
-				as.spawn((CraftPlayer) p, p.getLocation().getX(), p.getLocation().getY() + 0.3d, p.getLocation().getZ(), e.getDamage());
+				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY() + 0.3d, entity.getLocation().getZ(),
+						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
 				as.destroyAuto((CraftPlayer) p);
 			}else if(cause.equals(DamageCause.ENTITY_EXPLOSION)) {
 				if(Var.panda.contains(p)) {

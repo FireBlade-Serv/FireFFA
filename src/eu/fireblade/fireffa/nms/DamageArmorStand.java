@@ -17,9 +17,9 @@ public class DamageArmorStand extends EntityArmorStand{
 		super(world);
 	}
 	
-	public void spawn(CraftPlayer cp, double x, double y, double z, double damage) {
+	public void spawn(CraftPlayer cp, double x, double y, double z, float pitch, float yaw, double damage) {
 		initEntity();
-		setLocation(x, y, z);
+		setLocation(x, y, z, pitch, yaw);
 		setDamage(damage);
 		sendPacketAdd(cp, constructEntityPacketAdd());
 	}
@@ -50,8 +50,9 @@ public class DamageArmorStand extends EntityArmorStand{
 		this.setInvisible(true);
 	}
 	
-	public void setLocation(double x, double y, double z) {
-		this.setLocation(x, y, z);
+	@Override
+	public void setLocation(double x, double y, double z, float pitch, float yaw) {
+		super.setLocation(x, y, z, pitch, yaw);
 	}
 	
 	public void setDamage(double damage) {
