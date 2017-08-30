@@ -19,9 +19,9 @@ public class DamageArmorStand{
 	}
 	
 	public void spawn(CraftPlayer cp, double x, double y, double z, float pitch, float yaw, double damage) {
-		initEntity();
 		setLocation(x, y, z, pitch, yaw);
 		setDamage(damage);
+		initEntity();
 		sendPacketAdd(cp, constructEntityPacketAdd());
 	}
 	
@@ -33,7 +33,7 @@ public class DamageArmorStand{
 				sendPacketRemove(cp, constructEntityPacketRemove());
 			}
 			
-		}, 200L);
+		}, 15L);
 	}
 	
 	public void destroy(CraftPlayer cp) {
@@ -45,10 +45,10 @@ public class DamageArmorStand{
 	}
 	
 	public void initEntity() {
-		this.entity.setCustomName("§c- "+this.damage+" ❤");
+		this.entity.setCustomName("§c§l- "+this.damage+" ❤");
 		this.entity.setCustomNameVisible(true);
 		this.entity.setGravity(false);
-		this.entity.setInvisible(false);
+		this.entity.setInvisible(true);
 	}
 	
 	public void setLocation(double x, double y, double z, float pitch, float yaw) {
