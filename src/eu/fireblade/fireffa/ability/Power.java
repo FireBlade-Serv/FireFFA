@@ -47,7 +47,7 @@ public class Power implements Listener {
 					
 				return;
 			} else {
-				p.setVelocity(new Vector(0.0f, 1.2f, 0.0f));
+				p.setVelocity(new Vector(0.0f, 1.1f, 0.0f));
 				
 				p.playSound(p.getLocation(), Sound.BAT_TAKEOFF, 30, 30);
 				

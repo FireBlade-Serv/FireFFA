@@ -4,19 +4,23 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.World;
+import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
-import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
@@ -29,9 +33,12 @@ import org.bukkit.potion.PotionEffectType;
 
 import eu.fireblade.fireffa.cmd.GUI;
 import eu.fireblade.fireffa.items.Kits;
+import eu.fireblade.fireffa.nms.DamageArmorStand;
 import eu.fireblade.fireffa.util.Scoreboard;
 import eu.fireblade.fireffa.util.Tp;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
+import net.minecraft.server.v1_8_R3.EntityArmorStand;
+import net.minecraft.server.v1_8_R3.EntityLiving;
 import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand;
 import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand.EnumClientCommand;
 
@@ -51,10 +58,28 @@ public class Events implements Listener {
 		Var.killStreak.put(p, 0);
 		
 		Scoreboard.displayScoreboard(p);
+		
+		Kits.Clear(p);
+		
+		p.getInventory().setItem(4, Kits.ItemGen(Material.COMPASS, "§9Selectionner un kit", null, 1));
+		p.getInventory().setHeldItemSlot(4);
+		
+		p.getInventory().setItem(0, Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1));
+		p.getInventory().setItem(8, Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1));
 	}
 	
 	@EventHandler
 	public void onRain(WeatherChangeEvent e){
+		e.setCancelled(true);
+	}
+	
+	@EventHandler
+	public void onDrop(PlayerDropItemEvent e) {
+		final Player p = e.getPlayer();
+		
+		p.sendMessage("§6[§eFireFFA§6] §cVous ne pouvez pas drop des items !");
+		p.playSound(p.getEyeLocation(), Sound.ITEM_BREAK, 30, 30);
+		
 		e.setCancelled(true);
 	}
 	
@@ -69,38 +94,64 @@ public class Events implements Listener {
 	}
 	
 	@EventHandler
-	public void onDamage(EntityDamageEvent e){
+	public void onDamage(EntityDamageByEntityEvent e){
 		final Entity entity = e.getEntity();
+		final EntityLiving nmsentity = (EntityLiving) entity;
 		final World w = entity.getWorld();
-		final double damage = e.getDamage();
+		final DamageCause cause = e.getCause();
+		final Entity damager = e.getDamager();
 		
 		if(entity instanceof Player) {
 			w.playEffect(entity.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
 		}
 		
-		if(entity instanceof ArmorStand) {
+		if(nmsentity instanceof EntityArmorStand) {
 			e.setCancelled(true);
 			
 			return;
 		}
 		
-		Entity eNas = w.spawn(entity.getLocation().add(0.0d, 0.3d, 0.0d), ArmorStand.class);
-		
-		ArmorStand as = (ArmorStand) eNas;
-		
-		as.setCustomName("§c§l - "+damage+" ❤");
-		as.setCustomNameVisible(true);
-		as.setVisible(false);
-		as.setGravity(false);
-		
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
-
-			@Override
-			public void run() {
-				as.remove();
-			}
+		if(entity instanceof Player) {
+			Player p = (Player) entity;
 			
-		}, 10L);
+			if(cause.equals(DamageCause.BLOCK_EXPLOSION)) {
+				if(Var.panda.contains(p)) {
+					return;
+				}else if(Var.jihadist.contains(p)) {
+					if(e.getDamage() >= 20) {
+						return;
+					}
+				}
+			}else if(cause.equals(DamageCause.ENTITY_ATTACK)) {
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) p, p.getLocation().getX(), p.getLocation().getY() + 0.3d, p.getLocation().getZ(), e.getDamage());
+				as.destroyAuto((CraftPlayer) p);
+			}else if(cause.equals(DamageCause.ENTITY_EXPLOSION)) {
+				if(Var.panda.contains(p)) {
+					return;
+				}else if(Var.jihadist.contains(p)) {
+					if(e.getDamage() >= 20) {
+						return;
+					}
+				}
+			}else if(cause.equals(DamageCause.FALL)) {
+				if(Var.nuage.contains(p) || Var.piaf.contains(p)) {
+					return;
+				}
+			}else if(cause.equals(DamageCause.LIGHTNING)) {
+				if(Var.domination.contains(p)) {
+					return;
+				}
+			}else if(cause.equals(DamageCause.VOID)) {
+				return;
+			}else if(cause.equals(DamageCause.SUICIDE)) {
+				return;
+			}else if(cause.equals(DamageCause.PROJECTILE)) {
+				if(damager instanceof Arrow) {
+					
+				}
+			}
+		}
 	}
 
 	@EventHandler
@@ -110,8 +161,6 @@ public class Events implements Listener {
 		if(!(victime instanceof Player)){
 			return;
 		}
-		
-		
 		
 		Player p = (Player) victime;
 		
@@ -133,7 +182,7 @@ public class Events implements Listener {
                 if(p.isDead()){
                 	PacketPlayInClientCommand packet = new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN);
                 	
-                	 ((CraftPlayer) p).getHandle().playerConnection.a(packet);
+                	((CraftPlayer) p).getHandle().playerConnection.a(packet);
                 }
             }
             
@@ -254,6 +303,10 @@ public class Events implements Listener {
 		
 		if(a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)){
 			Bukkit.getPluginManager().callEvent(new eu.fireblade.fireffa.events.PlayerRightClickInteractEvent(p, item, p.getWorld()));
+			
+			if(item.equals(Kits.ItemGen(Material.COMPASS, "§9Selectionner un kit", null, 1))) {
+				GUI.mainMenu(p);
+			}
 		}
 	}
 	

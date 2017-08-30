@@ -14,7 +14,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.util.Vector;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
@@ -50,9 +49,9 @@ public class Piaf implements Listener {
 
 					@Override
 					public void run() {
-						p.getInventory().removeItem(Kits.ItemGen(Material.FEATHER, ChatColor.GRAY+"Vol", null, 1));
+						p.getInventory().removeItem(Kits.ItemGen(Material.FEATHER, ChatColor.GRAY+"Plume", null, 1));
 						
-						p.setVelocity(new Vector(0.0f, 1.3f, 0.0f));
+						p.setVelocity(p.getLocation().getDirection().multiply(1.5).setY(1));
 						
 						for(int index = 0 ; index <= 50 ; index++) {
 							w.playEffect(p.getLocation(), Effect.FLAME, 1);

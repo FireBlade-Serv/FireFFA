@@ -313,10 +313,12 @@ public class Kits {
 		ArrayList<String> lore = new ArrayList<String>();
 		lore.add(ChatColor.BLUE+"Nausée I");
 		lore.add(ChatColor.BLUE+"Vitesse I");
+		lore.add(ChatColor.BLUE+"Force I");
 		lore.add(ChatColor.BLUE+"1 minute");
 		PotionMeta.setLore(lore);
 		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.SPEED, 20*60, 0), true);
 		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20*60, 0), true);
+		PotionMeta.addCustomEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 20*60, 0), true);
 		Potion.setItemMeta(PotionMeta);
 
 		p.getInventory().setItem(1, Potion);

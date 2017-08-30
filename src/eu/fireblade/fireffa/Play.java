@@ -113,6 +113,8 @@ public class Play implements Listener {
 					p.getInventory().setArmorContents(tab2);
 					
 					p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
+					
+					p.getInventory().setHeldItemSlot(0);
 				}
 				
 			}
