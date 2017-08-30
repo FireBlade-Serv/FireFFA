@@ -29,14 +29,14 @@ public class Boucher implements Listener {
 		}
 		
 		if(item.equals(Kits.ItemGen(Material.RAW_BEEF, ChatColor.DARK_RED+"Viande saignante", 
-				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 1 coeur", ChatColor.BLUE+"1 utilisation"), 1))) {
+				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régénère 1 §c❤", ChatColor.BLUE+"1 utilisation"), 1))) {
 			
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
 
 				@Override
 				public void run() {
 					p.getInventory().removeItem(Kits.ItemGen(Material.RAW_BEEF, ChatColor.DARK_RED+"Viande saignante", 
-							Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 1 §c❤", ChatColor.BLUE+"1 utilisation"), 1));
+							Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régénère 1 §c❤", ChatColor.BLUE+"1 utilisation"), 1));
 					
 					p.playSound(p.getEyeLocation(), Sound.COW_HURT, 30, 30);
 					
@@ -49,14 +49,14 @@ public class Boucher implements Listener {
 			});
 			
 		}else if(item.equals(Kits.ItemGen(Material.MUTTON, ChatColor.DARK_RED+"Viande fraiche", 
-				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 §c❤", ChatColor.BLUE+"1 utilisation"), 1))) {
+				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régénère 2 §c❤", ChatColor.BLUE+"1 utilisation"), 1))) {
 			
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
 
 				@Override
 				public void run() {
 					p.getInventory().removeItem(Kits.ItemGen(Material.MUTTON, ChatColor.DARK_RED+"Viande fraiche", 
-							Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
+							Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Régénère 2 §c❤", ChatColor.BLUE+"1 utilisation"), 1));
 					
 					p.playSound(p.getEyeLocation(), Sound.PIG_DEATH, 30, 30);
 					
