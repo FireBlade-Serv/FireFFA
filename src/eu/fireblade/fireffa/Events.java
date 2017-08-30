@@ -7,6 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftEntity;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
@@ -38,7 +39,6 @@ import eu.fireblade.fireffa.util.Scoreboard;
 import eu.fireblade.fireffa.util.Tp;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.minecraft.server.v1_8_R3.EntityArmorStand;
-import net.minecraft.server.v1_8_R3.EntityLiving;
 import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand;
 import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand.EnumClientCommand;
 
@@ -96,7 +96,7 @@ public class Events implements Listener {
 	@EventHandler
 	public void onDamage(EntityDamageByEntityEvent e){
 		final Entity entity = e.getEntity();
-		final EntityLiving nmsentity = (EntityLiving) entity;
+		final net.minecraft.server.v1_8_R3.Entity nmsentity = ((CraftEntity) entity).getHandle();
 		final World w = entity.getWorld();
 		final DamageCause cause = e.getCause();
 		final Entity damager = e.getDamager();
