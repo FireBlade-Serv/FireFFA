@@ -9,12 +9,13 @@ import net.minecraft.server.v1_8_R3.PacketPlayOutEntityDestroy;
 import net.minecraft.server.v1_8_R3.PacketPlayOutSpawnEntityLiving;
 import net.minecraft.server.v1_8_R3.World;
 
-public class DamageArmorStand extends EntityArmorStand{
+public class DamageArmorStand{
 	
+	private EntityArmorStand entity;
 	private double damage;
 
 	public DamageArmorStand(World world) {
-		super(world);
+		this.entity = new EntityArmorStand(world);
 	}
 	
 	public void spawn(CraftPlayer cp, double x, double y, double z, float pitch, float yaw, double damage) {
@@ -32,7 +33,7 @@ public class DamageArmorStand extends EntityArmorStand{
 				sendPacketRemove(cp, constructEntityPacketRemove());
 			}
 			
-		}, 15L);
+		}, 200L);
 	}
 	
 	public void destroy(CraftPlayer cp) {
@@ -44,15 +45,14 @@ public class DamageArmorStand extends EntityArmorStand{
 	}
 	
 	public void initEntity() {
-		this.setCustomName("§c- "+this.damage+" ❤");
-		this.setCustomNameVisible(true);
-		this.setGravity(false);
-		this.setInvisible(true);
+		this.entity.setCustomName("§c- "+this.damage+" ❤");
+		this.entity.setCustomNameVisible(true);
+		this.entity.setGravity(false);
+		this.entity.setInvisible(false);
 	}
 	
-	@Override
 	public void setLocation(double x, double y, double z, float pitch, float yaw) {
-		super.setLocation(x, y, z, pitch, yaw);
+		this.entity.setLocation(x, y, z, pitch, yaw);
 	}
 	
 	public void setDamage(double damage) {
@@ -60,7 +60,7 @@ public class DamageArmorStand extends EntityArmorStand{
 	}
 	
 	public PacketPlayOutSpawnEntityLiving constructEntityPacketAdd() {
-		return new PacketPlayOutSpawnEntityLiving(this);
+		return new PacketPlayOutSpawnEntityLiving(this.entity);
 	}
 	
 	public void sendPacketRemove(CraftPlayer cp, PacketPlayOutEntityDestroy packetout) {
@@ -68,11 +68,11 @@ public class DamageArmorStand extends EntityArmorStand{
 	}
 	
 	public PacketPlayOutEntityDestroy constructEntityPacketRemove() {
-		return new PacketPlayOutEntityDestroy(getInstance().getId());
+		return new PacketPlayOutEntityDestroy(getInstance().entity.getId());
 	}
 	
 	public PacketPlayOutEntityDestroy constructEntityPacketRemove(DamageArmorStand instance) {
-		return new PacketPlayOutEntityDestroy(instance.getId());
+		return new PacketPlayOutEntityDestroy(instance.entity.getId());
 	}
 	
 	public void sendPacketAdd(CraftPlayer cp, PacketPlayOutSpawnEntityLiving packetout) {
