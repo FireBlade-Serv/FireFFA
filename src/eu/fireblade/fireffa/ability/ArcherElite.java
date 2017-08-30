@@ -40,11 +40,10 @@ public class ArcherElite implements Listener {
 
 	@EventHandler
 	public void onHitArrow(EntityDamageByEntityEvent e) {
-		final Entity entity = e.getEntity();
 		final Entity damager = e.getDamager();
 		
 		if(damager instanceof Arrow) {
-			Arrow ar = (Arrow) entity;
+			Arrow ar = (Arrow) damager;
 			
 			if(ar.getShooter() instanceof Player) {
 				Player p = (Player) ar.getShooter();
