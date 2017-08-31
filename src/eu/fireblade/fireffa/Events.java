@@ -124,7 +124,7 @@ public class Events implements Listener {
 				}
 			}else if(cause.equals(DamageCause.ENTITY_ATTACK)) {
 				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
-				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY() + 0.3d, entity.getLocation().getZ(),
+				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
 						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
 				as.destroyAuto((CraftPlayer) p);
 			}else if(cause.equals(DamageCause.ENTITY_EXPLOSION)) {
@@ -135,14 +135,29 @@ public class Events implements Listener {
 						return;
 					}
 				}
+				
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
+				as.destroyAuto((CraftPlayer) p);
 			}else if(cause.equals(DamageCause.FALL)) {
 				if(Var.nuage.contains(p) || Var.piaf.contains(p)) {
 					return;
 				}
+				
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
+				as.destroyAuto((CraftPlayer) p);
 			}else if(cause.equals(DamageCause.LIGHTNING)) {
 				if(Var.domination.contains(p)) {
 					return;
 				}
+				
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
+				as.destroyAuto((CraftPlayer) p);
 			}else if(cause.equals(DamageCause.VOID)) {
 				return;
 			}else if(cause.equals(DamageCause.SUICIDE)) {
