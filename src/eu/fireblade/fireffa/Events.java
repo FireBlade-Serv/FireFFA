@@ -177,7 +177,7 @@ public class Events implements Listener {
 				return;
 			}
 		}else if(damager instanceof Arrow || damager instanceof Fireball || damager instanceof Snowball) {
-			Projectile proj = (Projectile) entity;
+			Projectile proj = (Projectile) damager;
 			
 			if(proj.getShooter() instanceof Player) {
 				
