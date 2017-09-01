@@ -385,15 +385,13 @@ public class NearbyPlayerLocationCalculator implements Listener {
 	*/
 	
 	public static Player getNearestPlayer(Player p) {
-		double closest = Double.MAX_VALUE;
+		double nearest = 0.0d;
 		Player near = null;
 		
-		for(Player i : Bukkit.getOnlinePlayers()){
-			double dist = i.getLocation().distance(p.getLocation());
-			
-			if (closest == Double.MAX_VALUE || dist < closest){
-				closest = dist;
-				near = i;
+		for(Player online : Bukkit.getOnlinePlayers()) {
+			if(p.getLocation().distance(online.getLocation()) > nearest) {
+				nearest = p.getLocation().distance(online.getLocation());
+				near = online;
 			}
 		}
 		
