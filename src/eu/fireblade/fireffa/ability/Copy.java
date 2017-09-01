@@ -33,22 +33,22 @@ public class Copy implements Listener {
 		final ItemStack item = e.getItemInHand();
 		
 		if(Var.copy.contains(p)) {
-			if(item.equals(Kits.ItemGen(Material.TRIPWIRE_HOOK, "§9Copieur d'armure", Kits.LoreCreator("§9Clique Droit - copie l'armure ennemi", null), 1))) {
+			if(item.equals(Kits.ItemGen(Material.TRIPWIRE_HOOK, "§9Copieur d'armure", Kits.LoreCreator("§9Clique Droit - Copie l'armure ennemie", null), 1))) {
 				p.getInventory().setHelmet(target.getInventory().getHelmet());
 				p.getInventory().setChestplate(target.getInventory().getChestplate());
 				p.getInventory().setLeggings(target.getInventory().getLeggings());
 				p.getInventory().setBoots(target.getInventory().getBoots());
 				p.getInventory().remove(item);
-				p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
+				p.playSound(p.getLocation(), Sound.SHEEP_SHEAR, 30, 30);
 				GlowstoneTitle gt = new GlowstoneTitle(p, "", ChatColor.BLUE+"Armure copiée !", 20, 30, 20);
 				gt.send();
-			} else if(item.equals(Kits.ItemGen(Material.STRING, "§9Copieur d'arme", Kits.LoreCreator("§9Clique Droit - copie l'arme ennemi", null), 1))) {
+			} else if(item.equals(Kits.ItemGen(Material.STRING, "§9Copieur d'arme", Kits.LoreCreator("§9Clique Droit - copie l'arme ennemie", null), 1))) {
 				p.getInventory().setItem(0, target.getInventory().getItem(0));
 				p.getInventory().remove(item);
-				p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
+				p.playSound(p.getLocation(), Sound.SHEEP_SHEAR, 30, 30);
 				GlowstoneTitle gt = new GlowstoneTitle(p, "", ChatColor.BLUE+"Arme copiée !", 20, 30, 20);
 				gt.send();
-			} else if (item.equals(Kits.ItemGen(Material.FEATHER, "§9Plumart", Kits.LoreCreator("§9Clique Droit - saut de plusieurs blocs", "§915 secondes de récupération"), 1))){
+			} else if (item.equals(Kits.ItemGen(Material.FEATHER, "§9Plumart", Kits.LoreCreator("§9Clique Droit - Saut de plusieurs blocs", "§915 secondes de récupération"), 1))){
 				if(cooldown.contains(p)) {
 					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);

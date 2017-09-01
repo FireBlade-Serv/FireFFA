@@ -6,6 +6,9 @@ import java.util.Map;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.World;
+import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
@@ -18,6 +21,7 @@ import org.bukkit.inventory.ItemStack;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
+import eu.fireblade.fireffa.nms.DamageArmorStand;
 
 public class ArcherElite implements Listener {
 	
@@ -41,6 +45,8 @@ public class ArcherElite implements Listener {
 	@EventHandler
 	public void onHitArrow(EntityDamageByEntityEvent e) {
 		final Entity damager = e.getDamager();
+		final Entity entity = e.getEntity();
+		final World w = entity.getWorld();
 		
 		if(damager instanceof Arrow) {
 			Arrow ar = (Arrow) damager;
@@ -54,6 +60,20 @@ public class ArcherElite implements Listener {
 					ar.setKnockbackStrength(0);
 					
 					e.setDamage(1.0d);
+					
+					if(entity instanceof Player) {
+						Player v = (Player) entity;
+						
+						DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+						as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+								entity.getLocation().getPitch(), entity.getLocation().getYaw(), 1.0d);
+						as.destroyAuto((CraftPlayer) p);
+						
+						DamageArmorStand asv = new DamageArmorStand(((CraftWorld)w).getHandle());
+						asv.spawn((CraftPlayer) v, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+								entity.getLocation().getPitch(), entity.getLocation().getYaw(), 1.0d);
+						asv.destroyAuto((CraftPlayer) v);
+					}
 				}
 			}
 		}

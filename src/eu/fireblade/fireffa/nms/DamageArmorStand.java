@@ -25,9 +25,9 @@ public class DamageArmorStand{
 		sendPacketAdd(cp, constructEntityPacketAdd());
 	}
 	
-	public void spawn(CraftPlayer cp, double x, double y, double z, float pitch, float yaw) {
+	public void spawn(CraftPlayer cp, double x, double y, double z, float pitch, float yaw, String text) {
 		setLocation(x, y, z, pitch, yaw);
-		initEntityText();
+		initEntityText(text);
 		sendPacketAdd(cp, constructEntityPacketAdd());
 	}
 	
@@ -57,8 +57,8 @@ public class DamageArmorStand{
 		this.entity.setInvisible(true);
 	}
 	
-	public void initEntityText() {
-		this.entity.setCustomName("§l+ 1 KILL");
+	public void initEntityText(String text) {
+		this.entity.setCustomName(text);
 		this.entity.setCustomNameVisible(true);
 		this.entity.setGravity(false);
 		this.entity.setInvisible(true);

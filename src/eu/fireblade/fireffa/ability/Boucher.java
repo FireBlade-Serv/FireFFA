@@ -23,6 +23,7 @@ public class Boucher implements Listener {
 	public void onInteract(PlayerRightClickInteractEvent e) {
 		final Player p = e.getPlayer();
 		final ItemStack item = e.getItem();
+		final World w = e.getWorld();
 		
 		if(!Var.boucher.contains(p)) {
 			return;
@@ -45,6 +46,10 @@ public class Boucher implements Listener {
 					}else {
 						p.setHealth(p.getHealth() + 2);
 					}
+					
+					for(int i = 0 ; i <= 50 ; i++) {
+						w.playEffect(p.getEyeLocation(), Effect.VILLAGER_THUNDERCLOUD, 1);
+					}
 				}		
 			});
 			
@@ -65,6 +70,10 @@ public class Boucher implements Listener {
 					}else {
 						p.setHealth(p.getHealth() + 4);
 					}
+					
+					for(int i = 0 ; i <= 50 ; i++) {
+						w.playEffect(p.getEyeLocation(), Effect.VILLAGER_THUNDERCLOUD, 1);
+					}
 				}
 			});
 		}
@@ -78,7 +87,7 @@ public class Boucher implements Listener {
 		
 		if(Var.boucher.contains(killer)) {
 			
-			for(int i = 0 ; i <= 20 ; i++) {
+			for(int i = 0 ; i <= 50 ; i++) {
 				w.playEffect(p.getEyeLocation(), Effect.COLOURED_DUST, 1);
 			}
 		}

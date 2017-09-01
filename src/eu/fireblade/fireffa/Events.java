@@ -25,6 +25,8 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -126,11 +128,11 @@ public class Events implements Listener {
 		if(entity instanceof LivingEntity) {
 			LivingEntity le = (LivingEntity) entity;
 			
-			if(le.getHealth() <= 0.0d) {
+			if(le.getHealth() - e.getDamage() <= 0.0d) {
 				for(Player online : Bukkit.getOnlinePlayers()) {
 					DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
 					as.spawn((CraftPlayer) online, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
-							entity.getLocation().getPitch(), entity.getLocation().getYaw());
+							entity.getLocation().getPitch(), entity.getLocation().getYaw(), "§l+ 1 KILL");
 					as.destroyAuto((CraftPlayer) online);
 					
 					return;
@@ -158,6 +160,10 @@ public class Events implements Listener {
 		}else if(cause.equals(DamageCause.ENTITY_ATTACK)) {
 			if(damager instanceof Player) {
 				Player p = (Player) damager;
+				
+				if(Var.ogre.contains(p)) {
+					return;
+				}
 				
 				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
 				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
@@ -219,10 +225,17 @@ public class Events implements Listener {
 					Player p = (Player) proj.getShooter();
 					
 					if(damager instanceof Snowball) {
-						DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
-						as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
-								entity.getLocation().getPitch(), entity.getLocation().getYaw(), 3.0d);
-						as.destroyAuto((CraftPlayer) p);
+						if(Var.flic.contains(p)) {
+							DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+							as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+									entity.getLocation().getPitch(), entity.getLocation().getYaw(), 3.0d);
+							as.destroyAuto((CraftPlayer) p);
+						}else if(Var.swap.contains(p)) {
+							DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+							as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+									entity.getLocation().getPitch(), entity.getLocation().getYaw(), "§lSWAP !");
+							as.destroyAuto((CraftPlayer) p);
+						}
 					}
 				}
 			}
@@ -290,9 +303,23 @@ public class Events implements Listener {
 				
 				p.getInventory().setItem(0, Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1));
 				p.getInventory().setItem(8, Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1));
+				
+				if(Var.inGame.contains(p)) {
+					Var.inGame.remove(p);
+				}
 			}
 			
 		}, 10L);
+	}
+	
+	
+	@EventHandler
+	public void onClick(InventoryClickEvent e) {
+		final SlotType slot = e.getSlotType();
+		
+		if(slot.equals(SlotType.QUICKBAR)) {
+			e.setCancelled(true);
+		}
 	}
 	
 	@EventHandler
@@ -398,10 +425,7 @@ public class Events implements Listener {
 			}else if(item.equals(Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1))) {
 				
 			}else if(item.equals(Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1))) {
-				p.sendMessage("§6Plugin développé par les développeurs du projet FireBlade-Serv :");
-				p.sendMessage("§cGlowstoner §f> §cAdministrateur / Lead Développeur §6§lFireBlade-Serv");
-				p.sendMessage("§6_goldocelot_ §f> §6Développeur §lFireBlade-Serv");
-				p.sendMessage("§4baptistego §f> §4Owner §c/ §6Développeur §lFireBlade-Serv");
+				
 			}
 		}
 	}

@@ -432,7 +432,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_GREEN+"Bottes de l'archer vagabon", 1, 63, 76, 38));
 		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 10, ChatColor.DARK_GREEN+"Arc de la mort", null, 1));
 		p.getInventory().setItem(1, ItemGen(Material.BOW, ChatColor.DARK_GREEN+"Arc de l'archer vagabon", null, 1));
-		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.DARK_GREEN+"Fléche de l'archer vagabon", null, 32));
+		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.DARK_GREEN+"Flèche de l'archer vagabon", null, 32));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	// FAIT
@@ -687,7 +687,7 @@ public class Kits {
 		
 		p.getInventory().setChestplate(ItemGen(Material.LEATHER_CHESTPLATE, "§6Plastron swap", null, 1));
 		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§9épée swap", null, 1));
-		p.getInventory().setItem(1, ItemGen(Material.SNOW_BALL, "swaper", LoreCreator("§9Lancer la boule - Swap votre inventaire avec le joueur touché", null), 1));
+		p.getInventory().setItem(1, ItemGen(Material.SNOW_BALL, "§9Swaper", LoreCreator("§9Lancer la boule - Swap votre inventaire avec le joueur touché", null), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
     }
     //manque abilité
@@ -704,8 +704,8 @@ public class Kits {
 	//manque abilité
 	public static void kitCopy(Player p) {
 		Clear(p);
-		p.getInventory().setItem(0, ItemGen(Material.STRING, "§9Copieur d'arme", LoreCreator("§9Clique Droit - copie l'arme ennemi", null), 1));
-		p.getInventory().setItem(1, ItemGen(Material.TRIPWIRE_HOOK, "§9Copieur d'armure", LoreCreator("§9Clique Droit - copie l'armure ennemi", null), 1));
+		p.getInventory().setItem(0, ItemGen(Material.STRING, "§9Copieur d'arme", LoreCreator("§9Clique Droit - Copie l'armure ennemie", null), 1));
+		p.getInventory().setItem(1, ItemGen(Material.TRIPWIRE_HOOK, "§9Copieur d'armure", LoreCreator("§9Clique Droit - copie l'armure ennemie", null), 1));
 		p.getInventory().setItem(2, ItemGen(Material.FEATHER, "§9Plumart", LoreCreator("§9Clique Droit - saut de plusieurs blocs", "§915 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
@@ -772,7 +772,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon BoufTout", 1, 76, 127, 153));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes BoufTout", 1, 102, 76, 51));
 		p.getInventory().setItem(0, ItemGen1(Material.COOKED_BEEF, Enchantment.DAMAGE_ALL, 3, "§9Steak Saignant", null, 1));
-		p.getInventory().setItem(1, ItemGen1(Material.COOKED_CHICKEN, Enchantment.FIRE_ASPECT, 2, "§9Poulet Brûlant", LoreCreator("§9Clique Droit - vole 3 coeurs", "§930 secondes de récupération"), 1));
+		p.getInventory().setItem(1, ItemGen1(Material.COOKED_CHICKEN, Enchantment.FIRE_ASPECT, 2, "§9Poulet Brûlant", LoreCreator("§9Clique Droit - vole 3 §c❤", "§930 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	//FAIT

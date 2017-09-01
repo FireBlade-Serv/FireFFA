@@ -30,11 +30,11 @@ public class Bouftout implements Listener {
 		final ItemStack item = e.getItemInHand();
 		
 		if(Var.bouftout.contains(p)){
-			if(item.equals(Kits.ItemGen1(Material.COOKED_CHICKEN, Enchantment.FIRE_ASPECT, 2, "§9Poulet Brûlant", 
-					Kits.LoreCreator("§9Clique Droit - vole 3 coeurs", "§930 secondes de récupération"), 1))){
+			if(item.equals(Kits.ItemGen1(Material.COOKED_CHICKEN, Enchantment.FIRE_ASPECT, 2, "Â§9Poulet BrÃ»lant", 
+					Kits.LoreCreator("Â§9Clique Droit - vole 3 Â§câ¤", "Â§930 secondes de rÃ©cupÃ©ration"), 1))){
 				
 				if(cooldown.contains(p)){
-					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
+					p.sendMessage(ChatColor.GOLD+"Â§6[Â§eFireFFAÂ§6] "+ChatColor.RED+"Vous Ãªtes en cooldown pour cette attaque !");
 					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 					
 					return;
@@ -49,7 +49,7 @@ public class Bouftout implements Listener {
 						@Override
 						public void run() {
 							if(Var.bouftout.contains(p)){
-								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre attaque est prête !", 20, 30, 20);
+								GlowstoneTitle gt = new GlowstoneTitle(p, "", "Â§9Votre attaque est prÃªte !", 20, 30, 20);
 								gt.send();
 									
 								p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
@@ -74,7 +74,7 @@ public class Bouftout implements Listener {
 			if(!p.getGameMode().equals(GameMode.CREATIVE)){
 				p.setHealth(p.getHealth() - 6);
 				
-				p.sendMessage("§6[§eFireFFA§6] §fVotre vie a été drainée !");
+				p.sendMessage("Â§6[Â§eFireFFAÂ§6] Â§cVotre vie a Ã©tÃ© drainÃ©e !");
 				
 				p.playSound(p.getLocation(), Sound.CHICKEN_HURT, 30, 30);
 			}
@@ -88,7 +88,7 @@ public class Bouftout implements Listener {
 			if(!p.getGameMode().equals(GameMode.CREATIVE)){
 				p.setHealth(p.getHealth() + 6);
 				
-				p.sendMessage("§6[§eFireFFA§6] §fVous avez drainé de la vie !");
+				p.sendMessage("Â§6[Â§eFireFFAÂ§6] Â§aVous avez drainÃ© de la vie !");
 				
 				p.playSound(p.getLocation(), Sound.CHICKEN_HURT, 30, 30);
 			}
