@@ -391,6 +391,11 @@ public class NearbyPlayerLocationCalculator implements Listener {
 		for(Player i : Bukkit.getOnlinePlayers()){
 			double dist = i.getLocation().distance(p.getLocation());
 			
+			
+			if(p == i){
+				break;
+			}
+			
 			if (closest == Double.MAX_VALUE || dist < closest){
 				closest = dist;
 				near = i;

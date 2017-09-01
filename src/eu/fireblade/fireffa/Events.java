@@ -34,7 +34,9 @@ import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -49,6 +51,20 @@ import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand;
 import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand.EnumClientCommand;
 
 public class Events implements Listener {
+	
+	
+
+	public static ItemStack generateSkull(String owner) {
+		
+		ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
+		SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
+		skullMeta.setOwner(owner);
+		skullMeta.setDisplayName("§d"+owner);
+		skull.setItemMeta(skullMeta);
+		
+		return skull;
+	}
+
 	
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e){
@@ -351,7 +367,7 @@ public class Events implements Listener {
 	public void onEat(PlayerItemConsumeEvent e) {
 		final ItemStack item = e.getItem();
 	
-		if(item.getType().equals(Material.CARROT_ITEM)) {
+		if(item.equals(Kits.Bouf(Material.CARROT, 1))) {
 			return;
 		}
 		
@@ -435,7 +451,33 @@ public class Events implements Listener {
 				GUI.mainMenu(p);
 			}else if(item.equals(Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1))) {
 				
+				Inventory Info = Bukkit.createInventory(null, 9, ChatColor.BLUE+"Infos");
+				
+				Info.setItem(0, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Info.setItem(1, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Info.setItem(2, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Info.setItem(3, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Info.setItem(4, GUI.genPerspective(Material.LAPIS_ORE, ChatColor.BLUE+"Discord", (byte) 0));
+				Info.setItem(5, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Info.setItem(6, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Info.setItem(7, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Info.setItem(8, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				
+				p.openInventory(Info);
+				
 			}else if(item.equals(Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1))) {
+				
+				Inventory Crédits = Bukkit.createInventory(null, 9, ChatColor.BLUE+"Développé par:");
+				
+				Crédits.setItem(0, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Crédits.setItem(1, generateSkull("Baptistego"));
+				Crédits.setItem(2, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Crédits.setItem(3, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Crédits.setItem(4, generateSkull("Glowstoner"));
+				Crédits.setItem(5, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Crédits.setItem(6, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				Crédits.setItem(7, generateSkull("_goldocelot_"));
+				Crédits.setItem(8, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
 				
 			}
 		}
