@@ -391,11 +391,6 @@ public class NearbyPlayerLocationCalculator implements Listener {
 		for(Player i : Bukkit.getOnlinePlayers()){
 			double dist = i.getLocation().distance(p.getLocation());
 			
-			
-			if(p == i){
-				break;
-			}
-			
 			if (closest == Double.MAX_VALUE || dist < closest){
 				closest = dist;
 				near = i;
@@ -412,7 +407,7 @@ public class NearbyPlayerLocationCalculator implements Listener {
 			icbc = ChatSerializer.a("{\"text\": \" §c✖ §4|§c Aucun joueur proche ! \"}");
 		}else {
 			icbc = ChatSerializer.a("{\"text\": \" §9| §3Joueur le plus proche : §9§l"+
-					nearP.getName()+" §9| §l"+(int) p.getLocation().distance(nearP.getLocation())+" §3blocks §9| \"}");
+					p.getName()+" §9| §l"+(int) p.getLocation().distance(nearP.getLocation())+" §3blocks §9| \"}");
 		}
 		
 		PacketPlayOutChat ppoc = new PacketPlayOutChat(icbc, (byte) 2);

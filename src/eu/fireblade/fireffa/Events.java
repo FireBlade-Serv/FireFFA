@@ -457,7 +457,7 @@ public class Events implements Listener {
 				Info.setItem(1, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
 				Info.setItem(2, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
 				Info.setItem(3, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
-				Info.setItem(4, GUI.genPerspective(Material.LAPIS_ORE, ChatColor.BLUE+"Discord", (byte) 0));
+				Info.setItem(4, GUI.genPerspective(Material.INK_SACK, ChatColor.BLUE+"Discord", (byte) 4));
 				Info.setItem(5, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
 				Info.setItem(6, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
 				Info.setItem(7, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
@@ -478,6 +478,8 @@ public class Events implements Listener {
 				Crédits.setItem(6, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
 				Crédits.setItem(7, generateSkull("_goldocelot_"));
 				Crédits.setItem(8, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
+				
+				p.openInventory(Crédits);
 				
 			}
 		}
