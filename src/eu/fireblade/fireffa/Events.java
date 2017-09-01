@@ -109,14 +109,6 @@ public class Events implements Listener {
 		
 		if(entity instanceof Player) {
 			w.playEffect(entity.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
-			
-			Player p = (Player) entity;
-			
-			if(!Var.inGame.contains(p)) {
-				e.setCancelled(true);
-				
-				return;
-			}
 		}
 		
 		if(nmsentity instanceof EntityArmorStand) {
@@ -187,19 +179,6 @@ public class Events implements Listener {
 						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
 				as.destroyAuto((CraftPlayer) v);
 			}
-		}else if(cause.equals(DamageCause.FALL)) {
-			if(entity instanceof Player);{
-				Player p = (Player) entity;
-				
-				if(Var.nuage.contains(p) || Var.piaf.contains(p)) {
-					return;
-				}
-				
-				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
-				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
-						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
-				as.destroyAuto((CraftPlayer) p);
-			}
 		}else if(cause.equals(DamageCause.LIGHTNING)) {
 			if(entity instanceof Player) {
 				Player p = (Player) entity;
@@ -213,10 +192,6 @@ public class Events implements Listener {
 						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
 				as.destroyAuto((CraftPlayer) p);
 			}
-		}else if(cause.equals(DamageCause.VOID)) {
-			return;
-		}else if(cause.equals(DamageCause.SUICIDE)) {
-			return;
 		}else if(cause.equals(DamageCause.PROJECTILE)) {
 			if(damager instanceof Arrow || damager instanceof Fireball || damager instanceof Snowball) {
 				Projectile proj = (Projectile) damager;
@@ -238,6 +213,42 @@ public class Events implements Listener {
 						}
 					}
 				}
+			}
+		}
+	}
+	
+	@EventHandler
+	public void onEntityDamage(EntityDamageEvent e) {
+		final Entity entity = e.getEntity();
+		final DamageCause cause = e.getCause();
+		final World w = entity.getWorld();
+		
+		if(entity instanceof Player) {
+			Player p = (Player) entity;
+			
+			if(!Var.inGame.contains(p)) {
+				e.setCancelled(true);
+				
+				return;
+			}
+		}
+		
+		if(cause.equals(DamageCause.VOID)) {
+			return;
+		}else if(cause.equals(DamageCause.SUICIDE)) {
+			return;
+		}else if(cause.equals(DamageCause.FALL)) {
+			if(entity instanceof Player);{
+				Player p = (Player) entity;
+				
+				if(Var.nuage.contains(p) || Var.piaf.contains(p)) {
+					return;
+				}
+				
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
+				as.destroyAuto((CraftPlayer) p);
 			}
 		}
 	}
