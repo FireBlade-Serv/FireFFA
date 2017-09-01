@@ -11,7 +11,11 @@ import org.bukkit.craftbukkit.v1_8_R3.entity.CraftEntity;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Fireball;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Projectile;
+import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -111,13 +115,22 @@ public class Events implements Listener {
 			return;
 		}
 		
-		if(damager instanceof Player) {
+		if(entity instanceof LivingEntity) {
+			LivingEntity le = (LivingEntity) entity;
+			
+			if(le.getHealth() <= 0.0d) {
+				
+			}
+		}
+		
+		if(damager instanceof Player && entity instanceof Player) {
 			Player p = (Player) damager;
+			Player v = (Player) entity;
 			
 			if(cause.equals(DamageCause.BLOCK_EXPLOSION)) {
-				if(Var.panda.contains(p)) {
+				if(Var.panda.contains(v)) {
 					return;
-				}else if(Var.jihadist.contains(p)) {
+				}else if(Var.jihadist.contains(v)) {
 					if(e.getDamage() >= 20) {
 						return;
 					}
@@ -128,9 +141,9 @@ public class Events implements Listener {
 						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
 				as.destroyAuto((CraftPlayer) p);
 			}else if(cause.equals(DamageCause.ENTITY_EXPLOSION)) {
-				if(Var.panda.contains(p)) {
+				if(Var.panda.contains(v)) {
 					return;
-				}else if(Var.jihadist.contains(p)) {
+				}else if(Var.jihadist.contains(v)) {
 					if(e.getDamage() >= 20) {
 						return;
 					}
@@ -141,7 +154,7 @@ public class Events implements Listener {
 						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
 				as.destroyAuto((CraftPlayer) p);
 			}else if(cause.equals(DamageCause.FALL)) {
-				if(Var.nuage.contains(p) || Var.piaf.contains(p)) {
+				if(Var.nuage.contains(v) || Var.piaf.contains(v)) {
 					return;
 				}
 				
@@ -150,7 +163,7 @@ public class Events implements Listener {
 						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
 				as.destroyAuto((CraftPlayer) p);
 			}else if(cause.equals(DamageCause.LIGHTNING)) {
-				if(Var.domination.contains(p)) {
+				if(Var.domination.contains(v)) {
 					return;
 				}
 				
@@ -162,10 +175,12 @@ public class Events implements Listener {
 				return;
 			}else if(cause.equals(DamageCause.SUICIDE)) {
 				return;
-			}else if(cause.equals(DamageCause.PROJECTILE)) {
-				if(damager instanceof Arrow) {
-					
-				}
+			}
+		}else if(damager instanceof Arrow || damager instanceof Fireball || damager instanceof Snowball) {
+			Projectile proj = (Projectile) entity;
+			
+			if(proj.getShooter() instanceof Player) {
+				
 			}
 		}
 	}
@@ -223,6 +238,14 @@ public class Events implements Listener {
 				Var.inGame.remove(p);
 				
 				Scoreboard.displayScoreboard(p);
+				
+				Kits.Clear(p);
+				
+				p.getInventory().setItem(4, Kits.ItemGen(Material.COMPASS, "§9Selectionner un kit", null, 1));
+				p.getInventory().setHeldItemSlot(4);
+				
+				p.getInventory().setItem(0, Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1));
+				p.getInventory().setItem(8, Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1));
 			}
 			
 		}, 10L);
@@ -283,7 +306,13 @@ public class Events implements Listener {
 	@EventHandler
 	public void onKillStreak(PlayerDeathEvent e){
 		final Player p = e.getEntity();
-		final Player k = p.getKiller();
+		final Entity kE = p.getKiller();
+		
+		if(!(kE instanceof Player)) {
+			return;
+		}
+		
+		Player k = (Player) kE;
 	
 		Var.killStreak.replace(k, Var.killStreak.get(k) + 1);	
 		
@@ -322,6 +351,13 @@ public class Events implements Listener {
 			
 			if(item.equals(Kits.ItemGen(Material.COMPASS, "§9Selectionner un kit", null, 1))) {
 				GUI.mainMenu(p);
+			}else if(item.equals(Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1))) {
+				
+			}else if(item.equals(Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1))) {
+				p.sendMessage("§6Plugin développé par les développeurs du projet FireBlade-Serv :");
+				p.sendMessage("§cGlowstoner §f> §cAdministrateur / Lead Développeur §6§lFireBlade-Serv");
+				p.sendMessage("§6_goldocelot_ §f> §6Développeur §lFireBlade-Serv");
+				p.sendMessage("§4baptistego §f> §4Owner §c/ §6Développeur §lFireBlade-Serv");
 			}
 		}
 	}

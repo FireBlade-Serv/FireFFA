@@ -25,6 +25,13 @@ public class DamageArmorStand{
 		sendPacketAdd(cp, constructEntityPacketAdd());
 	}
 	
+	public void spawn(CraftPlayer cp, double x, double y, double z, float pitch, float yaw, String text) {
+		setLocation(x, y, z, pitch, yaw);
+		setDamage(damage);
+		initEntity();
+		sendPacketAdd(cp, constructEntityPacketAdd());
+	}
+	
 	public void destroyAuto(CraftPlayer cp) {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 
