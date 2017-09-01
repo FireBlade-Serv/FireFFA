@@ -17,6 +17,7 @@ import org.bukkit.util.Vector;
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.events.PlayerInteractAtPlayerEvent;
+import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.md_5.bungee.api.ChatColor;
@@ -42,45 +43,52 @@ public class Copy implements Listener {
 				p.playSound(p.getLocation(), Sound.SHEEP_SHEAR, 30, 30);
 				GlowstoneTitle gt = new GlowstoneTitle(p, "", ChatColor.BLUE+"Armure copiée !", 20, 30, 20);
 				gt.send();
-			} else if(item.equals(Kits.ItemGen(Material.STRING, "§9Copieur d'arme", Kits.LoreCreator("§9Clique Droit - copie l'arme ennemie", null), 1))) {
+			} else if(item.equals(Kits.ItemGen(Material.STRING, "§9Copieur d'arme", Kits.LoreCreator("§9Clique Droit - Copie l'arme ennemie", null), 1))) {
 				p.getInventory().setItem(0, target.getInventory().getItem(0));
 				p.getInventory().remove(item);
 				p.playSound(p.getLocation(), Sound.SHEEP_SHEAR, 30, 30);
 				GlowstoneTitle gt = new GlowstoneTitle(p, "", ChatColor.BLUE+"Arme copiée !", 20, 30, 20);
 				gt.send();
-			} else if (item.equals(Kits.ItemGen(Material.FEATHER, "§9Plumart", Kits.LoreCreator("§9Clique Droit - Saut de plusieurs blocs", "§915 secondes de récupération"), 1))){
-				if(cooldown.contains(p)) {
-					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
-					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
+			}
+		}
+	}
+	
+	@EventHandler
+	public void onInteract(PlayerRightClickInteractEvent e) {
+		final Player p = e.getPlayer();
+		final ItemStack item = e.getItem();
+		
+		if (item.equals(Kits.ItemGen(Material.FEATHER, "§9Plumart", Kits.LoreCreator("§9Clique Droit - Saut de plusieurs blocs", "§915 secondes de récupération"), 1))){
+			if(cooldown.contains(p)) {
+				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
+				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 					
-					return;
-				} else {
-					p.setVelocity(new Vector(0.0f, 1.4f, 0.0f));
+				return;
+			} else {
+				p.setVelocity(new Vector(0.0f, 1.4f, 0.0f));
 					
-					p.playSound(p.getLocation(), Sound.BAT_TAKEOFF, 30, 30);
+				p.playSound(p.getLocation(), Sound.BAT_TAKEOFF, 30, 30);
 					
-					noDamage(p);
+				noDamage(p);
 					
-					cooldown.add(p);
+				cooldown.add(p);
 					
-					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 
-						@Override
-						public void run() {
-							if(Var.copy.contains(p)){
-								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous pouvez utiliser votre Plumart !", 20, 30, 20);
-								gt.send();
+					@Override
+					public void run() {
+						if(Var.copy.contains(p)){
+							GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous pouvez utiliser votre Plumart !", 20, 30, 20);
+							gt.send();
 								
-								p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
-							}
-							
-							if(cooldown.contains(p)) {
-								cooldown.remove(p);
-							}
+							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 						}
 						
-					}, 300L);
-				}
+						if(cooldown.contains(p)) {
+							cooldown.remove(p);
+						}
+					}		
+				}, 300L);
 			}
 		}
 	}
