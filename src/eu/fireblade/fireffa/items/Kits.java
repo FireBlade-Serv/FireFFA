@@ -706,7 +706,7 @@ public class Kits {
 		Clear(p);
 		p.getInventory().setItem(0, ItemGen(Material.STRING, "§9Copieur d'arme", LoreCreator("§9Clique Droit - Copie l'armure ennemie", null), 1));
 		p.getInventory().setItem(1, ItemGen(Material.TRIPWIRE_HOOK, "§9Copieur d'armure", LoreCreator("§9Clique Droit - copie l'armure ennemie", null), 1));
-		p.getInventory().setItem(2, ItemGen(Material.FEATHER, "§9Plumart", LoreCreator("§9Clique Droit - saut de plusieurs blocs", "§915 secondes de récupération"), 1));
+		p.getInventory().setItem(2, ItemGen(Material.FEATHER, "§9Plumart", LoreCreator("§9Clique Droit - Saut de plusieurs blocs", "§915 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	//manque abilité
