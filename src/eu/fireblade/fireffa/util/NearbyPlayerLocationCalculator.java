@@ -405,7 +405,7 @@ public class NearbyPlayerLocationCalculator implements Listener {
 			icbc = ChatSerializer.a("{\"text\": \" §c✖ §4|§c Aucun joueur proche ! \"}");
 		}else {
 			icbc = ChatSerializer.a("{\"text\": \" §9| §3Joueur le plus proche : §9§l"+
-					p.getName()+" §9| §l"+(int) p.getLocation().distance(nearP.getLocation())+" §3blocks §9| \"}");
+					nearP.getName()+" §9| §l"+(int) p.getLocation().distance(nearP.getLocation())+" §3blocks §9| \"}");
 		}
 		
 		PacketPlayOutChat ppoc = new PacketPlayOutChat(icbc, (byte) 2);
