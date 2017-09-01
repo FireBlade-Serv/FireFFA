@@ -5,7 +5,6 @@ import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import eu.fireblade.fireffa.Var;
 import net.minecraft.server.v1_8_R3.EntityPlayer;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
@@ -13,6 +12,7 @@ import net.minecraft.server.v1_8_R3.PacketPlayOutChat;
 
 public class NearbyPlayerLocationCalculator implements Listener {
 	
+	/*
 	private static Player near;
 	private static double dist;
 	
@@ -375,6 +375,42 @@ public class NearbyPlayerLocationCalculator implements Listener {
 		}
 		
 		IChatBaseComponent icbc = ChatSerializer.a("{\"text\": \"" + message + "\"}");
+		
+		PacketPlayOutChat ppoc = new PacketPlayOutChat(icbc, (byte) 2);
+		
+		EntityPlayer ep = ((CraftPlayer)p).getHandle(); 
+		
+		ep.playerConnection.sendPacket(ppoc);
+	}
+	*/
+	
+	public static Player getNearestPlayer(Player p) {
+		double closest = Double.MAX_VALUE;
+		Player t = null;
+			
+		for(Player i : Bukkit.getOnlinePlayers()){
+			double distance = i.getLocation().distance(p.getLocation());
+				
+			if (closest == Double.MAX_VALUE || distance < closest){
+				closest = distance;
+				t = i;
+					
+				break;
+			}
+		}
+			
+		return t;
+	}
+	
+	public static void sendNearestPlayerActionBar(Player p, Player nearP) {
+		IChatBaseComponent icbc;
+		
+		if(nearP.equals(null)){
+			icbc = ChatSerializer.a("{\"text\": \" §c✖ §4|§c Aucun joueur proche ! \"}");
+		}else {
+			icbc = ChatSerializer.a("{\"text\": \" §9| §3Joueur le plus proche : §9§l"+
+					p.getName()+" §9| §l"+(int) p.getLocation().distance(nearP.getLocation())+" §3blocks §9| \"}");
+		}
 		
 		PacketPlayOutChat ppoc = new PacketPlayOutChat(icbc, (byte) 2);
 		

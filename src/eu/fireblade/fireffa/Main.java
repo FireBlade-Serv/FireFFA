@@ -86,11 +86,15 @@ public class Main extends JavaPlugin{
 		saveConfig();
 		
 		Methods.getConfig();
+		
+		Methods.schedulerUtils();
 	}
 	
 	@Override
 	public void onDisable() {
 		getLogger().info("FireFFA OFF");
+		
+		Bukkit.getScheduler().cancelTask(Var.wbtask);
 		
 		plugin = null;
 	}

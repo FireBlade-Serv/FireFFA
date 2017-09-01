@@ -107,6 +107,14 @@ public class Events implements Listener {
 		
 		if(entity instanceof Player) {
 			w.playEffect(entity.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
+			
+			Player p = (Player) entity;
+			
+			if(!Var.inGame.contains(p)) {
+				e.setCancelled(true);
+				
+				return;
+			}
 		}
 		
 		if(nmsentity instanceof EntityArmorStand) {
@@ -119,28 +127,21 @@ public class Events implements Listener {
 			LivingEntity le = (LivingEntity) entity;
 			
 			if(le.getHealth() <= 0.0d) {
-				
+				for(Player online : Bukkit.getOnlinePlayers()) {
+					DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+					as.spawn((CraftPlayer) online, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+							entity.getLocation().getPitch(), entity.getLocation().getYaw());
+					as.destroyAuto((CraftPlayer) online);
+					
+					return;
+				}
 			}
 		}
-		
-		if(damager instanceof Player && entity instanceof Player) {
-			Player p = (Player) damager;
-			Player v = (Player) entity;
 			
-			if(cause.equals(DamageCause.BLOCK_EXPLOSION)) {
-				if(Var.panda.contains(v)) {
-					return;
-				}else if(Var.jihadist.contains(v)) {
-					if(e.getDamage() >= 20) {
-						return;
-					}
-				}
-			}else if(cause.equals(DamageCause.ENTITY_ATTACK)) {
-				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
-				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
-						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
-				as.destroyAuto((CraftPlayer) p);
-			}else if(cause.equals(DamageCause.ENTITY_EXPLOSION)) {
+		if(cause.equals(DamageCause.BLOCK_EXPLOSION)) {
+			if(entity instanceof Player) {
+				Player v = (Player) entity;
+				
 				if(Var.panda.contains(v)) {
 					return;
 				}else if(Var.jihadist.contains(v)) {
@@ -150,37 +151,80 @@ public class Events implements Listener {
 				}
 				
 				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
-				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+				as.spawn((CraftPlayer) v, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
 						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
-				as.destroyAuto((CraftPlayer) p);
-			}else if(cause.equals(DamageCause.FALL)) {
-				if(Var.nuage.contains(v) || Var.piaf.contains(v)) {
-					return;
-				}
-				
-				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
-				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
-						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
-				as.destroyAuto((CraftPlayer) p);
-			}else if(cause.equals(DamageCause.LIGHTNING)) {
-				if(Var.domination.contains(v)) {
-					return;
-				}
-				
-				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
-				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
-						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
-				as.destroyAuto((CraftPlayer) p);
-			}else if(cause.equals(DamageCause.VOID)) {
-				return;
-			}else if(cause.equals(DamageCause.SUICIDE)) {
-				return;
+				as.destroyAuto((CraftPlayer) v);
 			}
-		}else if(damager instanceof Arrow || damager instanceof Fireball || damager instanceof Snowball) {
-			Projectile proj = (Projectile) damager;
-			
-			if(proj.getShooter() instanceof Player) {
+		}else if(cause.equals(DamageCause.ENTITY_ATTACK)) {
+			if(damager instanceof Player) {
+				Player p = (Player) damager;
 				
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
+				as.destroyAuto((CraftPlayer) p);
+			}
+		}else if(cause.equals(DamageCause.ENTITY_EXPLOSION)) {
+			if(entity instanceof Player) {
+				Player v = (Player) entity;
+				
+				if(Var.panda.contains(v)) {
+					return;
+				}else if(Var.jihadist.contains(v)) {
+					if(e.getDamage() >= 20) {
+						return;
+					}
+				}
+				
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) v, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
+				as.destroyAuto((CraftPlayer) v);
+			}
+		}else if(cause.equals(DamageCause.FALL)) {
+			if(entity instanceof Player);{
+				Player p = (Player) entity;
+				
+				if(Var.nuage.contains(p) || Var.piaf.contains(p)) {
+					return;
+				}
+				
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
+				as.destroyAuto((CraftPlayer) p);
+			}
+		}else if(cause.equals(DamageCause.LIGHTNING)) {
+			if(entity instanceof Player) {
+				Player p = (Player) entity;
+				
+				if(Var.domination.contains(p)) {
+					return;
+				}
+				
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
+				as.destroyAuto((CraftPlayer) p);
+			}
+		}else if(cause.equals(DamageCause.VOID)) {
+			return;
+		}else if(cause.equals(DamageCause.SUICIDE)) {
+			return;
+		}else if(cause.equals(DamageCause.PROJECTILE)) {
+			if(damager instanceof Arrow || damager instanceof Fireball || damager instanceof Snowball) {
+				Projectile proj = (Projectile) damager;
+				
+				if(proj.getShooter() instanceof Player) {
+					Player p = (Player) proj.getShooter();
+					
+					if(damager instanceof Snowball) {
+						DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+						as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+								entity.getLocation().getPitch(), entity.getLocation().getYaw(), 3.0d);
+						as.destroyAuto((CraftPlayer) p);
+					}
+				}
 			}
 		}
 	}

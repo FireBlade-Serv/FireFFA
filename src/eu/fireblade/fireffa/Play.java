@@ -60,8 +60,7 @@ public class Play implements Listener {
 		
 		if(Var.inGame.contains(p)) {
 			if(item.equals(Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1))) {
-				NearbyPlayerLocationCalculator.getDirection(p);
-				NearbyPlayerLocationCalculator.send(p);
+				NearbyPlayerLocationCalculator.sendNearestPlayerActionBar(p, NearbyPlayerLocationCalculator.getNearestPlayer(p));
 			}
 		}
 	}
