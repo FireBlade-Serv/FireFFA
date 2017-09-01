@@ -386,30 +386,28 @@ public class NearbyPlayerLocationCalculator implements Listener {
 	
 	public static Player getNearestPlayer(Player p) {
 		double closest = Double.MAX_VALUE;
-		Player t = null;
-			
+		Player near = null;
+		
 		for(Player i : Bukkit.getOnlinePlayers()){
-			double distance = i.getLocation().distance(p.getLocation());
-				
-			if (closest == Double.MAX_VALUE || distance < closest){
-				closest = distance;
-				t = i;
-					
-				break;
+			double dist = i.getLocation().distance(p.getLocation());
+			
+			if (closest == Double.MAX_VALUE || dist < closest){
+				closest = dist;
+				near = i;
 			}
 		}
-			
-		return t;
+		
+		return near;
 	}
 	
 	public static void sendNearestPlayerActionBar(Player p, Player nearP) {
 		IChatBaseComponent icbc;
 		
-		if(nearP.equals(null) || nearP.equals(p)){
+		if(nearP.equals(p)){
 			icbc = ChatSerializer.a("{\"text\": \" §c✖ §4|§c Aucun joueur proche ! \"}");
 		}else {
 			icbc = ChatSerializer.a("{\"text\": \" §9| §3Joueur le plus proche : §9§l"+
-					p.getName()+" §9| §l"+(int) p.getLocation().distance(nearP.getLocation())+" §3blocks §9| \"}");
+					nearP.getName()+" §9| §l"+(int) p.getLocation().distance(nearP.getLocation())+" §3blocks §9| \"}");
 		}
 		
 		PacketPlayOutChat ppoc = new PacketPlayOutChat(icbc, (byte) 2);
