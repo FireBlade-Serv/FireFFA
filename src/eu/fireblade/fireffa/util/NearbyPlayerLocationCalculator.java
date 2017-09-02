@@ -401,7 +401,7 @@ public class NearbyPlayerLocationCalculator implements Listener {
 	public static void sendNearestPlayerActionBar(Player p, Player nearP) {
 		IChatBaseComponent icbc = null;
 		
-		if(nearP.equals(null)){
+		if(nearP == null){
 			icbc = ChatSerializer.a("{\"text\": \" §c✖ §4|§c Aucun joueur proche ! \"}");
 		}else if((int) p.getLocation().distance(nearP.getLocation()) > 1){
 			icbc = ChatSerializer.a("{\"text\": \" §9| §3Joueur le plus proche : §9§l"+
