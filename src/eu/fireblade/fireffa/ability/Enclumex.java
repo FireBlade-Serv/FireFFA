@@ -9,13 +9,12 @@ import org.bukkit.World;
 import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.FallingBlock;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
 import eu.fireblade.fireffa.Main;
@@ -96,20 +95,14 @@ public class Enclumex implements Listener {
 	}
 	
 	@EventHandler
-	public void onAttack(EntityDamageByEntityEvent e) {
-		final Entity damager = e.getDamager();
-		
+	public void onAttack(EntityDamageEvent e) {
 		if(e.getCause().equals(DamageCause.FALLING_BLOCK)) {
-			FallingBlock fb = (FallingBlock) damager;
-			
-			if(fb.getMaterial().equals(Material.ANVIL) && fb.getCustomName().equals("§8§ltchoin")) {
-				e.setDamage(100.0d);
-			}
+			e.setDamage(100.0d);
 		}
 	}
 	
 	@EventHandler
 	public void onChangeBlock(EntityChangeBlockEvent e) {
-		e.setCancelled(false);
+		e.setCancelled(true);
 	}
 }
