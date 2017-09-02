@@ -6,6 +6,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.World;
+import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -20,6 +22,7 @@ import org.bukkit.inventory.ItemStack;
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.items.Kits;
+import eu.fireblade.fireffa.nms.DamageArmorStand;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.md_5.bungee.api.ChatColor;
 
@@ -96,7 +99,20 @@ public class Enclumex implements Listener {
 					fb.setDropItem(false);
 					fb.setCustomName("§8§ltchoin");
 					fb.setCustomNameVisible(true);
+					
+					DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+					as.spawn((CraftPlayer) jawad, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
+							entity.getLocation().getPitch(), entity.getLocation().getYaw(), "§lENCLUMÉ !");
+					as.destroyAuto((CraftPlayer) jawad);
 				}
+			}
+		}
+		
+		if(damager instanceof FallingBlock) {
+			FallingBlock fb = (FallingBlock) damager;
+			
+			if(fb.getMaterial().equals(Material.ANVIL) && fb.getCustomName().equals("§8§ltchoin")) {
+				e.setDamage(100.0d);
 			}
 		}
 	}
