@@ -94,7 +94,7 @@ public class Enclumex implements Listener {
 						Kits.LoreCreator("§9Clique Gauche - tue votre ennemis ", "§930 secondes de récupération"), 1))) {
 					
 					@SuppressWarnings("deprecation")
-					FallingBlock fb = w.spawnFallingBlock(entity.getLocation().add(0, 2, 0), Material.ANVIL, (byte) 0);
+					FallingBlock fb = w.spawnFallingBlock(entity.getLocation().add(0.0d, 3.5d, 0.0d), Material.ANVIL, (byte) 0);
 					
 					fb.setDropItem(false);
 					fb.setCustomName("§8§ltchoin");
