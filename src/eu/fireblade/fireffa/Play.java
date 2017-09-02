@@ -61,6 +61,10 @@ public class Play implements Listener {
 		if(Var.inGame.contains(p)) {
 			if(item.equals(Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1))) {
 				NearbyPlayerLocationCalculator.sendNearestPlayerActionBar(p, NearbyPlayerLocationCalculator.getNearestPlayer(p));
+			}else if(item.equals(Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1))) {
+				
+			}else if(item.equals(Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1))) {
+				
 			}
 		}
 	}
