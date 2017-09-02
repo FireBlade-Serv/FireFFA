@@ -16,6 +16,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
@@ -98,7 +99,7 @@ public class Enclumex implements Listener {
 	public void onAttack(EntityDamageByEntityEvent e) {
 		final Entity damager = e.getDamager();
 		
-		if(damager instanceof FallingBlock) {
+		if(e.getCause().equals(DamageCause.FALLING_BLOCK)) {
 			FallingBlock fb = (FallingBlock) damager;
 			
 			if(fb.getMaterial().equals(Material.ANVIL) && fb.getCustomName().equals("§8§ltchoin")) {
@@ -109,6 +110,6 @@ public class Enclumex implements Listener {
 	
 	@EventHandler
 	public void onChangeBlock(EntityChangeBlockEvent e) {
-		e.setCancelled(true);
+		e.setCancelled(false);
 	}
 }
