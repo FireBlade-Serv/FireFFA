@@ -63,7 +63,7 @@ public class Djihadiste implements Listener {
 							
 							for(int i = 0 ; i <= 5 ; i++) {
 								for(Block blocs : locs) {
-									w.playEffect(blocs.getLocation(), Effect.FLAME, 0);
+									w.playEffect(blocs.getLocation(), Effect.EXPLOSION, 0);
 								}
 							}
 						}
