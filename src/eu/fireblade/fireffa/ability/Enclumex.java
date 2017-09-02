@@ -104,6 +104,15 @@ public class Enclumex implements Listener {
 					as.spawn((CraftPlayer) jawad, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
 							entity.getLocation().getPitch(), entity.getLocation().getYaw(), "§lENCLUMÉ !");
 					as.destroyAuto((CraftPlayer) jawad);
+					
+					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+
+						@Override
+						public void run() {
+							fb.remove();
+						}
+						
+					}, 45L);
 				}
 			}
 		}
