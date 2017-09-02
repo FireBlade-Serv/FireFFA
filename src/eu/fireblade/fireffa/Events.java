@@ -12,7 +12,6 @@ import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Fireball;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
 import org.bukkit.entity.Snowball;
@@ -52,8 +51,6 @@ import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand.EnumClientCommand;
 
 public class Events implements Listener {
 	
-	
-
 	public static ItemStack generateSkull(String owner) {
 		
 		ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
@@ -88,6 +85,8 @@ public class Events implements Listener {
 		
 		p.getInventory().setItem(0, Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1));
 		p.getInventory().setItem(8, Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1));
+		
+		p.setLevel(0);
 	}
 	
 	@EventHandler
@@ -131,21 +130,6 @@ public class Events implements Listener {
 			e.setCancelled(true);
 			
 			return;
-		}
-		
-		if(entity instanceof LivingEntity) {
-			LivingEntity le = (LivingEntity) entity;
-			
-			if(le.getHealth() - e.getDamage() <= 0.0d) {
-				for(Player online : Bukkit.getOnlinePlayers()) {
-					DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
-					as.spawn((CraftPlayer) online, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
-							entity.getLocation().getPitch(), entity.getLocation().getYaw(), "§l+ 1 KILL");
-					as.destroyAuto((CraftPlayer) online);
-					
-					return;
-				}
-			}
 		}
 			
 		if(cause.equals(DamageCause.BLOCK_EXPLOSION)) {
@@ -272,6 +256,7 @@ public class Events implements Listener {
 	@EventHandler
 	public void onDeath(PlayerDeathEvent e) {
 		Entity victime = e.getEntity();
+		World w = victime.getWorld();
 		
 		if(!(victime instanceof Player)){
 			return;
@@ -288,6 +273,15 @@ public class Events implements Listener {
 				}else{
 					jawad.setHealth(jawad.getHealth() + 6);
 				}
+			}
+			
+			for(Player online : Bukkit.getOnlinePlayers()) {
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) online, p.getLocation().getX(), p.getLocation().getY(), p.getLocation().getZ(),
+						p.getLocation().getPitch(), p.getLocation().getYaw(), "§l+ 1 KILL");
+					as.destroyAuto((CraftPlayer) online);
+						
+				return;
 			}
 		}catch(Exception ex){}
 		

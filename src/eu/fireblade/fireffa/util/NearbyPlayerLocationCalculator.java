@@ -5,6 +5,7 @@ import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
+import eu.fireblade.fireffa.Var;
 import net.minecraft.server.v1_8_R3.EntityPlayer;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
@@ -395,7 +396,11 @@ public class NearbyPlayerLocationCalculator implements Listener {
 			}
 		}
 		
-		return near;
+		if(Var.inGame.contains(near)) {
+			return near;
+		}else {
+			return null;
+		}
 	}
 	
 	public static void sendNearestPlayerActionBar(Player p, Player nearP) {
