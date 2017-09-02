@@ -103,6 +103,6 @@ public class Enclumex implements Listener {
 	
 	@EventHandler
 	public void onChangeBlock(EntityChangeBlockEvent e) {
-		e.setCancelled(false);
+		e.setCancelled(true);
 	}
 }
