@@ -56,15 +56,17 @@ public class Methods {
 			public void run() {
 				for(Player online : Bukkit.getOnlinePlayers()) {
 					if(online.getHealth() <= 5) {
-						WorldBorder w = new WorldBorder();
-						w.setSize(1);
-						w.setCenter(online.getLocation().getX() + 10_000, online.getLocation().getZ() + 10_000);
-						
-						PacketPlayOutWorldBorder packet = new PacketPlayOutWorldBorder(w, PacketPlayOutWorldBorder.EnumWorldBorderAction.INITIALIZE);
-						
-						((CraftPlayer) online).getHandle().playerConnection.sendPacket(packet);
-						
-						wblist.add(online);
+						if(!wblist.contains(online)){
+							WorldBorder w = new WorldBorder();
+							w.setSize(1);
+							w.setCenter(online.getLocation().getX() + 10_000, online.getLocation().getZ() + 10_000);
+							
+							PacketPlayOutWorldBorder packet = new PacketPlayOutWorldBorder(w, PacketPlayOutWorldBorder.EnumWorldBorderAction.INITIALIZE);
+							
+							((CraftPlayer) online).getHandle().playerConnection.sendPacket(packet);
+							
+							wblist.add(online);
+						}
 					}else {
 						if(wblist.contains(online)) {
 							WorldBorder w = new WorldBorder();
@@ -80,7 +82,11 @@ public class Methods {
 					}
 					
 					if(Var.inGame.contains(online)) {
-						online.setCompassTarget(NearbyPlayerLocationCalculator.getNearestPlayer(online).getLocation());
+						Player target = NearbyPlayerLocationCalculator.getNearestPlayer(online);
+						
+						if(target != null) {
+							online.setCompassTarget(target.getLocation());
+						}
 					}
 				}
 			}

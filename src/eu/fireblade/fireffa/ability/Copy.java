@@ -118,6 +118,6 @@ public class Copy implements Listener {
 				nod.remove(p);
 			}
 			
-		}, 15L);
+		}, 65L);
 	}
 }
