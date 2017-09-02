@@ -56,9 +56,9 @@ public class Enclumex implements Listener {
 			@SuppressWarnings("deprecation")
 			FallingBlock fb = w.spawnFallingBlock(t.getLocation().add(0.0d, 3.5d, 0.0d), Material.ANVIL, (byte) 0);
 			
-			fb.setDropItem(false);
 			fb.setCustomName("§8§ltchoin");
 			fb.setCustomNameVisible(true);
+			fb.setHurtEntities(true);
 			
 			DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
 			as.spawn((CraftPlayer) p, t.getLocation().getX(), t.getLocation().getY(), t.getLocation().getZ(),
@@ -103,6 +103,6 @@ public class Enclumex implements Listener {
 	
 	@EventHandler
 	public void onChangeBlock(EntityChangeBlockEvent e) {
-		e.setCancelled(true);
+		e.setCancelled(false);
 	}
 }
