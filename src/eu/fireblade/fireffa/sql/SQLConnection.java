@@ -59,9 +59,12 @@ public class SQLConnection {
 			q.setString(1, p.getName().toString());
 			
 			ResultSet r = q.executeQuery();
+			
+			boolean has = r.next();
+			
 			q.close();
 			
-			return r.next();
+			return has;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
