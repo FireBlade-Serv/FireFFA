@@ -18,7 +18,7 @@ public class SQLConnection {
 	public static void connection() {
 		try {
 			Bukkit.getLogger().info("Tentative de connection SQL "
-					+ "avec 'host' -> '"+Var.host+"', 'db' -> '"+Var.db+"', 'user'"+Var.user+"', 'password' -> '"+Var.password+"'.");
+					+ "avec 'host' -> '"+Var.host+"', 'db' -> '"+Var.db+"', 'user' -> '"+Var.user+"', 'password' -> '"+Var.password+"'.");
 			connection = DriverManager.getConnection(Var.SqlUrlBase + Var.host + "/" + Var.db, Var.user, Var.password);
 			Bukkit.getLogger().info("Connection réussie !");
 		} catch (SQLException e) {
