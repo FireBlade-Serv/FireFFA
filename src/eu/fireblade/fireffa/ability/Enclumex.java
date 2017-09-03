@@ -59,6 +59,7 @@ public class Enclumex implements Listener {
 			fb.setCustomName("§8§ltchoin");
 			fb.setCustomNameVisible(true);
 			fb.setHurtEntities(true);
+			fb.setDropItem(false);
 			
 			DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
 			as.spawn((CraftPlayer) p, t.getLocation().getX(), t.getLocation().getY(), t.getLocation().getZ(),
