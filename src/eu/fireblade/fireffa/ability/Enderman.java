@@ -8,6 +8,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -51,7 +52,7 @@ public class Enderman implements Listener {
 				int z = -127 + r.nextInt(254);
 				
 				Location l = new Location(p.getWorld(),x,1,z);
-				Location newL = new Location(p.getWorld(), x, p.getWorld().getHighestBlockYAt(l), z);
+				Location newL = new Location(p.getWorld(), x, ((CraftWorld)p.getWorld()).getHighestBlockYAt(l), z);
 				
 				cooldown.add(p);
 				p.playSound(l, Sound.ENDERMAN_TELEPORT, 30, 30);
