@@ -27,6 +27,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType.SlotType;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -47,6 +48,7 @@ import eu.fireblade.fireffa.ability.Gameur;
 import eu.fireblade.fireffa.cmd.GUI;
 import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.nms.DamageArmorStand;
+import eu.fireblade.fireffa.sql.SQLConnection;
 import eu.fireblade.fireffa.util.Scoreboard;
 import eu.fireblade.fireffa.util.Tp;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
@@ -80,6 +82,10 @@ public class Events implements Listener {
 		gt.send();
 		
 		Var.killStreak.put(p, 0);
+		
+		if(!SQLConnection.hasAccount(p)) {
+			SQLConnection.createAccount(p);
+		}
 		
 		Scoreboard.displayScoreboard(p);
 		
@@ -294,6 +300,8 @@ public class Events implements Listener {
 				}else{
 					jawad.setHealth(jawad.getHealth() + 6);
 				}
+				
+				SQLConnection.setKills(jawad, SQLConnection.getKills(jawad) + 1);
 			}
 			
 			for(Player online : Bukkit.getOnlinePlayers()) {
@@ -301,55 +309,60 @@ public class Events implements Listener {
 				as.spawn((CraftPlayer) online, p.getLocation().getX(), p.getLocation().getY(), p.getLocation().getZ(),
 						p.getLocation().getPitch(), p.getLocation().getYaw(), "§l+ 1 KILL");
 					as.destroyAuto((CraftPlayer) online);
-						
-				return;
 			}
-		}catch(Exception ex){}
-		
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
+		}catch(Exception ex){
+			for(Player online : Bukkit.getOnlinePlayers()) {
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) online, p.getLocation().getX(), p.getLocation().getY(), p.getLocation().getZ(),
+						p.getLocation().getPitch(), p.getLocation().getYaw(), "§l+ 1 MORT");
+					as.destroyAuto((CraftPlayer) online);
+			}
+		}finally {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
+				
+	            public void run(){
+	                if(p.isDead()){
+	                	PacketPlayInClientCommand packet = new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN);
+	                	
+	                	((CraftPlayer) p).getHandle().playerConnection.a(packet);
+	                }
+	            }
+	            
+	        });
 			
-            public void run(){
-                if(p.isDead()){
-                	PacketPlayInClientCommand packet = new PacketPlayInClientCommand(EnumClientCommand.PERFORM_RESPAWN);
-                	
-                	((CraftPlayer) p).getHandle().playerConnection.a(packet);
-                }
-            }
-            
-        });
-		
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
 
-			@Override
-			public void run() {
-				Tp.tpSpawn(p);
-				
-				Kits.Clear(p);
-				
-				GUI.mainMenu(p);
-				
-				p.setLevel(0);
-				
-				Var.clearKitArray(p);
-				
-				Var.killStreak.replace(p, 0);
-				
-				if(Var.inGame.contains(p)) {
-					Var.inGame.remove(p);
+				@Override
+				public void run() {
+					Tp.tpSpawn(p);
+					
+					Kits.Clear(p);
+					
+					GUI.mainMenu(p);
+					
+					p.setLevel(0);
+					
+					Var.clearKitArray(p);
+					
+					Var.killStreak.replace(p, 0);
+					
+					if(Var.inGame.contains(p)) {
+						Var.inGame.remove(p);
+					}
+					
+					Scoreboard.displayScoreboard(p);
+					
+					Kits.Clear(p);
+					
+					p.getInventory().setItem(4, Kits.ItemGen(Material.COMPASS, "§9Selectionner un kit", null, 1));
+					p.getInventory().setHeldItemSlot(4);
+					
+					p.getInventory().setItem(0, Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1));
+					p.getInventory().setItem(8, Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1));
 				}
 				
-				Scoreboard.displayScoreboard(p);
-				
-				Kits.Clear(p);
-				
-				p.getInventory().setItem(4, Kits.ItemGen(Material.COMPASS, "§9Selectionner un kit", null, 1));
-				p.getInventory().setHeldItemSlot(4);
-				
-				p.getInventory().setItem(0, Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1));
-				p.getInventory().setItem(8, Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1));
-			}
-			
-		}, 8L);
+			}, 8L);
+		}
 	}
 	
 	@EventHandler
@@ -364,6 +377,10 @@ public class Events implements Listener {
 	@EventHandler
 	public void onRespawn(PlayerRespawnEvent e) {
 		final Player p = e.getPlayer();
+		
+		if(!Var.inGame.contains(p)) {
+			return;
+		}
 		
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
 
@@ -494,7 +511,7 @@ public class Events implements Listener {
 		}
 		
 		if(Var.killStreak.get(k) % 20 == 0) {
-			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 15 kill, vous obtenez régénération ! ");
+			k.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Bonus pour avoir fait 15 kill, vous obtenez force ! ");
 			k.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 1200, 0));
 		}
 	}
@@ -558,5 +575,10 @@ public class Events implements Listener {
 			
 			Bukkit.getPluginManager().callEvent(new eu.fireblade.fireffa.events.PlayerDamageEvent(p, w, damage, cause));
 		}
+	}
+	
+	@EventHandler
+	public void onChat(AsyncPlayerChatEvent e) {
+		
 	}
 }

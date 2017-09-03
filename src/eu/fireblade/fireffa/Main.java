@@ -5,6 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import eu.fireblade.fireffa.sql.SQLConnection;
 import eu.fireblade.fireffa.util.Methods;
 import eu.fireblade.fireffa.util.Tp;
 
@@ -88,6 +89,8 @@ public class Main extends JavaPlugin{
 		Methods.getConfig();
 		
 		Methods.schedulerUtils();
+		
+		SQLConnection.connection();
 	}
 	
 	@Override
@@ -95,6 +98,8 @@ public class Main extends JavaPlugin{
 		getLogger().info("FireFFA OFF");
 		
 		Bukkit.getScheduler().cancelTask(Var.wbtask);
+		
+		SQLConnection.disconnect();
 		
 		plugin = null;
 	}

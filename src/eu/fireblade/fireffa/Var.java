@@ -25,6 +25,7 @@ import eu.fireblade.fireffa.ability.GuerrierGalactique;
 import eu.fireblade.fireffa.ability.Invocation;
 import eu.fireblade.fireffa.ability.Magicien;
 import eu.fireblade.fireffa.ability.Moutarde;
+import eu.fireblade.fireffa.ability.Nuage;
 import eu.fireblade.fireffa.ability.Ocelot;
 import eu.fireblade.fireffa.ability.Ours;
 import eu.fireblade.fireffa.ability.PandaRoux;
@@ -39,7 +40,7 @@ import eu.fireblade.fireffa.items.Kits;
 
 public class Var {
 	
-	public static String SqlUrlBase = "jdbc:mysql://", host, user, password;
+	public static String SqlUrlBase = "jdbc:mysql://", host, db, user, password;
 	
 	public static int wbtask;
 	
@@ -294,6 +295,12 @@ public class Var {
 			vampire.remove(p);
 		}else if(nuage.contains(p)) {
 			nuage.remove(p);
+			
+			if(Nuage.tasks.containsKey(p)) {
+				Bukkit.getScheduler().cancelTask(Nuage.tasks.get(p));
+				
+				Nuage.tasks.remove(p);
+			}
 		}else if(timer.contains(p)) {
 			timer.remove(p); 
 			
@@ -402,6 +409,8 @@ public class Var {
 			}
 			
 			if(Power.tasks.containsKey(p)) {
+				Bukkit.getScheduler().cancelTask(Power.tasks.get(p));
+				
 				Power.tasks.remove(p);
 			}
 		}else if(dieu.contains(p)) {

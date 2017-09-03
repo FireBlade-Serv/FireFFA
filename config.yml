@@ -1,5 +1,6 @@
 #Copyright Fireblade-Serv, All rights reserved
 
 sqlhost: default
+sqldb: default
 sqluser: default
 sqlpassword: default

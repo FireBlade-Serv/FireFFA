@@ -19,6 +19,7 @@ public class Methods {
 		Var.host = Main.plugin.getConfig().getString("sqlhost");
 		Var.user = Main.plugin.getConfig().getString("sqluser");
 		Var.password = Main.plugin.getConfig().getString("sqlpassword");
+		Var.db = Main.plugin.getConfig().getString("sqldb");
 	}
 	
 	public static ArrayList<Block> getBlocks(Location loc1, Location loc2){
