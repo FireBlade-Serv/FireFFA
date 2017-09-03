@@ -42,6 +42,7 @@ public class Djihadiste implements Listener {
 					Entity primed = w.spawn(p.getLocation(), TNTPrimed.class);
 					
 					TNTPrimed tnt = (TNTPrimed) primed;
+					final Location bloc = tnt.getLocation();
 					
 					tnt.setFuseTicks(5);
 					tnt.setCustomName("§4ALLAH AKBAR !!!");
@@ -56,8 +57,6 @@ public class Djihadiste implements Listener {
 
 						@Override
 						public void run() {
-							Location bloc = p.getLocation();
-							
 							ArrayList<Block> locs = Methods.getBlocks(new Location(w, bloc.getX() - 12, bloc.getY(), bloc.getZ() - 12),
 									new Location(w, bloc.getX() + 12, bloc.getY(), bloc.getZ() + 12));
 							

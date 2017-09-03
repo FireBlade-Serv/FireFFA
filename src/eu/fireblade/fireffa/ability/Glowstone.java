@@ -1,11 +1,14 @@
 package eu.fireblade.fireffa.ability;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -22,6 +25,8 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 public class Glowstone implements Listener {
 
 	public static ArrayList<Player> cooldown = new ArrayList<Player>();
+	
+	public static HashMap<Player, Integer> tasks = new HashMap<Player, Integer>();
 	
 	@EventHandler
 	public void onInteract(PlayerInteractAtPlayerEvent e) {
@@ -63,6 +68,23 @@ public class Glowstone implements Listener {
 		}
 	}
 	
+	public static void particles(Player p, World w) {
+		if(tasks.containsKey(p)) {
+			Bukkit.getScheduler().cancelTask(tasks.get(p));
+			
+			tasks.remove(p);
+		}
+		
+		tasks.put(p, Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
+
+			@Override
+			public void run() {
+				w.playEffect(p.getLocation(), Effect.FLAME, 0);
+			}
+				
+		}, 140L, 3L));
+	}
+	
 	private static void effect(Player p, Player target) {
 		p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 		
@@ -70,5 +92,4 @@ public class Glowstone implements Listener {
 		
 		target.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 0));
 	}
-
 }

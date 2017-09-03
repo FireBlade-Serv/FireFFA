@@ -27,6 +27,7 @@ import org.bukkit.potion.PotionType;
 
 import eu.fireblade.fireffa.Play;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.ability.Glowstone;
 import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.util.GlobalRank;
 
@@ -268,7 +269,7 @@ public class GUI implements CommandExecutor, Listener {
 			
 			inv.setItem(30, genPerspective(Material.GOLD_SPADE, "§9Kit Fiesta", (byte) 0));
 			inv.setItem(31, genPerspectiveEnch(Material.REDSTONE_ORE, "§9Kit Power",Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
-			inv.setItem(32, genPerspective(Material.POTION, "§9Kit Russe", (byte) 0));
+			inv.setItem(32, genPerspective(Material.ICE, "§9Kit Invocation", (byte) 0));
 		}else{
 			inv.setItem(20, genPerspectiveBlock("Kit Golem", GlobalRank.ULTIMATE));
 			inv.setItem(21, genPerspectiveBlock("Kit Voleur d'âmes", GlobalRank.ULTIMATE));
@@ -616,6 +617,8 @@ public class GUI implements CommandExecutor, Listener {
 				Kits.kitGlowstone(p);
 				Var.glowstone.add(p);
 				Play.onPlay(p);
+				
+				Glowstone.particles(p, p.getWorld());
 			}else if(compareItems(item, genPerspectiveEnch(Material.CACTUS, "§9Kit Cactus", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0))){
 				Kits.kitCactus(p);
 				Var.cactus.add(p);
@@ -720,9 +723,9 @@ public class GUI implements CommandExecutor, Listener {
 				Kits.kitPower(p);
 				Var.power.add(p);
 				Play.onPlay(p);
-			}else if(compareItems(item, genPerspective(Material.POTION, "§9Kit Russe", (byte) 0))){
-				Kits.kitRusse(p);
-				Var.russe.add(p);
+			}else if(compareItems(item, genPerspective(Material.ICE, "§9Kit Invocation", (byte) 0))){
+				Kits.kitInvocation(p);
+				Var.invocation.add(p);
 				Play.onPlay(p);
 			}
 		}

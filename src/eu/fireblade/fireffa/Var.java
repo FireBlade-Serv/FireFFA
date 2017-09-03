@@ -3,26 +3,36 @@ package eu.fireblade.fireffa;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import eu.fireblade.fireffa.ability.Bouftout;
+import eu.fireblade.fireffa.ability.Copy;
 import eu.fireblade.fireffa.ability.DevDePacotille;
 import eu.fireblade.fireffa.ability.Domination;
 import eu.fireblade.fireffa.ability.Enclumex;
 import eu.fireblade.fireffa.ability.Enderman;
 import eu.fireblade.fireffa.ability.Fantôme;
 import eu.fireblade.fireffa.ability.Fiesta;
+import eu.fireblade.fireffa.ability.Furicat;
 import eu.fireblade.fireffa.ability.Gameur;
+import eu.fireblade.fireffa.ability.Gandalf;
+import eu.fireblade.fireffa.ability.Glowstone;
+import eu.fireblade.fireffa.ability.Golem;
 import eu.fireblade.fireffa.ability.Grampa;
 import eu.fireblade.fireffa.ability.GuerrierGalactique;
 import eu.fireblade.fireffa.ability.Invocation;
 import eu.fireblade.fireffa.ability.Magicien;
+import eu.fireblade.fireffa.ability.Moutarde;
 import eu.fireblade.fireffa.ability.Ocelot;
 import eu.fireblade.fireffa.ability.Ours;
 import eu.fireblade.fireffa.ability.PandaRoux;
 import eu.fireblade.fireffa.ability.Patissier;
+import eu.fireblade.fireffa.ability.Pharaon;
 import eu.fireblade.fireffa.ability.Power;
+import eu.fireblade.fireffa.ability.RedMan;
+import eu.fireblade.fireffa.ability.RobinDesBois;
 import eu.fireblade.fireffa.ability.Timer;
 import eu.fireblade.fireffa.ability.VoleurÂmes;
 import eu.fireblade.fireffa.items.Kits;
@@ -276,6 +286,10 @@ public class Var {
 			pyro.remove(p);
 		}else if(moutarde.contains(p)) {
 			moutarde.remove(p);
+			
+			if(Moutarde.cooldown.contains(p)) {
+				Moutarde.cooldown.remove(p);
+			}
 		}else if(vampire.contains(p)) {
 			vampire.remove(p);
 		}else if(nuage.contains(p)) {
@@ -288,10 +302,28 @@ public class Var {
 			}
 		}else if(robindesbois.contains(p)) {
 			robindesbois.remove(p);
+			
+			if(RobinDesBois.cooldown.contains(p)) {
+				RobinDesBois.cooldown.remove(p);
+			}
 		}else if(gandalf.contains(p)) {
 			gandalf.remove(p);
+			
+			if(Gandalf.cooldown.contains(p)) {
+				Gandalf.cooldown.remove(p);
+			}
 		}else if(glowstone.contains(p)) {
 			glowstone.remove(p);
+			
+			if(Glowstone.cooldown.contains(p)) {
+				Glowstone.cooldown.remove(p);
+			}
+			
+			if(Glowstone.tasks.containsKey(p)) {
+				Bukkit.getScheduler().cancelTask(Glowstone.tasks.get(p));
+				
+				Glowstone.tasks.remove(p);
+			}
 		}else if(enderman.contains(p)) {
 			enderman.remove(p);
 			
@@ -302,18 +334,38 @@ public class Var {
 			rulio.remove(p);
 		}else if(copy.contains(p)) {
 			copy.remove(p);
+			
+			if(Copy.cooldown.contains(p)) {
+				Copy.cooldown.contains(p);
+			}
 		}else if(pharaon.contains(p)) {
 			pharaon.remove(p);
+			
+			if(Pharaon.cooldown.contains(p)) {
+				Pharaon.cooldown.remove(p);
+			}
 		}else if(furicat.contains(p)) {
 			furicat.remove(p);
+			
+			if(Furicat.cooldown.contains(p)) {
+				Furicat.cooldown.remove(p);
+			}
 		}else if(redman.contains(p)) {
 			redman.remove(p);
+			
+			if(RedMan.cooldown.contains(p)) {
+				RedMan.cooldown.remove(p);
+			}
 		}else if(trapman.contains(p)) {
 			trapman.remove(p);
 		}else if(swap.contains(p)) {
 			swap.remove(p);
 		}else if(golem.contains(p)) {
 			golem.remove(p);
+			
+			if(Golem.cooldown.contains(p)) {
+				Golem.cooldown.remove(p);
+			}
 		}else if(ogre.contains(p)) {
 			ogre.remove(p);
 		}else if(bouftout.contains(p)) {

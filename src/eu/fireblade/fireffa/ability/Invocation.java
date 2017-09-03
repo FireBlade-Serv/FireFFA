@@ -232,7 +232,7 @@ public class Invocation implements Listener {
 				newb.setType(oldm);
 				newb.setData(oldb);
 				
-				PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.CLOUD, true,
+				PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.EXPLOSION_NORMAL, true,
 						(float) newb.getLocation().getX(), (float) newb.getLocation().getY(), (float) newb.getLocation().getZ(), 1, 1, 1, 1, 20);
 				
 				for(Player online : Bukkit.getOnlinePlayers()) {

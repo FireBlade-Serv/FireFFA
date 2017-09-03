@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -85,6 +86,8 @@ public class Grampa implements Listener {
 			
 			p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
 		}
+		
+		p.getWorld().playEffect(p.getEyeLocation().add(0, 1, 0), Effect.HEART, 0);
 	}
 
 }

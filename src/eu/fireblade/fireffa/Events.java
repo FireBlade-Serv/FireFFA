@@ -32,6 +32,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -126,6 +127,14 @@ public class Events implements Listener {
 		final Entity damager = e.getDamager();
 		
 		if(entity instanceof Player) {
+			Player p = (Player) entity;
+			
+			if(!Var.inGame.contains(p)) {
+				e.setCancelled(true);
+				
+				return;
+			}
+			
 			w.playEffect(entity.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
 		}
 		
@@ -257,6 +266,10 @@ public class Events implements Listener {
 						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());
 				as.destroyAuto((CraftPlayer) p);
 			}
+		}else if(cause.equals(DamageCause.SUFFOCATION)) {
+			e.setCancelled(true);
+			
+			return;
 		}
 	}
 
@@ -320,7 +333,9 @@ public class Events implements Listener {
 				
 				Var.killStreak.replace(p, 0);
 				
-				Var.inGame.remove(p);
+				if(Var.inGame.contains(p)) {
+					Var.inGame.remove(p);
+				}
 				
 				Scoreboard.displayScoreboard(p);
 				
@@ -331,15 +346,48 @@ public class Events implements Listener {
 				
 				p.getInventory().setItem(0, Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1));
 				p.getInventory().setItem(8, Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1));
+			}
+			
+		}, 8L);
+	}
+	
+	@EventHandler
+	public void onRespawn(PlayerRespawnEvent e) {
+		final Player p = e.getPlayer();
+		
+		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
+
+			@Override
+			public void run() {
+				Tp.tpSpawn(p);
+				
+				Kits.Clear(p);
+				
+				GUI.mainMenu(p);
+				
+				p.setLevel(0);
+				
+				Var.clearKitArray(p);
+				
+				Var.killStreak.replace(p, 0);
 				
 				if(Var.inGame.contains(p)) {
 					Var.inGame.remove(p);
 				}
+				
+				Scoreboard.displayScoreboard(p);
+				
+				Kits.Clear(p);
+				
+				p.getInventory().setItem(4, Kits.ItemGen(Material.COMPASS, "§9Selectionner un kit", null, 1));
+				p.getInventory().setHeldItemSlot(4);
+				
+				p.getInventory().setItem(0, Kits.ItemGen(Material.DIAMOND, "§9Infos", null, 1));
+				p.getInventory().setItem(8, Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1));
 			}
 			
 		}, 10L);
 	}
-	
 	
 	@EventHandler
 	public void onClick(InventoryClickEvent e) {
