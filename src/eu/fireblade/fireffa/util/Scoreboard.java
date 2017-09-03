@@ -32,7 +32,7 @@ public class Scoreboard {
 
 	private static String genKillStreak(Player p) {
 		if(Var.killStreak.get(p) == 0) {
-			return "cAucun KillStreak";
+			return "§cAucun KillStreak";
 		}else {
 			return "§e"+Var.killStreak.get(p);
 		}
