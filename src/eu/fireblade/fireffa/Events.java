@@ -406,6 +406,8 @@ public class Events implements Listener {
 		if(slot.equals(SlotType.QUICKBAR)) {
 			e.setCancelled(true);
 		}
+		
+		e.setCancelled(true);
 	}
 	
 	@EventHandler

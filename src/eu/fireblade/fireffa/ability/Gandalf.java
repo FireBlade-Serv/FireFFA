@@ -35,10 +35,10 @@ public class Gandalf implements Listener {
 			if(!cooldown.contains(p)) {
 			
 				cooldown.add(p);
-				Vector vector = p.getLocation().getDirection().add(new Vector(1.3f, 1.0f, 1.3f));
+				Vector vector = p.getLocation().getDirection().add(new Vector(0.f, 1.0f, 0.0f));
 				t.setVelocity(vector);
-				p.playSound(p.getLocation(), Sound.FALL_BIG, 30, 30);
-				t.playSound(p.getLocation(), Sound.FALL_BIG, 30, 30);
+				p.playSound(p.getLocation(), Sound.BAT_TAKEOFF, 30, 30);
+				t.playSound(p.getLocation(), Sound.BAT_TAKEOFF, 30, 30);
 			
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable(){
 				

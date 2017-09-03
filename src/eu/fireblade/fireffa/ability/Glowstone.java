@@ -82,7 +82,7 @@ public class Glowstone implements Listener {
 			@Override
 			public void run() {
 				PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.FLAME, true,
-						(float) p.getLocation().getX(), (float) p.getLocation().getY(), (float) p.getLocation().getZ(), 0, 0, 0, 0, 20);
+						(float) p.getLocation().getX(), (float) p.getLocation().getY() + 1, (float) p.getLocation().getZ(), 0, 0, 0, 0, 20);
 				
 				for(Player online : Bukkit.getOnlinePlayers()) {
 					((CraftPlayer)online).getHandle().playerConnection.sendPacket(ppowp);
