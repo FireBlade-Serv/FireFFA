@@ -14,14 +14,13 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
@@ -32,13 +31,18 @@ public class Enderman implements Listener {
 	public static ArrayList<Player> nod = new ArrayList<Player>();
 
 	@EventHandler
-	public void OnClick (PlayerInteractEvent e) {
+	public void OnClick(PlayerRightClickInteractEvent e) {
 		final Player p = e.getPlayer();
-		final Action a = e.getAction();
 		final ItemStack item = e.getItem();
 		
-		if((a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)) && item.equals(Kits.ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 3,
-				"§7Main de l'enderman", Kits.LoreCreator("§9Clique droit - vous tp aléatoirement", "§930 secondes de récupération"), 1)) && Var.enderman.contains(p)){
+		if(!Var.enderman.contains(p)) {
+			return;
+		}
+		
+		if(item.equals(Kits.ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 3,
+				"§7Main de l'enderman", Kits.LoreCreator("§9Clique droit - vous tp aléatoirement", "§930 secondes de récupération"), 1))) {
+		
+			
 			
 			if(cooldown.contains(p)) {
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");

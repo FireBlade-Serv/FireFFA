@@ -16,16 +16,15 @@ import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.ExplosionPrimeEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
 import net.md_5.bungee.api.ChatColor;
 import net.minecraft.server.v1_8_R3.EnumParticle;
@@ -37,29 +36,32 @@ public class Pyro implements Listener {
 	public static ArrayList<Player> inLoad = new ArrayList<Player>();
 
 	@EventHandler
-	public void onInteract (PlayerInteractEvent e) {
+	public void onInteract (PlayerRightClickInteractEvent e) {
 		final Player p = e.getPlayer();
-		final Action a = e.getAction();
-		
-		if((a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)) && 
-				e.getItem().equals(Kits.ItemGen1(Material.WOOD_SWORD, Enchantment.FIRE_ASPECT, 1, ChatColor.RED+"Épée lanceuse de boules de feu", 
-				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1)) && Var.pyro.contains(p)){
 			
-			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FIREBALL, ChatColor.RED+"Boule de feu", null, 1), 1)) {
-				if(inLoad.contains(p)) {
-					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
-					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez déjà une boulle de feu en execution !");
-					
-					return;
-				}
-				
-				p.launchProjectile(Fireball.class);
-				p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
-				p.getInventory().removeItem(Kits.ItemGen(Material.FIREBALL, ChatColor.RED+"Boule de feu", null, 1));
-			} else {
+		if(!e.getItem().equals(Kits.ItemGen1(Material.WOOD_SWORD, Enchantment.FIRE_ASPECT, 1, ChatColor.RED+"Épée lanceuse de boules de feu", 
+			Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1))) {
+			return;
+		}
+			
+		if(!Var.pyro.contains(p)) {
+			return;
+		}
+			
+		if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FIREBALL, ChatColor.RED+"Boule de feu", null, 1), 1)) {
+			if(inLoad.contains(p)) {
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
-				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de boule de feu.");
+				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez déjà une boulle de feu en execution !");
+					
+				return;
 			}
+				
+			p.launchProjectile(Fireball.class);
+			p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
+			p.getInventory().removeItem(Kits.ItemGen(Material.FIREBALL, ChatColor.RED+"Boule de feu", null, 1));
+		} else {
+			p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
+			p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de boule de feu.");
 		}
 	}
 	
