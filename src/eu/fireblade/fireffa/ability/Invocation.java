@@ -233,7 +233,7 @@ public class Invocation implements Listener {
 				newb.setData(oldb);
 				
 				PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.EXPLOSION_NORMAL, true,
-						(float) newb.getLocation().getX(), (float) newb.getLocation().getY(), (float) newb.getLocation().getZ(), 1, 1, 1, 1, 20);
+						(float) newb.getLocation().getX(), (float) newb.getLocation().getY(), (float) newb.getLocation().getZ(), 0, 0, 0, 0, 20);
 				
 				for(Player online : Bukkit.getOnlinePlayers()) {
 					((CraftPlayer)online).getHandle().playerConnection.sendPacket(ppowp);

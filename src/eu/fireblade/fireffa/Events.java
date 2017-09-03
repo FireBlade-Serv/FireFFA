@@ -22,6 +22,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -349,6 +350,15 @@ public class Events implements Listener {
 			}
 			
 		}, 8L);
+	}
+	
+	@EventHandler
+	public void onSaturationDown(FoodLevelChangeEvent e) {
+		Player p = (Player) e.getEntity();
+		
+		if(!Var.inGame.contains(p)) {
+			e.setFoodLevel(20);
+		}
 	}
 	
 	@EventHandler
