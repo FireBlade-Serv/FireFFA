@@ -1,9 +1,11 @@
 package eu.fireblade.fireffa.util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
@@ -55,7 +57,7 @@ public class Methods {
 
 			@Override
 			public void run() {
-				for(Player online : Bukkit.getOnlinePlayers()) {
+				for(Player online : getOnlinePlayers()) {
 					if(online.getHealth() <= 5) {
 						if(!wblist.contains(online)){
 							WorldBorder w = new WorldBorder();
@@ -95,5 +97,13 @@ public class Methods {
 		}, 0L, 1L);
 	}
 	
-	
+	public static List<Player> getOnlinePlayers() {
+	     List<Player> players = new ArrayList<Player>();
+	     for(World world : Bukkit.getWorlds()) {
+	          for(Player player : world.getPlayers()) {
+	               players.add(player);
+	          }
+	     }
+	     return players;
+	}
 }
