@@ -25,7 +25,7 @@ import net.md_5.bungee.api.ChatColor;
 public class Copy implements Listener {
 
 	public static ArrayList<Player> cooldown = new ArrayList<Player>();
-	private static ArrayList<Player> nod = new ArrayList<Player>();
+	public static ArrayList<Player> nod = new ArrayList<Player>();
 	
 	@EventHandler
 	public void onInteract(PlayerInteractAtPlayerEvent e) {

@@ -8,7 +8,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
+import org.bukkit.World;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -29,7 +29,7 @@ public class Enderman implements Listener {
 	
 	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	
-	private static ArrayList<Player> nod = new ArrayList<Player>();
+	public static ArrayList<Player> nod = new ArrayList<Player>();
 
 	@EventHandler
 	public void OnClick (PlayerInteractEvent e) {
@@ -51,11 +51,10 @@ public class Enderman implements Listener {
 				int x = -127 + r.nextInt(254);
 				int z = -127 + r.nextInt(254);
 				
-				Location l = new Location(p.getWorld(),x,1,z);
-				Location newL = new Location(p.getWorld(), x, ((CraftWorld)p.getWorld()).getHighestBlockYAt(l) + 1, z);
+				Location newL = new Location(p.getWorld(), x, getHighestBock(p.getWorld(), x, z), z);
 				
 				cooldown.add(p);
-				p.playSound(l, Sound.ENDERMAN_TELEPORT, 30, 30);
+				p.playSound(p.getEyeLocation(), Sound.ENDERMAN_TELEPORT, 30, 30);
 				p.teleport(newL);
 				noDamage(p);
 				
@@ -108,4 +107,15 @@ public class Enderman implements Listener {
 		}, 100L);
 	}
 
+	public int getHighestBock(World world, int x, int z){
+		int high = 255;
+		
+		while(high > 0){
+			if(new Location(world, x, high, z).getBlock().getType() != Material.AIR)
+				return high + 1;
+		      	high--;
+		   }
+		
+		   return 0;
+	}
 }

@@ -28,7 +28,7 @@ public class Gameur implements Listener {
 	public static ArrayList<Player> cooldown = new ArrayList<Player>();
 	public static ArrayList<Player> cooldown2 = new ArrayList<Player>();
 	
-	private static ArrayList<Player> nod = new ArrayList<Player>();
+	public static ArrayList<Player> nod = new ArrayList<Player>();
 	
 	@EventHandler
 	public void onInteract(PlayerRightClickInteractEvent e){

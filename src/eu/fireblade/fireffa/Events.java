@@ -39,6 +39,9 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import eu.fireblade.fireffa.ability.Copy;
+import eu.fireblade.fireffa.ability.Enderman;
+import eu.fireblade.fireffa.ability.Gameur;
 import eu.fireblade.fireffa.cmd.GUI;
 import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.nms.DamageArmorStand;
@@ -242,6 +245,10 @@ public class Events implements Listener {
 				Player p = (Player) entity;
 				
 				if(Var.nuage.contains(p) || Var.piaf.contains(p)) {
+					return;
+				}
+				
+				if(Enderman.nod.contains(p) || Copy.nod.contains(p) || Gameur.nod.contains(p)) {
 					return;
 				}
 				
