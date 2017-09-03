@@ -52,7 +52,7 @@ public class Enderman implements Listener {
 				int z = -127 + r.nextInt(254);
 				
 				Location l = new Location(p.getWorld(),x,1,z);
-				Location newL = new Location(p.getWorld(), x, ((CraftWorld)p.getWorld()).getHighestBlockYAt(l), z);
+				Location newL = new Location(p.getWorld(), x, ((CraftWorld)p.getWorld()).getHighestBlockYAt(l) + 1, z);
 				
 				cooldown.add(p);
 				p.playSound(l, Sound.ENDERMAN_TELEPORT, 30, 30);
