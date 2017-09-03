@@ -529,7 +529,7 @@ public class Events implements Listener {
 				Inventory Crédits = Bukkit.createInventory(null, 9, ChatColor.BLUE+"Développé par:");
 				
 				Crédits.setItem(0, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
-				Crédits.setItem(1, generateSkull("Baptistego"));
+				Crédits.setItem(1, generateSkull("baptistego"));
 				Crédits.setItem(2, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
 				Crédits.setItem(3, GUI.genPerspective(Material.LEAVES, "§1", (byte) 0));
 				Crédits.setItem(4, generateSkull("Glowstoner"));

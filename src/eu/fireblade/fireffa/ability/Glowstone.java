@@ -5,10 +5,10 @@ import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.World;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,6 +21,8 @@ import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.events.PlayerInteractAtPlayerEvent;
 import eu.fireblade.fireffa.items.Kits;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
+import net.minecraft.server.v1_8_R3.EnumParticle;
+import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
 
 public class Glowstone implements Listener {
 
@@ -68,7 +70,7 @@ public class Glowstone implements Listener {
 		}
 	}
 	
-	public static void particles(Player p, World w) {
+	public static void particles(final Player p, World w) {
 		if(tasks.containsKey(p)) {
 			Bukkit.getScheduler().cancelTask(tasks.get(p));
 			
@@ -79,7 +81,12 @@ public class Glowstone implements Listener {
 
 			@Override
 			public void run() {
-				w.playEffect(p.getLocation(), Effect.FLAME, 0);
+				PacketPlayOutWorldParticles ppowp = new PacketPlayOutWorldParticles(EnumParticle.FLAME, true,
+						(float) p.getLocation().getX(), (float) p.getLocation().getY(), (float) p.getLocation().getZ(), 0, 0, 0, 0, 20);
+				
+				for(Player online : Bukkit.getOnlinePlayers()) {
+					((CraftPlayer)online).getHandle().playerConnection.sendPacket(ppowp);
+				}
 			}
 				
 		}, 140L, 3L));
