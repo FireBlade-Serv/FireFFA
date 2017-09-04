@@ -28,8 +28,8 @@ import org.bukkit.potion.PotionType;
 import eu.fireblade.fireffa.Play;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.ability.Glowstone;
+import eu.fireblade.fireffa.enumerate.GlobalRank;
 import eu.fireblade.fireffa.items.Kits;
-import eu.fireblade.fireffa.util.GlobalRank;
 
 public class GUI implements CommandExecutor, Listener {
 

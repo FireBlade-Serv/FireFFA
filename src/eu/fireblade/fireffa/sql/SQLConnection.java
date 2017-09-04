@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 
 public class SQLConnection {
@@ -21,15 +22,35 @@ public class SQLConnection {
 					+ "avec 'host' -> '"+Var.host+"', 'db' -> '"+Var.db+"', 'user' -> '"+Var.user+"', 'password' -> '"+Var.password+"'.");
 			connection = DriverManager.getConnection(Var.SqlUrlBase + Var.host + "/" + Var.db, Var.user, Var.password);
 			Bukkit.getLogger().info("Connection réussie !");
+			Bukkit.getConsoleSender().sendMessage("§aConnection SQL !");
 		} catch (SQLException e) {
 			Bukkit.getLogger().info("Connection fail ! Erreur -> "+e.getMessage());
 		}
 	}
 
 	public static void disconnect() {
-		if(!isConnected()) {
+		if(isConnected()) {
+			Bukkit.getConsoleSender().sendMessage("§aDéconnection SQL !");
+			
 			connection = null;
 		}
+	}
+	
+	public static void autoConnection() {
+		Var.sqltask = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
+
+			@Override
+			public void run() {
+				Bukkit.getConsoleSender().sendMessage("§aPrecessus de Refresh SQL !");
+				
+				Bukkit.getConsoleSender().sendMessage("§aTentative de déconnection SQL !");
+				disconnect();
+				
+				Bukkit.getConsoleSender().sendMessage("§aTentative de connection SQL !");
+				connection();
+			}
+			
+		}, 36000L, 72000L);
 	}
 	
 	public static boolean isConnected() {

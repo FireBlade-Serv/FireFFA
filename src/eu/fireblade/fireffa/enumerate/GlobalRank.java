@@ -1,4 +1,4 @@
-package eu.fireblade.fireffa.util;
+package eu.fireblade.fireffa.enumerate;
 
 public enum GlobalRank {
 	

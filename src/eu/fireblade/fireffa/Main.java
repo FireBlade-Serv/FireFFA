@@ -91,6 +91,8 @@ public class Main extends JavaPlugin{
 		Methods.schedulerUtils();
 		
 		SQLConnection.connection();
+		
+		SQLConnection.autoConnection();
 	}
 	
 	@Override
@@ -100,6 +102,8 @@ public class Main extends JavaPlugin{
 		Bukkit.getScheduler().cancelTask(Var.wbtask);
 		
 		SQLConnection.disconnect();
+		
+		Bukkit.getScheduler().cancelTask(Var.sqltask);
 		
 		plugin = null;
 	}

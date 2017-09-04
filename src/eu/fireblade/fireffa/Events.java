@@ -19,6 +19,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.block.BlockFadeEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
@@ -575,6 +576,11 @@ public class Events implements Listener {
 			
 			Bukkit.getPluginManager().callEvent(new eu.fireblade.fireffa.events.PlayerDamageEvent(p, w, damage, cause));
 		}
+	}
+	
+	@EventHandler
+	public void onMelt(BlockFadeEvent e) {
+		e.setCancelled(true);
 	}
 	
 	@EventHandler

@@ -14,7 +14,7 @@ public class Scoreboard {
 		gs.setLine("§8  ", 1);
 		gs.setLine("§7§lGrade :", 2);
 		gs.setLine("§7 Serveur §8§l>> §c"+null, 3);
-		gs.setLine("§7 FFA §8§l>> §c"+null, 4);
+		gs.setLine("§7 FFA §8§l>> "+refreshRank(p), 4);
 		gs.setLine("§6  ", 5);
 		gs.setLine("§7§lKills :", 6);
 		gs.setLine(" §8§l>> "+genKills(p), 7);
@@ -43,6 +43,54 @@ public class Scoreboard {
 			return "§cAucun Kill";
 		}else {
 			return "§e"+SQLConnection.getKills(p);
+		}
+	}
+	
+	private static String refreshRank(Player p) {
+		int kills = SQLConnection.getKills(p);
+		
+		if(kills < 50) {
+			//Vagabond
+			
+			return "§b§lVagabond";
+		}else if(kills >= 50 && kills < 150) {
+			//Inquisiteur
+			
+			return "§e§lInquisiteur";
+		}else if(kills >= 150 && kills < 300) {
+			//Meurtrier
+			
+			return "§5§lMeurtrier";
+		}else if(kills >= 300 && kills < 500) {
+			//Mercenaire
+			
+			return "§a§lMercenaire";
+		}else if(kills >= 500 && kills < 800) {
+			//Bourreau
+			
+			return "§9§lBourrreau";
+		}else if(kills >= 800 && kills < 1200) {
+			//Executeur
+			
+			return "§1§lExecuteur";
+		}else if(kills >= 1200 && kills < 1700) {
+			//Sanguinaire
+			
+			return "§c§lSanguinaire";
+		}else if(kills >= 1700 && kills < 2300) {
+			//Massacreur
+			
+			return "§6§lMassacreur";
+		}else if(kills >= 2300 && kills < 3000) {
+			//Déchiqueteur
+			
+			return "§7Déchiqueteur";
+		}else if(kills >= 3000) {
+			//DeathGod
+		
+			return "§0§lDeathGod";
+		}else {
+			return "§4§lBUG !";
 		}
 	}
 }

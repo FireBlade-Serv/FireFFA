@@ -1,0 +1,8 @@
+package eu.fireblade.fireffa.enumerate;
+
+public enum Rank {
+	
+	VAGABOND, INQUISITEUR, MEURTRIER, MERCENAIRE, BOURREAU, EXECUTEUR, 
+	SANGUINAIRE, MASSACREUR, DÉCHIQUETEUR, DEATHGOD;
+
+}
