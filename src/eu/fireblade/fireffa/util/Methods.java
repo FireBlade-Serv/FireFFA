@@ -213,6 +213,27 @@ public class Methods {
 		}else if(kills >= 800 && kills < 1200) {
 			//Executeur
 			
+			if(kills == 800) {
+				Firework f = (Firework) p.getWorld().spawn(p.getLocation(), Firework.class);
+				
+				FireworkMeta fm = f.getFireworkMeta();
+				fm.addEffect(FireworkEffect.builder()
+						
+						.flicker(false)
+						.trail(false)
+						.with(Type.STAR)
+						.withColor(Color.BLUE)
+						.build());
+				
+				fm.setPower(1);
+				f.setFireworkMeta(fm);
+				
+				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §5§lMeurtrier §a!");
+				
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §5§lMeurtrier §a! \"}");
+				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
+				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
+			}
 		}else if(kills >= 1200 && kills < 1700) {
 			//Sanguinaire
 			
