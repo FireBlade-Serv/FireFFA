@@ -222,30 +222,114 @@ public class Methods {
 						.flicker(false)
 						.trail(false)
 						.with(Type.STAR)
-						.withColor(Color.BLUE)
+						.withColor(Color.NAVY)
 						.build());
 				
 				fm.setPower(1);
 				f.setFireworkMeta(fm);
 				
-				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §5§lMeurtrier §a!");
+				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §1§lExecuteur §a!");
 				
-				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §5§lMeurtrier §a! \"}");
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §1§lExecuteur §a! \"}");
 				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
 				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
 			}
 		}else if(kills >= 1200 && kills < 1700) {
 			//Sanguinaire
 			
+			if(kills == 1200) {
+				Firework f = (Firework) p.getWorld().spawn(p.getLocation(), Firework.class);
+				
+				FireworkMeta fm = f.getFireworkMeta();
+				fm.addEffect(FireworkEffect.builder()
+						
+						.flicker(false)
+						.trail(false)
+						.with(Type.STAR)
+						.withColor(Color.RED)
+						.build());
+				
+				fm.setPower(1);
+				f.setFireworkMeta(fm);
+				
+				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §c§lSanguinaire §a!");
+				
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §c§lSanguinaire §a! \"}");
+				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
+				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
+			}
 		}else if(kills >= 1700 && kills < 2300) {
 			//Massacreur
 			
+			if(kills == 1700) {
+				Firework f = (Firework) p.getWorld().spawn(p.getLocation(), Firework.class);
+				
+				FireworkMeta fm = f.getFireworkMeta();
+				fm.addEffect(FireworkEffect.builder()
+						
+						.flicker(false)
+						.trail(false)
+						.with(Type.STAR)
+						.withColor(Color.ORANGE)
+						.build());
+				
+				fm.setPower(1);
+				f.setFireworkMeta(fm);
+				
+				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §6§lMassacreur §a!");
+				
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §6§lMassacreur §a! \"}");
+				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
+				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
+			}
 		}else if(kills >= 2300 && kills < 3000) {
 			//Déchiqueteur
 			
+			if(kills == 2300) {
+				Firework f = (Firework) p.getWorld().spawn(p.getLocation(), Firework.class);
+				
+				FireworkMeta fm = f.getFireworkMeta();
+				fm.addEffect(FireworkEffect.builder()
+						
+						.flicker(false)
+						.trail(false)
+						.with(Type.STAR)
+						.withColor(Color.SILVER)
+						.build());
+				
+				fm.setPower(1);
+				f.setFireworkMeta(fm);
+				
+				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §7§lDéchiqueteur §a!");
+				
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §7§lDéchiqueteur §a! \"}");
+				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
+				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
+			}
 		}else if(kills >= 3000) {
 			//DeathGod
 			
+			if(kills == 3000) {
+				Firework f = (Firework) p.getWorld().spawn(p.getLocation(), Firework.class);
+				
+				FireworkMeta fm = f.getFireworkMeta();
+				fm.addEffect(FireworkEffect.builder()
+						
+						.flicker(false)
+						.trail(false)
+						.with(Type.STAR)
+						.withColor(Color.BLACK)
+						.build());
+				
+				fm.setPower(1);
+				f.setFireworkMeta(fm);
+				
+				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §0§lDeathGod §a!");
+				
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §0§lDeathGod §a! \"}");
+				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
+				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
+			}
 		}
 	}
 	
