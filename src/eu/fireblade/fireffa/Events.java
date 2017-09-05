@@ -305,7 +305,9 @@ public class Events implements Listener {
 				
 				SQLConnection.setKills(jawad, SQLConnection.getKills(jawad) + 1);
 				
-				Methods.refreshRank(p);
+				Methods.refreshRank(jawad);
+				
+				Scoreboard.displayScoreboard(jawad);
 			}
 			
 			for(Player online : Bukkit.getOnlinePlayers()) {
