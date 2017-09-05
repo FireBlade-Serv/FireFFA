@@ -50,6 +50,7 @@ import eu.fireblade.fireffa.cmd.GUI;
 import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.nms.DamageArmorStand;
 import eu.fireblade.fireffa.sql.SQLConnection;
+import eu.fireblade.fireffa.util.Methods;
 import eu.fireblade.fireffa.util.Scoreboard;
 import eu.fireblade.fireffa.util.Tp;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
@@ -303,6 +304,8 @@ public class Events implements Listener {
 				}
 				
 				SQLConnection.setKills(jawad, SQLConnection.getKills(jawad) + 1);
+				
+				Methods.refreshRank(p);
 			}
 			
 			for(Player online : Bukkit.getOnlinePlayers()) {
