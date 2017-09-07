@@ -28,8 +28,10 @@ import org.bukkit.potion.PotionType;
 import eu.fireblade.fireffa.Play;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.ability.Glowstone;
-import eu.fireblade.fireffa.enumerate.GlobalRank;
+import eu.fireblade.fireffa.enums.GlobalRank;
+import eu.fireblade.fireffa.enums.Rank;
 import eu.fireblade.fireffa.items.Kits;
+import eu.fireblade.fireffa.util.Methods;
 
 public class GUI implements CommandExecutor, Listener {
 
@@ -163,28 +165,57 @@ public class GUI implements CommandExecutor, Listener {
 		
 		//sanguinaire
 		inv.setItem(6, genPerspective(Material.STAINED_GLASS, "§c§lKits Sanguinaire", (byte) 14));
-		inv.setItem(15, genPerspectiveEnch(Material.WOOD_SWORD, "§9Kit Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
-		inv.setItem(24, genPerspective(Material.ENDER_PEARL, "§9Kit Enderman", (byte) 0));
-		inv.setItem(33, genPerspective(Material.SAPLING, "§9Kit Robin des bois", (byte) 0));
+		
+		if(Methods.getRank(p).equals(Rank.SANGUINAIRE) || Methods.getRank(p).equals(Rank.MASSACREUR) 
+				|| Methods.getRank(p).equals(Rank.DÉCHIQUETEUR) || Methods.getRank(p).equals(Rank.DEATHGOD)) {
+			
+			inv.setItem(15, genPerspectiveEnch(Material.WOOD_SWORD, "§9Kit Pyro", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+			inv.setItem(24, genPerspective(Material.ENDER_PEARL, "§9Kit Enderman", (byte) 0));
+			inv.setItem(33, genPerspective(Material.SAPLING, "§9Kit Robin des bois", (byte) 0));
+		}else {
+			
+		}
 		
 		//massacreur
 		inv.setItem(7, genPerspective(Material.STAINED_GLASS, "§6§lKits Massacreur", (byte) 1));
-		inv.setItem(16, genPerspective(Material.RAW_FISH, "§9Kit Ocelot", (byte) 0));
-		inv.setItem(25, genPerspective(Material.BRICK, "§9Kit Rulio", (byte) 0));
-		inv.setItem(34, genPerspectiveEnch(Material.REDSTONE_COMPARATOR, "§9Kit Mathématicien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		
+		if(Methods.getRank(p).equals(Rank.MASSACREUR) || Methods.getRank(p).equals(Rank.DÉCHIQUETEUR) || Methods.getRank(p).equals(Rank.DEATHGOD)) {
+			inv.setItem(16, genPerspective(Material.RAW_FISH, "§9Kit Ocelot", (byte) 0));
+			inv.setItem(25, genPerspective(Material.BRICK, "§9Kit Rulio", (byte) 0));
+			inv.setItem(34, genPerspectiveEnch(Material.REDSTONE_COMPARATOR, "§9Kit Mathématicien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		}else {
+			inv.setItem(16, genPerspectiveBlock("§9Kit Ocelot", Rank.MASSACREUR));
+			inv.setItem(25, genPerspectiveBlock("Kit Rulio", Rank.MASSACREUR));
+			inv.setItem(34, genPerspectiveBlock("Kit Mathématicien", Rank.MASSACREUR));
+		}
 		
 		//déchiqueteur
+		
 		inv.setItem(8, genPerspective(Material.STAINED_GLASS, "§7§lKits Déchiqueteur", (byte) 8));
-		inv.setItem(17, genPerspectiveEnch(Material.TORCH, "§9Kit FuriCat", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
-		inv.setItem(26, genPerspective(Material.COMPASS, "§9Kit Timer", (byte) 0));
-		inv.setItem(35, genPerspectiveEnch(Material.IRON_TRAPDOOR, "§9Kit TrapMan", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		
+		if(Methods.getRank(p).equals(Rank.DÉCHIQUETEUR) || Methods.getRank(p).equals(Rank.DEATHGOD)) {
+			inv.setItem(17, genPerspectiveEnch(Material.TORCH, "§9Kit FuriCat", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+			inv.setItem(26, genPerspective(Material.COMPASS, "§9Kit Timer", (byte) 0));
+			inv.setItem(35, genPerspectiveEnch(Material.IRON_TRAPDOOR, "§9Kit TrapMan", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		}else {
+			inv.setItem(17, genPerspectiveBlock("Kit FuriCat", Rank.DÉCHIQUETEUR));
+			inv.setItem(26, genPerspectiveBlock("Kit Timer", Rank.DÉCHIQUETEUR));
+			inv.setItem(35, genPerspectiveBlock("Kit TrapMan", Rank.DÉCHIQUETEUR));
+		}
 		
 		//deathgod
-		inv.setItem(40, genPerspective(Material.STAINED_GLASS, "§0§lKits DeathGod", (byte) 15));
-		inv.setItem(50, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Kit Démolisseur", 1, 89, 38, 38));
-		inv.setItem(49, genPerspectiveEnch(Material.DETECTOR_RAIL, "§9Kit Informaticien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
-		inv.setItem(48, genPerspectiveEnch(Material.STICK, "§9Kit Gandalf", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
 		
+		if(Methods.getRank(p).equals(Rank.DEATHGOD)) {
+			inv.setItem(40, genPerspective(Material.STAINED_GLASS, "§0§lKits DeathGod", (byte) 15));
+			inv.setItem(50, genPerspectiveLeatherColor(Material.LEATHER_CHESTPLATE, "§9Kit Démolisseur", 1, 89, 38, 38));
+			inv.setItem(49, genPerspectiveEnch(Material.DETECTOR_RAIL, "§9Kit Informaticien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+			inv.setItem(48, genPerspectiveEnch(Material.STICK, "§9Kit Gandalf", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		}else {
+			inv.setItem(40, genPerspective(Material.STAINED_GLASS, "§0§lKits DeathGod", (byte) 15));
+			inv.setItem(50, genPerspectiveBlock("Kit Démolisseur", Rank.DEATHGOD));
+			inv.setItem(49, genPerspectiveBlock("Kit Informaticien", Rank.DEATHGOD));
+			inv.setItem(48, genPerspectiveBlock("Kit Gandalf", Rank.DEATHGOD));
+		}
 		
 		p.openInventory(inv);
 	}
@@ -364,6 +395,41 @@ public class GUI implements CommandExecutor, Listener {
 			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Ultra !"));
 		}else if(minRank.equals(GlobalRank.ULTIMATE)){
 			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Ultimate !"));
+		}
+		
+		item.setItemMeta(meta);
+		
+		return item;
+	}
+	
+	public static ItemStack genPerspectiveBlock(String name, Rank minRank){
+		ItemStack item = new ItemStack(Material.BARRIER, 1);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName("§c"+name);
+		
+		meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
+		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
+		
+		if(minRank.equals(Rank.VAGABOND)){
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Vagabond !"));
+		}else if(minRank.equals(Rank.INQUISITEUR)){
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Inquisiteur !"));
+		}else if(minRank.equals(Rank.MEURTRIER)){
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Meurtrier !"));
+		}else if(minRank.equals(Rank.MERCENAIRE)) {
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Mercenaire !"));
+		}else if(minRank.equals(Rank.BOURREAU)) {
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Bourreau !"));
+		}else if(minRank.equals(Rank.EXECUTEUR)) {
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Executeur !"));
+		}else if(minRank.equals(Rank.SANGUINAIRE)) {
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Sanguinaire !"));
+		}else if(minRank.equals(Rank.MASSACREUR)) {
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Massacreur !"));
+		}else if(minRank.equals(Rank.DÉCHIQUETEUR)) {
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade Déchiqueteur !"));
+		}else if(minRank.equals(Rank.DEATHGOD)) {
+			meta.setLore(Arrays.asList("§8Vous devez avoir le grade DeathGod !"));
 		}
 		
 		item.setItemMeta(meta);

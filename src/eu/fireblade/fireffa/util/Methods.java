@@ -18,6 +18,7 @@ import org.bukkit.inventory.meta.FireworkMeta;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.enums.Rank;
 import eu.fireblade.fireffa.sql.SQLConnection;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
@@ -330,6 +331,54 @@ public class Methods {
 				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
 				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
 			}
+		}
+	}
+	
+	public static Rank getRank(Player p) {
+		int kills = SQLConnection.getKills(p);
+		
+		if(kills < 50) {
+			//Vagabond
+			
+			return Rank.VAGABOND;
+		}else if(kills >= 50 && kills < 150) {
+			//Inquisiteur
+			
+			return Rank.INQUISITEUR;
+		}else if(kills >= 150 && kills < 300) {
+			//Meurtrier
+			
+			return Rank.MEURTRIER;
+		}else if(kills >= 300 && kills < 500) {
+			//Mercenaire
+			
+			return Rank.MERCENAIRE;
+		}else if(kills >= 500 && kills < 800) {
+			//Bourreau
+			
+			return Rank.BOURREAU;
+		}else if(kills >= 800 && kills < 1200) {
+			//Executeur
+			
+			return Rank.EXECUTEUR;
+		}else if(kills >= 1200 && kills < 1700) {
+			//Sanguinaire
+			
+			return Rank.SANGUINAIRE;
+		}else if(kills >= 1700 && kills < 2300) {
+			//Massacreur
+			
+			return Rank.MASSACREUR;
+		}else if(kills >= 2300 && kills < 3000) {
+			//Déchiqueteur
+			
+			return Rank.DÉCHIQUETEUR;
+		}else if(kills >= 3000) {
+			//DeathGod
+		
+			return Rank.DEATHGOD;
+		}else {
+			return null;
 		}
 	}
 	

@@ -2,7 +2,6 @@ package eu.fireblade.fireffa;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -37,7 +36,6 @@ import eu.fireblade.fireffa.ability.RedMan;
 import eu.fireblade.fireffa.ability.RobinDesBois;
 import eu.fireblade.fireffa.ability.Timer;
 import eu.fireblade.fireffa.ability.VoleurÂmes;
-import eu.fireblade.fireffa.enumerate.Rank;
 import eu.fireblade.fireffa.items.Kits;
 
 public class Var {
@@ -45,8 +43,6 @@ public class Var {
 	public static String SqlUrlBase = "jdbc:mysql://", host, db, user, password;
 	
 	public static int wbtask, sqltask;
-	
-	public static Map<Player, Rank> ranks = new HashMap<>();
 	
 	public static ArrayList<Player> démolisseur = new ArrayList<Player>();
 	

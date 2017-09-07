@@ -3,6 +3,7 @@ package eu.fireblade.fireffa;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.World;
@@ -55,8 +56,11 @@ import eu.fireblade.fireffa.util.Scoreboard;
 import eu.fireblade.fireffa.util.Tp;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.minecraft.server.v1_8_R3.EntityArmorStand;
+import net.minecraft.server.v1_8_R3.IChatBaseComponent;
+import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
 import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand;
 import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand.EnumClientCommand;
+import net.minecraft.server.v1_8_R3.PacketPlayOutChat;
 
 public class Events implements Listener {
 	
@@ -100,6 +104,8 @@ public class Events implements Listener {
 		p.getInventory().setItem(8, Kits.ItemGen(Material.EMERALD, "§9Crédits", null, 1));
 		
 		p.setLevel(0);
+		
+		p.setGameMode(GameMode.ADVENTURE);
 	}
 	
 	@EventHandler
@@ -304,6 +310,12 @@ public class Events implements Listener {
 				}
 				
 				SQLConnection.setKills(jawad, SQLConnection.getKills(jawad) + 1);
+				
+				IChatBaseComponent icbc = ChatSerializer.a("{\"text\": \" + 1 KILL \"}");
+				
+				((CraftPlayer) jawad).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(icbc, (byte) 2));
+				
+				jawad.playSound(jawad.getLocation(), Sound.ORB_PICKUP, 30, 30);
 				
 				Methods.refreshRank(jawad);
 				

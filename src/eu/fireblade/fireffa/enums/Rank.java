@@ -1,4 +1,4 @@
-package eu.fireblade.fireffa.enumerate;
+package eu.fireblade.fireffa.enums;
 
 public enum Rank {
 	
