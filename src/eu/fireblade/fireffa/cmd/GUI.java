@@ -189,6 +189,10 @@ public class GUI implements CommandExecutor, Listener {
 			inv.setItem(13, genPerspectiveEnch(Material.INK_SACK, "§9Kit Grampa", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
 			inv.setItem(22, genPerspective(Material.STONE_AXE, "§9Kit Boucher", (byte) 0));
 			inv.setItem(31, genPerspectiveEnch(Material.LEASH, "§9Kit Esclave", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		}else {
+			inv.setItem(13, genPerspectiveBlock("Kit Grampa", Rank.BOURREAU));
+			inv.setItem(22, genPerspectiveBlock("Kit Boucher", Rank.BOURREAU));
+			inv.setItem(31, genPerspectiveBlock("Kit Esclave", Rank.BOURREAU));
 		}
 		
 		//executeur
@@ -216,7 +220,9 @@ public class GUI implements CommandExecutor, Listener {
 			inv.setItem(24, genPerspective(Material.ENDER_PEARL, "§9Kit Enderman", (byte) 0));
 			inv.setItem(33, genPerspective(Material.SAPLING, "§9Kit Robin des bois", (byte) 0));
 		}else {
-			
+			inv.setItem(15, genPerspectiveBlock("Kit Pyro", Rank.SANGUINAIRE));
+			inv.setItem(24, genPerspectiveBlock("Kit Enderman", Rank.SANGUINAIRE));
+			inv.setItem(33, genPerspectiveBlock("Kit Robin des bois", Rank.SANGUINAIRE));
 		}
 		
 		//massacreur
@@ -227,7 +233,7 @@ public class GUI implements CommandExecutor, Listener {
 			inv.setItem(25, genPerspective(Material.BRICK, "§9Kit Rulio", (byte) 0));
 			inv.setItem(34, genPerspectiveEnch(Material.REDSTONE_COMPARATOR, "§9Kit Mathématicien", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
 		}else {
-			inv.setItem(16, genPerspectiveBlock("§9Kit Ocelot", Rank.MASSACREUR));
+			inv.setItem(16, genPerspectiveBlock("Kit Ocelot", Rank.MASSACREUR));
 			inv.setItem(25, genPerspectiveBlock("Kit Rulio", Rank.MASSACREUR));
 			inv.setItem(34, genPerspectiveBlock("Kit Mathématicien", Rank.MASSACREUR));
 		}
