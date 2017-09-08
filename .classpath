@@ -11,5 +11,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="src/eu/fireblade/fireffa/lib/spigot.jar"/>
 	<classpathentry kind="lib" path="src/eu/fireblade/fireffa/lib/GlowstoneAPI.jar"/>
+	<classpathentry kind="lib" path="src/eu/fireblade/fireffa/lib/ProtocolLib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

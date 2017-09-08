@@ -134,34 +134,77 @@ public class GUI implements CommandExecutor, Listener {
 		
 		//inquisiteur
 		inv.setItem(1, genPerspective(Material.STAINED_GLASS, "§e§lKits Inquisiteur", (byte) 4));
-		inv.setItem(10, genPerspective(Material.IRON_INGOT, "§9Kit Mineur", (byte) 0));
-		inv.setItem(19, genPerspective(Material.SUGAR_CANE, "§9Kit Panda", (byte) 0));
-		inv.setItem(28, genPerspective(Material.LEATHER_HELMET, "§9Kit Ours", (byte) 0));
+		
+		if(Methods.getRank(p).equals(Rank.EXECUTEUR) || Methods.getRank(p).equals(Rank.SANGUINAIRE) || Methods.getRank(p).equals(Rank.MASSACREUR) || 
+				Methods.getRank(p).equals(Rank.DÉCHIQUETEUR) || Methods.getRank(p).equals(Rank.DEATHGOD) || 
+				Methods.getRank(p).equals(Rank.BOURREAU) || Methods.getRank(p).equals(Rank.MERCENAIRE) || Methods.getRank(p).equals(Rank.MEURTRIER)) {
+			
+			inv.setItem(10, genPerspective(Material.IRON_INGOT, "§9Kit Mineur", (byte) 0));
+			inv.setItem(19, genPerspective(Material.SUGAR_CANE, "§9Kit Panda", (byte) 0));
+			inv.setItem(28, genPerspective(Material.LEATHER_HELMET, "§9Kit Ours", (byte) 0));
+		}else {
+			inv.setItem(10, genPerspective(Material.IRON_INGOT, "§9Kit Mineur", (byte) 0));
+			inv.setItem(19, genPerspectiveBlock("Kit Panda", Rank.INQUISITEUR));
+			inv.setItem(28, genPerspectiveBlock("Kit Ours", Rank.INQUISITEUR));
+		}
 		
 		//meurtrier
 		inv.setItem(2, genPerspective(Material.STAINED_GLASS, "§5§lKits Meurtrier", (byte) 2));
-		inv.setItem(11, genPerspectiveEnch(Material.GOLD_HELMET, "§9Kit Tank", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
-		inv.setItem(20, genPerspectiveEnch(Material.STICK, "§9Kit Flic", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
-		inv.setItem(29, genPerspective(Material.SHEARS, "§9Kit Assassin", (byte) 0));
+		
+		if(Methods.getRank(p).equals(Rank.EXECUTEUR) || Methods.getRank(p).equals(Rank.SANGUINAIRE) || Methods.getRank(p).equals(Rank.MASSACREUR) || 
+				Methods.getRank(p).equals(Rank.DÉCHIQUETEUR) || Methods.getRank(p).equals(Rank.DEATHGOD) || 
+				Methods.getRank(p).equals(Rank.BOURREAU) || Methods.getRank(p).equals(Rank.MERCENAIRE) || Methods.getRank(p).equals(Rank.MEURTRIER)) {
+			
+			inv.setItem(11, genPerspectiveEnch(Material.GOLD_HELMET, "§9Kit Tank", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+			inv.setItem(20, genPerspectiveEnch(Material.STICK, "§9Kit Flic", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+			inv.setItem(29, genPerspective(Material.SHEARS, "§9Kit Assassin", (byte) 0));
+		}else {
+			inv.setItem(11, genPerspectiveBlock("Kit Tank", Rank.MEURTRIER));
+			inv.setItem(20, genPerspectiveBlock("Kit Flic", Rank.MEURTRIER));
+			inv.setItem(29, genPerspectiveBlock("Kit Assassin", Rank.MEURTRIER));
+		}
 		
 		//mercenaire
 		inv.setItem(3, genPerspective(Material.STAINED_GLASS, "§a§lKits Mercenaire", (byte) 5));
 		
-		inv.setItem(12, genPerspective(Material.FERMENTED_SPIDER_EYE, "§9Kit Guerrier Galactique", (byte) 0));
-		inv.setItem(21, genPerspectiveEnch(Material.RED_MUSHROOM, "§9Kit Gameur", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
-		inv.setItem(30, genPerspective(Material.CAKE, "§9Kit Patissier", (byte) 0));
+		if(Methods.getRank(p).equals(Rank.EXECUTEUR) || Methods.getRank(p).equals(Rank.SANGUINAIRE) || Methods.getRank(p).equals(Rank.MASSACREUR) || 
+				Methods.getRank(p).equals(Rank.DÉCHIQUETEUR) || Methods.getRank(p).equals(Rank.DEATHGOD) || 
+				Methods.getRank(p).equals(Rank.BOURREAU) || Methods.getRank(p).equals(Rank.MERCENAIRE)) {
+			
+			inv.setItem(12, genPerspective(Material.FERMENTED_SPIDER_EYE, "§9Kit Guerrier Galactique", (byte) 0));
+			inv.setItem(21, genPerspectiveEnch(Material.RED_MUSHROOM, "§9Kit Gameur", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+			inv.setItem(30, genPerspective(Material.CAKE, "§9Kit Patissier", (byte) 0));
+		}else {
+			inv.setItem(12, genPerspectiveBlock("Kit Guerrier Galactique", Rank.MERCENAIRE));
+			inv.setItem(21, genPerspectiveBlock("Kit Gameur", Rank.MERCENAIRE));
+			inv.setItem(30, genPerspectiveBlock("Kit Patissier", Rank.MERCENAIRE));
+		}
 		
 		//bourreau
 		inv.setItem(4, genPerspective(Material.STAINED_GLASS, "§9§lKits Bourreau", (byte) 11));
-		inv.setItem(13, genPerspectiveEnch(Material.INK_SACK, "§9Kit Grampa", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
-		inv.setItem(22, genPerspective(Material.STONE_AXE, "§9Kit Boucher", (byte) 0));
-		inv.setItem(31, genPerspectiveEnch(Material.LEASH, "§9Kit Esclave", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		
+		if(Methods.getRank(p).equals(Rank.EXECUTEUR) || Methods.getRank(p).equals(Rank.SANGUINAIRE) || Methods.getRank(p).equals(Rank.MASSACREUR) || 
+				Methods.getRank(p).equals(Rank.DÉCHIQUETEUR) || Methods.getRank(p).equals(Rank.DEATHGOD) || Methods.getRank(p).equals(Rank.BOURREAU)) {
+		
+			inv.setItem(13, genPerspectiveEnch(Material.INK_SACK, "§9Kit Grampa", Enchantment.PROTECTION_ENVIRONMENTAL, 1, (byte) 0));
+			inv.setItem(22, genPerspective(Material.STONE_AXE, "§9Kit Boucher", (byte) 0));
+			inv.setItem(31, genPerspectiveEnch(Material.LEASH, "§9Kit Esclave", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		}
 		
 		//executeur
 		inv.setItem(5, genPerspective(Material.STAINED_GLASS, "§1§lKits Executeur", (byte) 13));
-		inv.setItem(14, genPerspective(Material.PORK, "§9Kit Sauvage", (byte) 0));
-		inv.setItem(23, genPerspectiveLeatherColor(Material.LEATHER_HELMET, "§9Kit Archer d'élite", 1, 114, 113, 57));
-		inv.setItem(32, genPerspectiveEnch(Material.SEEDS, "§9Kit Moutarde", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		
+		if(Methods.getRank(p).equals(Rank.EXECUTEUR) || Methods.getRank(p).equals(Rank.SANGUINAIRE) || Methods.getRank(p).equals(Rank.MASSACREUR) || 
+				Methods.getRank(p).equals(Rank.DÉCHIQUETEUR) || Methods.getRank(p).equals(Rank.DEATHGOD)) {
+			
+			inv.setItem(14, genPerspective(Material.PORK, "§9Kit Sauvage", (byte) 0));
+			inv.setItem(23, genPerspectiveLeatherColor(Material.LEATHER_HELMET, "§9Kit Archer d'élite", 1, 114, 113, 57));
+			inv.setItem(32, genPerspectiveEnch(Material.SEEDS, "§9Kit Moutarde", Enchantment.PROTECTION_ENVIRONMENTAL, 1,(byte) 0));
+		}else {
+			inv.setItem(14, genPerspectiveBlock("Kit Sauvage", Rank.EXECUTEUR));
+			inv.setItem(23, genPerspectiveBlock("Kit Archer d'élite", Rank.EXECUTEUR));
+			inv.setItem(32, genPerspectiveBlock("Kit Moutarde", Rank.EXECUTEUR));
+		}
 		
 		//sanguinaire
 		inv.setItem(6, genPerspective(Material.STAINED_GLASS, "§c§lKits Sanguinaire", (byte) 14));
