@@ -398,25 +398,25 @@ public class Methods {
 	
 	public static void refreshTabRank(Player p) {
 		if(getRank(p).equals(Rank.VAGABOND)) {
-			NametagEdit.getApi().setSuffix(p, " §8[§bVagabond§8]");
+			NametagEdit.getApi().setSuffix(p, " §b[Vagabond]");
 		}else if(getRank(p).equals(Rank.INQUISITEUR)) {
-			NametagEdit.getApi().setSuffix(p, " §8[§eInquisiteur§8]");
+			NametagEdit.getApi().setSuffix(p, " §e[Inquisiteur]");
 		}else if(getRank(p).equals(Rank.MEURTRIER)) {
-			NametagEdit.getApi().setSuffix(p, " §8[§5Meurtrier§8]");
+			NametagEdit.getApi().setSuffix(p, " §5[Meurtrier]");
 		}else if(getRank(p).equals(Rank.MERCENAIRE)) {
-			NametagEdit.getApi().setSuffix(p, " §8[§aMercenaire§8]");
+			NametagEdit.getApi().setSuffix(p, " §a[Mercenaire]");
 		}else if(getRank(p).equals(Rank.BOURREAU)) {
-			NametagEdit.getApi().setSuffix(p, " §8[§1Bourreau§8]");
+			NametagEdit.getApi().setSuffix(p, " §1[Bourreau]");
 		}else if(getRank(p).equals(Rank.EXECUTEUR)) {
-			NametagEdit.getApi().setSuffix(p, " §8[§2Executeur§8]");
+			NametagEdit.getApi().setSuffix(p, " §2[Executeur]");
 		}else if(getRank(p).equals(Rank.SANGUINAIRE)) {
-			NametagEdit.getApi().setSuffix(p, " §8[§cSanguinaire§8]");
+			NametagEdit.getApi().setSuffix(p, " §c[Sanguinaire]");
 		}else if(getRank(p).equals(Rank.MASSACREUR)) {
-			NametagEdit.getApi().setSuffix(p, " §8[§6Massacreur§8]");
+			NametagEdit.getApi().setSuffix(p, " §6[Massacreur]");
 		}else if(getRank(p).equals(Rank.DÉCHIQUETEUR)) {
-			NametagEdit.getApi().setSuffix(p, " §8[§7Déchiqueteur§8]");
+			NametagEdit.getApi().setSuffix(p, " §7[Déchiqueteur]");
 		}else if(getRank(p).equals(Rank.DEATHGOD)) {
-			NametagEdit.getApi().setSuffix(p, " §8[§0DeathGod§8]");
+			NametagEdit.getApi().setSuffix(p, " §0[DeathGod]");
 		}
 	}
 }
