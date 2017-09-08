@@ -143,7 +143,7 @@ public class GUI implements CommandExecutor, Listener {
 			inv.setItem(19, genPerspective(Material.SUGAR_CANE, "§9Kit Panda", (byte) 0));
 			inv.setItem(28, genPerspective(Material.LEATHER_HELMET, "§9Kit Ours", (byte) 0));
 		}else {
-			inv.setItem(10, genPerspective(Material.IRON_INGOT, "§9Kit Mineur", (byte) 0));
+			inv.setItem(10, genPerspectiveBlock("Kit Mineur", Rank.INQUISITEUR));
 			inv.setItem(19, genPerspectiveBlock("Kit Panda", Rank.INQUISITEUR));
 			inv.setItem(28, genPerspectiveBlock("Kit Ours", Rank.INQUISITEUR));
 		}
