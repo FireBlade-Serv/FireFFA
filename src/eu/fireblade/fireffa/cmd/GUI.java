@@ -137,7 +137,8 @@ public class GUI implements CommandExecutor, Listener {
 		
 		if(Methods.getRank(p).equals(Rank.EXECUTEUR) || Methods.getRank(p).equals(Rank.SANGUINAIRE) || Methods.getRank(p).equals(Rank.MASSACREUR) || 
 				Methods.getRank(p).equals(Rank.DÉCHIQUETEUR) || Methods.getRank(p).equals(Rank.DEATHGOD) || 
-				Methods.getRank(p).equals(Rank.BOURREAU) || Methods.getRank(p).equals(Rank.MERCENAIRE) || Methods.getRank(p).equals(Rank.MEURTRIER)) {
+				Methods.getRank(p).equals(Rank.BOURREAU) || Methods.getRank(p).equals(Rank.MERCENAIRE) || Methods.getRank(p).equals(Rank.MEURTRIER) ||
+				Methods.getRank(p).equals(Rank.INQUISITEUR)) {
 			
 			inv.setItem(10, genPerspective(Material.IRON_INGOT, "§9Kit Mineur", (byte) 0));
 			inv.setItem(19, genPerspective(Material.SUGAR_CANE, "§9Kit Panda", (byte) 0));
