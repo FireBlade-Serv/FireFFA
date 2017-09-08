@@ -106,6 +106,8 @@ public class Events implements Listener {
 		p.setLevel(0);
 		
 		p.setGameMode(GameMode.ADVENTURE);
+		
+		Methods.refreshTabRank(p);
 	}
 	
 	@EventHandler

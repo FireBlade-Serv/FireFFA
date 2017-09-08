@@ -16,6 +16,8 @@ import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.FireworkMeta;
 
+import com.nametagedit.plugin.NametagEdit;
+
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.enums.Rank;
@@ -110,6 +112,8 @@ public class Methods {
 	
 	public static void refreshRank(Player p) {
 		int kills = SQLConnection.getKills(p);
+		
+		Methods.refreshTabRank(p);
 		
 		if(kills < 50) {
 			//Vagabond
@@ -390,5 +394,29 @@ public class Methods {
 	          }
 	     }
 	     return players;
+	}
+	
+	public static void refreshTabRank(Player p) {
+		if(getRank(p).equals(Rank.VAGABOND)) {
+			NametagEdit.getApi().setSuffix(p, " §8[§bVagabond§8]");
+		}else if(getRank(p).equals(Rank.INQUISITEUR)) {
+			NametagEdit.getApi().setSuffix(p, " §8[§eInquisiteur§8]");
+		}else if(getRank(p).equals(Rank.MEURTRIER)) {
+			NametagEdit.getApi().setSuffix(p, " §8[§5Meurtrier§8]");
+		}else if(getRank(p).equals(Rank.MERCENAIRE)) {
+			NametagEdit.getApi().setSuffix(p, " §8[§aMercenaire§8]");
+		}else if(getRank(p).equals(Rank.BOURREAU)) {
+			NametagEdit.getApi().setSuffix(p, " §8[§1Bourreau§8]");
+		}else if(getRank(p).equals(Rank.EXECUTEUR)) {
+			NametagEdit.getApi().setSuffix(p, " §8[§2Executeur§8]");
+		}else if(getRank(p).equals(Rank.SANGUINAIRE)) {
+			NametagEdit.getApi().setSuffix(p, " §8[§cSanguinaire§8]");
+		}else if(getRank(p).equals(Rank.MASSACREUR)) {
+			NametagEdit.getApi().setSuffix(p, " §8[§6Massacreur§8]");
+		}else if(getRank(p).equals(Rank.DÉCHIQUETEUR)) {
+			NametagEdit.getApi().setSuffix(p, " §8[§7Déchiqueteur§8]");
+		}else if(getRank(p).equals(Rank.DEATHGOD)) {
+			NametagEdit.getApi().setSuffix(p, " §8[§0DeathGod§8]");
+		}
 	}
 }

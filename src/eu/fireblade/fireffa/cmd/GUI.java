@@ -196,7 +196,7 @@ public class GUI implements CommandExecutor, Listener {
 		}
 		
 		//executeur
-		inv.setItem(5, genPerspective(Material.STAINED_GLASS, "§1§lKits Executeur", (byte) 13));
+		inv.setItem(5, genPerspective(Material.STAINED_GLASS, "§2§lKits Executeur", (byte) 13));
 		
 		if(Methods.getRank(p).equals(Rank.EXECUTEUR) || Methods.getRank(p).equals(Rank.SANGUINAIRE) || Methods.getRank(p).equals(Rank.MASSACREUR) || 
 				Methods.getRank(p).equals(Rank.DÉCHIQUETEUR) || Methods.getRank(p).equals(Rank.DEATHGOD)) {
