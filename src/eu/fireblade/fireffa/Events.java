@@ -1,7 +1,5 @@
 package eu.fireblade.fireffa;
 
-import java.beans.MethodDescriptor;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
@@ -50,7 +48,6 @@ import eu.fireblade.fireffa.ability.Copy;
 import eu.fireblade.fireffa.ability.Enderman;
 import eu.fireblade.fireffa.ability.Gameur;
 import eu.fireblade.fireffa.cmd.GUI;
-import eu.fireblade.fireffa.enums.Rank;
 import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.nms.DamageArmorStand;
 import eu.fireblade.fireffa.sql.SQLConnectionFFA;
