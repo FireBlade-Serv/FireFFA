@@ -3,7 +3,7 @@ package eu.fireblade.fireffa.util;
 import org.bukkit.entity.Player;
 
 import eu.fireblade.fireffa.Var;
-import eu.fireblade.fireffa.sql.SQLConnection;
+import eu.fireblade.fireffa.sql.SQLConnectionFFA;
 import fr.glowstoner.api.bukkit.scoreboard.GlowstoneScoreboardAPI;
 
 public class Scoreboard {
@@ -39,15 +39,15 @@ public class Scoreboard {
 	}
 	
 	private static String genKills(Player p) {
-		if(SQLConnection.getKills(p) == 0) {
+		if(SQLConnectionFFA.getKills(p) == 0) {
 			return "§cAucun Kill";
 		}else {
-			return "§e"+SQLConnection.getKills(p);
+			return "§e"+SQLConnectionFFA.getKills(p);
 		}
 	}
 	
 	private static String refreshRank(Player p) {
-		int kills = SQLConnection.getKills(p);
+		int kills = SQLConnectionFFA.getKills(p);
 		
 		if(kills < 50) {
 			//Vagabond

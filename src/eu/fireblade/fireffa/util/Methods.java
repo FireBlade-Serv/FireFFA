@@ -22,7 +22,7 @@ import com.nametagedit.plugin.NametagEdit;
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.enums.Rank;
-import eu.fireblade.fireffa.sql.SQLConnection;
+import eu.fireblade.fireffa.sql.SQLConnectionFFA;
 import net.md_5.bungee.api.ChatColor;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
@@ -113,7 +113,7 @@ public class Methods {
 	}
 	
 	public static void refreshRank(Player p) {
-		int kills = SQLConnection.getKills(p);
+		int kills = SQLConnectionFFA.getKills(p);
 		
 		Methods.refreshTabRank(p);
 		
@@ -341,7 +341,7 @@ public class Methods {
 	}
 	
 	public static Rank getRank(Player p) {
-		int kills = SQLConnection.getKills(p);
+		int kills = SQLConnectionFFA.getKills(p);
 		
 		if(kills < 50) {
 			//Vagabond
@@ -400,25 +400,25 @@ public class Methods {
 	
 	public static void refreshTabRank(Player p) {
 		if(getRank(p).equals(Rank.VAGABOND)) {
-			NametagEdit.getApi().setSuffix(p, " §b[Vagabond]");
+			NametagEdit.getApi().setPrefix(p, " §b[Vagabond]");
 		}else if(getRank(p).equals(Rank.INQUISITEUR)) {
-			NametagEdit.getApi().setSuffix(p, " §e[Inquisiteur]");
+			NametagEdit.getApi().setPrefix(p, " §e[Inquisiteur]");
 		}else if(getRank(p).equals(Rank.MEURTRIER)) {
-			NametagEdit.getApi().setSuffix(p, " §5[Meurtrier]");
+			NametagEdit.getApi().setPrefix(p, " §5[Meurtrier]");
 		}else if(getRank(p).equals(Rank.MERCENAIRE)) {
-			NametagEdit.getApi().setSuffix(p, " §a[Mercenaire]");
+			NametagEdit.getApi().setPrefix(p, " §a[Mercenaire]");
 		}else if(getRank(p).equals(Rank.BOURREAU)) {
-			NametagEdit.getApi().setSuffix(p, " §1[Bourreau]");
+			NametagEdit.getApi().setPrefix(p, " §1[Bourreau]");
 		}else if(getRank(p).equals(Rank.EXECUTEUR)) {
 			NametagEdit.getApi().setSuffix(p, " §2[Executeur]");
 		}else if(getRank(p).equals(Rank.SANGUINAIRE)) {
-			NametagEdit.getApi().setSuffix(p, " §c[Sanguinaire]");
+			NametagEdit.getApi().setPrefix(p, " §c[Sanguinaire]");
 		}else if(getRank(p).equals(Rank.MASSACREUR)) {
-			NametagEdit.getApi().setSuffix(p, " §6[Massacreur]");
+			NametagEdit.getApi().setPrefix(p, " §6[Massacreur]");
 		}else if(getRank(p).equals(Rank.DÉCHIQUETEUR)) {
-			NametagEdit.getApi().setSuffix(p, " §7[Déchiqueteur]");
+			NametagEdit.getApi().setPrefix(p, " §7[Déchiqueteur]");
 		}else if(getRank(p).equals(Rank.DEATHGOD)) {
-			NametagEdit.getApi().setSuffix(p, " §0[DeathGod]");
+			NametagEdit.getApi().setPrefix(p, " §0[DeathGod]");
 		}
 	}
 	

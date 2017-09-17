@@ -8,7 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 
-import eu.fireblade.fireffa.sql.SQLConnection;
+import eu.fireblade.fireffa.sql.SQLConnectionFFA;
 import eu.fireblade.fireffa.util.Methods;
 import eu.fireblade.fireffa.util.Tp;
 
@@ -100,9 +100,9 @@ public class Main extends JavaPlugin{
 		
 		Methods.schedulerUtils();
 		
-		SQLConnection.connection();
+		SQLConnectionFFA.connection();
 		
-		SQLConnection.autoConnection();
+		SQLConnectionFFA.autoConnection();
 	}
 	
 	@Override
@@ -111,7 +111,7 @@ public class Main extends JavaPlugin{
 		
 		Bukkit.getScheduler().cancelTask(Var.wbtask);
 		
-		SQLConnection.disconnect();
+		SQLConnectionFFA.disconnect();
 		
 		Bukkit.getScheduler().cancelTask(Var.sqltask);
 		
