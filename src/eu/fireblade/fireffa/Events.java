@@ -617,23 +617,23 @@ public class Events implements Listener {
 		}else if (PermissionsEx.getUser(p).inGroup("Ultimate")) {
 			Methods.chatFormat(p, msg, "§5[Ultimate]", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Youtuber")) {
-			Methods.chatFormat(p, msg, "§e[Youtuber]", e);
+			Methods.chatFormat(p, "§e"+msg, "§e[Youtuber]", e);
 		}else if (PermissionsEx.getUser(p).inGroup("RespCom")) {
-			Methods.chatFormat(p, msg, "§6[Resp. Com.]", e);
+			Methods.chatFormat(p, "§6"+msg, "§8[§6Resp. Com.§8]§6", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Dev")) {
-			Methods.chatFormat(p, msg, "§8[§9Dev§8]§9", e);
+			Methods.chatFormat(p, "§9"+msg, "§8[§9Dev§8]§9", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Builder")) {
-			Methods.chatFormat(p, msg, "§8[§6Builder§8]§6", e);
+			Methods.chatFormat(p, "§6"+msg, "§8[§6Builder§8]§6", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Guide")) {
-			Methods.chatFormat(p, msg, "§8[§2Guide§8]§2", e);
+			Methods.chatFormat(p, "§2"+msg, "§8[§2Guide§8]§2", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Assistant")) {
-			Methods.chatFormat(p, msg, "§8[§6Assistant§8]§6", e);
+			Methods.chatFormat(p, "§6"+msg, "§8[§6Assistant§8]§6", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Modérateur")) {
-			Methods.chatFormat(p, msg, "§8[§3Modérateur§8]§3", e);
+			Methods.chatFormat(p, "§3"+msg, "§8[§3Modérateur§8]§3", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Admin")) {
-			Methods.chatFormat(p, msg, "§8[§4Admin§8]§4", e);
+			Methods.chatFormat(p, "§4"+msg, "§8[§4Admin§8]§4", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Owner")) {
-			Methods.chatFormat(p, msg, "§8[§4Owner§8]§4", e);
+			Methods.chatFormat(p, "4"+msg, "§8[§4Owner§8]§4", e);
 		}
 	}
 }
