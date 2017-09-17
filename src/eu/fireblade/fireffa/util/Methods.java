@@ -14,7 +14,6 @@ import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.inventory.meta.FireworkMeta;
 
 import com.nametagedit.plugin.NametagEdit;
@@ -23,7 +22,6 @@ import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.enums.Rank;
 import eu.fireblade.fireffa.sql.SQLConnectionFFA;
-import net.md_5.bungee.api.ChatColor;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
 import net.minecraft.server.v1_8_R3.PacketPlayOutChat;
