@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 
-public class SQLConnection {
+public class SQLConnectionFFA {
 	
 	private static Connection connection;
 	

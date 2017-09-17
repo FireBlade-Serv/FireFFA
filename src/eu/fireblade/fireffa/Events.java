@@ -51,7 +51,7 @@ import eu.fireblade.fireffa.cmd.GUI;
 import eu.fireblade.fireffa.enums.Rank;
 import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.nms.DamageArmorStand;
-import eu.fireblade.fireffa.sql.SQLConnection;
+import eu.fireblade.fireffa.sql.SQLConnectionFFA;
 import eu.fireblade.fireffa.util.Methods;
 import eu.fireblade.fireffa.util.Scoreboard;
 import eu.fireblade.fireffa.util.Tp;
@@ -91,8 +91,8 @@ public class Events implements Listener {
 		
 		Var.killStreak.put(p, 0);
 		
-		if(!SQLConnection.hasAccount(p)) {
-			SQLConnection.createAccount(p);
+		if(!SQLConnectionFFA.hasAccount(p)) {
+			SQLConnectionFFA.createAccount(p);
 		}
 		
 		Scoreboard.displayScoreboard(p);
@@ -313,7 +313,7 @@ public class Events implements Listener {
 					jawad.setHealth(jawad.getHealth() + 6);
 				}
 				
-				SQLConnection.setKills(jawad, SQLConnection.getKills(jawad) + 1);
+				SQLConnectionFFA.setKills(jawad, SQLConnectionFFA.getKills(jawad) + 1);
 				
 				IChatBaseComponent icbc = ChatSerializer.a("{\"text\": \" + 1 KILL \"}");
 				
