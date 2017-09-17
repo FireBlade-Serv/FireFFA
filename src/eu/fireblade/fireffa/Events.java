@@ -61,6 +61,7 @@ import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
 import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand;
 import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand.EnumClientCommand;
 import net.minecraft.server.v1_8_R3.PacketPlayOutChat;
+import ru.tehkode.permissions.bukkit.PermissionsEx;
 
 public class Events implements Listener {
 	
@@ -604,6 +605,18 @@ public class Events implements Listener {
 	
 	@EventHandler
 	public void onChat(AsyncPlayerChatEvent e) {
+		Player p = e.getPlayer();
+		String msg = e.getMessage();
+		
+		if(PermissionsEx.getUser(p).inGroup("Membre")){
+		   Methods.setFormat(p, ChatColor.GRAY+"[Membre]", msg, e);
+		}else if (PermissionsEx.getUser(p).inGroup("Fire")) {
+			Methods.setFormat(p, ChatColor.YELLOW+"[Fire]", msg, e);
+		}else if (PermissionsEx.getUser(p).inGroup("Ultra")) {
+			Methods.setFormat(p, ChatColor.GOLD+"[Ultra]", msg, e);
+		}else if (PermissionsEx.getUser(p).inGroup("Ultimate")) {
+			Methods.setFormat(p,"§5[Ultimate]", msg, e);
+		}
 		
 	}
 }

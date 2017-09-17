@@ -14,6 +14,7 @@ import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.inventory.meta.FireworkMeta;
 
 import com.nametagedit.plugin.NametagEdit;
@@ -418,5 +419,18 @@ public class Methods {
 		}else if(getRank(p).equals(Rank.DEATHGOD)) {
 			NametagEdit.getApi().setSuffix(p, " §0[DeathGod]");
 		}
+	}
+	
+	public static void setFormat(Player p, String global, String msg, AsyncPlayerChatEvent e) {
+		 if(Methods.getRank(p).equals(Rank.VAGABOND)) e.setFormat(global+" §b[Vagabond] "+p.getName()+" >> "+msg);
+		 if(Methods.getRank(p).equals(Rank.INQUISITEUR)) e.setFormat(global+" §e[Inquisiteur] "+p.getName()+" >> "+msg);
+		 if(Methods.getRank(p).equals(Rank.MEURTRIER)) e.setFormat(global+" §5[Meurtrier] "+p.getName()+" >> "+msg);
+		 if(Methods.getRank(p).equals(Rank.MERCENAIRE)) e.setFormat(global+" §a[Mercenaire] "+p.getName()+" >> "+msg);
+		 if(Methods.getRank(p).equals(Rank.BOURREAU)) e.setFormat(global+" §9[Bourreau] "+p.getName()+" >> "+msg);
+		 if(Methods.getRank(p).equals(Rank.EXECUTEUR)) e.setFormat(global+" §2[Executeur] "+p.getName()+" >> "+msg);
+		 if(Methods.getRank(p).equals(Rank.SANGUINAIRE)) e.setFormat(global+" §c[Sanguinaire] "+p.getName()+" >> "+msg);
+		 if(Methods.getRank(p).equals(Rank.MASSACREUR)) e.setFormat(global+" §6[Massacreur] "+p.getName()+" >> "+msg);
+		 if(Methods.getRank(p).equals(Rank.DÉCHIQUETEUR)) e.setFormat(global+" §7[Déchiqueteur] "+p.getName()+" >> "+msg);
+		 if(Methods.getRank(p).equals(Rank.DEATHGOD)) e.setFormat(global+" §0[DeathGod] "+p.getName()+" >> "+msg);
 	}
 }
