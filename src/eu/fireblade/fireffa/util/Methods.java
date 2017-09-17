@@ -420,6 +420,5 @@ public class Methods {
 		}else if(getRank(p).equals(Rank.DEATHGOD)) {
 			NametagEdit.getApi().setSuffix(p, " §0[DeathGod]");
 		}
-	}
-	
+	}	
 }
