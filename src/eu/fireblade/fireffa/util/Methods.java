@@ -478,7 +478,7 @@ public class Methods {
 		}else if(getRank(p).equals(Rank.BOURREAU)) {
 			NametagEdit.getApi().setPrefix(p, " §1[Bourreau] ");
 		}else if(getRank(p).equals(Rank.EXECUTEUR)) {
-			NametagEdit.getApi().setSuffix(p, " §2[Executeur] ");
+			NametagEdit.getApi().setPrefix(p, " §2[Executeur] ");
 		}else if(getRank(p).equals(Rank.SANGUINAIRE)) {
 			NametagEdit.getApi().setPrefix(p, " §c[Sanguinaire] ");
 		}else if(getRank(p).equals(Rank.MASSACREUR)) {
