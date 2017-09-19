@@ -20,7 +20,7 @@ public class Scoreboard {
 		gs.setLine(" §8§l>> "+genKills(p), 7);
 		gs.setLine("§4    ", 8);
 		gs.setLine("§7§lKills Restants :", 9);
-		gs.setLine("§8§l >>§c "+Methods.getRemainingKills(p), 10);
+		gs.setLine("§8§l >>§e "+Methods.getRemainingKills(p), 10);
 		gs.setLine("§1   ", 11);
 		gs.setLine("§7§lKillStreak :", 12);
 		gs.setLine("§8§l >> "+genKillStreak(p), 13);

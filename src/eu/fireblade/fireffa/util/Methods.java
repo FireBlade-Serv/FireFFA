@@ -467,28 +467,32 @@ public class Methods {
 	}
 	
 	public static void refreshTabRank(Player p) {
+		int kills = SQLConnectionFFA.getKills(p);
+		
 		if(getRank(p).equals(Rank.VAGABOND)) {
-			NametagEdit.getApi().setPrefix(p, " §b[Vagabond] ");
+			NametagEdit.getApi().setPrefix(p, "§b[Vagabond] ");
 		}else if(getRank(p).equals(Rank.INQUISITEUR)) {
-			NametagEdit.getApi().setPrefix(p, " §e[Inquisiteur] ");
+			NametagEdit.getApi().setPrefix(p, "§e[Inquisiteur] ");
 		}else if(getRank(p).equals(Rank.MEURTRIER)) {
-			NametagEdit.getApi().setPrefix(p, " §5[Meurtrier] ");
+			NametagEdit.getApi().setPrefix(p, "§5[Meurtrier] ");
 		}else if(getRank(p).equals(Rank.MERCENAIRE)) {
-			NametagEdit.getApi().setPrefix(p, " §a[Mercenaire] ");
+			NametagEdit.getApi().setPrefix(p, "§a[Mercenaire] ");
 		}else if(getRank(p).equals(Rank.BOURREAU)) {
-			NametagEdit.getApi().setPrefix(p, " §1[Bourreau] ");
+			NametagEdit.getApi().setPrefix(p, "§1[Bourreau] ");
 		}else if(getRank(p).equals(Rank.EXECUTEUR)) {
-			NametagEdit.getApi().setPrefix(p, " §2[Executeur] ");
+			NametagEdit.getApi().setPrefix(p, "§2[Executeur] ");
 		}else if(getRank(p).equals(Rank.SANGUINAIRE)) {
-			NametagEdit.getApi().setPrefix(p, " §c[Sanguinaire] ");
+			NametagEdit.getApi().setPrefix(p, "§c[Sanguinaire] ");
 		}else if(getRank(p).equals(Rank.MASSACREUR)) {
-			NametagEdit.getApi().setPrefix(p, " §6[Massacreur] ");
+			NametagEdit.getApi().setPrefix(p, "§6[Massacreur] ");
 		}else if(getRank(p).equals(Rank.DÉCHIQUETEUR)) {
-			NametagEdit.getApi().setPrefix(p, " §7[Déchiqueteur] ");
+			NametagEdit.getApi().setPrefix(p, "§7[Déchiqueteur] ");
 		}else if(getRank(p).equals(Rank.DEATHGOD)) {
-			NametagEdit.getApi().setPrefix(p, " §0[DeathGod] ");
+			NametagEdit.getApi().setPrefix(p, "§0[DeathGod] ");
 		}
-	}	
+		
+		NametagEdit.getApi().setSuffix(p, " §["+kills+"]");
+	}
 	
 	public static void chatFormat(Player p, String msg, String global, AsyncPlayerChatEvent e) {
 		if(Methods.getRank(p).equals(Rank.VAGABOND)) e.setFormat(global+" §b[Vagabond] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);

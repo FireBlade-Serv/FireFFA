@@ -323,6 +323,8 @@ public class Events implements Listener {
 				Methods.refreshRank(jawad);
 				
 				Scoreboard.displayScoreboard(jawad);
+				
+				Methods.refreshTabRank(p);
 			}
 			
 			for(Player online : Bukkit.getOnlinePlayers()) {
