@@ -22,6 +22,7 @@ import com.nametagedit.plugin.NametagEdit;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.enums.GlobalRank;
 import eu.fireblade.fireffa.enums.Rank;
 import eu.fireblade.fireffa.sql.SQLConnectionFFA;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
@@ -29,6 +30,7 @@ import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
 import net.minecraft.server.v1_8_R3.PacketPlayOutChat;
 import net.minecraft.server.v1_8_R3.PacketPlayOutWorldBorder;
 import net.minecraft.server.v1_8_R3.WorldBorder;
+import ru.tehkode.permissions.bukkit.PermissionsEx;
 
 public class Methods {
 	
@@ -139,9 +141,9 @@ public class Methods {
 				fm.setPower(1);
 				f.setFireworkMeta(fm);
 				
-				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à "+p.getName()+" ! Il a désormait le grade §e§lInquisiteur §a!");
+				Bukkit.broadcastMessage("Â§6[Â§eFireFFAÂ§6] Â§aBravo Ã  "+p.getName()+" ! Il a dÃ©sormait le grade Â§eÂ§lInquisiteur Â§a!");
 				
-				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §e§lInquisiteur §a! \"}");
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" Â§aVous avez dÃ©sormais le grade Â§eÂ§lInquisiteur Â§a! \"}");
 				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
 				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
 			}
@@ -163,9 +165,9 @@ public class Methods {
 				fm.setPower(1);
 				f.setFireworkMeta(fm);
 				
-				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §5§lMeurtrier §a!");
+				Bukkit.broadcastMessage("Â§6[Â§eFireFFAÂ§6] Â§aBravo Ã  Â§l"+p.getName()+"Â§a ! Il a dÃ©sormait le grade Â§5Â§lMeurtrier Â§a!");
 				
-				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §5§lMeurtrier §a! \"}");
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" Â§aVous avez dÃ©sormais le grade Â§5Â§lMeurtrier Â§a! \"}");
 				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
 				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
 			}
@@ -187,9 +189,9 @@ public class Methods {
 				fm.setPower(1);
 				f.setFireworkMeta(fm);
 				
-				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §lMercenaire §a!");
+				Bukkit.broadcastMessage("Â§6[Â§eFireFFAÂ§6] Â§aBravo Ã  Â§l"+p.getName()+"Â§a ! Il a dÃ©sormait le grade Â§lMercenaire Â§a!");
 				
-				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §lMercenaire §a! \"}");
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" Â§aVous avez dÃ©sormais le grade Â§lMercenaire Â§a! \"}");
 				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
 				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
 			}
@@ -211,9 +213,9 @@ public class Methods {
 				fm.setPower(1);
 				f.setFireworkMeta(fm);
 				
-				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §5§lMeurtrier §a!");
+				Bukkit.broadcastMessage("Â§6[Â§eFireFFAÂ§6] Â§aBravo Ã  Â§l"+p.getName()+"Â§a ! Il a dÃ©sormait le grade Â§5Â§lMeurtrier Â§a!");
 				
-				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §5§lMeurtrier §a! \"}");
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" Â§aVous avez dÃ©sormais le grade Â§5Â§lMeurtrier Â§a! \"}");
 				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
 				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
 			}
@@ -235,9 +237,9 @@ public class Methods {
 				fm.setPower(1);
 				f.setFireworkMeta(fm);
 				
-				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §1§lExecuteur §a!");
+				Bukkit.broadcastMessage("Â§6[Â§eFireFFAÂ§6] Â§aBravo Ã  Â§l"+p.getName()+"Â§a ! Il a dÃ©sormait le grade Â§1Â§lExecuteur Â§a!");
 				
-				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §1§lExecuteur §a! \"}");
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" Â§aVous avez dÃ©sormais le grade Â§1Â§lExecuteur Â§a! \"}");
 				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
 				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
 			}
@@ -259,9 +261,9 @@ public class Methods {
 				fm.setPower(1);
 				f.setFireworkMeta(fm);
 				
-				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §c§lSanguinaire §a!");
+				Bukkit.broadcastMessage("Â§6[Â§eFireFFAÂ§6] Â§aBravo Ã  Â§l"+p.getName()+"Â§a ! Il a dÃ©sormait le grade Â§cÂ§lSanguinaire Â§a!");
 				
-				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §c§lSanguinaire §a! \"}");
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" Â§aVous avez dÃ©sormais le grade Â§cÂ§lSanguinaire Â§a! \"}");
 				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
 				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
 			}
@@ -283,14 +285,14 @@ public class Methods {
 				fm.setPower(1);
 				f.setFireworkMeta(fm);
 				
-				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §6§lMassacreur §a!");
+				Bukkit.broadcastMessage("Â§6[Â§eFireFFAÂ§6] Â§aBravo Ã  Â§l"+p.getName()+"Â§a ! Il a dÃ©sormait le grade Â§6Â§lMassacreur Â§a!");
 				
-				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §6§lMassacreur §a! \"}");
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" Â§aVous avez dÃ©sormais le grade Â§6Â§lMassacreur Â§a! \"}");
 				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
 				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
 			}
 		}else if(kills >= 2300 && kills < 3000) {
-			//Déchiqueteur
+			//DÃ©chiqueteur
 			
 			if(kills == 2300) {
 				Firework f = (Firework) p.getWorld().spawn(p.getLocation(), Firework.class);
@@ -307,9 +309,9 @@ public class Methods {
 				fm.setPower(1);
 				f.setFireworkMeta(fm);
 				
-				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §7§lDéchiqueteur §a!");
+				Bukkit.broadcastMessage("Â§6[Â§eFireFFAÂ§6] Â§aBravo Ã  Â§l"+p.getName()+"Â§a ! Il a dÃ©sormait le grade Â§7Â§lDÃ©chiqueteur Â§a!");
 				
-				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §7§lDéchiqueteur §a! \"}");
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" Â§aVous avez dÃ©sormais le grade Â§7Â§lDÃ©chiqueteur Â§a! \"}");
 				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
 				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
 			}
@@ -331,9 +333,9 @@ public class Methods {
 				fm.setPower(1);
 				f.setFireworkMeta(fm);
 				
-				Bukkit.broadcastMessage("§6[§eFireFFA§6] §aBravo à §l"+p.getName()+"§a ! Il a désormait le grade §0§lDeathGod §a!");
+				Bukkit.broadcastMessage("Â§6[Â§eFireFFAÂ§6] Â§aBravo Ã  Â§l"+p.getName()+"Â§a ! Il a dÃ©sormait le grade Â§0Â§lDeathGod Â§a!");
 				
-				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" §aVous avez désormais le grade §0§lDeathGod §a! \"}");
+				IChatBaseComponent chat = ChatSerializer.a("{\"text\": \" Â§aVous avez dÃ©sormais le grade Â§0Â§lDeathGod Â§a! \"}");
 				((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(chat, (byte) 2));
 				p.playSound(p.getEyeLocation(), Sound.LEVEL_UP, 30, 30);
 			}
@@ -376,13 +378,79 @@ public class Methods {
 			
 			return Rank.MASSACREUR;
 		}else if(kills >= 2300 && kills < 3000) {
-			//Déchiqueteur
+			//DÃ©chiqueteur
 			
-			return Rank.DÉCHIQUETEUR;
+			return Rank.DÃ‰CHIQUETEUR;
 		}else if(kills >= 3000) {
 			//DeathGod
 		
 			return Rank.DEATHGOD;
+		}else {
+			return null;
+		}
+	}
+	
+	public static String getRemainingKills(Player p) {
+		int kills = SQLConnectionFFA.getKills(p);
+		
+		if(kills < 50) {
+			//Vagabond
+			
+			int re = 50 - kills;
+			
+			return ""+re;
+		}else if(kills >= 50 && kills < 150) {
+			//Inquisiteur
+			
+			int re = 150 - kills;
+			
+			return ""+re;
+		}else if(kills >= 150 && kills < 300) {
+			//Meurtrier
+			
+			int re = 300 - kills;
+			
+			return ""+re;
+		}else if(kills >= 300 && kills < 500) {
+			//Mercenaire
+			
+			int re = 500 - kills;
+			
+			return ""+re;
+		}else if(kills >= 500 && kills < 800) {
+			//Bourreau
+			
+			int re = 800 - kills;
+			
+			return ""+re;
+		}else if(kills >= 800 && kills < 1200) {
+			//Executeur
+			
+			int re = 1200 - kills;
+			
+			return ""+re;
+		}else if(kills >= 1200 && kills < 1700) {
+			//Sanguinaire
+			
+			int re = 1700 - kills;
+			
+			return ""+re;
+		}else if(kills >= 1700 && kills < 2300) {
+			//Massacreur
+			
+			int re = 2300 - kills;
+			
+			return ""+re;
+		}else if(kills >= 2300 && kills < 3000) {
+			//DÃ©chiqueteur
+			
+			int re = 3000 - kills;
+			
+			return ""+re;
+		}else if(kills >= 3000) {
+			//DeathGod
+		
+			return "âˆž";
 		}else {
 			return null;
 		}
@@ -400,38 +468,110 @@ public class Methods {
 	
 	public static void refreshTabRank(Player p) {
 		if(getRank(p).equals(Rank.VAGABOND)) {
-			NametagEdit.getApi().setPrefix(p, " §b[Vagabond]");
+			NametagEdit.getApi().setPrefix(p, " Â§b[Vagabond]");
 		}else if(getRank(p).equals(Rank.INQUISITEUR)) {
-			NametagEdit.getApi().setPrefix(p, " §e[Inquisiteur]");
+			NametagEdit.getApi().setPrefix(p, " Â§e[Inquisiteur]");
 		}else if(getRank(p).equals(Rank.MEURTRIER)) {
-			NametagEdit.getApi().setPrefix(p, " §5[Meurtrier]");
+			NametagEdit.getApi().setPrefix(p, " Â§5[Meurtrier]");
 		}else if(getRank(p).equals(Rank.MERCENAIRE)) {
-			NametagEdit.getApi().setPrefix(p, " §a[Mercenaire]");
+			NametagEdit.getApi().setPrefix(p, " Â§a[Mercenaire]");
 		}else if(getRank(p).equals(Rank.BOURREAU)) {
-			NametagEdit.getApi().setPrefix(p, " §1[Bourreau]");
+			NametagEdit.getApi().setPrefix(p, " Â§1[Bourreau]");
 		}else if(getRank(p).equals(Rank.EXECUTEUR)) {
-			NametagEdit.getApi().setSuffix(p, " §2[Executeur]");
+			NametagEdit.getApi().setSuffix(p, " Â§2[Executeur]");
 		}else if(getRank(p).equals(Rank.SANGUINAIRE)) {
-			NametagEdit.getApi().setPrefix(p, " §c[Sanguinaire]");
+			NametagEdit.getApi().setPrefix(p, " Â§c[Sanguinaire]");
 		}else if(getRank(p).equals(Rank.MASSACREUR)) {
-			NametagEdit.getApi().setPrefix(p, " §6[Massacreur]");
-		}else if(getRank(p).equals(Rank.DÉCHIQUETEUR)) {
-			NametagEdit.getApi().setPrefix(p, " §7[Déchiqueteur]");
+			NametagEdit.getApi().setPrefix(p, " Â§6[Massacreur]");
+		}else if(getRank(p).equals(Rank.DÃ‰CHIQUETEUR)) {
+			NametagEdit.getApi().setPrefix(p, " Â§7[DÃ©chiqueteur]");
 		}else if(getRank(p).equals(Rank.DEATHGOD)) {
-			NametagEdit.getApi().setPrefix(p, " §0[DeathGod]");
+			NametagEdit.getApi().setPrefix(p, " Â§0[DeathGod]");
 		}
 	}	
 	
 	public static void chatFormat(Player p, String msg, String global, AsyncPlayerChatEvent e) {
-		if(Methods.getRank(p).equals(Rank.VAGABOND)) e.setFormat(global+" §b[Vagabond] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.INQUISITEUR)) e.setFormat(global+" §e[Inquisiteur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.MEURTRIER)) e.setFormat(global+" §5[Meurtrier] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.MERCENAIRE)) e.setFormat(global+" §a[Mercenaire] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.BOURREAU)) e.setFormat(global+" §9[Bourreau] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.EXECUTEUR)) e.setFormat(global+" §2[Executeur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.SANGUINAIRE)) e.setFormat(global+" §c[Sanguinaire] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.MASSACREUR)) e.setFormat(global+" §6[Massacreur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.DÉCHIQUETEUR)) e.setFormat(global+" §7[Déchiqueteur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.DEATHGOD)) e.setFormat(global+" §0[DeathGod] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.VAGABOND)) e.setFormat(global+" Â§b[Vagabond] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.INQUISITEUR)) e.setFormat(global+" Â§e[Inquisiteur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.MEURTRIER)) e.setFormat(global+" Â§5[Meurtrier] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.MERCENAIRE)) e.setFormat(global+" Â§a[Mercenaire] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.BOURREAU)) e.setFormat(global+" Â§9[Bourreau] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.EXECUTEUR)) e.setFormat(global+" Â§2[Executeur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.SANGUINAIRE)) e.setFormat(global+" Â§c[Sanguinaire] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.MASSACREUR)) e.setFormat(global+" Â§6[Massacreur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.DÃ‰CHIQUETEUR)) e.setFormat(global+" Â§7[DÃ©chiqueteur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.DEATHGOD)) e.setFormat(global+" Â§0[DeathGod] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+	}
+	
+	public static GlobalRank getGlobalRank(Player p) {
+		if(PermissionsEx.getUser(p).inGroup("Membre")) {
+			return GlobalRank.MEMBRE;
+		}else if(PermissionsEx.getUser(p).inGroup("Fire")) {
+			return GlobalRank.FIRE;
+		}else if(PermissionsEx.getUser(p).inGroup("Ultra")) {
+			return GlobalRank.ULTRA;
+		}else if(PermissionsEx.getUser(p).inGroup("Ultimate")) {
+			return GlobalRank.ULTIMATE;
+		}else if(PermissionsEx.getUser(p).inGroup("Youtuber")) {
+			return GlobalRank.YOUTUBER;
+		}else if(PermissionsEx.getUser(p).inGroup("RespCom")) {
+			return GlobalRank.RESPCOM;
+		}else if(PermissionsEx.getUser(p).inGroup("Dev")) {
+			return GlobalRank.DEV;
+		}else if(PermissionsEx.getUser(p).inGroup("Builder")) {
+			return GlobalRank.BUILDER;
+		}else if(PermissionsEx.getUser(p).inGroup("Guide")) {
+			return GlobalRank.GUIDE;
+		}else if(PermissionsEx.getUser(p).inGroup("Assistant")) {
+			return GlobalRank.ASSISTANT;
+		}else if(PermissionsEx.getUser(p).inGroup("ModÃ©rateur")) {
+			return GlobalRank.MODÃ‰RATEUR;
+		}else if(PermissionsEx.getUser(p).inGroup("Admin")) {
+			return GlobalRank.ADMIN;
+		}else if(PermissionsEx.getUser(p).inGroup("Owner")) {
+			return GlobalRank.PADRE;
+		}else if(PermissionsEx.getUser(p).inGroup("manager1")) {
+			return GlobalRank.MANAGER_STAFF;
+		}else if(PermissionsEx.getUser(p).inGroup("manager2")) {
+			return GlobalRank.MANAGER_IG;
+		}else {
+			return GlobalRank.BUG;
+		}
+	}
+	
+	public static String getStringRank(Player p){
+		if(PermissionsEx.getUser(p).inGroup("Builder")){
+			return "Â§6Â§lBuilder";
+		}else if(PermissionsEx.getUser(p).inGroup("Fire")){
+			return "Â§eÂ§lFire";
+		}else if(PermissionsEx.getUser(p).inGroup("Ultra")){
+			return "Â§aÂ§lUltra";
+		}else if(PermissionsEx.getUser(p).inGroup("Ultimate")){
+			return "Â§5Â§lUltimate";
+		}else if(PermissionsEx.getUser(p).inGroup("Youtuber")){
+			return "Â§2Â§lYoutuber";
+		}else if(PermissionsEx.getUser(p).inGroup("Guide")){
+			return "Â§2Â§lGuide";
+		}else if(PermissionsEx.getUser(p).inGroup("Assistant")){
+			return "Â§6Â§lAssistant";
+		}else if(PermissionsEx.getUser(p).inGroup("ModÃ©rateur")){
+			return "Â§3Â§lModÃ©rateur";
+		}else if(PermissionsEx.getUser(p).inGroup("manager1")){
+			return "Â§cÂ§lStaff Manager";
+		}else if(PermissionsEx.getUser(p).inGroup("manager2")){
+			return "Â§cÂ§lManager IG";
+		}else if(PermissionsEx.getUser(p).inGroup("Dev")){
+			return "Â§9Â§lDev";
+		}else if(PermissionsEx.getUser(p).inGroup("Admin")){
+			return "Â§4Â§lAdmin";
+		}else if(PermissionsEx.getUser(p).inGroup("Owner")){
+			return "Â§4Â§lOwner";
+		}else if(PermissionsEx.getUser(p).inGroup("RespCom")){
+			return "Â§6Â§lResp. Com.";
+		}else if(PermissionsEx.getUser(p).inGroup("Membre")){
+			return "Â§7Membre";
+		}else {
+			return "Â§cBUG !";
+		}
 	}
 }
