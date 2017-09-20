@@ -467,8 +467,6 @@ public class Methods {
 	}
 	
 	public static void refreshTabRank(Player p) {
-		int kills = SQLConnectionFFA.getKills(p);
-		
 		if(getRank(p).equals(Rank.VAGABOND)) {
 			NametagEdit.getApi().setPrefix(p, "§b[Vagabond] ");
 		}else if(getRank(p).equals(Rank.INQUISITEUR)) {
@@ -490,8 +488,6 @@ public class Methods {
 		}else if(getRank(p).equals(Rank.DEATHGOD)) {
 			NametagEdit.getApi().setPrefix(p, "§0[DeathGod] ");
 		}
-		
-		NametagEdit.getApi().setSuffix(p, " §["+kills+"]");
 	}
 	
 	public static void chatFormat(Player p, String msg, String global, AsyncPlayerChatEvent e) {
