@@ -611,31 +611,31 @@ public class Events implements Listener {
 		String msg = e.getMessage();
 		
 		if(PermissionsEx.getUser(p).inGroup("Membre")){;
-			Methods.chatFormat(p, msg, ChatColor.GRAY+"[Membre]", e);
+			Methods.chatFormat(p, ChatColor.GRAY+msg, ChatColor.GRAY+"[Membre]", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Fire")) {
-			Methods.chatFormat(p, msg, ChatColor.YELLOW+"[Fire]", e);
+			Methods.chatFormat(p, ChatColor.GRAY+msg, ChatColor.YELLOW+"[Fire]", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Ultra")) {
-			Methods.chatFormat(p, msg, ChatColor.GOLD+"[Ultra]", e);
+			Methods.chatFormat(p, ChatColor.GRAY+msg, ChatColor.GOLD+"[Ultra]", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Ultimate")) {
-			Methods.chatFormat(p, msg, "§5[Ultimate]", e);
+			Methods.chatFormat(p, ChatColor.GRAY+msg, "§5[Ultimate]", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Youtuber")) {
-			Methods.chatFormat(p, "§e"+msg, "§e[Youtuber]", e);
+			Methods.chatFormat(p, ChatColor.GRAY+msg, "§e[Youtuber]", e);
 		}else if (PermissionsEx.getUser(p).inGroup("RespCom")) {
-			Methods.chatFormat(p, "§6"+msg, "§8[§6Resp. Com.§8]§6", e);
+			Methods.chatFormat(p, ChatColor.GRAY+msg, "§8[§6Resp. Com.§8]§6", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Dev")) {
-			Methods.chatFormat(p, "§9"+msg, "§8[§9Dev§8]§9", e);
+			Methods.chatFormat(p, msg, "§8[§9Dev§8]§9", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Builder")) {
-			Methods.chatFormat(p, "§6"+msg, "§8[§6Builder§8]§6", e);
+			Methods.chatFormat(p, ChatColor.GRAY+msg, "§8[§6Builder§8]§6", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Guide")) {
-			Methods.chatFormat(p, "§2"+msg, "§8[§2Guide§8]§2", e);
+			Methods.chatFormat(p, ChatColor.GRAY+msg, "§8[§2Guide§8]§2", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Assistant")) {
-			Methods.chatFormat(p, "§6"+msg, "§8[§6Assistant§8]§6", e);
+			Methods.chatFormat(p, ChatColor.GRAY+msg, "§8[§6Assistant§8]§6", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Modérateur")) {
-			Methods.chatFormat(p, "§3"+msg, "§8[§3Modérateur§8]§3", e);
+			Methods.chatFormat(p, msg, "§8[§3Modérateur§8]§3", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Admin")) {
-			Methods.chatFormat(p, "§4"+msg, "§8[§4Admin§8]§4", e);
+			Methods.chatFormat(p, msg, "§8[§4Admin§8]§4", e);
 		}else if (PermissionsEx.getUser(p).inGroup("Owner")) {
-			Methods.chatFormat(p, "4"+msg, "§8[§4Owner§8]§4", e);
+			Methods.chatFormat(p, msg, "§8[§4Owner§8]§4", e);
 		}
 	}
 }
