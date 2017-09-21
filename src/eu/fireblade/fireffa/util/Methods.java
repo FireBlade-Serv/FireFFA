@@ -491,16 +491,16 @@ public class Methods {
 	}
 	
 	public static void chatFormat(Player p, String msg, String global, AsyncPlayerChatEvent e) {
-		if(Methods.getRank(p).equals(Rank.VAGABOND)) e.setFormat(global+" §b[Vagabond] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.INQUISITEUR)) e.setFormat(global+" §e[Inquisiteur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.MEURTRIER)) e.setFormat(global+" §5[Meurtrier] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.MERCENAIRE)) e.setFormat(global+" §a[Mercenaire] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.BOURREAU)) e.setFormat(global+" §9[Bourreau] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.EXECUTEUR)) e.setFormat(global+" §2[Executeur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.SANGUINAIRE)) e.setFormat(global+" §c[Sanguinaire] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.MASSACREUR)) e.setFormat(global+" §6[Massacreur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.DÉCHIQUETEUR)) e.setFormat(global+" §7[Déchiqueteur] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
-		if(Methods.getRank(p).equals(Rank.DEATHGOD)) e.setFormat(global+" §0[DeathGod] "+ChatColor.RESET+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.VAGABOND)) e.setFormat(global+" §b[Vagabond] "+ChatColor.DARK_GRAY+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.INQUISITEUR)) e.setFormat(global+" §e[Inquisiteur] "+ChatColor.DARK_GRAY+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.MEURTRIER)) e.setFormat(global+" §5[Meurtrier] "+ChatColor.DARK_GRAY+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.MERCENAIRE)) e.setFormat(global+" §a[Mercenaire] "+ChatColor.DARK_GRAY+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.BOURREAU)) e.setFormat(global+" §9[Bourreau] "+ChatColor.DARK_GRAY+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.EXECUTEUR)) e.setFormat(global+" §2[Executeur] "+ChatColor.DARK_GRAY+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.SANGUINAIRE)) e.setFormat(global+" §c[Sanguinaire] "+ChatColor.DARK_GRAY+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.MASSACREUR)) e.setFormat(global+" §6[Massacreur] "+ChatColor.DARK_GRAY+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.DÉCHIQUETEUR)) e.setFormat(global+" §7[Déchiqueteur] "+ChatColor.DARK_GRAY+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
+		if(Methods.getRank(p).equals(Rank.DEATHGOD)) e.setFormat(global+" §0[DeathGod] "+ChatColor.DARK_GRAY+p.getName()+ChatColor.YELLOW+" >> "+ChatColor.RESET+msg);
 	}
 	
 	public static GlobalRank getGlobalRank(Player p) {
