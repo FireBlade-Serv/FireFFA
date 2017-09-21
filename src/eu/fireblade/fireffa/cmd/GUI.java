@@ -32,6 +32,7 @@ import eu.fireblade.fireffa.enums.GlobalRank;
 import eu.fireblade.fireffa.enums.Rank;
 import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.util.Methods;
+import fr.glowstoner.api.bukkit.msg.GlowstoneClickURL;
 
 public class GUI implements CommandExecutor, Listener {
 
@@ -843,6 +844,12 @@ public class GUI implements CommandExecutor, Listener {
 				Kits.kitInvocation(p);
 				Var.invocation.add(p);
 				Play.onPlay(p);
+			}
+		}else if(inv.getName().equals("Infos")) {
+			if(compareItems(item, genPerspective(Material.INK_SACK, ChatColor.BLUE+"Discord", (byte) 4))) {
+				GlowstoneClickURL click = new GlowstoneClickURL(p, "§9Cliquez ICI pour le discord !", "https://discordapp.com/invite/H7acUcX");
+				
+				click.send();
 			}
 		}
 	}
