@@ -850,6 +850,8 @@ public class GUI implements CommandExecutor, Listener {
 				GlowstoneClickURL click = new GlowstoneClickURL(p, "§9Cliquez ICI pour le discord !", "https://discordapp.com/invite/H7acUcX");
 				
 				click.send();
+				
+				p.closeInventory();
 			}
 		}
 	}
