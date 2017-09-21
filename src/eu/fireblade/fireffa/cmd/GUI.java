@@ -845,7 +845,7 @@ public class GUI implements CommandExecutor, Listener {
 				Var.invocation.add(p);
 				Play.onPlay(p);
 			}
-		}else if(inv.getName().equals("Infos")) {
+		}else if(inv.getName().equals("§9Infos")) {
 			if(compareItems(item, genPerspective(Material.INK_SACK, ChatColor.BLUE+"Discord", (byte) 4))) {
 				GlowstoneClickURL click = new GlowstoneClickURL(p, "§9Cliquez ICI pour le discord !", "https://discordapp.com/invite/H7acUcX");
 				
