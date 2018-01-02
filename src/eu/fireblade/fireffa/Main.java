@@ -83,6 +83,7 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Nuage(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Vampire(), this);
 		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.Piaf(), this);
+		getServer().getPluginManager().registerEvents(new eu.fireblade.fireffa.ability.ArcherVagabon(), this);
 		
 		
 		for (Player online : Bukkit.getOnlinePlayers()){
