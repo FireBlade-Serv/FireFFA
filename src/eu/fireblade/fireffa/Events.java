@@ -511,6 +511,10 @@ public class Events implements Listener {
 			return;
 		}
 		
+		if(Var.magicien.contains(kE)) {
+			p.getInventory().setItem(1, Kits.ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", null, 2));
+		}
+		
 		Player k = (Player) kE;
 	
 		Var.killStreak.replace(k, Var.killStreak.get(k) + 1);	
