@@ -417,6 +417,10 @@ public class Var {
 			if(Power.cooldown2.contains(p)) {
 				Power.cooldown2.remove(p);
 			}
+			
+			if(Power.Bouclier.contains(p)) {
+				Power.Bouclier.remove(p);
+			}
 		}else if(dieu.contains(p)) {
 			dieu.remove(p);
 		}else if(invocation.contains(p)) {
