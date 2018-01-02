@@ -17,6 +17,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
@@ -46,6 +48,7 @@ public class Invocation implements Listener {
 				return;
 			}else {				
 				getBlockAtPlayer(p);
+				p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10, 2));
 			}
 		}
 	}
