@@ -8,6 +8,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 
@@ -18,7 +19,8 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class ArcherVagabon implements Listener {
 
-	public void onShoot(ProjectileLaunchEvent e) {
+	@EventHandler
+	public void onBump(ProjectileLaunchEvent e) {
 		final Entity entity = e.getEntity();
 		
 			if(entity instanceof Arrow) {
@@ -31,9 +33,10 @@ public class ArcherVagabon implements Listener {
 					return;
 				}
 				
-				if(p.getItemInHand().equals(Kits.ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 10, ChatColor.DARK_GREEN+"Arc de la mort", null, 1))){
+				if(p.getItemInHand().equals(Kits.ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 10, ChatColor.DARK_GREEN+"Arc de la mort", Kits.LoreCreator(ChatColor.BLUE+"Tirer normalement pour l'utiliser", ChatColor.BLUE+"10 secondes de récupération"), 1))){
 					p.getInventory().setItem(0, Kits.ItemGen(Material.BARRIER, ChatColor.RED+"En récupération", Kits.LoreCreator(ChatColor.BLUE+"10 secondes de récupération", null), 1));
 					p.playSound(p.getLocation(), Sound.FUSE, 30, 30);
+					
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 
 						@Override

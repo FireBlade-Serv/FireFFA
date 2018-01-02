@@ -399,7 +399,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.GREEN+"Pantalon de l'archer élémentaire", 1, 102, 127, 51));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.GREEN+"Bottes de l'archer élémentaire", 1, 102, 127, 51));
 		p.getInventory().setItem(3, ItemGen(Material.ARROW, ChatColor.GREEN+"Fléche de l'arche élémentaire", null, 32));
-		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 5, ChatColor.GREEN+"Arc des adieux", null, 1));
+		p.getInventory().setItem(0, Kits.ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 5, ChatColor.GREEN+"Arc des adieux", Kits.LoreCreator(ChatColor.BLUE+"Tirer normalement pour utiliser",ChatColor.BLUE+"5 secondes de récupération"), 1));
 		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_FIRE, 1, ChatColor.GREEN+"Arc de feu", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.BOW, ChatColor.GREEN+"Arc de glace", LoreCreator(ChatColor.BLUE+"Ses fléches ralentissent et aveugles", ChatColor.BLUE+"Pendant 2 secondes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));		
@@ -430,7 +430,7 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.DARK_GREEN+"Tunique de l'archer vagabon", 1, 63, 76, 38));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.DARK_GREEN+"Pantalon de l'archer vagabon", 1, 63, 76, 38));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.DARK_GREEN+"Bottes de l'archer vagabon", 1, 63, 76, 38));
-		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 10, ChatColor.DARK_GREEN+"Arc de la mort", LoreCreator(ChatColor.BLUE+"Tirer normalement pour l'utiliser", ChatColor.BLUE+"10 secondes de récupération"), 1));
+		p.getInventory().setItem(0, Kits.ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 10, ChatColor.DARK_GREEN+"Arc de la mort", Kits.LoreCreator(ChatColor.BLUE+"Tirer normalement pour l'utiliser", ChatColor.BLUE+"10 secondes de récupération"), 1));
 		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_DAMAGE, 1, ChatColor.DARK_GREEN+"Arc de l'archer vagabon", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.DARK_GREEN+"Flèche de l'archer vagabon", null, 32));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
@@ -687,7 +687,7 @@ public class Kits {
 		
 		p.getInventory().setChestplate(ItemGen(Material.LEATHER_CHESTPLATE, "§6Plastron swap", null, 1));
 		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§9épée swap", null, 1));
-		p.getInventory().setItem(1, ItemGen(Material.SNOW_BALL, "§9Swaper", LoreCreator("§9Lancer la boule - Swap votre inventaire avec le joueur touché", null), 1));
+		p.getInventory().setItem(1, ItemGen(Material.SNOW_BALL, "§9Swaper", LoreCreator("§9Lancer la boule - Swap votre inventaire avec le joueur touché", ChatColor.BLUE+"20 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
     }
     //manque abilité

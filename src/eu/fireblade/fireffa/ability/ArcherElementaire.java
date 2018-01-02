@@ -10,6 +10,7 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftArrow;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -23,6 +24,7 @@ import org.bukkit.potion.PotionEffectType;
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.items.Kits;
+import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.minecraft.server.v1_8_R3.EnumParticle;
 import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
 
@@ -109,6 +111,41 @@ public class ArcherElementaire implements Listener {
 					}
 					
 				}, 0L, 1L));
+			}
+		}
+	}
+	
+	@EventHandler
+	public void onBump(ProjectileLaunchEvent e) {
+		final Entity entity = e.getEntity();
+		
+			if(entity instanceof Arrow) {
+				final Arrow ball = (Arrow) entity;
+				
+				if(ball.getShooter() instanceof Player) {
+					Player p = (Player) ball.getShooter();
+				
+				if(!Var.archerélémentaire.contains(p)) {
+					return;
+				}
+				
+				if(p.getItemInHand().equals(Kits.ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 5, ChatColor.GREEN+"Arc des adieux", Kits.LoreCreator(ChatColor.BLUE+"Tirer normalement pour utiliser",ChatColor.BLUE+"5 secondes de récupération"), 1))){
+					p.getInventory().setItem(0, Kits.ItemGen(Material.BARRIER, ChatColor.RED+"En récupération", Kits.LoreCreator(ChatColor.BLUE+"5 secondes de récupération", null), 1));
+					p.playSound(p.getLocation(), Sound.FUSE, 30, 30);
+					
+					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+
+						@Override
+						public void run() {
+							if(Var.archervagabon.contains(p)){
+								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre arc est prêt !", 20, 30, 20);
+								gt.send();
+								p.getInventory().setItem(0, Kits.ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 5, ChatColor.GREEN+"Arc des adieux", Kits.LoreCreator(ChatColor.BLUE+"Tirer normalement pour utiliser",ChatColor.BLUE+"5 secondes de récupération"), 1));
+								p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
+							}
+						}						
+					}, 100L);
+				}
 			}
 		}
 	}
