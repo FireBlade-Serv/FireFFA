@@ -36,7 +36,7 @@ public class Enclumex implements Listener {
 		World w = e.getWorld();
 			
 		if(p.getItemInHand().equals(Kits.ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 1, "§9UltiMax", 
-				Kits.LoreCreator("§9Clique Gauche - Tue votre ennemi", "§930 secondes de récupération"), 1)) && Var.enclumex.contains(p)){
+				Kits.LoreCreator("§9Clique Gauche - Fait tomber une enclume", "§930 secondes de récupération"), 1)) && Var.enclumex.contains(p)){
 				
 			if(cooldown.contains(p)) {
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
@@ -60,6 +60,70 @@ public class Enclumex implements Listener {
 			fb.setCustomNameVisible(true);
 			fb.setHurtEntities(true);
 			fb.setDropItem(false);
+			
+			@SuppressWarnings("deprecation")
+			FallingBlock fb2 = w.spawnFallingBlock(t.getLocation().add(1.0d, 3.5d, 0.0d), Material.ANVIL, (byte) 0);
+			
+			fb2.setCustomName("§8§ltchoin");
+			fb2.setCustomNameVisible(true);
+			fb2.setHurtEntities(true);
+			fb2.setDropItem(false);
+			
+			@SuppressWarnings("deprecation")
+			FallingBlock fb3 = w.spawnFallingBlock(t.getLocation().add(1.0d, 3.5d, 1.0d), Material.ANVIL, (byte) 0);
+			
+			fb3.setCustomName("§8§ltchoin");
+			fb3.setCustomNameVisible(true);
+			fb3.setHurtEntities(true);
+			fb3.setDropItem(false);
+			
+			@SuppressWarnings("deprecation")
+			FallingBlock fb4 = w.spawnFallingBlock(t.getLocation().add(-1.0d, 3.5d, 0.0d), Material.ANVIL, (byte) 0);
+			
+			fb4.setCustomName("§8§ltchoin");
+			fb4.setCustomNameVisible(true);
+			fb4.setHurtEntities(true);
+			fb4.setDropItem(false);
+			
+			@SuppressWarnings("deprecation")
+			FallingBlock fb5 = w.spawnFallingBlock(t.getLocation().add(-1.0d, 3.5d, -1.0d), Material.ANVIL, (byte) 0);
+			
+			fb5.setCustomName("§8§ltchoin");
+			fb5.setCustomNameVisible(true);
+			fb5.setHurtEntities(true);
+			fb5.setDropItem(false);
+			
+			@SuppressWarnings("deprecation")
+			FallingBlock fb6 = w.spawnFallingBlock(t.getLocation().add(0.0d, 3.5d, 1.0d), Material.ANVIL, (byte) 0);
+			
+			fb6.setCustomName("§8§ltchoin");
+			fb6.setCustomNameVisible(true);
+			fb6.setHurtEntities(true);
+			fb6.setDropItem(false);
+			
+			@SuppressWarnings("deprecation")
+			FallingBlock fb7 = w.spawnFallingBlock(t.getLocation().add(0.0d, 3.5d, -1.0d), Material.ANVIL, (byte) 0);
+			
+			fb7.setCustomName("§8§ltchoin");
+			fb7.setCustomNameVisible(true);
+			fb7.setHurtEntities(true);
+			fb7.setDropItem(false);
+			
+			@SuppressWarnings("deprecation")
+			FallingBlock fb8 = w.spawnFallingBlock(t.getLocation().add(1.0d, 3.5d, -1.0d), Material.ANVIL, (byte) 0);
+			
+			fb8.setCustomName("§8§ltchoin");
+			fb8.setCustomNameVisible(true);
+			fb8.setHurtEntities(true);
+			fb8.setDropItem(false);
+			
+			@SuppressWarnings("deprecation")
+			FallingBlock fb9 = w.spawnFallingBlock(t.getLocation().add(-1.0d, 3.5d, 1.0d), Material.ANVIL, (byte) 0);
+			
+			fb9.setCustomName("§8§ltchoin");
+			fb9.setCustomNameVisible(true);
+			fb9.setHurtEntities(true);
+			fb9.setDropItem(false);
 			
 			DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
 			as.spawn((CraftPlayer) p, t.getLocation().getX(), t.getLocation().getY(), t.getLocation().getZ(),

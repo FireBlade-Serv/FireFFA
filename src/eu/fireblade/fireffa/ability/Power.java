@@ -28,8 +28,10 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 public class Power implements Listener {
 
 	public static ArrayList<Player> cooldown = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown2 = new ArrayList<Player>();
 	private static ArrayList<Player> nod = new ArrayList<Player>();
 	public static ArrayList<Player> inload = new ArrayList<Player>();
+	public static ArrayList<Player> Bouclier = new ArrayList<Player>();
 	
 	public static Map<Player, Integer> max = new HashMap<Player, Integer>();
 	public static Map<Player, Integer> tasks = new HashMap<Player, Integer>();
@@ -115,6 +117,39 @@ public class Power implements Listener {
 				}
 				
 			}, 0L, 20L));
+		}else if(Var.power.contains(p) && i.equals(Kits.ItemGen(Material.SLIME_BALL, "§9Invulnérabiliter",
+				Kits.LoreCreator("§9Clique droit - Rend invinsible pendant 3 secondes", ChatColor.BLUE+"15 secondes de récupération"), 1))){
+			
+			if(cooldown.contains(p)){
+				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
+				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
+			}else {
+				cooldown2.add(p);
+				Bouclier.add(p);
+				p.playSound(p.getLocation(), Sound.LEVEL_UP, 30, 30);
+				
+				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+
+					@Override
+					public void run() {
+						Bouclier.remove(p);
+						
+						Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+
+							@Override
+							public void run() {
+								cooldown.remove(p);
+								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous pouvez utiliser votre invulnérabilité !", 20, 30, 20);
+								gt.send();
+								
+								p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
+							}
+							
+						}, 140L);
+					}
+					
+				}, 60L);
+			}
 		}
 	}
 	
@@ -145,6 +180,10 @@ public class Power implements Listener {
 		
 		if(entity instanceof Player){
 			Player p = (Player) entity;
+			
+			if(Bouclier.contains(p)) {
+				e.setCancelled(true);
+			}
 			
 			if(Var.power.contains(p) && nod.contains(p)){
 				if(e.getCause().equals(DamageCause.FALL)){

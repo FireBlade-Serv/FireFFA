@@ -413,6 +413,10 @@ public class Var {
 				
 				Power.tasks.remove(p);
 			}
+			
+			if(Power.cooldown2.contains(p)) {
+				Power.cooldown2.remove(p);
+			}
 		}else if(dieu.contains(p)) {
 			dieu.remove(p);
 		}else if(invocation.contains(p)) {

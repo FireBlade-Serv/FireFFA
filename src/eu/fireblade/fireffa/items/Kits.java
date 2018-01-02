@@ -783,7 +783,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon EnClumex", 1, 76, 76, 76));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes EnClumex", 1, 76, 76, 76));
 		p.getInventory().setItem(0, ItemGen1(Material.IRON_BLOCK, Enchantment.DAMAGE_ALL, 1, "§9Enclumax", null, 1));
-		p.getInventory().setItem(1, ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 1, "§9UltiMax", LoreCreator("§9Clique Gauche - Tue votre ennemi", "§930 secondes de récupération"), 1) );
+		p.getInventory().setItem(1, ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 2, "§9UltiMax", LoreCreator("§9Clique Gauche - Fait tomber une enclume", "§930 secondes de récupération"), 1) );
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
@@ -801,8 +801,9 @@ public class Kits {
 	//FAIT
 	public static void kitPower(Player p) {
 		Clear(p);
-		p.getInventory().setItem(0, ItemGen(Material.STICK, "§9Jumper", LoreCreator("§9Clique droit - jump de 12 blocs", "15 secondes de récupération"), 1));
+		p.getInventory().setItem(0, ItemGen(Material.STICK, "§9Jumper", LoreCreator("§9Clique droit - jump de 12 blocs", ChatColor.BLUE+"15 secondes de récupération"), 1));
 		p.getInventory().setItem(1, ItemGen(Material.SLIME_BALL, "§9Poing", LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1));
+		p.getInventory().setItem(1, ItemGen(Material.SLIME_BALL, "§9Invulnérabiliter", LoreCreator("§9Clique droit - Rend invinsible pendant 3 secondes", ChatColor.BLUE+"15 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}
