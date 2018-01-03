@@ -46,9 +46,17 @@ public class Invocation implements Listener {
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 				
 				return;
-			}else {				
-				p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10, 1));
+			}else {					
 				getBlockAtPlayer(p);
+			}
+		}
+		
+		if(Var.invocation.contains(p) && i.equals(Kits.ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 1, "§fInvocation Stick", 
+				Kits.LoreCreator("§9Clique Droit - invoque un bouclier pendant 10s", "§945 secondes de récupération"), 1))) {
+			if(cooldown.contains(p)) {
+				return;
+			}else {
+				p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10, 1));	
 			}
 		}
 	}

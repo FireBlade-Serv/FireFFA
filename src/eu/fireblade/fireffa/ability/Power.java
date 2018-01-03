@@ -117,10 +117,10 @@ public class Power implements Listener {
 				}
 				
 			}, 0L, 20L));
-		}else if(Var.power.contains(p) && i.equals(Kits.ItemGen(Material.SLIME_BALL, "§9Invulnérabiliter",
+		}else if(Var.power.contains(p) && i.equals(Kits.ItemGen(Material.DIAMOND_CHESTPLATE, "§9Invulnérabilité",
 				Kits.LoreCreator("§9Clique droit - Rend invinsible pendant 3 secondes", ChatColor.BLUE+"15 secondes de récupération"), 1))){
 			
-			if(cooldown.contains(p)){
+			if(cooldown2.contains(p)){
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 			}else {
@@ -138,7 +138,7 @@ public class Power implements Listener {
 
 							@Override
 							public void run() {
-								cooldown.remove(p);
+								cooldown2.remove(p);
 								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous pouvez utiliser votre invulnérabilité !", 20, 30, 20);
 								gt.send();
 								
