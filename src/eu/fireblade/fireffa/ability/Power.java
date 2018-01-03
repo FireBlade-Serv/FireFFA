@@ -117,7 +117,7 @@ public class Power implements Listener {
 				}
 				
 			}, 0L, 20L));
-		}else if(Var.power.contains(p) && i.equals(Kits.ItemGen(Material.DIAMOND_CHESTPLATE, "§9Invulnérabilité",
+		}else if(Var.power.contains(p) && i.equals(Kits.ItemGen(Material.BANNER, "§9Invulnérabilité",
 				Kits.LoreCreator("§9Clique droit - Rend invinsible pendant 3 secondes", ChatColor.BLUE+"15 secondes de récupération"), 1))){
 			
 			if(cooldown2.contains(p)){

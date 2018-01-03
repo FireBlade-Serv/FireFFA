@@ -40,7 +40,7 @@ public class Flic implements Listener {
 				Kits.ItemGen(Material.FLINT_AND_STEEL, ChatColor.DARK_BLUE+"Flingue",
 						Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Tire une balle", ChatColor.BLUE+"Consomme une munition"), 1)) && Var.flic.contains(p)){
 			
-			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 12), 1)) {
+			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FIREWORK_CHARGE, ChatColor.DARK_BLUE+"Munition", null, 12), 1)) {
 				if(inLoad.contains(p)) {
 					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 					p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous avez déjà une balle en execution !");
@@ -50,15 +50,11 @@ public class Flic implements Listener {
 				
 				p.launchProjectile(Snowball.class);
 				p.playSound(p.getLocation(), Sound.FIRE_IGNITE, 30, 30);
-				p.getInventory().removeItem(Kits.ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 1));
+				p.getInventory().removeItem(Kits.ItemGen(Material.FIREWORK_CHARGE, ChatColor.DARK_BLUE+"Munition", null, 1));
 			} else {
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de munitions.");
 			}
-		}
-		
-		if(e.getItem().equals(Kits.ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 1)) && Var.flic.contains(p)) {
-			e.setCancelled(true);
 		}
 	}
 	
@@ -138,7 +134,7 @@ public class Flic implements Listener {
 		Player p = e.getKiller();
 		
 		if(Var.flic.contains(p)) {
-			p.getInventory().addItem(Kits.ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 2));
+			p.getInventory().addItem(Kits.ItemGen(Material.FIREWORK_CHARGE, ChatColor.DARK_BLUE+"Munition", null, 2));
 		}
 	}
 
