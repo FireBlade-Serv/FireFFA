@@ -31,7 +31,7 @@ public class Ours implements Listener {
 		final ItemStack item = e.getItemInHand();
 		
 		if(item.equals(Kits.ItemGen(Material.WOOD_PICKAXE, ChatColor.DARK_GRAY+"Crocs de l'ours", 
-				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Vole 2 coeurs à la cible", ChatColor.BLUE+"1 minute de récupération"), 1))) {
+				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Vole 2 coeurs à la cible", ChatColor.BLUE+"25 secondes de récupération"), 1))) {
 			
 			if(Var.ours.contains(p)) {
 				if(cooldown.contains(p)) {
@@ -63,7 +63,7 @@ public class Ours implements Listener {
 							}
 						}
 						
-					}, 1200L);
+					}, 500L);
 				}
 			}
 		}

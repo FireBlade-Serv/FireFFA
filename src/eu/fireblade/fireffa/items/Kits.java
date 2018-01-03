@@ -516,7 +516,7 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGen(Material.LEATHER_LEGGINGS, ChatColor.DARK_GRAY+"Pantalon de l'ourse", null, 1));
 		p.getInventory().setBoots(ItemGen(Material.LEATHER_BOOTS, ChatColor.DARK_GRAY+"Bottes de l'ours", null, 1));
 		p.getInventory().setItem(0, ItemGen1(Material.STONE_HOE, Enchantment.DAMAGE_ALL, 2, ChatColor.DARK_GRAY+"Griffe de l'ours", null, 1));
-		p.getInventory().setItem(1, ItemGen(Material.WOOD_PICKAXE, ChatColor.DARK_GRAY+"Crocs de l'ours", LoreCreator(ChatColor.BLUE+"Clique droit - Vole 2 coeurs à la cible", ChatColor.BLUE+"1 minute de récupération"), 1));
+		p.getInventory().setItem(1, ItemGen(Material.WOOD_PICKAXE, ChatColor.DARK_GRAY+"Crocs de l'ours", LoreCreator(ChatColor.BLUE+"Clique droit - Vole 2 coeurs à la cible", ChatColor.BLUE+"25 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	// FAIT
