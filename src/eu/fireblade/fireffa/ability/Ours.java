@@ -6,6 +6,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,6 +17,7 @@ import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.events.PlayerInteractAtPlayerEvent;
 import eu.fireblade.fireffa.items.Kits;
+import eu.fireblade.fireffa.nms.DamageArmorStand;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Ours implements Listener {
@@ -39,7 +42,9 @@ public class Ours implements Listener {
 					return;
 				}else {
 					damage(p, target);
-					
+					DamageArmorStand das = new DamageArmorStand(((CraftWorld)p.getWorld()).getHandle());
+					das.spawn((CraftPlayer) p, target.getLocation().getBlockX(), target.getLocation().getBlockY(), target.getLocation().getBlockZ(), target.getLocation().getPitch(), target.getLocation().getYaw(), 4d);
+					das.destroyAuto((CraftPlayer) p);
 					cooldown.add(p);
 					
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
