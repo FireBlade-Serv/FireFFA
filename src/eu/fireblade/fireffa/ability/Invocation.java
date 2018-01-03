@@ -24,6 +24,7 @@ import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
+import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.minecraft.server.v1_8_R3.EnumParticle;
 import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
 
@@ -48,6 +49,19 @@ public class Invocation implements Listener {
 				return;
 			}else {					
 				getBlockAtPlayer(p);
+				cooldown.add(p);
+				
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+					
+					@Override
+					public void run() {
+						cooldown.remove(p);
+						GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous pouvez utiliser votre dôme de glace !", 20, 30, 20);
+						gt.send();
+						
+						p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
+					}
+				}, 900L);
 			}
 		}
 		
