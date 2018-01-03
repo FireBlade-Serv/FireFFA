@@ -16,6 +16,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.events.PlayerKillEvent;
 import eu.fireblade.fireffa.items.Kits;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 import net.md_5.bungee.api.ChatColor;
@@ -89,6 +90,15 @@ public class Magicien implements Listener {
 		victime.playSound(victime.getLocation(), Sound.WITHER_DEATH, 30, 30);
 		
 		victime.sendMessage("§6[§eFireFFA§6] §fUn magicien vous à lancé un mauvais sort !");
+	}
+	
+	@EventHandler
+	public void onKill (PlayerKillEvent e) {
+		Player p = e.getKiller();
+		
+		if(Var.magicien.contains(p)) {
+			p.getInventory().addItem(Kits.ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", null, 2));
+		}
 	}
 
 }

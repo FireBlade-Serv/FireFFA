@@ -20,6 +20,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.events.PlayerKillEvent;
 import eu.fireblade.fireffa.items.Kits;
 import net.md_5.bungee.api.ChatColor;
 import net.minecraft.server.v1_8_R3.EnumParticle;
@@ -54,6 +55,10 @@ public class Flic implements Listener {
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous n'avez plus de munitions.");
 			}
+		}
+		
+		if(e.getItem().equals(Kits.ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 1)) && Var.flic.contains(p)) {
+			e.setCancelled(true);
 		}
 	}
 	
@@ -125,6 +130,15 @@ public class Flic implements Listener {
 					
 				}, 0L, 1L));
 			}
+		}
+	}
+	
+	@EventHandler
+	public void onKill (PlayerKillEvent e) {
+		Player p = e.getKiller();
+		
+		if(Var.flic.contains(p)) {
+			p.getInventory().addItem(Kits.ItemGen(Material.SNOW_BALL, ChatColor.DARK_BLUE+"Munition", null, 2));
 		}
 	}
 
