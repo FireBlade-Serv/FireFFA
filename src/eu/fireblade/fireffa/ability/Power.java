@@ -41,7 +41,7 @@ public class Power implements Listener {
 		final Player p = e.getPlayer();
 		final ItemStack i = e.getItem();
 		
-		if(Var.power.contains(p) && i.equals(Kits.ItemGen(Material.STICK, "§9Jumper", Kits.LoreCreator("§9Clique droit - jump de 12 blocs", "15 secondes de récupération"), 1))){
+		if(Var.power.contains(p) && i.equals(Kits.ItemGen(Material.STICK, "§9Jumper", Kits.LoreCreator("§9Clique droit - jump de 12 blocs", ChatColor.BLUE+"15 secondes de récupération"), 1))){
 			
 			if(cooldown.contains(p)){
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
