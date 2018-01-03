@@ -825,7 +825,7 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fTunique d'invocation", 1, 76, 127, 153));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon d'invocation", 1, 76, 127, 153));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes d'invocation", 1, 76, 127, 153));
-		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 1, "§fInvocation Stick", LoreCreator("§9Clique Droit - invoque un bouclier pendant 10s", "§945 secondes de récupération"), 1));
+		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 1, "§fInvocation Stick", LoreCreator("§9Clique Droit - invoque un bouclier et donne force 2 pendant 10s", "§945 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	//MANQUE ABILITé
