@@ -138,11 +138,13 @@ public class Power implements Listener {
 
 							@Override
 							public void run() {
-								cooldown2.remove(p);
-								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous pouvez utiliser votre invulnérabilité !", 20, 30, 20);
-								gt.send();
-								
-								p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
+								if(Var.power.contains(p)) {
+									cooldown2.remove(p);
+									GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous pouvez utiliser votre invulnérabilité !", 20, 30, 20);
+									gt.send();
+									
+									p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
+								}							
 							}
 							
 						}, 140L);

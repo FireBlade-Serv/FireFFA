@@ -51,6 +51,7 @@ public class Swap implements Listener {
 					target.getInventory().setArmorContents(pArmor);
 					p.getInventory().setContents(tItems);
 					p.getInventory().setArmorContents(tArmor);
+									
 				}
 			}
 		}

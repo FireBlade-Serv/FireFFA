@@ -6,6 +6,8 @@ import java.util.HashMap;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import eu.fireblade.fireffa.ability.Bouftout;
 import eu.fireblade.fireffa.ability.Copy;
@@ -443,11 +445,15 @@ public class Var {
 		}else if(fantôme.contains(t)) {
 			fantôme.remove(t);
 			swap.add(t);
+			t.removePotionEffect(PotionEffectType.INVISIBILITY);
+			p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 0));
 			fantôme.add(p);
 			swap.remove(p);
 		}else if(tank.contains(t)) {
 			tank.remove(t);
 			swap.add(t);
+			t.removePotionEffect(PotionEffectType.SLOW);
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, Integer.MAX_VALUE, 0));
 			tank.add(p);
 			swap.remove(p);
 		}else if(flic.contains(t)) {
@@ -468,6 +474,8 @@ public class Var {
 		}else if(cactus.contains(t)) {
 			cactus.remove(t);
 			swap.add(t);
+			t.removePotionEffect(PotionEffectType.SPEED);
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2));
 			cactus.add(p);
 			swap.remove(p);
 		}else if(piaf.contains(t)) {
@@ -483,11 +491,15 @@ public class Var {
 		}else if(OITCman.contains(t)) {
 			OITCman.remove(t);
 			swap.add(t);
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 0));
+			t.removePotionEffect(PotionEffectType.SPEED);
 			OITCman.add(p);
 			swap.remove(p);
 		}else if(lapin.contains(t)) {
 			lapin.remove(t);
 			swap.add(t);
+			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 6));
+			t.removePotionEffect(PotionEffectType.JUMP);
 			lapin.add(p);
 			swap.remove(p);
 		}else if(russe.contains(t)) {
@@ -628,6 +640,8 @@ public class Var {
 		}else if(glowstone.contains(t)) {
 			glowstone.remove(t);
 			swap.add(t);
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1));
+			t.removePotionEffect(PotionEffectType.SPEED);
 			glowstone.add(p);
 			swap.remove(p);
 		}else if(enderman.contains(t)) {
