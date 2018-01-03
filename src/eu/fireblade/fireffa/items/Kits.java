@@ -802,7 +802,7 @@ public class Kits {
 		Clear(p);
 		p.getInventory().setItem(0, ItemGen(Material.STICK, "§9Jumper", LoreCreator("§9Clique droit - jump de 12 blocs", ChatColor.BLUE+"15 secondes de récupération"), 1));
 		p.getInventory().setItem(1, ItemGen(Material.SLIME_BALL, "§9Poing", LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1));
-		p.getInventory().setItem(2, ItemGen(Material.DIAMOND_CHESTPLATE, "§9Invulnérabiliter", LoreCreator("§9Clique droit - Rend invinsible pendant 3 secondes", ChatColor.BLUE+"15 secondes de récupération"), 1));
+		p.getInventory().setItem(2, ItemGen(Material.DIAMOND_CHESTPLATE, "§9Invulnérabilité", LoreCreator("§9Clique droit - Rend invinsible pendant 3 secondes", ChatColor.BLUE+"15 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		
 	}

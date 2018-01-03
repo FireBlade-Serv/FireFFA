@@ -56,7 +56,7 @@ public class Invocation implements Listener {
 			if(cooldown.contains(p)) {
 				return;
 			}else {
-				p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10, 1));	
+				p.addPotionEffect(new PotionEffect(PotionEffectType.HARM, 10, 1));	
 			}
 		}
 	}
