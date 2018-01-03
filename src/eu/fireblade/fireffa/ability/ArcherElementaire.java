@@ -137,7 +137,7 @@ public class ArcherElementaire implements Listener {
 
 						@Override
 						public void run() {
-							if(Var.archervagabon.contains(p)){
+							if(Var.archerélémentaire.contains(p)){
 								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre arc est prêt !", 20, 30, 20);
 								gt.send();
 								p.getInventory().setItem(0, Kits.ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 5, ChatColor.GREEN+"Arc des adieux", Kits.LoreCreator(ChatColor.BLUE+"Tirer normalement pour utiliser",ChatColor.BLUE+"5 secondes de récupération"), 1));

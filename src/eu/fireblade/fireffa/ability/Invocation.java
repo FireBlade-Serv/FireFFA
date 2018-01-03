@@ -47,8 +47,8 @@ public class Invocation implements Listener {
 				
 				return;
 			}else {				
-				getBlockAtPlayer(p);
 				p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10, 1));
+				getBlockAtPlayer(p);
 			}
 		}
 	}
