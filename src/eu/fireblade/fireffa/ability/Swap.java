@@ -20,6 +20,8 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Swap implements Listener {
 	
+	public static boolean thisLive = false;
+	
 	@EventHandler
 	public void onDamage(EntityDamageByEntityEvent e) {
 		Entity sb = e.getDamager();
@@ -71,11 +73,13 @@ public class Swap implements Listener {
 				return;
 			}
 			
+				thisLive = true;
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 
 					@Override
 					public void run() {
-						if(Var.swap.contains(p)){
+						if(Var.swap.contains(p) && thisLive == true){
+							thisLive = false;
 							GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous avez récupéré une boule de neige !", 20, 30, 20);
 							gt.send();
 							p.getInventory().setItem(1, Kits.ItemGen(Material.SNOW_BALL, "§9Swaper", Kits.LoreCreator("§9Lancer la boule - Swap votre inventaire avec le joueur touché", ChatColor.BLUE+"20 secondes de récupération"), 1));

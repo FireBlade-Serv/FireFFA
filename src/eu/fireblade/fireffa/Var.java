@@ -36,6 +36,7 @@ import eu.fireblade.fireffa.ability.Pharaon;
 import eu.fireblade.fireffa.ability.Power;
 import eu.fireblade.fireffa.ability.RedMan;
 import eu.fireblade.fireffa.ability.RobinDesBois;
+import eu.fireblade.fireffa.ability.Swap;
 import eu.fireblade.fireffa.ability.Timer;
 import eu.fireblade.fireffa.ability.VoleurÂmes;
 import eu.fireblade.fireffa.items.Kits;
@@ -369,6 +370,9 @@ public class Var {
 			trapman.remove(p);
 		}else if(swap.contains(p)) {
 			swap.remove(p);
+			if(Swap.thisLive == true){
+				Swap.thisLive = false;
+			}
 		}else if(golem.contains(p)) {
 			golem.remove(p);
 			

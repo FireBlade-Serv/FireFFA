@@ -8,6 +8,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.World;
+import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -23,6 +26,7 @@ import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
 import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
+import eu.fireblade.fireffa.nms.DamageArmorStand;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 
 public class Power implements Listener {
@@ -162,6 +166,8 @@ public class Power implements Listener {
 		
 		if(d.getType().equals(EntityType.PLAYER) && t.getType().equals(EntityType.PLAYER)) {
 			Player dp = (Player) d;
+			Player tp = (Player) t;
+			World w = d.getWorld();
 			
 			if(Var.power.contains(dp) && dp.getItemInHand().equals(Kits.ItemGen(Material.SLIME_BALL, "§9Poing",
 				Kits.LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1))) {
@@ -172,6 +178,11 @@ public class Power implements Listener {
 				Bukkit.getScheduler().cancelTask(tasks.get(dp));
 				
 				max.replace(dp, -1);
+				
+				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+				as.spawn((CraftPlayer) dp, tp.getLocation().getX(), tp.getLocation().getY(), tp.getLocation().getZ(),
+						tp.getLocation().getPitch(), tp.getLocation().getYaw(), e.getDamage());
+				as.destroyAuto((CraftPlayer) dp);
 			}
 		}
 	}

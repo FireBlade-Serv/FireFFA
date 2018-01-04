@@ -187,6 +187,11 @@ public class Events implements Listener {
 					return;
 				}
 				
+				if(p.getItemInHand().equals(Kits.ItemGen(Material.SLIME_BALL, "§9Poing",
+						Kits.LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1))) {
+					return;
+				}
+				
 				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
 				as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
 						entity.getLocation().getPitch(), entity.getLocation().getYaw(), e.getDamage());

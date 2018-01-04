@@ -54,6 +54,11 @@ public class Ogre implements Listener {
 					as.spawn((CraftPlayer) dp, tp.getLocation().getX(), tp.getLocation().getY(), tp.getLocation().getZ(),
 							tp.getLocation().getPitch(), tp.getLocation().getYaw(), e.getDamage());
 					as.destroyAuto((CraftPlayer) dp);
+				}else {
+					DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
+					as.spawn((CraftPlayer) dp, tp.getLocation().getX(), tp.getLocation().getY(), tp.getLocation().getZ(),
+							tp.getLocation().getPitch(), tp.getLocation().getYaw(), e.getDamage());
+					as.destroyAuto((CraftPlayer) dp);
 				}
 			}
 		}
