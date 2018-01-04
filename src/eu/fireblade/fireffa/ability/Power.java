@@ -180,6 +180,8 @@ public class Power implements Listener {
 				max.replace(dp, -1);
 				
 				if(Power.Bouclier.contains(tp)){
+					dp.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Ce joueur est intouchable !");
+					dp.playSound(dp.getLocation(), Sound.ITEM_BREAK, 30, 30);
 					return;
 				}
 				
@@ -193,8 +195,8 @@ public class Power implements Listener {
 	
 	@EventHandler
 	public void onPlayerDamage(EntityDamageEvent e){
-		final Entity entity = e.getEntity();
-		
+		Entity entity = e.getEntity();
+			
 		if(entity instanceof Player){
 			Player p = (Player) entity;
 			

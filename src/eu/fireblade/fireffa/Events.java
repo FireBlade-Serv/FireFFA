@@ -153,8 +153,7 @@ public class Events implements Listener {
 				
 				return;
 			}
-			
-			w.playEffect(entity.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
+			if(!Power.Bouclier.contains(p))w.playEffect(entity.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);	
 		}
 		
 		if(nmsentity instanceof EntityArmorStand) {
