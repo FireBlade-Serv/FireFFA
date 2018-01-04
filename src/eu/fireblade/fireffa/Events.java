@@ -47,6 +47,7 @@ import org.bukkit.potion.PotionEffectType;
 import eu.fireblade.fireffa.ability.Copy;
 import eu.fireblade.fireffa.ability.Enderman;
 import eu.fireblade.fireffa.ability.Gameur;
+import eu.fireblade.fireffa.ability.Power;
 import eu.fireblade.fireffa.cmd.GUI;
 import eu.fireblade.fireffa.items.Kits;
 import eu.fireblade.fireffa.nms.DamageArmorStand;
@@ -161,7 +162,11 @@ public class Events implements Listener {
 			
 			return;
 		}
-			
+		
+		if(Power.Bouclier.contains(entity)){
+			return;
+		}
+		
 		if(cause.equals(DamageCause.BLOCK_EXPLOSION)) {
 			if(entity instanceof Player) {
 				Player v = (Player) entity;
@@ -183,12 +188,12 @@ public class Events implements Listener {
 			if(damager instanceof Player) {
 				Player p = (Player) damager;
 				
-				if(Var.ogre.contains(p)) {
-					return;
-				}
-				
 				if(p.getItemInHand().equals(Kits.ItemGen(Material.SLIME_BALL, "§9Poing",
 						Kits.LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1))) {
+					return;
+				}
+			
+				if(Power.Bouclier.contains(entity)){
 					return;
 				}
 				

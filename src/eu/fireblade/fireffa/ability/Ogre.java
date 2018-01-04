@@ -50,11 +50,20 @@ public class Ogre implements Listener {
 					tp.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Le joueur "+ dp.getName() +"vous a infligé un gros coup.");
 					tp.playSound(dp.getLocation(), Sound.GHAST_DEATH, 30, 30);
 					
+					if(Power.Bouclier.contains(tp)){
+						return;
+					}
+					
 					DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
 					as.spawn((CraftPlayer) dp, tp.getLocation().getX(), tp.getLocation().getY(), tp.getLocation().getZ(),
 							tp.getLocation().getPitch(), tp.getLocation().getYaw(), e.getDamage());
 					as.destroyAuto((CraftPlayer) dp);
 				}else {
+					
+					if(Power.Bouclier.contains(tp)){
+						return;
+					}
+
 					DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
 					as.spawn((CraftPlayer) dp, tp.getLocation().getX(), tp.getLocation().getY(), tp.getLocation().getZ(),
 							tp.getLocation().getPitch(), tp.getLocation().getYaw(), e.getDamage());

@@ -64,15 +64,14 @@ public class ArcherElite implements Listener {
 					if(entity instanceof Player) {
 						Player v = (Player) entity;
 						
+						if(Power.Bouclier.contains(v)){
+							return;
+						}
+
 						DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
 						as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
 								entity.getLocation().getPitch(), entity.getLocation().getYaw(), 1.0d);
 						as.destroyAuto((CraftPlayer) p);
-						
-						DamageArmorStand asv = new DamageArmorStand(((CraftWorld)w).getHandle());
-						asv.spawn((CraftPlayer) v, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
-								entity.getLocation().getPitch(), entity.getLocation().getYaw(), 1.0d);
-						asv.destroyAuto((CraftPlayer) v);
 					}
 				}
 			}

@@ -179,6 +179,10 @@ public class Power implements Listener {
 				
 				max.replace(dp, -1);
 				
+				if(Power.Bouclier.contains(tp)){
+					return;
+				}
+				
 				DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
 				as.spawn((CraftPlayer) dp, tp.getLocation().getX(), tp.getLocation().getY(), tp.getLocation().getZ(),
 						tp.getLocation().getPitch(), tp.getLocation().getYaw(), e.getDamage());
