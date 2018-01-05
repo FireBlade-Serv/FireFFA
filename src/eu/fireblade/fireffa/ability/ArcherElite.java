@@ -100,7 +100,7 @@ public class ArcherElite implements Listener {
 					if(Var.nuage.contains(p)) {
 						return;
 					}else {
-						e.setDamage(1.0d);
+						e.setDamage(5.0d);
 					}
 					
 					if(entity instanceof Player) {
@@ -112,7 +112,7 @@ public class ArcherElite implements Listener {
 						
 						DamageArmorStand as = new DamageArmorStand(((CraftWorld)w).getHandle());
 						as.spawn((CraftPlayer) p, entity.getLocation().getX(), entity.getLocation().getY(), entity.getLocation().getZ(),
-								entity.getLocation().getPitch(), entity.getLocation().getYaw(), 1.0d);
+								entity.getLocation().getPitch(), entity.getLocation().getYaw(), 5.0d);
 						as.destroyAuto((CraftPlayer) p);
 					}
 				}
