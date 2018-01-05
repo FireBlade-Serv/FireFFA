@@ -44,5 +44,4 @@ public class PlayerInteractAtPlayerEvent extends Event {
 	public static HandlerList getHandlerList(){
 		return handlers;
 	}
-
 }

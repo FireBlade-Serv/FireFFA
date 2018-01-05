@@ -20,6 +20,7 @@ import org.bukkit.inventory.ItemStack;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.events.PlayerInteractAtPlayerEvent;
 import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
@@ -27,6 +28,7 @@ import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
 public class Enderman implements Listener {
 	
 	public static ArrayList<Player> cooldown = new ArrayList<Player>();
+	public static ArrayList<Player> cooldown2 = new ArrayList<Player>();
 	
 	public static ArrayList<Player> nod = new ArrayList<Player>();
 
@@ -40,7 +42,7 @@ public class Enderman implements Listener {
 		}
 		
 		if(item.equals(Kits.ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 3,
-				"§7Main de l'enderman", Kits.LoreCreator("§9Clique droit - vous tp aléatoirement", "§930 secondes de récupération"), 1))) {
+				"§7Main de l'enderman", Kits.LoreCreator("§9Clique droit - vous téléporte aléatoirement", "§930 secondes de récupération"), 1))) {
 		
 			
 			
@@ -67,7 +69,7 @@ public class Enderman implements Listener {
 					@Override
 					public void run() { 
 					if(Var.enderman.contains(p)){
-							GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre attaque est prête !", 20, 30, 20);
+							GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre téléportation aléatoire est prête !", 20, 30, 20);
 							gt.send();
 							
 							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);						
@@ -94,6 +96,42 @@ public class Enderman implements Listener {
 				if(e.getCause().equals(DamageCause.FALL)){
 					e.setCancelled(true);
 				}
+			}
+		}
+	}
+	
+	@EventHandler
+	public void onPlayerInteract(PlayerInteractAtPlayerEvent e) {
+		Player p = e.getPlayer();
+		Player t = e.getTarget();
+		ItemStack i = e.getItemInHand();
+		
+		if(i.equals(Kits.ItemGen(Material.BLAZE_ROD, "§7Essence d'Enderman",
+				Kits.LoreCreator("§9Clique droit - vous téléporte à la cible", "45 secondes de récupération"), 1))) {
+			if(cooldown2.contains(p)) {
+				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
+				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
+				
+				return;
+			
+			}else {
+				p.teleport(t.getLocation());
+				p.playSound(p.getLocation(), Sound.ENDERMAN_TELEPORT, 30, 30);
+				t.playSound(p.getLocation(), Sound.ENDERMAN_SCREAM, 30, 30);
+				cooldown2.add(p);
+				
+				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+					
+					@Override
+					public void run() {
+						if(Var.enderman.contains(p) && cooldown2.contains(p)) {
+							GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre téléportation aléatoire est prête !", 20, 30, 20);
+							gt.send();
+							
+							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);						}
+												
+					}
+				}, 900L);
 			}
 		}
 	}
