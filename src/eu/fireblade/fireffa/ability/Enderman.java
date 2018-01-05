@@ -127,7 +127,7 @@ public class Enderman implements Listener {
 						if(Var.enderman.contains(p) && cooldown2.contains(p)) {
 							GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Votre téléportation aléatoire est prête !", 20, 30, 20);
 							gt.send();
-							
+							cooldown2.remove(p);
 							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);						}
 												
 					}
