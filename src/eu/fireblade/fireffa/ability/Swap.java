@@ -64,9 +64,7 @@ public class Swap implements Listener {
 								target.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 							}
 						}						
-					}, 400L);
-					target.getInventory().setItem(1, Kits.ItemGen(Material.SNOW_BALL, "§9Swaper", Kits.LoreCreator("§9Lancer la boule - Swap votre inventaire avec le joueur touché", ChatColor.BLUE+"20 secondes de récupération"), 1));
-									
+					}, 400L);							
 				}
 			}
 		}
