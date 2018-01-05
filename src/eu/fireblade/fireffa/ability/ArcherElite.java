@@ -50,6 +50,7 @@ public class ArcherElite implements Listener {
 							p.setLevel(18-arrowcount.get(p));
 						}
 						if(arrowcount.get(p) >= 18) {
+							cooldown.add(p);
 							GlowstoneTitle gt = new GlowstoneTitle(p, "", "§cVous devez attendre 2 secondes avant de tirer!", 20, 30, 20);
 							gt.send();
 							p.getInventory().setItem(0, Kits.ItemGen(Material.BARRIER, ChatColor.RED+"En récupération", Kits.LoreCreator(ChatColor.BLUE+"2 secondes de récupération", null), 1));
@@ -61,7 +62,7 @@ public class ArcherElite implements Listener {
 									gt.send();	
 									p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 									p.getInventory().setItem(0, Kits.ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, ChatColor.DARK_GREEN+"Arc mitrailleur", Kits.LoreCreator(ChatColor.BLUE+"N'a pas besoin d'être chargé", ChatColor.BLUE+"2 secondes de récupération toute les 18 fléches."), 1));
-									
+									cooldown.remove(p);
 									arrowcount.remove(p);
 									p.setLevel(18);
 								}
