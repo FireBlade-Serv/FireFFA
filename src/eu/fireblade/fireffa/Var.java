@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import eu.fireblade.fireffa.ability.ArcherElite;
 import eu.fireblade.fireffa.ability.Bouftout;
 import eu.fireblade.fireffa.ability.Copy;
 import eu.fireblade.fireffa.ability.DevDePacotille;
@@ -240,6 +241,7 @@ public class Var {
 			}
 		}else if(archerélite.contains(p)) {
 			archerélite.remove(p);
+			ArcherElite.cooldown.remove(p);
 		}else if(assassin.contains(p)) {
 			assassin.remove(p);
 		}else if(panda.contains(p)) {
