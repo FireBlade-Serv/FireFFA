@@ -62,7 +62,7 @@ public class GuerrierGalactique implements Listener {
 							}
 						}
 					
-					}, 1200L);
+					}, 400L);
 				}
 			}
 		}
