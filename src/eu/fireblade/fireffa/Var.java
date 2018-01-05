@@ -372,9 +372,6 @@ public class Var {
 			trapman.remove(p);
 		}else if(swap.contains(p)) {
 			swap.remove(p);
-			if(Swap.thisLive == true){
-				Swap.thisLive = false;
-			}
 		}else if(golem.contains(p)) {
 			golem.remove(p);
 			
