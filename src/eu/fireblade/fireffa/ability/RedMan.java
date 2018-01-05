@@ -18,6 +18,7 @@ import org.bukkit.inventory.ItemStack;
 
 import eu.fireblade.fireffa.Main;
 import eu.fireblade.fireffa.Var;
+import eu.fireblade.fireffa.events.PlayerKillEvent;
 import eu.fireblade.fireffa.events.PlayerRightClickInteractEvent;
 import eu.fireblade.fireffa.items.Kits;
 import fr.glowstoner.api.bukkit.title.GlowstoneTitle;
@@ -98,5 +99,12 @@ public class RedMan implements Listener {
 				p.playSound(p.getLocation(), Sound.LAVA_POP, 30, 30);
 			}
 		}
+	}
+	
+	@EventHandler
+	private static void onKill(PlayerKillEvent e) {
+		Player p = e.getKiller();
+		
+		if(Var.redman.contains(p))p.getInventory().addItem(Kits.ItemGen(Material.TNT, "§9Recharge", null, 2));
 	}
 }

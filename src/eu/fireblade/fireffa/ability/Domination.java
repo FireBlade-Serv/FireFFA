@@ -34,7 +34,7 @@ public class Domination implements Listener {
 		final World w = e.getWorld();
 		
 		if(item.equals(Kits.ItemGen1(Material.NETHER_STAR, Enchantment.DAMAGE_ALL, 3,ChatColor.BLACK+"Éclair de terreur", 
-				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Fait tomber la foudre", ChatColor.BLUE+"30 secondes de récupération"),1))) {
+				Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Fait tomber la foudre", ChatColor.BLUE+"15 secondes de récupération"),1))) {
 			
 			if(Var.domination.contains(p)) {
 				if(cooldown.contains(p)) {
@@ -45,6 +45,10 @@ public class Domination implements Listener {
 				}else {
 					p.playSound(p.getEyeLocation(), Sound.IRONGOLEM_DEATH, 30, 30);
 					
+					w.strikeLightning(p.getLocation());
+					w.strikeLightning(p.getLocation());
+					w.strikeLightning(p.getLocation());
+					w.strikeLightning(p.getLocation());
 					w.strikeLightning(p.getLocation());
 					
 					cooldown.add(p);
@@ -65,7 +69,7 @@ public class Domination implements Listener {
 							}
 						}
 						
-					}, new GlowstoneTick(30).getTicks());
+					}, new GlowstoneTick(15).getTicks());
 				}
 			}
 		}

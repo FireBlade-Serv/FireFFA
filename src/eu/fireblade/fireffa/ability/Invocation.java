@@ -41,7 +41,7 @@ public class Invocation implements Listener {
 		ItemStack i = e.getItem();
 		
 		if(Var.invocation.contains(p) && i.equals(Kits.ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 1, "§fInvocation Stick", 
-				Kits.LoreCreator("§9Clique Droit - invoque un bouclier et donne force 2 pendant 10s", "§945 secondes de récupération"), 1))) {
+				Kits.LoreCreator("§9Clique Droit - invoque un bouclier et donne force 2 pendant 10s", "§925 secondes de récupération"), 1))) {
 			if(cooldown.contains(p)) {
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
 				p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
@@ -64,7 +64,7 @@ public class Invocation implements Listener {
 							p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
 						}					
 					}
-				}, 900L);
+				}, 500L);
 			}
 		}
 	}

@@ -167,6 +167,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen2(Material.IRON_AXE, Enchantment.DAMAGE_ALL, 1, Enchantment.KNOCKBACK, 2, ChatColor.DARK_RED+"Hache de guerre", LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1)); 
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.getInventory().setItem(1, ItemGen(Material.FIREBALL, ChatColor.DARK_RED+"Boule de feu", null, 16));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitFantome(Player p) {
@@ -177,6 +178,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.BLAZE_ROD, ChatColor.GRAY+"Warp stick",LoreCreator(ChatColor.BLUE+"Clique droit - Téléporte", ChatColor.BLUE+"Utilisable toute les minutes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 0));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitTank(Player p) {
@@ -191,6 +193,7 @@ public class Kits {
 		p.getInventory().setItem(2, generatePotItem(PotionType.INSTANT_HEAL, 2, ChatColor.GOLD+"Potion curative du tank", true));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, Integer.MAX_VALUE, 0));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitFlic (Player p) {
@@ -204,6 +207,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.FLINT_AND_STEEL, ChatColor.DARK_BLUE+"Flingue",LoreCreator(ChatColor.BLUE+"Clique droit - Tire une balle", ChatColor.BLUE+"Consomme une munition"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.getInventory().setItem(2, ItemGen(Material.FIREWORK_CHARGE, ChatColor.DARK_BLUE+"Munition", null, 12));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitMagicien (Player p) {
@@ -217,6 +221,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.BLAZE_POWDER, ChatColor.BLUE+"Poudre magique", null, 3));
 		p.getInventory().setItem(2, generatePotItem(PotionType.REGEN, 2, ChatColor.BLUE+"Potion régéneratrice du magicien", true));
 		p.getInventory().setItem(3, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLUE+"Potion déstructrice du magicien", true));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 	}
 	// FAIT
@@ -230,6 +235,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.STONE_SWORD, Enchantment.KNOCKBACK, 0-2, ChatColor.GRAY+"Épée du Chevalier", null, 1));
 		p.getInventory().setItem(1, generatePotItem(PotionType.INSTANT_HEAL, 2, ChatColor.GRAY+"Potion curative du chevalier", false));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitCactus (Player p) {
@@ -242,6 +248,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 2, ChatColor.GREEN+"Épine", null,1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitPiaf (Player p) {
@@ -254,6 +261,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.SUGAR, Enchantment.DAMAGE_ALL, 4, ChatColor.GRAY+"Fiente", LoreCreator(ChatColor.BLUE+"Clique droit - Propulse en hauteur", ChatColor.BLUE+"Utilisable 25 fois"), 1));
 		p.getInventory().setItem(1, ItemGen(Material.FEATHER, ChatColor.GRAY+"Plume", null, 25));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 		
 	}
 	// manque abilité
@@ -273,6 +281,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen(Material.STONE_SWORD, ChatColor.BLACK+"Épée du voleur d'âme",LoreCreator(ChatColor.BLUE+"Clique droit - Vole une âme (1,5 coeurs)", ChatColor.BLUE+"45 secondes de récupération"), 1));
 		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.BLACK+"Puit de sang",LoreCreator(ChatColor.BLUE+"Clique droit - Utilise les âmes accumulées pour se régénerer", ChatColor.BLUE+"Consomme le puit de sang (Expérience)"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitOITCman (Player p) {
@@ -283,6 +292,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 2, ChatColor.RED+"OITC sword", null, 1));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 0));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitLapin (Player p) {
@@ -296,6 +306,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.GOLDEN_CARROT, Enchantment.DAMAGE_ALL, 4, ChatColor.WHITE+"Carotte magique du lapin", null, 1));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 6));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitRusse(Player p) {
@@ -323,6 +334,7 @@ public class Kits {
 
 		p.getInventory().setItem(1, Potion);
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitGrampa(Player p) {
@@ -341,6 +353,7 @@ public class Kits {
 		charcoal.setItemMeta(charcoalM);
 		p.getInventory().setItem(2, charcoal);
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitMineur(Player p) {
@@ -354,6 +367,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.IRON_INGOT, Enchantment.DAMAGE_ALL, 3, ChatColor.YELLOW+"Lingot de la mort", null, 1));
 		p.getInventory().setItem(2, ItemGen1(Material.COAL, Enchantment.FIRE_ASPECT, 1, ChatColor.YELLOW+"Charbon du mineur", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitJihadist (Player p) {
@@ -367,6 +381,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.DARK_RED+"Munitions", null, 32));
 		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, ChatColor.DARK_RED+"Allah akbar",LoreCreator(ChatColor.BLUE+"Clique droit - Se faire exploser", ChatColor.BLUE+"Vous tue instantanément"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitGamer (Player p) {
@@ -380,6 +395,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.RED_MUSHROOM, ChatColor.GREEN+"Super champignon",LoreCreator(ChatColor.BLUE+"Clique droit - Force 1, 3 secondes", ChatColor.BLUE+"Récupération 30 secondes"), 1));
 		p.getInventory().setItem(2, ItemGen(Material.RABBIT_FOOT, ChatColor.GREEN+"Super jump",LoreCreator(ChatColor.BLUE+"Clique droit - Saute à une hauteur de 5 blocs", ChatColor.BLUE+"Récupération 15 secondes"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitSauvage (Player p) {
@@ -389,6 +405,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.FISHING_ROD, Enchantment.DAMAGE_ALL, 4, ChatColor.DARK_PURPLE+"Massue", null, 1));
 		p.getInventory().setItem(1, ItemGen(Material.GRILLED_PORK, ChatColor.DARK_PURPLE+"Nourriture charnue", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 3 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitArcherelementaire (Player p) {
@@ -402,7 +419,8 @@ public class Kits {
 		p.getInventory().setItem(0, Kits.ItemGen1(Material.BOW, Enchantment.ARROW_KNOCKBACK, 5, ChatColor.GREEN+"Arc des adieux", Kits.LoreCreator(ChatColor.BLUE+"Tirer normalement pour utiliser",ChatColor.BLUE+"5 secondes de récupération"), 1));
 		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_FIRE, 1, ChatColor.GREEN+"Arc de feu", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.BOW, ChatColor.GREEN+"Arc de glace", LoreCreator(ChatColor.BLUE+"Ses fléches ralentissent et aveugles", ChatColor.BLUE+"Pendant 2 secondes"), 1));
-		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));		
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitOcelot (Player p) {
@@ -420,7 +438,8 @@ public class Kits {
 		bonemeal.setItemMeta(bonemealM);
 		p.getInventory().setItem(1, bonemeal);
 		p.getInventory().setItem(2, ItemGen(Material.STRING, ChatColor.YELLOW+"Ficelle de pelote laine", null, 3));
-		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));			
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitArchervagabon (Player p) {
@@ -434,15 +453,18 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_DAMAGE, 1, ChatColor.DARK_GREEN+"Arc de l'archer vagabon", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.ARROW, ChatColor.DARK_GREEN+"Flèche de l'archer vagabon", null, 32));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitArcherelite (Player p) {
 		Clear(p);
 		
 		p.getInventory().setHelmet(ItemGenColorLeather(Material.LEATHER_HELMET, ChatColor.DARK_GREEN+"Chapeau de l'archer d'élite", 1, 114, 113, 57));
-		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, ChatColor.DARK_GREEN+"Arc mitrailleur", LoreCreator(ChatColor.BLUE+"N'a pas besoin d'être chargé", ChatColor.BLUE+"Pas de limite d'utilisation"), 1));
+		p.getInventory().setItem(0, ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, ChatColor.DARK_GREEN+"Arc mitrailleur", LoreCreator(ChatColor.BLUE+"N'a pas besoin d'être chargé", ChatColor.BLUE+"2 secondes de récupération toute les 18 fléches."), 1));
 		p.getInventory().setItem(1, ItemGen(Material.ARROW, ChatColor.GREEN+"Fléche de l'archer élite", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
+		p.setLevel(18);
 	}
 	// A MODIF
 	public static void kitAssassin (Player p) {
@@ -455,6 +477,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.WOOD_SWORD, Enchantment.KNOCKBACK, -10, ChatColor.BLACK+"Dague",null ,1));
 		p.getInventory().setItem(1, ItemGen1(Material.SHEARS, Enchantment.DAMAGE_ALL, 4, ChatColor.BLACK+"Couteau de l'égorgeur", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitPanda (Player p) {
@@ -467,6 +490,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen2(Material.SUGAR_CANE, Enchantment.DAMAGE_ALL, 3, Enchantment.KNOCKBACK, 1, ChatColor.WHITE+"Bamboo", null, 1));
 		p.getInventory().setItem(1, ItemGen(Material.CLAY_BALL, ChatColor.WHITE+"Charge au sol", LoreCreator(ChatColor.BLUE+"Clique droit - Petite explosion", ChatColor.BLUE+"30 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitInformaticien (Player p) {
@@ -479,6 +503,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.WOOD_HOE, Enchantment.KNOCKBACK, 5, ChatColor.GRAY+"Tournevis", null, 1));
 		p.getInventory().setItem(2, ItemGen1(Material.POWERED_RAIL, Enchantment.FIRE_ASPECT, 2, ChatColor.GRAY+"Carte graphique (AMD)", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitProgrammeur (Player p) {
@@ -493,6 +518,7 @@ public class Kits {
 		p.getInventory().setItem(2, ItemGen(Material.IRON_INGOT, ChatColor.DARK_PURPLE+"Command prompt: BLIND", LoreCreator(ChatColor.BLUE+"Clique droit - Aveugle", ChatColor.BLUE+"5 secondes de récupération"), 1));
 		p.getInventory().setItem(3, ItemGen1(Material.GOLD_INGOT, Enchantment.FIRE_ASPECT, 2, ChatColor.DARK_PURPLE+"Command prompt: FLAME", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitPatissier (Player p) {
@@ -506,6 +532,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.CAKE, Enchantment.KNOCKBACK, 4, ChatColor.LIGHT_PURPLE+"Gâteau dans ta face", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.COOKIE, ChatColor.LIGHT_PURPLE+"Cookie du patisser", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 2 coeurs + vitesse 2, 15 secondes", ChatColor.BLUE+"30 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}	
 	// FAIT
 	public static void kitOurs (Player p) {
@@ -518,6 +545,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.STONE_HOE, Enchantment.DAMAGE_ALL, 2, ChatColor.DARK_GRAY+"Griffe de l'ours", null, 1));
 		p.getInventory().setItem(1, ItemGen(Material.WOOD_PICKAXE, ChatColor.DARK_GRAY+"Crocs de l'ours", LoreCreator(ChatColor.BLUE+"Clique droit - Vole 2 coeurs à la cible", ChatColor.BLUE+"25 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitGuerriergalactique (Player p) {
@@ -529,6 +557,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.FERMENTED_SPIDER_EYE, Enchantment.DAMAGE_ALL, 4, ChatColor.AQUA+"Poing du guerrier galactique", null, 1));
 		p.getInventory().setItem(1, ItemGen(Material.GOLD_NUGGET, ChatColor.AQUA+"Pouvoir du guerrier galactique", LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"20 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitEsclave(Player p) {
@@ -541,6 +570,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.LEASH, Enchantment.DAMAGE_ALL, 4, ChatColor.DARK_GRAY+"Fouet volé", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.WOOD_HOE, Enchantment.KNOCKBACK, 2, ChatColor.DARK_GRAY+"Hoe de l'esclave", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitDomination (Player p) {
@@ -550,12 +580,13 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, ChatColor.BLACK+"Tunique de domination", 1, 25, 25, 25));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, ChatColor.BLACK+"Pantalon de domination", 1, 25, 25, 25));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, ChatColor.BLACK+"Bottes de domination", 1, 25, 25, 25));
-		p.getInventory().setItem(0, ItemGen1(Material.NETHER_STAR, Enchantment.DAMAGE_ALL, 3,ChatColor.BLACK+"Éclair de terreur", LoreCreator(ChatColor.BLUE+"Clique droit - Fait tomber la foudre", ChatColor.BLUE+"30 secondes de récupération"),1));
+		p.getInventory().setItem(0, ItemGen1(Material.NETHER_STAR, Enchantment.DAMAGE_ALL, 3,ChatColor.BLACK+"Éclair de terreur", LoreCreator(ChatColor.BLUE+"Clique droit - Fait tomber la foudre", ChatColor.BLUE+"15 secondes de récupération"),1));
 		p.getInventory().setItem(1, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLACK+"Potion de domination", true));
 		p.getInventory().setItem(2, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLACK+"Potion de domination", true));
 		p.getInventory().setItem(3, generatePotItem(PotionType.INSTANT_DAMAGE, 2, ChatColor.BLACK+"Potion de domination", true));
 		p.getInventory().setItem(4, generatePotItem(PotionType.SLOWNESS, 1, ChatColor.BLACK+"Potion anti-rebellion", true));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitBoucher(Player p) {
@@ -568,6 +599,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.RAW_BEEF, ChatColor.DARK_RED+"Viande saignante", LoreCreator(ChatColor.BLUE+"Clique droit - Régénère 1 §c❤", ChatColor.BLUE+"1 utilisation"), 1));
 		p.getInventory().setItem(2, ItemGen(Material.MUTTON, ChatColor.DARK_RED+"Viande fraiche", LoreCreator(ChatColor.BLUE+"Clique droit - Régénère 2 §c❤", ChatColor.BLUE+"1 utilisation"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitMathematicien(Player p) {
@@ -580,6 +612,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen2(Material.REDSTONE_COMPARATOR, Enchantment.DAMAGE_ALL, 3, Enchantment.FIRE_ASPECT, 1, ChatColor.AQUA+"Calculatrice", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.BEACON, ChatColor.AQUA+"Y=MX+P", LoreCreator(ChatColor.BLUE+"Clique droit - Régéne 3 coeurs", ChatColor.BLUE+"1 utilisation"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitPyro(Player p) {
@@ -592,6 +625,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.WOOD_SWORD, Enchantment.FIRE_ASPECT, 1, ChatColor.RED+"Épée lanceuse de boules de feu", LoreCreator(ChatColor.BLUE+"Clique droit - Boule de feu", ChatColor.BLUE+"Consomme une boule de feu"), 1));
 		p.getInventory().setItem(1, ItemGen(Material.FIREBALL, ChatColor.RED+"Boule de feu", null, 6));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitMoutarde(Player p) {
@@ -604,6 +638,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.SEEDS, Enchantment.DAMAGE_ALL, 3, ChatColor.YELLOW+"Graine de moutarde", null, 1));
 		p.getInventory().setItem(1, ItemGen(Material.POTION, ChatColor.YELLOW+"Gaz moutarde", LoreCreator(ChatColor.BLUE+"Clique droit - Donne poison 2 à la cible pendant 2 secondes", ChatColor.BLUE+"15 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// Manque abilité
 	public static void kitVampire(Player p) {
@@ -616,6 +651,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§5Epée du vampire", LoreCreator("§9Clique droit - permet de ce tp dans le dos du joueur", "§920 secondes de récupération"), 1));
 		p.getInventory().setItem(1, ItemGen(Material.INK_SACK, "§5Transformation", LoreCreator("§9Clique droit - te transforme en chauve souris", "§940 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// manque abilité
 	public static void kitNuage(Player p) {
@@ -629,6 +665,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, "§fArc Nuage",  null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.ARROW, "§fFléche du Nuage", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 
 	}
 	// manque abilité
@@ -642,6 +679,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.WATCH, Enchantment.DAMAGE_ALL, 2, "§9Montre du Temps", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.COMPASS, Enchantment.KNOCKBACK, 5, "§9Ejecteur Temporel", LoreCreator("§9Clique droit - permet de frezze 5s", "§930 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void kitRobinDesBois(Player p) {
@@ -655,6 +693,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.BOW, Enchantment.ARROW_DAMAGE, 1, "§9Arc des bois", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.ARROW, "§9Flèche de Robin des bois", null, 16));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// manque abilité
 	public static void kitGandalf(Player p) {
@@ -666,6 +705,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§2Bottes de Gandalf", 1, 153, 153, 153));
 		p.getInventory().setItem(0, ItemGen2(Material.STICK, Enchantment.DAMAGE_ALL, 3, Enchantment.KNOCKBACK, 2, "§9You Shall Not Pass", LoreCreator("§9Clique droit - éjecte le joueur", "§920 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}   
 	// FAIT
 	public static void kitGlowstone(Player p) {
@@ -675,10 +715,11 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§eTunique de Glowstone", 1, 229, 229, 51));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§ePantalon de Glowstone", 1, 229, 229, 51));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§eBottes de Glowstone", 1, 229, 229, 51));
-		p.getInventory().setItem(0, ItemGen2(Material.GLOWSTONE_DUST, Enchantment.DAMAGE_ALL, 2, Enchantment.FIRE_ASPECT, 2, "§9Lumière puissante", null, 1));
+		p.getInventory().setItem(0, ItemGen2(Material.GLOWSTONE_DUST, Enchantment.DAMAGE_ALL, 1, Enchantment.FIRE_ASPECT, 2, "§9Lumière puissante", null, 1));
 		p.getInventory().setItem(1, ItemGen(Material.TORCH, "§9L'aveugleur", LoreCreator("§9Clique droit - aveugle 5 secondes", "§920 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
     public static void kitSwap(Player p) {
@@ -688,6 +729,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen(Material.WOOD_SWORD, "§9épée swap", null, 1));
 		p.getInventory().setItem(1, ItemGen(Material.SNOW_BALL, "§9Swaper", LoreCreator("§9Lancer la boule - Swap votre inventaire avec le joueur touché", ChatColor.BLUE+"20 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
     }
     //manque abilité
     public static void kitRulio(Player p) {
@@ -698,6 +740,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen1(Material.STONE_SLAB2, Enchantment.KNOCKBACK, 6, "§9Dalle", null, 1));
 		p.getInventory().setItem(2, ItemGen(Material.NAME_TAG, "§9Truelle", LoreCreator("§Clique Droit - donne poison 5s", "§15 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
     
     }
 	//manque abilité
@@ -707,6 +750,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.TRIPWIRE_HOOK, "§9Copieur d'armure", LoreCreator("§9Clique Droit - Copie l'armure ennemie", null), 1));
 		p.getInventory().setItem(2, ItemGen(Material.FEATHER, "§9Plumart", LoreCreator("§9Clique Droit - Saut de plusieurs blocs", "§915 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	//manque abilité
 	public static void kitPharaon(Player p) {
@@ -717,6 +761,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§eChausson", 1, 216, 127, 51));
 		p.getInventory().setItem(0, ItemGen2(Material.GOLD_SPADE, Enchantment.DAMAGE_ALL, 1, Enchantment.FIRE_ASPECT, 2, "§9Sceptre du Pharaon", LoreCreator("§9Clique Droit - donne nausé 5s", "§930 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	//manque abilité
 	public static void kitFuricat(Player p) {
@@ -727,6 +772,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§cBottes furicat", 1, 153, 51, 51));
 		p.getInventory().setItem(0, ItemGen2(Material.TORCH, Enchantment.DAMAGE_ALL, 2, Enchantment.FIRE_ASPECT, 1, "§9Titute", LoreCreator("§9Clique Droit - Aveugle 5s", "§915 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 		
 	}
 	//FAIT
@@ -740,6 +786,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.REDSTONE, "§9Poudre de Regen", LoreCreator("§9Regen 2 coeurs", "§9 20 secondes de récupérations"), 1));
 		p.getInventory().setItem(2, ItemGen(Material.TNT, "§9Recharge", null, 20));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 		
 	}
 	//OK !
@@ -752,6 +799,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.TRAP_DOOR, Enchantment.DAMAGE_ALL, 2, "§9Chestar", null, 1));
 		p.getInventory().setItem(1, ItemGen2(Material.IRON_TRAPDOOR, Enchantment.FIRE_ASPECT, 1, Enchantment.KNOCKBACK, 2, "§9Dolouris", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	//FAIT
 	public static void kitGolem(Player p) {
@@ -762,6 +810,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes Golem", 1, 255, 255, 255));
 		p.getInventory().setItem(0, ItemGen(Material.IRON_INGOT, "§9Balanceur", LoreCreator("§9Clique Droit - expulse vos ennemis", "§95 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	
 	}
 	//FAIT
@@ -773,6 +822,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.COOKED_BEEF, Enchantment.DAMAGE_ALL, 3, "§9Steak Saignant", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.COOKED_CHICKEN, Enchantment.FIRE_ASPECT, 2, "§9Poulet Brûlant", LoreCreator("§9Clique Droit - vole 3 §c❤", "§930 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	//FAIT
 	public static void kitEnclumex(Player p) {
@@ -784,6 +834,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.IRON_BLOCK, Enchantment.DAMAGE_ALL, 1, "§9Enclumax", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 2, "§9UltiMax", LoreCreator("§9Clique Gauche - Fait tomber des enclumes", "§930 secondes de récupération"), 1) );
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 		
 	}
 	//FAIT
@@ -795,6 +846,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§cBottes fiesta", 1, 153, 51, 51));
 		p.getInventory().setItem(0, ItemGen2(Material.ARROW, Enchantment.DAMAGE_ALL, 2, Enchantment.KNOCKBACK, 3, "§9Cotillon", LoreCreator("§9Clique Droit - tp les joueurs sur 10 blocs", "§940 secodnes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 			
 	}
 	//FAIT
@@ -804,6 +856,7 @@ public class Kits {
 		p.getInventory().setItem(1, ItemGen(Material.SLIME_BALL, "§9Poing", LoreCreator("§9Clique droit - charge le poing", "§9Clique gauche - tape selon la charge"), 1));
 		p.getInventory().setItem(2, ItemGen(Material.BANNER, "§9Invulnérabilité", LoreCreator("§9Clique droit - Rend invinsible pendant 3 secondes", ChatColor.BLUE+"15 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 		
 	}
 	//FAIT
@@ -816,6 +869,7 @@ public class Kits {
 		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.KNOCKBACK, 15, "§fBâton d'expulsion", null, 1));
 		p.getInventory().setItem(1, ItemGen1(Material.INK_SACK, Enchantment.DAMAGE_ALL, 2, "§fSac aux pêchers", null, 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 		
 	}
 	//ok
@@ -825,8 +879,9 @@ public class Kits {
 		p.getInventory().setChestplate(ItemGenColorLeather(Material.LEATHER_CHESTPLATE, "§fTunique d'invocation", 1, 76, 127, 153));
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§fPantalon d'invocation", 1, 76, 127, 153));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§fBottes d'invocation", 1, 76, 127, 153));
-		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 1, "§fInvocation Stick", LoreCreator("§9Clique Droit - invoque un bouclier et donne force 2 pendant 10s", "§945 secondes de récupération"), 1));
+		p.getInventory().setItem(0, ItemGen1(Material.STICK, Enchantment.DAMAGE_ALL, 1, "§fInvocation Stick", LoreCreator("§9Clique Droit - invoque un bouclier et donne force 2 pendant 10s", "§925 secondes de récupération"), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	//MANQUE ABILITé
 	public static void kitOgre(Player p) {
@@ -838,6 +893,7 @@ public class Kits {
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§2Bottes d'ogre", 1, 102, 127, 51));
 		p.getInventory().setItem(0, ItemGen1(Material.LEVER, Enchantment.DAMAGE_ALL, 1, "§2Massue", LoreCreator("§9Vous avez 35% de chance de faire plus de dégats", null), 1));
 		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 		
 	}
 	//FAIT
@@ -848,7 +904,8 @@ public class Kits {
 		p.getInventory().setLeggings(ItemGenColorLeather(Material.LEATHER_LEGGINGS, "§7Pantalon d'Enderman", 1, 102, 127, 51));
 		p.getInventory().setBoots(ItemGenColorLeather(Material.LEATHER_BOOTS, "§7Bottes d'Enderman", 1, 102, 127, 51));
 		p.getInventory().setItem(0, ItemGen1(Material.FLINT, Enchantment.DAMAGE_ALL, 3, "§7Main de l'enderman", LoreCreator("§9Clique droit - vous tp aléatoirement", "§930 secondes de récupération"), 1));
-		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));			
+		p.getInventory().setItem(8, Bouf(Material.CARROT_ITEM, 64));	
+		p.getInventory().setItem(7, Kits.ItemGen(Material.COMPASS, "§9Localisation Joueur", null, 1));
 	}
 	// FAIT
 	public static void Clear(Player p) {
