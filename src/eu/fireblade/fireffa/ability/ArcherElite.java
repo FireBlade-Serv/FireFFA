@@ -32,14 +32,12 @@ public class ArcherElite implements Listener {
 	public static Map<Player, Integer> tasks = new HashMap<Player, Integer>();
 	public static Map<Player, Integer> arrowcount = new HashMap<Player, Integer>();
 	public static ArrayList<Player> inLoad = new ArrayList<Player>();
-	public static ArrayList<Player> coolDown = new ArrayList<Player>();
 	
 	@EventHandler
 	public void onInteract(PlayerRightClickInteractEvent e) {
 		final Player p = e.getPlayer();
 		final ItemStack item = e.getItem();
 		
-		if(!coolDown.contains(p)) {
 			if(item.equals(Kits.ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, ChatColor.DARK_GREEN+"Arc mitrailleur", 
 					Kits.LoreCreator(ChatColor.BLUE+"N'a pas besoin d'être chargé", ChatColor.BLUE+"2 secondes de récupération toute les 18 fléches."), 1))) {
 					if(!arrowcount.containsKey(p)) {
@@ -52,15 +50,16 @@ public class ArcherElite implements Listener {
 					if(arrowcount.get(p) >= 18) {
 						GlowstoneTitle gt = new GlowstoneTitle(p, "", "§cVous devez attendre 2 secondes avant de tirer!", 20, 30, 20);
 						gt.send();
-						coolDown.add(p);
+						p.getInventory().setItem(0, Kits.ItemGen(Material.BARRIER, ChatColor.RED+"En récupération", Kits.LoreCreator(ChatColor.BLUE+"2 secondes de récupération", null), 1));
 						Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin , new Runnable() {
 							
 							@Override
 							public void run() {
 								GlowstoneTitle gt = new GlowstoneTitle(p, "", "§9Vous pouvez tirer!", 20, 30, 20);
-								gt.send();		
+								gt.send();	
+								p.playSound(p.getLocation(), Sound.ORB_PICKUP, 30, 30);
+								p.getInventory().setItem(0, Kits.ItemGen1(Material.BOW, Enchantment.ARROW_INFINITE, 1, ChatColor.DARK_GREEN+"Arc mitrailleur", Kits.LoreCreator(ChatColor.BLUE+"N'a pas besoin d'être chargé", ChatColor.BLUE+"2 secondes de récupération toute les 18 fléches."), 1));
 								
-								coolDown.remove(p);
 								arrowcount.remove(p);
 								p.setLevel(18);
 							}
@@ -72,10 +71,6 @@ public class ArcherElite implements Listener {
 					return;
 				}
 			}
-		}else {
-			p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
-			p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);
-		}
 	}
 
 	@EventHandler
