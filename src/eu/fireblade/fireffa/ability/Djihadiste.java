@@ -35,7 +35,7 @@ public class Djihadiste implements Listener {
 		final World w = p.getWorld();
 		
 		if(a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)){
-			if(item.equals(Kits.ItemGen(Material.REDSTONE, ChatColor.DARK_RED+"Allah akbar",
+			if(Var.jihadist.contains(p) && item.equals(Kits.ItemGen(Material.REDSTONE, ChatColor.DARK_RED+"Allah akbar",
 					Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Se faire exploser", ChatColor.BLUE+"Vous tue instantanément"), 1))){
 				
 				if(Var.jihadist.contains(p)){

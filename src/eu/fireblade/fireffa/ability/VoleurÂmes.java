@@ -37,7 +37,7 @@ public class VoleurÂmes implements Listener {
 		final World w = e.getWorld();
 		
 		if(Var.voleurdame.contains(p)){
-			if(item.equals(Kits.ItemGen(Material.STONE_SWORD, 
+			if(Var.voleurdame.contains(p) && item.equals(Kits.ItemGen(Material.STONE_SWORD, 
 					ChatColor.BLACK+"Épée du voleur d'âme",Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Vole une âme (1,5 coeurs)",
 							ChatColor.BLUE+"45 secondes de récupération"), 1))){
 				
@@ -95,13 +95,10 @@ public class VoleurÂmes implements Listener {
 		final ItemStack item = e.getItem();
 		
 		if(a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)){
-			if(item.equals(Kits.ItemGen(Material.REDSTONE, ChatColor.BLACK+"Puit de sang",
+			if(Var.voleurdame.contains(p) && item.equals(Kits.ItemGen(Material.REDSTONE, ChatColor.BLACK+"Puit de sang",
 					Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Utilise les âmes accumulées pour se régénerer",
 							ChatColor.BLUE+"Consomme le puit de sang (Expérience)"), 1))){
-				if(!Var.voleurdame.contains(p)){
-					return;
-				}
-				
+
 				if(!soul.containsKey(p)){
 					soul.put(p, 0.0d);
 				}
