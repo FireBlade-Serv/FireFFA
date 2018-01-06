@@ -36,10 +36,7 @@ public class Flic implements Listener {
 		final Player p = e.getPlayer();
 		final Action a = e.getAction();
 		
-		if((a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)) && e.getItem().equals(
-				Kits.ItemGen(Material.FLINT_AND_STEEL, ChatColor.DARK_BLUE+"Flingue",
-						Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Tire une balle", ChatColor.BLUE+"Consomme une munition"), 1)) && Var.flic.contains(p)){
-			
+	if((a.equals(Action.RIGHT_CLICK_AIR) || a.equals(Action.RIGHT_CLICK_BLOCK)) && e.getItem().equals(Kits.ItemGen(Material.FLINT_AND_STEEL, ChatColor.DARK_BLUE+"Flingue",Kits.LoreCreator(ChatColor.BLUE+"Clique droit - Tire une balle", ChatColor.BLUE+"Consomme une munition"), 1)) && Var.flic.contains(p)){			
 			if(p.getInventory().containsAtLeast(Kits.ItemGen(Material.FIREWORK_CHARGE, ChatColor.DARK_BLUE+"Munition", null, 12), 1)) {
 				if(inLoad.contains(p)) {
 					p.playSound(p.getLocation(), Sound.ITEM_BREAK, 30, 30);

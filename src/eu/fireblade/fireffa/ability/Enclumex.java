@@ -35,7 +35,7 @@ public class Enclumex implements Listener {
 		Player t = e.getTarget();
 		World w = e.getWorld();
 			
-		if(p.getItemInHand().equals(Kits.ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 2, "§9UltiMax", Kits.LoreCreator("§9Clique Gauche - Fait tomber des enclumes", "§930 secondes de récupération"), 1))){
+		if(p.getItemInHand().equals(Kits.ItemGen1(Material.ANVIL, Enchantment.DAMAGE_ALL, 1, "§9UltiMax", Kits.LoreCreator("§9Clique Gauche - Fait tomber des enclumes", "§930 secondes de récupération"), 1))){
 				
 			if(cooldown.contains(p)) {
 				p.sendMessage(ChatColor.GOLD+"§6[§eFireFFA§6] "+ChatColor.RED+"Vous êtes en cooldown pour cette attaque !");
